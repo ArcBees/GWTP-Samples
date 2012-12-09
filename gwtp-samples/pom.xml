@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gwtplatform</groupId>
+    <artifactId>gwtp-samples</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>GWT-Platform Samples</name>
+    <inceptionYear>2010</inceptionYear>
+    <description>Some samples highlighting some of GWT-Platform features.</description>
+    <url>http://gwtplatform.com</url>
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>ArcBees</name>
+        <url>http://arcbees.com</url>
+    </organization>
+    
+    <scm>
+        <connection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</connection>
+        <developerConnection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</developerConnection>
+        <url>https://github.com/ArcBees/GWTP-Samples</url>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/ArcBees/GWTP-Samples/issues</url>
+        <system>Github Issues</system>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Team City</system>
+        <url>http://teamcity.codebetter.com</url>
+    </ciManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>Development</name>
+            <subscribe>gwt-platform+subscribe@googlegroups.com</subscribe>
+            <unsubscribe>gwt-platform+unsubscribe@googlegroups.com</unsubscribe>
+            <post>gwt-platform@googlegroups.com</post>
+            <archive>http://groups.google.com/group/gwt-platform</archive>
+        </mailingList>
+    </mailingLists>
+
+    <modules>
+        <module>gwtp-sample-basic</module>
+        <module>gwtp-sample-basic-spring</module>
+        <module>gwtp-sample-hplace</module>
+        <module>gwtp-sample-nested</module>
+        <module>gwtp-sample-tab</module>
+        <module>gwtp-sample-crawler-service</module>
+        <module>gwtp-sample-mobile</module>
+    </modules>
+</project>
