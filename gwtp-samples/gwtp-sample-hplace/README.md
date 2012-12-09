@@ -1,5 +1,7 @@
 #GWTP Hierarchical Places
 
+#[GWT-Platform HOME](https://github.com/ArcBees/GWTP)
+
 ##Demo
 http://gwtp-sample-hplace.appspot.com
 
