@@ -18,12 +18,14 @@
         <gwtp.version>0.8-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
 
+        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
         <gae.version>1.7.2</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
         <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
         <target.jdk>1.6</target.jdk>
+        <m2e.version>2.9</m2e.version>
 
         <junit.version>4.11</junit.version>
         <jukito.version>1.1</jukito.version>
@@ -46,6 +48,7 @@
                     <source>${target.jdk}</source>
                     <target>${target.jdk}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <proc>none</proc>
                 </configuration>
             </plugin>
 
@@ -136,6 +139,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${m2e.version}</version>
                 <configuration>
                     <useProjectReferences>false</useProjectReferences>
                     <additionalBuildcommands>
@@ -155,19 +159,11 @@
                 </dependencies>
             </plugin>
 
-            <!-- Disable annotation processors during normal compilation -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <proc>none</proc>
-                </configuration>
-            </plugin>
-
             <!-- Run annotation processors on src/main/java sources -->
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
+                <version>2.1.0</version>
                 <!-- <executions>
                     <execution>
                         <id>process</id>
@@ -242,6 +238,7 @@
             <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
+                <version>${maven-gae-plugin.version}</version>
                 <configuration>
                     <serverId>appengine-credentials</serverId>
                     <sdkDir>${gae.home}</sdkDir>

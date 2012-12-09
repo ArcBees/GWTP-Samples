@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gwtplatform</groupId>
@@ -24,7 +25,7 @@
         <name>ArcBees</name>
         <url>http://arcbees.com</url>
     </organization>
-    
+
     <scm>
         <connection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</connection>
         <developerConnection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</developerConnection>
@@ -60,4 +61,32 @@
         <module>gwtp-sample-crawler-service</module>
         <module>gwtp-sample-mobile</module>
     </modules>
+
+    <properties>
+        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- run 'gae:deploy' - for deploying samples to app engine -->
+                <plugin>
+                    <groupId>net.kindleit</groupId>
+                    <artifactId>maven-gae-plugin</artifactId>
+                    <version>${maven-gae-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>local</id>
+            <url>file://./target/distribution/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>local</id>
+            <url>file://./target/distribution/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
