@@ -79,14 +79,27 @@
         </pluginManagement>
     </build>
 
+    <!-- Build to local directory, so we can use mvn clean deploy to deploy all samples to App Engine -->
     <distributionManagement>
         <repository>
-            <id>local</id>
+            <id>local-target-distribution</id>
             <url>file://./target/distribution/release</url>
         </repository>
         <snapshotRepository>
-            <id>local</id>
+            <id>local-target-distribution</id>
             <url>file://./target/distribution/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+    
+    <repositories>
+        <!-- Use GWTP snapshots for the latest and greatest -->
+        <repository>
+            <id>sonatype.snapshots</id>
+            <name>Sonatype snapshot repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
