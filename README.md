@@ -1,6 +1,6 @@
 #GWTP-Samples
 
-#[GWT-Platform HOME](https://github.com/ArcBees/GWTP)
+#[GWT-Platform Home](https://github.com/ArcBees/GWTP)
 
 ##Demos
 <table>
