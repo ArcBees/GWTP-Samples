@@ -1,6 +1,6 @@
 #GWTP Tab Sample
 
-#[GWT-Platform HOME](https://github.com/ArcBees/GWTP)
+##[GWTP Home](https://github.com/ArcBees/GWTP)
 
 ##Demo
 http://gwtp-sample-tab.appspot.com
