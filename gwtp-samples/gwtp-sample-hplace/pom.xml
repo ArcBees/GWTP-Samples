@@ -48,7 +48,7 @@
                 <configuration>
                     <source>${target.jdk}</source>
                     <target>${target.jdk}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>cd 
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
 
