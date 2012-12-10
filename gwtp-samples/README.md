@@ -1,6 +1,6 @@
 #GWTP Samples
 
-#[GWT-Platform HOME](https://github.com/ArcBees/GWTP)
+#[GWT-Platform Home](https://github.com/ArcBees/GWTP)
 
 ##Demos
 <table>
@@ -28,5 +28,10 @@
     <th>Tabs</th>
     <td><a href="http://gwtp-sample-tab.appspot.com">AppEngine Demo</a></td>
     <td><a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-tab">Source</a></td>
+  </tr>
+  <tr>
+    <th>Mobile</th>
+    <td><a href="http://gwtp-sample-mobile.appspot.com/">AppEngine Demo</a></td>
+    <td><a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-mobile">Source</a></td>
   </tr>
 </table>
