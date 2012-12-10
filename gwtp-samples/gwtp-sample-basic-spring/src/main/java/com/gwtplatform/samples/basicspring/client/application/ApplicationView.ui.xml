@@ -24,7 +24,7 @@
         <h1>GWTP Basic Example</h1>
         <div class="{style.gwtp}">
             <a href="https://github.com/ArcBees/GWTP">Project Home</a><br/>
-            <a href="https://github.com/ArcBees/GWTP/tree/master/gwtp-samples/gwtp-sample-basic-spring">Source</a><br/>
+            <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic-spring">Source</a><br/>
         </div>
         
         <div class="{style.label}">Please enter your name:</div>
