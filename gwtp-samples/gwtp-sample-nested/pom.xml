@@ -64,7 +64,6 @@
                             <includes>
                                 <include>appengine-web.xml</include>
                             </includes>
-
                             <targetPath>WEB-INF</targetPath>
                         </resource>
                     </webResources>

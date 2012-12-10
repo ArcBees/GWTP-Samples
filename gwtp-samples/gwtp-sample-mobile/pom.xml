@@ -49,7 +49,6 @@
                     <source>${target.jdk}</source>
                     <target>${target.jdk}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <proc>none</proc>
                 </configuration>
             </plugin>
 
@@ -66,7 +65,6 @@
                             <includes>
                                 <include>appengine-web.xml</include>
                             </includes>
-
                             <targetPath>WEB-INF</targetPath>
                         </resource>
                     </webResources>
@@ -160,12 +158,21 @@
                 </dependencies>
             </plugin>
 
+            <!-- Disable annotation processors during normal compilation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <proc>none</proc>
+                </configuration>
+            </plugin>
+
             <!-- Run annotation processors on src/main/java sources -->
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.1.0</version>
-                <executions>
+                <!-- <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -173,7 +180,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions>
+                </executions> -->
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
