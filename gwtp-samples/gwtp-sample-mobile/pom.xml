@@ -155,7 +155,7 @@
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
                         <artifactId>gwtp-build-tools</artifactId>
-                        <version>${project.version}</version>
+                        <version>${gwtp.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -165,7 +165,7 @@
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.1.0</version>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -173,7 +173,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions> -->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
@@ -289,6 +289,7 @@
                                     <artifactId>maven-processor-plugin</artifactId>
                                     <versionRange>[2.0.5,)</versionRange>
                                     <goals>
+                                        <goal>generate-sources</goal>
                                         <goal>process</goal>
                                         <goal>process-test</goal>
                                     </goals>

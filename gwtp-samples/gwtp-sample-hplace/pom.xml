@@ -162,7 +162,7 @@
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.1.0</version>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -170,7 +170,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions> -->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>

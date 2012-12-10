@@ -236,49 +236,49 @@
     </build>
 
     <dependencies>
-        <!-- GWTP -->
+         <!-- GWTP -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-client</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-server-guice</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-server-spring</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-crawler</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-crawler-service</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-processors</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-all</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
 
         <!-- GWT dependencies -->
