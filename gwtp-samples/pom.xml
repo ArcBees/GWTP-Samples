@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gwtplatform</groupId>
@@ -24,7 +25,7 @@
         <name>ArcBees</name>
         <url>http://arcbees.com</url>
     </organization>
-    
+
     <scm>
         <connection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</connection>
         <developerConnection>scm:git:https://github.com/ArcBees/GWTP-Samples.git</developerConnection>
@@ -60,4 +61,366 @@
         <module>gwtp-sample-crawler-service</module>
         <module>gwtp-sample-mobile</module>
     </modules>
+
+    <properties>
+        <gwt.version>2.5.0</gwt.version>
+        <gwtp.version>0.8-SNAPSHOT</gwtp.version>
+        <gin.version>2.0.0</gin.version>
+
+        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+        <gae.version>1.7.2</gae.version>
+        <guice.version>3.0</guice.version>
+        <aopalliance.version>1.0</aopalliance.version>
+
+        <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
+        <target.jdk>1.6</target.jdk>
+        <m2e.version>2.9</m2e.version>
+        <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
+        <maven.deploy.version>2.7</maven.deploy.version>
+        <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
+        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+
+        <junit.version>4.11</junit.version>
+        <jukito.version>1.1</jukito.version>
+
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <gae.home>
+            ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
+        </gae.home>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- GWT -->
+                <!-- 'mvn gwt:run' - runs development mode -->
+                <!-- 'mvn gwt:debug' - runs debug mode -->
+                <!-- 'mvn gwt:compile' - compiles gwt -->
+                <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
+                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys 
+                    to gae & sona with out running tests -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <version>${gwt.version}</version>
+                    <configuration>
+                        <strict>true</strict>
+
+                        <testTimeOut>180</testTimeOut>
+                        <includes>**/*GwtTest.java</includes>
+                        <mode>htmlunit</mode>
+
+                        <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
+                        <logLevel>INFO</logLevel>
+                        <style>${gwt.style}</style>
+
+                        <copyWebapp>true</copyWebapp>
+                        <hostedWebapp>${webappDirectory}</hostedWebapp>
+
+                        <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
+                        <appEngineVersion>${gae.version}</appEngineVersion>
+                        <appEngineHome>${gae.home}</appEngineHome>
+                        <extraJvmArgs>-Dappengine.sdk.root=${gae.home}</extraJvmArgs>
+
+                        <runTarget>Gwtpsample.html</runTarget>
+                        <module>com.gwtplatform.samples.basic.Gwtpsample</module>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.google.gwt</groupId>
+                            <artifactId>gwt-user</artifactId>
+                            <version>${gwt.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.google.gwt</groupId>
+                            <artifactId>gwt-dev</artifactId>
+                            <version>${gwt.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.google.gwt</groupId>
+                            <artifactId>gwt-codeserver</artifactId>
+                            <version>${gwt.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${target.jdk}</source>
+                        <target>${target.jdk}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.bsc.maven</groupId>
+                    <artifactId>maven-processor-plugin</artifactId>
+                    <version>${maven-processor-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven.deploy.version}</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>net.kindleit</groupId>
+                    <version>${maven-gae-plugin.version}</version>
+                    <artifactId>maven-gae-plugin</artifactId>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>${maven-eclipse-plugin.version}</version>
+                </plugin>
+
+                <!--This plugin's configuration is used to store Eclipse 
+                    m2e settings only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>${lifecycle-mapping-plugin.version}</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.datanucleus</groupId>
+                                        <artifactId>maven-datanucleus-plugin</artifactId>
+                                        <versionRange>[1.1.4,)</versionRange>
+                                        <goals>
+                                            <goal>enhance</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>net.kindleit</groupId>
+                                        <artifactId>maven-gae-plugin</artifactId>
+                                        <versionRange>[0.7.3,)</versionRange>
+                                        <goals>
+                                            <goal>unpack</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.bsc.maven</groupId>
+                                        <artifactId>maven-processor-plugin</artifactId>
+                                        <versionRange>[2.0.5,)</versionRange>
+                                        <goals>
+                                            <goal>process</goal>
+                                            <goal>process-test</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <!-- TODO(beaudoin): This should 
+                                            be `execute` but it fails. The workaround is to manually run `mvn install` 
+                                            whenever the code generating files are changed. -->
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>[1.0-beta-1,)</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-compiler-plugin</artifactId>
+                                        <versionRange>[2.0.0,)</versionRange>
+                                        <goals>
+                                            <goal>default-compile</goal>
+                                            <goal>default-testCompile</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!-- Build to local directory, so we can use mvn clean deploy to deploy 
+        all samples to App Engine -->
+    <distributionManagement>
+        <repository>
+            <id>local-target-distribution</id>
+            <url>file://./target/distribution/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>local-target-distribution</id>
+            <url>file://./target/distribution/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- Use GWTP snapshots for the latest and greatest -->
+        <repository>
+            <id>sonatype.snapshots</id>
+            <name>Sonatype snapshot repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- GWTP -->
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-mvp-client</artifactId>
+            <version>${gwtp.version}</version>
+            <scope>provided</scope> <!-- Not needed server-side -->
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-client</artifactId>
+            <version>${gwtp.version}</version>
+            <scope>provided</scope> <!-- Not needed server-side -->
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-server-guice</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-server-spring</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-crawler</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-crawler-service</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-processors</artifactId>
+            <version>${gwtp.version}</version>
+            <scope>provided</scope> <!-- Not needed server-side -->
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-all</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+
+        <!-- GWT dependencies -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- AppEngine dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+
+        <!-- DI dependencies -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-servlet</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>${aopalliance.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+            <version>${gin.version}</version>
+            <scope>provided</scope> <!-- Not needed server-side -->
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jukito</groupId>
+            <artifactId>jukito</artifactId>
+            <version>${jukito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

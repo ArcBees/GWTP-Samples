@@ -17,12 +17,15 @@
         <gwtp.version>0.8-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
         
+        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
         <gae.version>1.7.2</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
         
         <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
         <target.jdk>1.6</target.jdk>
+        <m2e.version>2.9</m2e.version>
+        <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         
         <junit.version>4.11</junit.version>
         <jukito.version>1.1</jukito.version>
@@ -40,7 +43,6 @@
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${target.jdk}</source>
                     <target>${target.jdk}</target>
@@ -61,7 +63,6 @@
                             <includes>
                                 <include>appengine-web.xml</include>
                             </includes>
-
                             <targetPath>WEB-INF</targetPath>
                         </resource>
                     </webResources>
@@ -135,6 +136,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${m2e.version}</version>
                 <configuration>
                     <useProjectReferences>false</useProjectReferences>
                     <additionalBuildcommands>
@@ -170,53 +172,111 @@
                 </executions>
             </plugin>
 
+            <!--This plugin's configuration is used to store Eclipse m2e 
+                settings only. It has no influence on the Maven build itself. -->
+            <plugin>
+                <groupId>org.eclipse.m2e</groupId>
+                <artifactId>lifecycle-mapping</artifactId>
+                <version>${lifecycle-mapping-plugin.version}</version>
+                <configuration>
+                    <lifecycleMappingMetadata>
+                        <pluginExecutions>
+                            <pluginExecution>
+                                <pluginExecutionFilter>
+                                    <groupId>net.kindleit</groupId>
+                                    <artifactId>maven-gae-plugin</artifactId>
+                                    <versionRange>[0.7.3,)</versionRange>
+                                    <goals>
+                                        <goal>unpack</goal>
+                                    </goals>
+                                </pluginExecutionFilter>
+                                <action>
+                                    <execute />
+                                </action>
+                            </pluginExecution>
+                            <pluginExecution>
+                                <pluginExecutionFilter>
+                                    <groupId>org.bsc.maven</groupId>
+                                    <artifactId>maven-processor-plugin</artifactId>
+                                    <versionRange>[2.0.5,)</versionRange>
+                                    <goals>
+                                        <goal>process</goal>
+                                        <goal>process-test</goal>
+                                    </goals>
+                                </pluginExecutionFilter>
+                                <action>
+                                    <!-- TODO(beaudoin): This should be `execute` 
+                                        but it fails. The workaround is to manually run `mvn install` whenever the 
+                                        code generating files are changed. -->
+                                    <ignore />
+                                </action>
+                            </pluginExecution>
+                            <pluginExecution>
+                                <pluginExecutionFilter>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-compiler-plugin</artifactId>
+                                    <versionRange>[2.0.0,)</versionRange>
+                                    <goals>
+                                        <goal>default-compile</goal>
+                                        <goal>default-testCompile</goal>
+                                    </goals>
+                                </pluginExecutionFilter>
+                                <action>
+                                    <ignore />
+                                </action>
+                            </pluginExecution>
+                        </pluginExecutions>
+                    </lifecycleMappingMetadata>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
     <dependencies>
-        <!-- GWTP -->
+         <!-- GWTP -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-client</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-server-guice</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-server-spring</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-crawler</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-crawler-service</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-processors</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-all</artifactId>
-            <version>${project.version}</version>
+            <version>${gwtp.version}</version>
         </dependency>
 
         <!-- GWT dependencies -->

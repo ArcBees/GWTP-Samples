@@ -1,6 +1,6 @@
 #GWTP Mobile Sample
 
-#[GWT-Platform HOME](https://github.com/ArcBees/GWTP)
+##[GWTP Home](https://github.com/ArcBees/GWTP)
 
 ##Demo
 http://gwtp-sample-mobile.appspot.com
