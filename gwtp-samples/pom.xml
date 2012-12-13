@@ -81,6 +81,7 @@
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven.surfire.version>2.12</maven.surfire.version>
         <maven.war.version>2.3</maven.war.version>
+        <maven.compiler.version>2.1</maven.compiler.version>
 
         <junit.version>4.11</junit.version>
         <jukito.version>1.1</jukito.version>
@@ -97,6 +98,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.version}</version>
                     <configuration>
                         <source>${target.jdk}</source>
                         <target>${target.jdk}</target>
