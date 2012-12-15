@@ -40,8 +40,9 @@
   <source path='client'/>
   <source path='shared'/>
 
-  <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
-  <set-configuration-property name="gin.ginjector" 
-      value="com.gwtplatform.samples.basic.client.gin.ClientGinjector" />
+  <define-configuration-property name="gin.module.name" is-multi-valued="false" />
+  <set-configuration-property name="gin.module.name" value="com.gwtplatform.samples.basic.client.gin.ClientModule"/>
 
+  <define-configuration-property name="gin.ginjector" is-multi-valued="false"/>
+  <set-configuration-property name="gin.ginjector" value="com.gwtplatform.samples.basic.client.gin.ClientGinjector"/>
 </module>
