@@ -25,6 +25,5 @@
   <source path='client'/>
 
   <!-- This is required for Gwt-Platform Proxy's generator        -->
-  <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
   <set-configuration-property name="gin.ginjector" value="com.gwtplatform.samples.nested.client.gin.ClientGinjector" />
 </module>

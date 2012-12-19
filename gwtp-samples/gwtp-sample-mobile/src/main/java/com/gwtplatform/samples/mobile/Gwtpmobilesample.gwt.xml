@@ -30,6 +30,5 @@
   <inherits name="com.gwtplatform.samples.mobile.FormFactor"/>
 
   <!-- This is required for Gwt-Platform Proxy's generator        -->
-  <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
   <set-configuration-property name="gin.ginjector" value="com.gwtplatform.samples.mobile.client.gin.ClientGinjector" />
 </module>
