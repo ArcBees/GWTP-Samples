@@ -25,8 +25,10 @@ import com.gwtplatform.mvp.client.ApplicationController;
  * @author Philippe Beaudoin
  */
 public class Gwtpsample implements EntryPoint {
+  public final ApplicationController controller = GWT.create(ApplicationController.class);
 
+  @Override
   public void onModuleLoad() {
-    GWT.<ApplicationController>create(ApplicationController.class).init();
+    controller.init();
   }
 }
