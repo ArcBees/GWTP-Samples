@@ -26,8 +26,8 @@ import com.gwtplatform.mvp.client.annotations.RequestTabs;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.proxy.NonLeafTabContentProxy;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
+import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
-import com.gwtplatform.samples.tab.client.gin.ClientGinjector;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
@@ -54,8 +54,8 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
   @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
   nameToken = NameTokens.homeNewsPage)
   // Go to HomeNewsPresenter when clicked
-  static String getTabLabel(ClientGinjector ginjector) {
-    return ginjector.getMyConstants().home();
+  static String getTabLabel(MyConstants constants) {
+    return constants.home();
   }
 
   /**

@@ -27,8 +27,8 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.TabContentProxyPlace;
+import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.home.HomePresenter;
-import com.gwtplatform.samples.tab.client.gin.ClientGinjector;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
@@ -51,9 +51,9 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
   }
 
   @TabInfo(container = HomePresenter.class)
-  static TabData getTabLabel(ClientGinjector ginjector) {
+  static TabData getTabLabel(MyConstants constants) {
     // Priority = 0, means it will be the left-most tab in the home tab
-    return new TabDataBasic(ginjector.getMyConstants().news(), 0);
+    return new TabDataBasic(constants.news(), 0);
   }
 
   /**
