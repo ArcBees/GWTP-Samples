@@ -21,111 +21,14 @@
     </properties>
 
     <build>
-        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <webappDirectory>${webappDirectory}</webappDirectory>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp/WEB-INF</directory>
-                            <filtering>true</filtering>
-                            <includes>
-                                <include>appengine-web.xml</include>
-                            </includes>
-                            <targetPath>WEB-INF</targetPath>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                    <excludes>
-                        <exclude>**/*GwtTest.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <!-- GWT -->
-            <!-- 'mvn gwt:run' - runs development mode -->
-            <!-- 'mvn gwt:debug' - runs debug mode -->
-            <!-- 'mvn gwt:compile' - compiles gwt -->
-            <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-            <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to 
-                gae & sona with out running tests -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <strict>true</strict>
-
-                    <testTimeOut>180</testTimeOut>
-                    <includes>**/*GwtTest.java</includes>
-                    <mode>htmlunit</mode>
-
-                    <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
-                    <logLevel>INFO</logLevel>
-                    <style>${gwt.style}</style>
-
-                    <copyWebapp>true</copyWebapp>
-                    <hostedWebapp>${webappDirectory}</hostedWebapp>
-
-                    <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
-                    <appEngineVersion>${gae.version}</appEngineVersion>
-                    <appEngineHome>${gae.home}</appEngineHome>
-                    <extraJvmArgs>-Dappengine.sdk.root=${gae.home}</extraJvmArgs>
-
                     <runTarget>Gwtpsample.html</runTarget>
                     <module>com.gwtplatform.samples.basic.Gwtpsample</module>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-user</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                    <!-- <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-dev</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency> -->
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-codeserver</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <configuration>
-                    <useProjectReferences>false</useProjectReferences>
-                    <additionalBuildcommands>
-                        <buildcommand>com.google.gwt.eclipse.core.gwtProjectValidator</buildcommand>
-                    </additionalBuildcommands>
-                    <additionalProjectnatures>
-                        <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
-                        <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-                    </additionalProjectnatures>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.gwtplatform</groupId>
-                        <artifactId>gwtp-build-tools</artifactId>
-                        <version>${gwtp.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <plugin>
@@ -146,4 +49,64 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <!-- GWTP -->
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-mvp-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-server-guice</artifactId>
+        </dependency>
+
+        <!-- GWT dependencies -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+        </dependency>
+
+        <!-- AppEngine dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+        </dependency>
+
+        <!-- DI dependencies -->
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-servlet</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jukito</groupId>
+            <artifactId>jukito</artifactId>
+        </dependency>
+    </dependencies>
 </project>

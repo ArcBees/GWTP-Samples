@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.4.0/distro-source/core/src/gwt-module.dtd">
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
 
 <!--
    Copyright 2010 Philippe Beaudoin
@@ -41,6 +42,6 @@
   <source path='shared'/>
 
   <set-configuration-property name="gin.ginjector"
-      value="com.gwtplatform.samples.basicspring.client.gin.ClientGinjector" />
+                              value="com.gwtplatform.samples.basicspring.client.gin.ClientGinjector" />
 
 </module>
