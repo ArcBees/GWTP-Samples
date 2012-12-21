@@ -1,6 +1,6 @@
 #GWTP-Samples
 
-##[GWT-Platform Home](https://github.com/ArcBees/GWTP)
+#[Find out more about GWTP](https://github.com/ArcBees/GWTP)
 
 ##Demos
 <table>
@@ -40,3 +40,23 @@
     <td><a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-tab">Source</a></td>
   </tr>
 </table>
+
+##Archetype Tools
+[More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
+
+```
+mvn archetype:generate -DarchetypeGroupId=com.arcbees \
+-DarchetypeArtifactId=gwtp-basic-appengine-archetype \
+-DarchetypeVersion=0.1-SNAPSHOT \
+-DgroupId=com.projectname \
+-DartifactId=new-project-name \
+-DremoteRepositories=https://oss.sonatype.org/content/repositories/snapshots/
+```
+
+##Current Release
+.8
+
+##Thanks to
+[![Arcbees.com](http://arcbees-ads.appspot.com/images/1.png)](http://arcbees.com)
+
+[![IntelliJ](https://lh6.googleusercontent.com/--QIIJfKrjSk/UJJ6X-UohII/AAAAAAAAAVM/cOW7EjnH778/s800/banner_IDEA.png)](http://www.jetbrains.com/idea/index.html)
