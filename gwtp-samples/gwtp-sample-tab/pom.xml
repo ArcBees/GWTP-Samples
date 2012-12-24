@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -21,7 +22,7 @@
 
     <build>
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,7 +41,7 @@
                     </webResources>
                 </configuration>
             </plugin>
-        
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -53,34 +54,35 @@
                     </excludes>
                 </configuration>
             </plugin>
-            
+
             <!-- GWT -->
             <!-- 'mvn gwt:run' - runs development mode -->
             <!-- 'mvn gwt:debug' - runs debug mode -->
             <!-- 'mvn gwt:compile' - compiles gwt -->
             <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-            <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
+            <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to 
+                gae & sona with out running tests -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
                     <strict>true</strict>
-                    
+
                     <testTimeOut>180</testTimeOut>
                     <includes>**/*GwtTest.java</includes>
                     <mode>htmlunit</mode>
-                    
+
                     <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
                     <logLevel>INFO</logLevel>
                     <style>${gwt.style}</style>
-                    
+
                     <copyWebapp>true</copyWebapp>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
 
                     <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
                     <appEngineVersion>${gae.version}</appEngineVersion>
                     <appEngineHome>${gae.home}</appEngineHome>
-                    
+
                     <runTarget>Gwtptabsample.html</runTarget>
                     <module>com.gwtplatform.samples.tab.Gwtptabsample</module>
                 </configuration>
@@ -90,11 +92,11 @@
                         <artifactId>gwt-user</artifactId>
                         <version>${gwt.version}</version>
                     </dependency>
-                    <!-- <dependency>
+                    <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-dev</artifactId>
                         <version>${gwt.version}</version>
-                    </dependency> -->
+                    </dependency>
                     <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-codeserver</artifactId>
@@ -102,7 +104,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            
+
             <!-- Disable annotation processors during normal compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -111,12 +113,12 @@
                     <proc>none</proc>
                 </configuration>
             </plugin>
-            
+
             <!-- Run annotation processors on src/main/java sources -->
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -124,7 +126,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions> -->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
@@ -133,7 +135,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -153,7 +155,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
@@ -174,7 +176,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            
+
             <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
@@ -294,7 +296,7 @@
             <version>${gin.version}</version>
             <scope>provided</scope> <!-- Not needed server-side -->
         </dependency>
-        
+
         <!-- Testing -->
         <dependency>
             <groupId>junit</groupId>

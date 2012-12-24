@@ -87,14 +87,25 @@
                     <runTarget>Gwtphplacesample.html</runTarget>
                     <module>com.gwtplatform.samples.hplace.Gwtphplacesample</module>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-user</artifactId>
                         <version>${gwt.version}</version>
                     </dependency>
-                    <!-- <dependency> <groupId>com.google.gwt</groupId> <artifactId>gwt-dev</artifactId> 
-                        <version>${gwt.version}</version> </dependency> -->
+                    <dependency>
+                        <groupId>com.google.gwt</groupId>
+                        <artifactId>gwt-dev</artifactId>
+                        <version>${gwt.version}</version>
+                    </dependency>
                     <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-codeserver</artifactId>
@@ -138,7 +149,7 @@
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -146,7 +157,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions> -->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
