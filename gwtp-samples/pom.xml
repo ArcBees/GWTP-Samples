@@ -81,7 +81,7 @@
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven.surfire.version>2.12</maven.surfire.version>
         <maven.war.version>2.3</maven.war.version>
-        <maven.compiler.version>2.1</maven.compiler.version>
+        <maven.compiler.version>3.0</maven.compiler.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
 
         <junit.version>4.11</junit.version>
@@ -104,6 +104,8 @@
                         <source>${target.jdk}</source>
                         <target>${target.jdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <proc>none</proc>
+                        <compilerArgument>-proc:none</compilerArgument>
                     </configuration>
                 </plugin>
 
@@ -152,6 +154,14 @@
                         <runTarget>Gwtpsample.html</runTarget>
                         <module>com.gwtplatform.samples.basic.Gwtpsample</module>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <dependencies>
                         <dependency>
                             <groupId>com.google.gwt</groupId>

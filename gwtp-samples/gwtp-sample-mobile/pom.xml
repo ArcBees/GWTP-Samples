@@ -59,8 +59,10 @@
             <!-- 'mvn gwt:run' - runs development mode -->
             <!-- 'mvn gwt:debug' - runs debug mode -->
             <!-- 'mvn gwt:compile' - compiles gwt -->
-            <!-- 'mvn gwt:test' or 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-            <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
+            <!-- 'mvn gwt:test' or 'mvn integration-test' - runs the gwt 
+                tests (*GwtTest.java) -->
+            <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to 
+                gae & sona with out running tests -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
@@ -85,17 +87,25 @@
                     <runTarget>Gwtpmobilesample.html</runTarget>
                     <module>com.gwtplatform.samples.mobile.Gwtpmobilesample</module>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-user</artifactId>
                         <version>${gwt.version}</version>
                     </dependency>
-                    <!-- <dependency>
+                    <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-dev</artifactId>
                         <version>${gwt.version}</version>
-                    </dependency> -->
+                    </dependency>
                     <dependency>
                         <groupId>com.google.gwt</groupId>
                         <artifactId>gwt-codeserver</artifactId>
@@ -131,7 +141,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <source>${target.jdk}</source>
+                    <target>${target.jdk}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <proc>none</proc>
+                    <compilerArgument>-proc:none</compilerArgument>
                 </configuration>
             </plugin>
 
@@ -139,7 +153,7 @@
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
-                <!-- <executions>
+                <executions>
                     <execution>
                         <id>process</id>
                         <goals>
@@ -147,7 +161,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                     </execution>
-                </executions> -->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>com.gwtplatform</groupId>
