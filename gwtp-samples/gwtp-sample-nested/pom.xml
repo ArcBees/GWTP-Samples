@@ -43,7 +43,7 @@
     </build>
 
     <dependencies>
-         <!-- GWTP -->
+        <!-- GWTP -->
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
@@ -74,7 +74,7 @@
             <groupId>com.google.gwt.inject</groupId>
             <artifactId>gin</artifactId>
         </dependency>
-        
+
         <!-- Testing -->
         <dependency>
             <groupId>junit</groupId>

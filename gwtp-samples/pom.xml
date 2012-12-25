@@ -66,6 +66,7 @@
         <gwt.version>2.5.0</gwt.version>
         <gwtp.version>0.8-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
+        <gwt.style>OBF</gwt.style>
 
         <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
         <gae.version>1.7.3</gae.version>
@@ -73,6 +74,7 @@
         <aopalliance.version>1.0</aopalliance.version>
 
         <target.jdk>1.6</target.jdk>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <m2e.version>2.9</m2e.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
@@ -172,6 +174,14 @@
                         <appEngineHome>${gae.home}</appEngineHome>
                         <extraJvmArgs>-Dappengine.sdk.root=${gae.home}</extraJvmArgs>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <dependencies>
                         <dependency>
                             <groupId>com.google.gwt</groupId>
@@ -179,6 +189,15 @@
                             <version>${gwt.version}</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
                 </plugin>
 
                 <plugin>
