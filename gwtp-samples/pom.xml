@@ -73,8 +73,8 @@
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
-        <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
         <target.jdk>1.6</target.jdk>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <m2e.version>2.9</m2e.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
@@ -82,7 +82,7 @@
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven.surfire.version>2.12</maven.surfire.version>
         <maven.war.version>2.3</maven.war.version>
-        <maven.compiler.version>3.0</maven.compiler.version>
+        <maven.compiler.version>2.3.2</maven.compiler.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
 
         <junit.version>4.11</junit.version>
@@ -95,6 +95,8 @@
     </properties>
 
     <build>
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -105,8 +107,6 @@
                         <source>${target.jdk}</source>
                         <target>${target.jdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <proc>none</proc>
-                        <compilerArgument>-proc:none</compilerArgument>
                     </configuration>
                 </plugin>
 
@@ -114,12 +114,34 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven.war.version}</version>
+                    <configuration>
+                        <webappDirectory>${webappDirectory}</webappDirectory>
+                        <webResources>
+                            <resource>
+                                <directory>src/main/webapp/WEB-INF</directory>
+                                <filtering>true</filtering>
+                                <includes>
+                                    <include>appengine-web.xml</include>
+                                </includes>
+
+                                <targetPath>WEB-INF</targetPath>
+                            </resource>
+                        </webResources>
+                    </configuration>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surfire.version}</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/*GwtTest.java</exclude>
+                        </excludes>
+                    </configuration>
                 </plugin>
 
                 <!-- GWT -->
@@ -151,9 +173,6 @@
                         <appEngineVersion>${gae.version}</appEngineVersion>
                         <appEngineHome>${gae.home}</appEngineHome>
                         <extraJvmArgs>-Dappengine.sdk.root=${gae.home}</extraJvmArgs>
-
-                        <runTarget>Gwtpsample.html</runTarget>
-                        <module>com.gwtplatform.samples.basic.Gwtpsample</module>
                     </configuration>
                     <executions>
                         <execution>
@@ -166,16 +185,6 @@
                     <dependencies>
                         <dependency>
                             <groupId>com.google.gwt</groupId>
-                            <artifactId>gwt-user</artifactId>
-                            <version>${gwt.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.google.gwt</groupId>
-                            <artifactId>gwt-dev</artifactId>
-                            <version>${gwt.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.google.gwt</groupId>
                             <artifactId>gwt-codeserver</artifactId>
                             <version>${gwt.version}</version>
                         </dependency>
@@ -183,9 +192,12 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.bsc.maven</groupId>
-                    <artifactId>maven-processor-plugin</artifactId>
-                    <version>${maven-processor-plugin.version}</version>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -219,9 +231,38 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <version>${maven-eclipse-plugin.version}</version>
+                    <configuration>
+                        <useProjectReferences>false</useProjectReferences>
+                        <additionalBuildcommands>
+                            <buildcommand>com.google.gwt.eclipse.core.gwtProjectValidator</buildcommand>
+                        </additionalBuildcommands>
+                        <additionalProjectnatures>
+                            <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
+                            <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+                        </additionalProjectnatures>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.gwtplatform</groupId>
+                            <artifactId>gwtp-build-tools</artifactId>
+                            <version>${gwtp.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
 
                 <!--This plugin's configuration is used to store Eclipse 
@@ -257,23 +298,6 @@
                                     </pluginExecutionFilter>
                                     <action>
                                         <execute />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.bsc.maven</groupId>
-                                        <artifactId>maven-processor-plugin</artifactId>
-                                        <versionRange>[2.0.5,)</versionRange>
-                                        <goals>
-                                            <goal>process</goal>
-                                            <goal>process-test</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <!-- TODO(beaudoin): This should 
-                                            be `execute` but it fails. The workaround is to manually run `mvn install` 
-                                            whenever the code generating files are changed. -->
-                                        <ignore />
                                     </action>
                                 </pluginExecution>
                                 <pluginExecution>
@@ -336,118 +360,121 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <!-- GWTP -->
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-mvp-client</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope> <!-- Not needed server-side -->
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-client</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope> <!-- Not needed server-side -->
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-server-guice</artifactId>
-            <version>${gwtp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-server-spring</artifactId>
-            <version>${gwtp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-crawler</artifactId>
-            <version>${gwtp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-crawler-service</artifactId>
-            <version>${gwtp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-processors</artifactId>
-            <version>${gwtp.version}</version>
-            <!-- <scope>provided</scope> Not needed server-side -->
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-all</artifactId>
-            <version>${gwtp.version}</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <!-- GWTP -->
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-mvp-client</artifactId>
+                <version>${gwtp.version}</version>
+                <scope>provided</scope> <!-- Not needed server-side -->
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-client</artifactId>
+                <version>${gwtp.version}</version>
+                <scope>provided</scope> <!-- Not needed server-side -->
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-server-guice</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-server-spring</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-crawler</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-crawler-service</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-processors</artifactId>
+                <version>${gwtp.version}</version>
+                <scope>provided</scope> <!-- Not needed server-side -->
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-all</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
 
-        <!-- GWT dependencies -->
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwt.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-            <version>${gwt.version}</version>
-            <scope>runtime</scope>
-        </dependency>
+            <!-- GWT dependencies -->
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-user</artifactId>
+                <version>${gwt.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-dev</artifactId>
+                <version>${gwt.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-servlet</artifactId>
+                <version>${gwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
-        <!-- AppEngine dependencies -->
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${gae.version}</version>
-        </dependency>
+            <!-- AppEngine dependencies -->
+            <dependency>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-api-1.0-sdk</artifactId>
+                <version>${gae.version}</version>
+            </dependency>
 
-        <!-- DI dependencies -->
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>${guice.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject.extensions</groupId>
-            <artifactId>guice-servlet</artifactId>
-            <version>${guice.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject.extensions</groupId>
-            <artifactId>guice-assistedinject</artifactId>
-            <version>${guice.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>aopalliance</groupId>
-            <artifactId>aopalliance</artifactId>
-            <version>${aopalliance.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-            <version>${gin.version}</version>
-            <scope>provided</scope> <!-- Not needed server-side -->
-        </dependency>
+            <!-- DI dependencies -->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assistedinject</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>aopalliance</groupId>
+                <artifactId>aopalliance</artifactId>
+                <version>${aopalliance.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt.inject</groupId>
+                <artifactId>gin</artifactId>
+                <version>${gin.version}</version>
+                <scope>provided</scope> <!-- Not needed server-side -->
+            </dependency>
 
-        <!-- Testing -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jukito</groupId>
-            <artifactId>jukito</artifactId>
-            <version>${jukito.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+            <!-- Testing -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jukito</groupId>
+                <artifactId>jukito</artifactId>
+                <version>${jukito.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -27,7 +27,6 @@ import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.gwtplatform.mvp.client.proxy.TabContentProxyPlace;
 import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
-import com.gwtplatform.samples.tab.client.gin.ClientGinjector;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
@@ -56,9 +55,9 @@ public class AdminAreaPresenter extends Presenter<AdminAreaPresenter.MyView, Adm
   }
 
   @TabInfo(container = ApplicationPresenter.class)
-  static TabData getTabLabel(ClientGinjector ginjector) {
+  static TabData getTabLabel(IsAdminGatekeeper adminGatekeeper) {
     // Priority = 1000, means it will be the right-most tab in the home tab
-    return new TabDataExt("Admin area", 1000, ginjector.getIsAdminGatekeeper());
+    return new TabDataExt("Admin area", 1000, adminGatekeeper);
   }
 
   /**
