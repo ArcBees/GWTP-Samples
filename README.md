@@ -56,8 +56,6 @@ mvn archetype:generate -DarchetypeGroupId=com.arcbees \
 -DremoteRepositories=https://oss.sonatype.org/content/repositories/snapshots/
 ```
 
-##Current Release
-.8
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/images/1.png)](http://arcbees.com)
