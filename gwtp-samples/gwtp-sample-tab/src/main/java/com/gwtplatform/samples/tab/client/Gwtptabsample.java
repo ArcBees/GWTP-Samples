@@ -18,8 +18,7 @@ package com.gwtplatform.samples.tab.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.gwtplatform.mvp.client.DelayedBindRegistry;
-import com.gwtplatform.samples.tab.client.gin.ClientGinjector;
+import com.gwtplatform.mvp.client.ApplicationController;
 
 /**
  * The entry point of this sample.
@@ -27,13 +26,10 @@ import com.gwtplatform.samples.tab.client.gin.ClientGinjector;
  * @author Christian Goudreau
  */
 public class Gwtptabsample implements EntryPoint {
-  public final ClientGinjector ginjector = GWT.create(ClientGinjector.class);
+  public final ApplicationController controller = GWT.create(ApplicationController.class);
 
   @Override
   public void onModuleLoad() {
-    // This is required for Gwt-Platform proxy's generator.
-    DelayedBindRegistry.bind(ginjector);
-
-    ginjector.getPlaceManager().revealCurrentPlace();
+    controller.init();
   }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.4.0/distro-source/core/src/gwt-module.dtd">
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
 
 <module rename-to='gwtptabsample'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
@@ -23,8 +24,11 @@
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
-  
-  <!-- This is required for Gwt-Platform Proxy's generator        -->
-  <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
-  <set-configuration-property name="gin.ginjector" value="com.gwtplatform.samples.tab.client.gin.ClientGinjector" />
+
+  <set-configuration-property name="gin.ginjector.modules"
+                              value="com.gwtplatform.samples.tab.client.gin.ClientModule,
+                                     com.gwtplatform.samples.tab.client.application.ui.UiModule"/>
+
+  <set-configuration-property name="gin.ginjector.extensions"
+                              value="com.gwtplatform.samples.tab.client.gin.GinjectorExtension"/>
 </module>
