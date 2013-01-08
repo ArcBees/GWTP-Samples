@@ -24,20 +24,20 @@ import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
  * (server-side).
  */
 public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
-  private String textToServer;
+    private String textToServer;
 
-  public SendTextToServerAction(final String textToServer) {
-    this.textToServer = textToServer;
-  }
+    public SendTextToServerAction(final String textToServer) {
+        this.textToServer = textToServer;
+    }
 
-  /**
-   * For serialization only.
-   */
-  @SuppressWarnings("unused")
-  private SendTextToServerAction() {
-  }
+    /**
+     * For serialization only.
+     */
+    @SuppressWarnings("unused")
+    private SendTextToServerAction() {
+    }
 
-  public String getTextToServer() {
-    return textToServer;
-  }
+    public String getTextToServer() {
+        return textToServer;
+    }
 }

@@ -18,17 +18,16 @@ package com.gwtplatform.samples.basic.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-
 import com.gwtplatform.mvp.client.ApplicationController;
 
 /**
  * @author Philippe Beaudoin
  */
 public class Gwtpsample implements EntryPoint {
-  public final ApplicationController controller = GWT.create(ApplicationController.class);
+    public final ApplicationController controller = GWT.create(ApplicationController.class);
 
-  @Override
-  public void onModuleLoad() {
-    controller.init();
-  }
+    @Override
+    public void onModuleLoad() {
+        controller.init();
+    }
 }

@@ -25,14 +25,14 @@ import com.gwtplatform.mvp.client.proxy.TokenFormatter;
 /**
  * @author Philippe Beaudoin
  */
-public class PlaceManager extends PlaceManagerImpl {
-  @Inject
-  public PlaceManager(EventBus eventBus, TokenFormatter tokenFormatter) {
-    super(eventBus, tokenFormatter);
-  }
+public class ClientPlaceManager extends PlaceManagerImpl {
+    @Inject
+    public ClientPlaceManager(EventBus eventBus, TokenFormatter tokenFormatter) {
+        super(eventBus, tokenFormatter);
+    }
 
-  @Override
-  public void revealDefaultPlace() {
-    revealPlace(new PlaceRequest(NameTokens.getHome()), false);
-  }
+    @Override
+    public void revealDefaultPlace() {
+        revealPlace(new PlaceRequest(NameTokens.getHome()), false);
+    }
 }
