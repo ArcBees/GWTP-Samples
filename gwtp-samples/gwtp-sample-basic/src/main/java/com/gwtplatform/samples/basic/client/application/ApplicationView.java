@@ -29,51 +29,51 @@ import com.gwtplatform.mvp.client.ViewImpl;
  * @author Philippe Beaudoin
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ApplicationView> {
-  }
+    /**
+     */
+    public interface Binder extends UiBinder<Widget, ApplicationView> {
+    }
 
-  @UiField
-  TextBox nameField;
-  @UiField
-  Button sendButton;
-  @UiField
-  HTML error;
+    @UiField
+    TextBox nameField;
+    @UiField
+    Button sendButton;
+    @UiField
+    HTML error;
 
-  /**
-   */
-  private Widget widget;
+    /**
+     */
+    private Widget widget;
 
-  @Inject
-  public ApplicationView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
+    @Inject
+    public ApplicationView(final Binder binder) {
+        widget = binder.createAndBindUi(this);
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
 
-  @Override
-  public String getName() {
-    return nameField.getText();
-  }
+    @Override
+    public String getName() {
+        return nameField.getText();
+    }
 
-  @Override
-  public Button getSendButton() {
-    return sendButton;
-  }
+    @Override
+    public Button getSendButton() {
+        return sendButton;
+    }
 
-  @Override
-  public void resetAndFocus() {
-    // Focus the cursor on the name field when the app loads
-    nameField.setFocus(true);
-    nameField.selectAll();
-  }
+    @Override
+    public void resetAndFocus() {
+        // Focus the cursor on the name field when the app loads
+        nameField.setFocus(true);
+        nameField.selectAll();
+    }
 
-  @Override
-  public void setError(String errorText) {
-    error.setText(errorText);
-  }
+    @Override
+    public void setError(String errorText) {
+        error.setText(errorText);
+    }
 }

@@ -6,22 +6,22 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .label {
             font-weight: bold;
         }
     </ui:style>
     <g:HTMLPanel styleName="{style.root}">
-    
+
         <h1>Remote Procedure Call</h1>
-        
+
         <div class="{style.label}">Sending name to server:</div>
-        <g:HTML ui:field="textToServer"/>  
-        
+        <g:HTML ui:field="textToServer"/>
+
         <div class="{style.label}">Server replies:</div>
         <g:HTML ui:field="serverResponse"/>
 
         <g:Button ui:field="closeButton">Close</g:Button>
-    
+
     </g:HTMLPanel>
 </ui:UiBinder> 

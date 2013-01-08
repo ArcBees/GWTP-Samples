@@ -39,73 +39,73 @@ import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
  * @author Philippe Beaudoin
  */
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy> {
-  /**
-   * {@link ResponsePresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.response)
-  public interface MyProxy extends Proxy<ResponsePresenter>, Place {
-  }
+    /**
+     * {@link ResponsePresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.response)
+    public interface MyProxy extends Proxy<ResponsePresenter>, Place {
+    }
 
-  /**
-   * {@link ResponsePresenter}'s view.
-   */
-  public interface MyView extends View {
-    Button getCloseButton();
+    /**
+     * {@link ResponsePresenter}'s view.
+     */
+    public interface MyView extends View {
+        Button getCloseButton();
 
-    void setServerResponse(String serverResponse);
+        void setServerResponse(String serverResponse);
 
-    void setTextToServer(String textToServer);
-  }
+        void setTextToServer(String textToServer);
+    }
 
-  public static final String textToServerParam = "textToServer";
+    public static final String textToServerParam = "textToServer";
 
-  private final DispatchAsync dispatcher;
-  private final PlaceManager placeManager;
+    private final DispatchAsync dispatcher;
+    private final PlaceManager placeManager;
 
-  private String textToServer;
+    private String textToServer;
 
-  @Inject
-  public ResponsePresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager,
-      DispatchAsync dispatcher) {
-    super(eventBus, view, proxy, RevealType.Root);
+    @Inject
+    public ResponsePresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager,
+            DispatchAsync dispatcher) {
+        super(eventBus, view, proxy, RevealType.Root);
 
-    this.placeManager = placeManager;
-    this.dispatcher = dispatcher;
-  }
+        this.placeManager = placeManager;
+        this.dispatcher = dispatcher;
+    }
 
-  @Override
-  public void prepareFromRequest(PlaceRequest request) {
-    super.prepareFromRequest(request);
-    textToServer = request.getParameter(textToServerParam, null);
-  }
+    @Override
+    public void prepareFromRequest(PlaceRequest request) {
+        super.prepareFromRequest(request);
+        textToServer = request.getParameter(textToServerParam, null);
+    }
 
-  @Override
-  protected void onBind() {
-    super.onBind();
-    registerHandler(getView().getCloseButton().addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        placeManager.revealPlace(new PlaceRequest(NameTokens.getHome()));
-      }
-    }));
-  }
+    @Override
+    protected void onBind() {
+        super.onBind();
+        registerHandler(getView().getCloseButton().addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                placeManager.revealPlace(new PlaceRequest(NameTokens.getHome()));
+            }
+        }));
+    }
 
-  @Override
-  protected void onReset() {
-    super.onReset();
-    getView().setTextToServer(textToServer);
-    getView().setServerResponse("Waiting for response...");
-    dispatcher.execute(new SendTextToServerAction(textToServer), new AsyncCallback<SendTextToServerResult>() {
-      @Override
-      public void onFailure(Throwable caught) {
-        getView().setServerResponse("An error occured: " + caught.getMessage());
-      }
+    @Override
+    protected void onReset() {
+        super.onReset();
+        getView().setTextToServer(textToServer);
+        getView().setServerResponse("Waiting for response...");
+        dispatcher.execute(new SendTextToServerAction(textToServer), new AsyncCallback<SendTextToServerResult>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                getView().setServerResponse("An error occured: " + caught.getMessage());
+            }
 
-      @Override
-      public void onSuccess(SendTextToServerResult result) {
-        getView().setServerResponse(result.getResponse());
-      }
-    });
-  }
+            @Override
+            public void onSuccess(SendTextToServerResult result) {
+                getView().setServerResponse(result.getResponse());
+            }
+        });
+    }
 }

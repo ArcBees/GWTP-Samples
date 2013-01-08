@@ -22,12 +22,12 @@ import com.google.gwt.junit.client.GWTTestCase;
  * @author Brandon Donnelson
  */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.basic.Gwtpsample";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.basic.Gwtpsample";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }
