@@ -15,6 +15,7 @@ public class BoostrapperImpl implements Bootstrapper {
         this.placeManager = placeManager;
     }
 
+    @Override
     public void init() {
         placeManager.revealCurrentPlace();
     }
