@@ -30,12 +30,8 @@
     <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
     <!-- Other module inherits                                      -->
-
-    <!-- Specify the app entry point class.                         -->
-    <entry-point class='com.gwtplatform.samples.basic.client.Gwtpsample'/>
-
     <inherits name='com.gwtplatform.dispatch.Dispatch'/>
-    <inherits name='com.gwtplatform.mvp.Mvp'/>
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
