@@ -3,10 +3,10 @@ package com.gwtplatform.samples.basic.client.gin;
 import javax.inject.Inject;
 
 import com.gwtplatform.mvp.client.Bootstrapper;
-import com.gwtplatform.mvp.client.annotations.IsTheBootstrapper;
+import com.gwtplatform.mvp.client.annotations.Bootstrap;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
-@IsTheBootstrapper
+@Bootstrap
 public class BootstrapperImpl implements Bootstrapper {
     private final PlaceManager placeManager;
 
@@ -16,7 +16,7 @@ public class BootstrapperImpl implements Bootstrapper {
     }
 
     @Override
-    public void init() {
+    public void onBootstrap() {
         placeManager.revealCurrentPlace();
     }
 }
