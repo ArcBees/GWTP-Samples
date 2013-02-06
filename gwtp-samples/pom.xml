@@ -63,18 +63,19 @@
     </modules>
 
     <properties>
+        <!-- client -->
         <gwt.version>2.5.0</gwt.version>
-        <gwtp.version>0.8-beta-2-SNAPSHOT</gwtp.version>
+        <gwtp.version>1.0-RC-1</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
-        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+        <!-- server -->
         <gae.version>1.7.4</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
-        <target.jdk>1.6</target.jdk>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- maven -->
+        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
         <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
@@ -84,8 +85,12 @@
         <maven.compiler.version>2.3.2</maven.compiler.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
 
+        <!-- testing -->
         <junit.version>4.11</junit.version>
         <jukito.version>1.1</jukito.version>
+
+        <target.jdk>1.6</target.jdk>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
         <gae.home>
@@ -111,25 +116,6 @@
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${maven.war.version}</version>
-                    <configuration>
-                        <webappDirectory>${webappDirectory}</webappDirectory>
-                        <webResources>
-                            <resource>
-                                <directory>src/main/webapp/WEB-INF</directory>
-                                <filtering>true</filtering>
-                                <includes>
-                                    <include>appengine-web.xml</include>
-                                </includes>
-                                <targetPath>WEB-INF</targetPath>
-                            </resource>
-                        </webResources>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surfire.version}</version>
                     <configuration>
@@ -147,8 +133,7 @@
                 <!-- 'mvn gwt:debug' - runs debug mode -->
                 <!-- 'mvn gwt:compile' - compiles gwt -->
                 <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys 
-                    to gae & sona with out running tests -->
+                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
@@ -160,7 +145,7 @@
                         <includes>**/*GwtTest.java</includes>
                         <mode>htmlunit</mode>
 
-                        <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
+                        <extraJvmArgs>-Xss1024k -Xmx512M -XX:MaxPermSize=256m</extraJvmArgs>
                         <logLevel>INFO</logLevel>
                         <style>${gwt.style}</style>
 
@@ -180,13 +165,6 @@
                             </goals>
                         </execution>
                     </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.google.gwt</groupId>
-                            <artifactId>gwt-codeserver</artifactId>
-                            <version>${gwt.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
 
                 <plugin>
@@ -200,19 +178,24 @@
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven.war.version}</version>
+                    <configuration>
+                        <webappDirectory>${webappDirectory}</webappDirectory>
+                        <webResources>
+                            <resource>
+                                <directory>src/main/webapp/WEB-INF</directory>
+                                <filtering>true</filtering>
+                                <includes>
+                                    <include>appengine-web.xml</include>
+                                </includes>
+                                <targetPath>WEB-INF</targetPath>
+                            </resource>
+                        </webResources>
+                    </configuration>
                 </plugin>
 
+                <!-- Skip deploy -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -251,18 +234,6 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.7</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.3</version>
-                </plugin>
-
-                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <version>${maven-eclipse-plugin.version}</version>
@@ -285,8 +256,8 @@
                     </dependencies>
                 </plugin>
 
-                <!--This plugin's configuration is used to store Eclipse 
-                    m2e settings only. It has no influence on the Maven build itself. -->
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven 
+                    build itself. -->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
@@ -354,31 +325,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <!-- Build to local directory, so we can use mvn clean deploy to deploy 
-        all samples to App Engine -->
-    <distributionManagement>
-        <repository>
-            <id>local-target-distribution</id>
-            <url>file://./target/distribution/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>local-target-distribution</id>
-            <url>file://./target/distribution/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <!-- Use GWTP snapshots for the latest and greatest -->
-        <repository>
-            <id>sonatype.snapshots</id>
-            <name>Sonatype snapshot repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>

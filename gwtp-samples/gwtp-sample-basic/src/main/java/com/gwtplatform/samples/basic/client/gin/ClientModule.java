@@ -19,20 +19,14 @@ package com.gwtplatform.samples.basic.client.gin;
 import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.basic.client.application.ApplicationModule;
-import com.gwtplatform.samples.basic.client.place.ClientPlaceManager;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        // Default implementation of standard resources
-        install(new DefaultModule(ClientPlaceManager.class));
-
+        install(new DefaultModule(DefaultPlaceManager.class));
         install(new DispatchAsyncModule());
-
         install(new ApplicationModule());
     }
 }
