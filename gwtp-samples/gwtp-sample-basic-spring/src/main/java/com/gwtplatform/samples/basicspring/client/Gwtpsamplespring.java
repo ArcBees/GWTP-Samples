@@ -18,18 +18,15 @@ package com.gwtplatform.samples.basicspring.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.gwtplatform.mvp.client.DelayedBindRegistry;
-import com.gwtplatform.samples.basicspring.client.gin.ClientGinjector;
+import com.gwtplatform.mvp.client.ApplicationController;
 
 /**
  * @author Philippe Beaudoin
  */
 public class Gwtpsamplespring implements EntryPoint {
-  public final ClientGinjector ginjector = GWT.create(ClientGinjector.class);
+    private static final ApplicationController controller = GWT.create(ApplicationController.class);
 
-  public void onModuleLoad() {
-    DelayedBindRegistry.bind(ginjector);
-
-    ginjector.getPlaceManager().revealCurrentPlace();
-  }
+    public void onModuleLoad() {
+        controller.init();
+    }
 }

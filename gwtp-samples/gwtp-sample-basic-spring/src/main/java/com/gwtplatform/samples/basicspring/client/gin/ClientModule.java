@@ -25,7 +25,6 @@ import com.gwtplatform.samples.basicspring.client.place.PlaceManager;
  * @author Philippe Beaudoin
  */
 public class ClientModule extends AbstractPresenterModule {
-
   @Override
   protected void configure() {
     // Default implementation of standard resources
