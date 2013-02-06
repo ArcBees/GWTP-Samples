@@ -64,18 +64,17 @@
 
     <properties>
         <gwt.version>2.5.0</gwt.version>
-        <gwtp.version>0.8-alpha-4-SNAPSHOT</gwtp.version>
+        <gwtp.version>0.8-beta-2-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
         <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
-        <gae.version>1.7.3</gae.version>
+        <gae.version>1.7.4</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
         <target.jdk>1.6</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <m2e.version>2.9</m2e.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
         <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
@@ -123,7 +122,6 @@
                                 <includes>
                                     <include>appengine-web.xml</include>
                                 </includes>
-
                                 <targetPath>WEB-INF</targetPath>
                             </resource>
                         </webResources>
@@ -177,8 +175,8 @@
                     <executions>
                         <execution>
                             <goals>
-                                <goal>compile</goal>
                                 <goal>test</goal>
+                                <goal>compile</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -224,10 +222,32 @@
                     </configuration>
                 </plugin>
 
+                <!-- App Engine -->
                 <plugin>
                     <groupId>net.kindleit</groupId>
-                    <version>${maven-gae-plugin.version}</version>
                     <artifactId>maven-gae-plugin</artifactId>
+                    <version>${maven-gae-plugin.version}</version>
+                    <configuration>
+                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+                        <serverId>appengine-credentials</serverId>
+                        <splitJars>true</splitJars>
+                        <sdkDir>${gae.home}</sdkDir>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>install-server-jar</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>deploy</id>
+                            <goals>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
