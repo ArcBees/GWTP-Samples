@@ -18,8 +18,8 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <runTarget>Gwtpnestedsample.html</runTarget>
-                    <module>com.gwtplatform.samples.nested.Gwtpnestedsample</module>
+                    <runTarget>KitchenSink.html</runTarget>
+                    <module>com.gwtplatform.samples.kitchensink.KitchenSink</module>
                 </configuration>
             </plugin>
 
