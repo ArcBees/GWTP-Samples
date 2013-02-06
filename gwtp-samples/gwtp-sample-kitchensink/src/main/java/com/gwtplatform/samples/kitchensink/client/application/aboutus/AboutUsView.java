@@ -25,15 +25,8 @@ public class AboutUsView extends ViewImpl implements AboutUsPresenter.MyView {
     public interface Binder extends UiBinder<Widget, AboutUsView> {
     }
 
-    private final Widget widget;
-
     @Inject
     public AboutUsView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(binder.createAndBindUi(this));
     }
 }

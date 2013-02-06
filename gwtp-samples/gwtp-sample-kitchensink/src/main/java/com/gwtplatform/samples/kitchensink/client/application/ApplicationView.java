@@ -34,8 +34,6 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     public interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
-    public final Widget widget;
-
     @UiField
     SimplePanel mainContentPanel;
     @UiField
@@ -43,12 +41,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @Inject
     public ApplicationView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(binder.createAndBindUi(this));
     }
 
     @Override

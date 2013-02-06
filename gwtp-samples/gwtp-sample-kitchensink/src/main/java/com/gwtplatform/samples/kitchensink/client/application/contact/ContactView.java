@@ -30,16 +30,9 @@ public class ContactView extends ViewImpl implements ContactPresenter.MyView {
     @UiField
     Label navigationHistory;
 
-    private final Widget widget;
-
     @Inject
     public ContactView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(binder.createAndBindUi(this));
     }
 
     @Override
