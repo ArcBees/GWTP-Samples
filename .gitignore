@@ -4,7 +4,7 @@ target
 .project
 *.iml
 .settings
-.idea
+.idea**
 .classpath
 .gwt
 bin
