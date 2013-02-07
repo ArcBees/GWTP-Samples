@@ -29,49 +29,44 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 
 /**
- * This is the top-level presenter of the hierarchy. Other presenters reveal
- * themselves within this presenter.
+ * This is the top-level presenter of the hierarchy. Other presenters reveal themselves within this presenter.
  * <p />
- * The goal of this sample is to show how to use nested presenters. These can be
- * useful to decouple multiple presenters that need to be displayed on the
- * screen simultaneously.
- *
- * @author Christian Goudreau
+ * The goal of this sample is to show how to use nested presenters. These can be useful to decouple multiple presenters
+ * that need to be displayed on the screen simultaneously.
  */
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
-  /**
-   * {@link ApplicationPresenter}'s proxy.
-   */
-  @ProxyStandard
-  public interface MyProxy extends Proxy<ApplicationPresenter> {
-  }
+    /**
+     * {@link ApplicationPresenter}'s proxy.
+     */
+    @ProxyStandard
+    public interface MyProxy extends Proxy<ApplicationPresenter> {
+    }
 
-  /**
-   * {@link ApplicationPresenter}'s view.
-   */
-  public interface MyView extends View {
-    void showLoading(boolean visibile);
-  }
+    /**
+     * {@link ApplicationPresenter}'s view.
+     */
+    public interface MyView extends View {
+        void showLoading(boolean visibile);
+    }
 
-  /**
-   * Use this in leaf presenters, inside their {@link #revealInParent} method.
-   */
-  @ContentSlot
-  public static final Type<RevealContentHandler<?>> TYPE_SetMainContent = new Type<RevealContentHandler<?>>();
+    /**
+     * Use this in leaf presenters, inside their {@link #revealInParent} method.
+     */
+    @ContentSlot
+    public static final Type<RevealContentHandler<?>> TYPE_SetMainContent = new Type<RevealContentHandler<?>>();
 
-  @Inject
-  public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
-    super(eventBus, view, proxy, RevealType.Root);
-  }
+    @Inject
+    public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+        super(eventBus, view, proxy, RevealType.Root);
+    }
 
-  /**
-   * We display a short lock message whenever navigation is in progress.
-   *
-   * @param event
-   *          The {@link LockInteractionEvent}.
-   */
-  @ProxyEvent
-  public void onLockInteraction(LockInteractionEvent event) {
-    getView().showLoading(event.shouldLock());
-  }
+    /**
+     * We display a short lock message whenever navigation is in progress.
+     * 
+     * @param event The {@link LockInteractionEvent}.
+     */
+    @ProxyEvent
+    public void onLockInteraction(LockInteractionEvent event) {
+        getView().showLoading(event.shouldLock());
+    }
 }

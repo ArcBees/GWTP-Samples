@@ -22,32 +22,29 @@ import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 
 /**
- * This is a basic class that holds the privileges of the user currently logged
- * in.
- * 
- * @author Philippe Beaudoin
+ * This is a basic class that holds the privileges of the user currently logged in.
  */
 public class CurrentUser implements HasHandlers {
-  private boolean isAdmin = true;
+    private boolean isAdmin = true;
 
-  private final EventBus eventBus;
+    private final EventBus eventBus;
 
-  @Inject
-  public CurrentUser(EventBus eventBus) {
-    this.eventBus = eventBus;
-  }
+    @Inject
+    public CurrentUser(EventBus eventBus) {
+        this.eventBus = eventBus;
+    }
 
-  public void setAdmin(boolean isAdmin) {
-    this.isAdmin = isAdmin;
-    CurrentUserChangedEvent.fire(this);
-  }
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+        CurrentUserChangedEvent.fire(this);
+    }
 
-  public boolean isAdmin() {
-    return isAdmin;
-  }
+    public boolean isAdmin() {
+        return isAdmin;
+    }
 
-  @Override
-  public void fireEvent(GwtEvent<?> event) {
-    eventBus.fireEvent(event);
-  }
+    @Override
+    public void fireEvent(GwtEvent<?> event) {
+        eventBus.fireEvent(event);
+    }
 }

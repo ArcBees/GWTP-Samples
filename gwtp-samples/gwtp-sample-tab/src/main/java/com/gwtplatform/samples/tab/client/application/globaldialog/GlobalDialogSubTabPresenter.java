@@ -27,59 +27,57 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.proxy.RevealRootPopupContentEvent;
 import com.gwtplatform.mvp.client.proxy.TabContentProxyPlace;
+import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
 import com.gwtplatform.samples.tab.client.application.dialog.DialogSamplePresenter;
 import com.gwtplatform.samples.tab.client.application.infopopup.InfoPopupPresenterWidget;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
- * A sample {@link Presenter} that demonstrates how to trigger a global dialog
- * box. It appears as a tab within {@link DialogSamplePresenter}, which is
- * itself a s tab in {@link ApplicationPresenter}.
+ * A sample {@link Presenter} that demonstrates how to trigger a global dialog box. It appears as a tab within
+ * {@link DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
  * <p />
  * It demonstrates the option 3 described in {@link TabInfo}.
- * 
- * @author Philippe Beaudoin
  */
 public class GlobalDialogSubTabPresenter extends
-    Presenter<GlobalDialogSubTabPresenter.MyView, GlobalDialogSubTabPresenter.MyProxy> implements
-    GlobalDialogSubTabUiHandlers {
-  /**
-   * {@link GlobalDialogSubTabPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.globalDialogSamplePage)
-  @TabInfo(container = DialogSamplePresenter.class, label = "Global", priority = 0)
-  // The leftmost tab in the dialog tab
-  public interface MyProxy extends TabContentProxyPlace<GlobalDialogSubTabPresenter> {
-  }
+        Presenter<GlobalDialogSubTabPresenter.MyView, GlobalDialogSubTabPresenter.MyProxy> implements
+        GlobalDialogSubTabUiHandlers {
+    /**
+     * {@link GlobalDialogSubTabPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.globalDialogSamplePage)
+    @TabInfo(container = DialogSamplePresenter.class, label = "Global", priority = 0)
+    // The leftmost tab in the dialog tab
+    public interface MyProxy extends TabContentProxyPlace<GlobalDialogSubTabPresenter> {
+    }
 
-  /**
-   * {@link GlobalDialogSubTabPresenter}'s view.
-   */
-  public interface MyView extends View, HasUiHandlers<GlobalDialogSubTabUiHandlers> {
-  }
+    /**
+     * {@link GlobalDialogSubTabPresenter}'s view.
+     */
+    public interface MyView extends View, HasUiHandlers<GlobalDialogSubTabUiHandlers> {
+    }
 
-  private final GlobalDialogPresenterWidget globalDialog;
-  private final InfoPopupPresenterWidget infoPopup;
+    private final GlobalDialogPresenterWidget globalDialog;
+    private final InfoPopupPresenterWidget infoPopup;
 
-  @Inject
-  public GlobalDialogSubTabPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-      final GlobalDialogPresenterWidget globalDialog, final InfoPopupPresenterWidget infoPopup) {
-    super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
-    this.globalDialog = globalDialog;
-    this.infoPopup = infoPopup;
+    @Inject
+    public GlobalDialogSubTabPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
+            final GlobalDialogPresenterWidget globalDialog, final InfoPopupPresenterWidget infoPopup) {
+        super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
+        this.globalDialog = globalDialog;
+        this.infoPopup = infoPopup;
 
-    getView().setUiHandlers(this);
-  }
+        getView().setUiHandlers(this);
+    }
 
-  public void showGlobalDialog() {
-    RevealRootPopupContentEvent.fire(this, globalDialog);
-  }
+    public void showGlobalDialog() {
+        RevealRootPopupContentEvent.fire(this, globalDialog);
+    }
 
-  @Override
-  public void showInfoPopup(int mousePosX, int mousePosY) {
-    addToPopupSlot(infoPopup, false);
-    PopupView popupView = (PopupView) infoPopup.getView();
-    popupView.setPosition(mousePosX + 15, mousePosY);
-  }
+    @Override
+    public void showInfoPopup(int mousePosX, int mousePosY) {
+        addToPopupSlot(infoPopup, false);
+        PopupView popupView = (PopupView) infoPopup.getView();
+        popupView.setPosition(mousePosX + 15, mousePosY);
+    }
 }

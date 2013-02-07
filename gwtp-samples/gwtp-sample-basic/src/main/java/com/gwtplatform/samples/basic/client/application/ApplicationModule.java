@@ -20,9 +20,6 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.samples.basic.client.application.response.ResponsePresenter;
 import com.gwtplatform.samples.basic.client.application.response.ResponseView;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

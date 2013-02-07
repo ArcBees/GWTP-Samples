@@ -23,53 +23,43 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
-import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 
 /**
  * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.globaldialog.GlobalDialogPresenterWidget}
- * .
- * 
- * @author Philippe Beaudoin
+ * {@link com.gwtplatform.samples.tab.client.application.globaldialog.GlobalDialogPresenterWidget} .
  */
 public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPresenterWidget.MyView {
-  /**
+    /**
    */
-  public interface Binder extends UiBinder<PopupPanel, GlobalDialogView> {
-  }
-
-  @UiField
-  Button okButton;
-  @UiField
-  Label navigationMessage;
-
-  private final PopupPanel widget;
-
-  @Inject
-  public GlobalDialogView(Binder uiBinder, EventBus eventBus) {
-    super(eventBus);
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @UiHandler("okButton")
-  void okButtonClicked(ClickEvent event) {
-    widget.hide();
-  }
-
-  @Override
-  public void setNavigationPlace(String placeName) {
-    if (placeName == null) {
-      navigationMessage.setText("");
-    } else {
-      navigationMessage.setText("Looks like you just navigated to '" + placeName + "'.");
+    public interface Binder extends UiBinder<PopupPanel, GlobalDialogView> {
     }
-  }
+
+    @UiField
+    Button okButton;
+    @UiField
+    Label navigationMessage;
+
+    @Inject
+    public GlobalDialogView(Binder uiBinder, EventBus eventBus) {
+        super(eventBus);
+        
+        initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @UiHandler("okButton")
+    void okButtonClicked(ClickEvent event) {
+        hide();
+    }
+
+    @Override
+    public void setNavigationPlace(String placeName) {
+        if (placeName == null) {
+            navigationMessage.setText("");
+        } else {
+            navigationMessage.setText("Looks like you just navigated to '" + placeName + "'.");
+        }
+    }
 }
