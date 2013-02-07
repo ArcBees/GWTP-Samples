@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1.0-RC-1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtp-sample-hplace</artifactId>
@@ -25,78 +25,8 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/generated-sources/annotations</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>default-clean</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>remove-gwt-user-jar</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                        <configuration>
-                            <excludeDefaultDirectories>true</excludeDefaultDirectories>
-                            <filesets>
-                                <fileset>
-                                    <directory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</directory>
-                                    <includes>
-                                        <include>gwt-user*.jar</include>
-                                    </includes>
-                                </fileset>
-                            </filesets>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
-                <configuration>
-                    <serverId>appengine-credentials</serverId>
-                    <sdkDir>${gae.home}</sdkDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>install-server-jar</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

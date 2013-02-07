@@ -26,26 +26,23 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.nested.client.application.ApplicationPresenter;
 import com.gwtplatform.samples.nested.client.place.NameTokens;
 
-/**
- * @author Christian Goudreau
- */
 public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter.MyProxy> {
-  /**
-   * {@link HomePresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.homePage)
-  public interface MyProxy extends ProxyPlace<HomePresenter> {
-  }
+    /**
+     * {@link HomePresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.homePage)
+    public interface MyProxy extends ProxyPlace<HomePresenter> {
+    }
 
-  /**
-   * {@link HomePresenter}'s view.
-   */
-  public interface MyView extends View {
-  }
+    /**
+     * {@link HomePresenter}'s view.
+     */
+    public interface MyView extends View {
+    }
 
-  @Inject
-  public HomePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
-    super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
-  }
+    @Inject
+    public HomePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
+    }
 }

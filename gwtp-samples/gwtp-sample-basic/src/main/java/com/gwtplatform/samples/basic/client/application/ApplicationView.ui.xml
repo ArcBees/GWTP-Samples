@@ -6,15 +6,15 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         .gwtp {
             margin-bottom: 15px;
         }
-
+        
         .label {
             font-weight: bold;
         }
-
+        
         .label-error {
             color: red;
         }
@@ -24,15 +24,15 @@
         <h1>GWTP Basic Example</h1>
         <div class="{style.gwtp}">
             <a href="https://github.com/ArcBees/GWTP">Project Home</a>
-            <br/>
+            <br />
             <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic">Source</a>
-            <br/>
+            <br />
         </div>
 
         <div class="{style.label}">Please enter your name:</div>
-        <g:TextBox ui:field="nameField"/>
+        <g:TextBox ui:field="nameField" />
         <g:Button ui:field="sendButton">Send</g:Button>
-        <g:HTML ui:field="error" styleName="{style.label-error}"/>
+        <g:HTML ui:field="error" styleName="{style.label-error}" />
 
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -20,30 +20,26 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.TabData;
+import com.gwtplatform.samples.tab.client.application.ui.linkmenu.LinkMenu;
 
 /**
  * A {@link BaseTabPanel} styled to contain {@link SimpleTab}.
  * <p />
- * Look at {@link LinkMenu} to see how we can use this widget within a UiBinder
- * file even though its constructor relies on dependency injection.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
+ * Look at {@link LinkMenu} to see how we can use this widget within a UiBinder file even though its constructor relies
+ * on dependency injection.
  */
 public class SimpleTabPanel extends BaseTabPanel {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, SimpleTabPanel> {
-  }
+    public interface Binder extends UiBinder<Widget, SimpleTabPanel> {
+    }
 
-  @Inject
-  public SimpleTabPanel(Binder binder) {
-    initWidget(binder.createAndBindUi(this));
-  }
+    @Inject
+    public SimpleTabPanel(Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 
-  @Override
-  protected BaseTab createNewTab(TabData tabData) {
-    // TODO Try using assisted injection here (to inject UiBinder in SimpleTab)
-    return new SimpleTab(tabData);
-  }
+    @Override
+    protected BaseTab createNewTab(TabData tabData) {
+        // TODO Try using assisted injection here (to inject UiBinder in SimpleTab)
+        return new SimpleTab(tabData);
+    }
 }

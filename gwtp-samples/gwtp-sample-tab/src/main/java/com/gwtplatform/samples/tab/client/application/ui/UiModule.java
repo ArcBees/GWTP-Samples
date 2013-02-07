@@ -22,17 +22,14 @@ import com.gwtplatform.samples.tab.client.application.ui.tabs.RoundTabPanel;
 import com.gwtplatform.samples.tab.client.application.ui.tabs.SimpleTabPanel;
 
 /**
- * This module makes sure every binder required by our widgets are bound as
- * singleton.
- * 
- * @author Philippe Beaudoin
+ * This module makes sure every binder required by our widgets are bound as singleton.
  */
 public class UiModule extends AbstractGinModule {
-  @Override
-  protected void configure() {
-    // Singleton binders
-    bind(LinkMenu.Binder.class).in(Singleton.class);
-    bind(RoundTabPanel.Binder.class).in(Singleton.class);
-    bind(SimpleTabPanel.Binder.class).in(Singleton.class);
-  }
+    @Override
+    protected void configure() {
+        // Singleton binders
+        bind(LinkMenu.Binder.class).in(Singleton.class);
+        bind(RoundTabPanel.Binder.class).in(Singleton.class);
+        bind(SimpleTabPanel.Binder.class).in(Singleton.class);
+    }
 }

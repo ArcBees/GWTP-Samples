@@ -31,52 +31,50 @@ import com.gwtplatform.samples.mobile.client.application.breadcrumbs.Breadcrumbs
 import com.gwtplatform.samples.mobile.client.application.products.ProductsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 
-/**
- * @author Christian Goudreau
- * @author Philippe Beaudoin
- */
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
-    implements ApplicationUiHandlers {
-  /**
-   * {@link ApplicationPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.homePage)
-  @Title("Home")
-  public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
-  }
+        implements ApplicationUiHandlers {
+    /**
+     * {@link ApplicationPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.homePage)
+    @Title("Home")
+    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
+    }
 
-  /**
-   * {@link ApplicationPresenter}'s view.
-   */
-  public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
-  }
+    /**
+     * {@link ApplicationPresenter}'s view.
+     */
+    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
+    }
 
-  private PlaceManager placeManager;
+    private PlaceManager placeManager;
 
-  @Inject
-  public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-      final PlaceManager placeManager) {
-    super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
-    this.placeManager = placeManager;
-    view.setUiHandlers(this);
-  }
+    @Inject
+    public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
+            final PlaceManager placeManager) {
+        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+        
+        this.placeManager = placeManager;
+        
+        view.setUiHandlers(this);
+    }
 
-  @Override
-  public void revealAllProductsList() {
-    placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-        ProductsPresenter.TYPE_ALL_PRODUCTS));
-  }
+    @Override
+    public void revealAllProductsList() {
+        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
+                ProductsPresenter.TYPE_ALL_PRODUCTS));
+    }
 
-  @Override
-  public void revealFavoriteProductsList() {
-    placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-        ProductsPresenter.TYPE_FAVORITE_PRODUCTS));
-  }
+    @Override
+    public void revealFavoriteProductsList() {
+        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
+                ProductsPresenter.TYPE_FAVORITE_PRODUCTS));
+    }
 
-  @Override
-  public void revealSpecialsList() {
-    placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-        ProductsPresenter.TYPE_SPECIALS));
-  }
+    @Override
+    public void revealSpecialsList() {
+        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
+                ProductsPresenter.TYPE_SPECIALS));
+    }
 }

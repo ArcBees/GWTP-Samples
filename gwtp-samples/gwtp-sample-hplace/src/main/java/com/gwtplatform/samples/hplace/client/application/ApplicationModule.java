@@ -24,22 +24,17 @@ import com.gwtplatform.samples.hplace.client.application.product.ProductView;
 import com.gwtplatform.samples.hplace.client.application.products.ProductsPresenter;
 import com.gwtplatform.samples.hplace.client.application.products.ProductsView;
 
-/**
- * @author Brandon Donnelson
- */
 public class ApplicationModule extends AbstractPresenterModule {
-  @Override
-  protected void configure() {
-    // Application Presenters
-    bindPresenter(BreadcrumbsPresenter.class,
-        BreadcrumbsPresenter.MyView.class, BreadcrumbsView.class,
-        BreadcrumbsPresenter.MyProxy.class);
-    bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class,
-        ApplicationView.class, ApplicationPresenter.MyProxy.class);
-    bindPresenter(ProductsPresenter.class,
-        ProductsPresenter.MyView.class, ProductsView.class,
-        ProductsPresenter.MyProxy.class);
-    bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class,
-        ProductView.class, ProductPresenter.MyProxy.class);
-  }
+    @Override
+    protected void configure() {
+        // Application Presenters
+        bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsView.class,
+                BreadcrumbsPresenter.MyProxy.class);
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
+                ApplicationPresenter.MyProxy.class);
+        bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsView.class,
+                ProductsPresenter.MyProxy.class);
+        bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductView.class,
+                ProductPresenter.MyProxy.class);
+    }
 }
