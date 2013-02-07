@@ -34,34 +34,32 @@ import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerActio
 
 /**
  * Module which binds the handlers and configurations.
- *
- * @author Philippe Beaudoin
  */
 @Configuration
 @Import(DefaultModule.class)
 @ComponentScan(basePackages = "com.gwtplatform.dispatch.server.spring")
 public class ServerModule extends HandlerModule {
-  public ServerModule() {
-  }
+    public ServerModule() {
+    }
 
-  @Bean
-  public SendTextToServerHandler getSendTextToServerHandler() {
-    return new SendTextToServerHandler();
-  }
+    @Bean
+    public SendTextToServerHandler getSendTextToServerHandler() {
+        return new SendTextToServerHandler();
+    }
 
-  @Bean
-  public ActionValidator getDefaultActionValidator() {
-    return new DefaultActionValidator();
-  }
+    @Bean
+    public ActionValidator getDefaultActionValidator() {
+        return new DefaultActionValidator();
+    }
 
-  @Bean
-  public LoggerFactoryBean getLogger() {
-    Logger logger = Logger.getAnonymousLogger();
-    logger.setLevel(Level.FINEST);
-    return new LoggerFactoryBean(logger);
-  }
+    @Bean
+    public LoggerFactoryBean getLogger() {
+        Logger logger = Logger.getAnonymousLogger();
+        logger.setLevel(Level.FINEST);
+        return new LoggerFactoryBean(logger);
+    }
 
-  protected void configureHandlers() {
-    bindHandler(SendTextToServerAction.class, SendTextToServerHandler.class);
-  }
+    protected void configureHandlers() {
+        bindHandler(SendTextToServerAction.class, SendTextToServerHandler.class);
+    }
 }

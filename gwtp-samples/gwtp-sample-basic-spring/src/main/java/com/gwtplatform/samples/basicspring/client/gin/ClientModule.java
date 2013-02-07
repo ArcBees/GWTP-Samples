@@ -16,20 +16,26 @@
 
 package com.gwtplatform.samples.basicspring.client.gin;
 
+import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
+import com.gwtplatform.mvp.client.annotations.DefaultPlace;
+import com.gwtplatform.mvp.client.annotations.ErrorPlace;
+import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.basicspring.client.application.ApplicationModule;
-import com.gwtplatform.samples.basicspring.client.place.PlaceManager;
+import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ClientModule extends AbstractPresenterModule {
-  @Override
-  protected void configure() {
-    // Default implementation of standard resources
-    install(new DefaultModule(PlaceManager.class));
-
-    install(new ApplicationModule());
-  }
+    @Override
+    protected void configure() {
+        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new DispatchAsyncModule());
+        install(new ApplicationModule());
+        
+        // DefaultPlaceManager Places
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
+    }
 }
