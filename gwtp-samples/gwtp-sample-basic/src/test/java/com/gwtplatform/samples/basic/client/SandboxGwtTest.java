@@ -18,9 +18,6 @@ package com.gwtplatform.samples.basic.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
     @Override
     public String getModuleName() {

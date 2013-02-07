@@ -18,16 +18,13 @@ package com.gwtplatform.samples.basicspring.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.basicspring.Gwtpsamplespring";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.basicspring.Gwtpsamplespring";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }
