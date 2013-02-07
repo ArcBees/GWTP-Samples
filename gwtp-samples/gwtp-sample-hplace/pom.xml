@@ -27,25 +27,6 @@
             <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
-                <configuration>
-                    <serverId>appengine-credentials</serverId>
-                    <sdkDir>${gae.home}</sdkDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>install-server-jar</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
