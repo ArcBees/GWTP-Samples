@@ -26,55 +26,42 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
- * This is the top-level view of the application. Every time another presenter
- * wants to reveal itself, {@link ApplicationView} will add its content of the
- * target inside the {@code mainContantPanel}.
- *
- * @author Christian Goudreau
+ * This is the top-level view of the application. Every time another presenter wants to reveal itself,
+ * {@link ApplicationView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ApplicationView> {
-  }
-
-  public final Widget widget;
-
-  @UiField
-  FlowPanel mainContentPanel;
-  @UiField
-  Element loadingMessage;
-
-  @Inject
-  public ApplicationView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void setInSlot(Object slot, Widget content) {
-    if (slot == ApplicationPresenter.TYPE_SetMainContent) {
-      setMainContent(content);
-    } else {
-      super.setInSlot(slot, content);
+    public interface Binder extends UiBinder<Widget, ApplicationView> {
     }
-  }
 
-  private void setMainContent(Widget content) {
-    mainContentPanel.clear();
+    @UiField
+    FlowPanel mainContentPanel;
+    @UiField
+    Element loadingMessage;
 
-    if (content != null) {
-      mainContentPanel.add(content);
+    @Inject
+    public ApplicationView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
     }
-  }
+    
+    @Override
+    public void setInSlot(Object slot, Widget content) {
+        if (slot == ApplicationPresenter.TYPE_SetMainContent) {
+            setMainContent(content);
+        } else {
+            super.setInSlot(slot, content);
+        }
+    }
 
-  @Override
-  public void showLoading(boolean visibile) {
-    loadingMessage.getStyle().setVisibility(
-        visibile ? Visibility.VISIBLE : Visibility.HIDDEN);
-  }
+    private void setMainContent(Widget content) {
+        mainContentPanel.clear();
+
+        if (content != null) {
+            mainContentPanel.add(content);
+        }
+    }
+
+    @Override
+    public void showLoading(boolean visibile) {
+        loadingMessage.getStyle().setVisibility(visibile ? Visibility.VISIBLE : Visibility.HIDDEN);
+    }
 }
