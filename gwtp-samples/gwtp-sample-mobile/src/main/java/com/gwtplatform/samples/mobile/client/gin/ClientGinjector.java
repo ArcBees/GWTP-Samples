@@ -26,18 +26,16 @@ import com.gwtplatform.samples.mobile.client.application.breadcrumbs.Breadcrumbs
 import com.gwtplatform.samples.mobile.client.application.product.ProductPresenter;
 import com.gwtplatform.samples.mobile.client.application.products.ProductsPresenter;
 
-/**
- */
 public interface ClientGinjector extends Ginjector {
-  EventBus getEventBus();
+    EventBus getEventBus();
 
-  AsyncProvider<ApplicationPresenter> getHomePresenter();
+    AsyncProvider<ApplicationPresenter> getHomePresenter();
 
-  Provider<BreadcrumbsPresenter> getBreadcrumbsPresenter();
+    Provider<BreadcrumbsPresenter> getBreadcrumbsPresenter();
 
-  PlaceManager getPlaceManager();
+    PlaceManager getPlaceManager();
 
-  AsyncProvider<ProductsPresenter> getProductListPresenter();
+    AsyncProvider<ProductsPresenter> getProductListPresenter();
 
-  AsyncProvider<ProductPresenter> getProductPresenter();
+    AsyncProvider<ProductPresenter> getProductPresenter();
 }
