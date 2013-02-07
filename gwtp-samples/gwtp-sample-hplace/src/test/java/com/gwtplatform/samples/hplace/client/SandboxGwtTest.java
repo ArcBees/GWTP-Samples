@@ -18,16 +18,13 @@ package com.gwtplatform.samples.hplace.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.hplace.Gwtphplacesample";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.hplace.Gwtphplacesample";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }
