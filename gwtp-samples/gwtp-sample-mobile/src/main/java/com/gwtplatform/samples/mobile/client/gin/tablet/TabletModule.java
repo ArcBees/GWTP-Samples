@@ -16,24 +16,20 @@
 
 package com.gwtplatform.samples.mobile.client.gin.tablet;
 
+import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.mobile.client.application.ApplicationTabletModule;
-import com.gwtplatform.samples.mobile.client.place.DefaultPlace;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
-import com.gwtplatform.samples.mobile.client.place.PlaceManager;
 
-/**
- */
 public class TabletModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-      // Default implementation of standard resources
-      install(new DefaultModule(PlaceManager.class));
+        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new ApplicationTabletModule());
 
-      // Constants
-      bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
-
-      install(new ApplicationTabletModule());
+        // Constants
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
     }
 }

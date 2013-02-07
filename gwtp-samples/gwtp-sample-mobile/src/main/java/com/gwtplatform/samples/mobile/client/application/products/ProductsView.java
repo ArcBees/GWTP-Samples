@@ -33,60 +33,49 @@ import com.gwtplatform.samples.mobile.client.application.product.ProductPresente
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ProductsView extends ViewImpl implements ProductsPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ProductsView> {
-  }
-
-  @UiField
-  Hyperlink backLink;
-  @UiField
-  FlowPanel productList;
-  @UiField
-  HeadingElement title;
-
-  private final PlaceManager placeManager;
-  private final Widget widget;
-
-  @Inject
-  public ProductsView(final Binder binder, final PlaceManager placeManager) {
-    widget = binder.createAndBindUi(this);
-    this.placeManager = placeManager;
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void setBackLinkHistoryToken(String historyToken) {
-    backLink.setTargetHistoryToken(historyToken);
-  }
-
-  @Override
-  public void setList(List<Product> products) {
-    productList.clear();
-    for (Product product : products) {
-      PlaceRequest request = new PlaceRequest(NameTokens.product).with(
-          ProductPresenter.TOKEN_ID, Integer.toString(product.getId()));
-      productList.add(new Hyperlink(product.getName(),
-          placeManager.buildRelativeHistoryToken(request)));
+    public interface Binder extends UiBinder<Widget, ProductsView> {
     }
-  }
 
-  @Override
-  public void setMessage(String string) {
-    productList.clear();
-    productList.add(new Label(string));
-  }
+    @UiField
+    Hyperlink backLink;
+    @UiField
+    FlowPanel productList;
+    @UiField
+    HeadingElement title;
 
-  @Override
-  public void setTitle(String title) {
-    this.title.setInnerHTML(title);
-  }
+    private final PlaceManager placeManager;
+
+    @Inject
+    public ProductsView(final Binder binder, final PlaceManager placeManager) {
+        this.placeManager = placeManager;
+
+        initWidget(binder.createAndBindUi(this));
+    }
+
+    @Override
+    public void setBackLinkHistoryToken(String historyToken) {
+        backLink.setTargetHistoryToken(historyToken);
+    }
+
+    @Override
+    public void setList(List<Product> products) {
+        productList.clear();
+        for (Product product : products) {
+            PlaceRequest request = new PlaceRequest(NameTokens.product).with(ProductPresenter.TOKEN_ID,
+                    Integer.toString(product.getId()));
+            productList.add(new Hyperlink(product.getName(), placeManager.buildRelativeHistoryToken(request)));
+        }
+    }
+
+    @Override
+    public void setMessage(String string) {
+        productList.clear();
+        productList.add(new Label(string));
+    }
+
+    @Override
+    public void setTitle(String title) {
+        this.title.setInnerHTML(title);
+    }
 }

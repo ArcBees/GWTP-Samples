@@ -20,8 +20,6 @@ import com.google.gwt.core.client.GWT;
 import com.gwtplatform.samples.mobile.client.gin.ClientGinjector;
 import com.gwtplatform.samples.mobile.client.gin.GinjectorProvider;
 
-/**
- */
 public class MobileGinjectorProvider implements GinjectorProvider {
     @Override
     public ClientGinjector get() {

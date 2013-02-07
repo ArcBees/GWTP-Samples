@@ -22,18 +22,14 @@ import com.gwtplatform.mvp.client.DelayedBindRegistry;
 import com.gwtplatform.samples.mobile.client.gin.ClientGinjector;
 import com.gwtplatform.samples.mobile.client.gin.GinjectorProvider;
 
-/**
- * @author Christian Goudreau
- */
 public class Gwtpmobilesample implements EntryPoint {
-  // This will load the desktop, table or mobile ginjector
-  private final ClientGinjector ginjector = ((GinjectorProvider) GWT.create(GinjectorProvider.class)).get();
+    // This will load the desktop, table or mobile ginjector
+    private final ClientGinjector ginjector = ((GinjectorProvider) GWT.create(GinjectorProvider.class)).get();
 
-  @Override
-  public void onModuleLoad() {
-    // This is required for Gwt-Platform proxy's generator.
-    DelayedBindRegistry.bind(ginjector);
+    @Override
+    public void onModuleLoad() {
+        DelayedBindRegistry.bind(ginjector);
 
-    ginjector.getPlaceManager().revealCurrentPlace();
-  }
+        ginjector.getPlaceManager().revealCurrentPlace();
+    }
 }

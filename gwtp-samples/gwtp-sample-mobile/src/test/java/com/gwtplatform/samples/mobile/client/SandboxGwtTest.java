@@ -18,16 +18,13 @@ package com.gwtplatform.samples.mobile.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.mobile.Gwtpmobilesample";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.mobile.Gwtpmobilesample";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }
