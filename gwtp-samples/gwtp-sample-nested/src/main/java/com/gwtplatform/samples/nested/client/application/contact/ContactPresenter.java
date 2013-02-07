@@ -26,23 +26,18 @@ import com.gwtplatform.samples.nested.client.place.NameTokens;
 
 /**
  * The events are handled in {@link ContactPresenterBase}.
- *
- * @author Christian Goudreau
- * @author Philippe Beaudoin
  */
-public class ContactPresenter
-    extends ContactPresenterBase<ContactPresenter.MyProxy> {
-  /**
-   * {@link ContactPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.contactPage)
-  public interface MyProxy extends ProxyPlace<ContactPresenter> {
-  }
+public class ContactPresenter extends ContactPresenterBase<ContactPresenter.MyProxy> {
+    /**
+     * {@link ContactPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.contactPage)
+    public interface MyProxy extends ProxyPlace<ContactPresenter> {
+    }
 
-  @Inject
-  public ContactPresenter(final EventBus eventBus, final MyView view,
-      final MyProxy proxy) {
-    super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
-  }
+    @Inject
+    public ContactPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
+    }
 }

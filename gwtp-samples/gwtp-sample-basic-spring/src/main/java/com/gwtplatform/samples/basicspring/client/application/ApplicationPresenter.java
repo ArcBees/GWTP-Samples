@@ -33,74 +33,70 @@ import com.gwtplatform.samples.basicspring.client.application.response.ResponseP
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 import com.gwtplatform.samples.basicspring.shared.FieldVerifier;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
-  /**
-   * {@link ApplicationPresenter}'s proxy.
-   */
-  @ProxyStandard
-  @NameToken(NameTokens.home)
-  public interface MyProxy extends Proxy<ApplicationPresenter>, Place {
-  }
-
-  /**
-   * {@link ApplicationPresenter}'s view.
-   */
-  public interface MyView extends View {
-    String getName();
-
-    Button getSendButton();
-
-    void resetAndFocus();
-
-    void setError(String errorText);
-  }
-
-  private final PlaceManager placeManager;
-
-  @Inject
-  public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager) {
-    super(eventBus, view, proxy, RevealType.Root);
-
-    this.placeManager = placeManager;
-  }
-
-  @Override
-  protected void onBind() {
-    super.onBind();
-
-    registerHandler(getView().getSendButton().addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        sendNameToServer();
-      }
-    }));
-  }
-
-  @Override
-  protected void onReset() {
-    super.onReset();
-
-    getView().resetAndFocus();
-  }
-
-  /**
-   * Send the name from the nameField to the server and wait for a response.
-   */
-  private void sendNameToServer() {
-    // First, we validate the input.
-    getView().setError("");
-    String textToServer = getView().getName();
-    if (!FieldVerifier.isValidName(textToServer)) {
-      getView().setError("Please enter at least four characters");
-      return;
+    /**
+     * {@link ApplicationPresenter}'s proxy.
+     */
+    @ProxyStandard
+    @NameToken(NameTokens.home)
+    public interface MyProxy extends Proxy<ApplicationPresenter>, Place {
     }
 
-    // Then, we transmit it to the ResponsePresenter, which will do the server
-    // call
-    placeManager.revealPlace(new PlaceRequest(NameTokens.response).with(ResponsePresenter.textToServerParam,
-        textToServer));
-  }
+    /**
+     * {@link ApplicationPresenter}'s view.
+     */
+    public interface MyView extends View {
+        String getName();
+
+        Button getSendButton();
+
+        void resetAndFocus();
+
+        void setError(String errorText);
+    }
+
+    private final PlaceManager placeManager;
+
+    @Inject
+    public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager) {
+        super(eventBus, view, proxy, RevealType.Root);
+
+        this.placeManager = placeManager;
+    }
+
+    @Override
+    protected void onBind() {
+        super.onBind();
+
+        registerHandler(getView().getSendButton().addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                sendNameToServer();
+            }
+        }));
+    }
+
+    @Override
+    protected void onReset() {
+        super.onReset();
+
+        getView().resetAndFocus();
+    }
+
+    /**
+     * Send the name from the nameField to the server and wait for a response.
+     */
+    private void sendNameToServer() {
+        // First, we validate the input.
+        getView().setError("");
+        String textToServer = getView().getName();
+        if (!FieldVerifier.isValidName(textToServer)) {
+            getView().setError("Please enter at least four characters");
+            return;
+        }
+
+        // Then, we transmit it to the ResponsePresenter, which will do the server call
+        placeManager.revealPlace(new PlaceRequest(NameTokens.response).with(ResponsePresenter.textToServerParam,
+                textToServer));
+    }
 }

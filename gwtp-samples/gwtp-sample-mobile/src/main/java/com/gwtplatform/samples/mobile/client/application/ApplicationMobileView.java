@@ -25,46 +25,35 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-/**
- * @author Philippe Beaudoin
- */
-public class ApplicationMobileView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ApplicationMobileView> {
-  }
+public class ApplicationMobileView extends ViewWithUiHandlers<ApplicationUiHandlers> implements
+        ApplicationPresenter.MyView {
+    public interface Binder extends UiBinder<Widget, ApplicationMobileView> {
+    }
 
-  @UiField
-  Button all;
-  @UiField
-  Button favorites;
-  @UiField
-  Button specials;
+    @UiField
+    Button all;
+    @UiField
+    Button favorites;
+    @UiField
+    Button specials;
 
-  private final Widget widget;
+    @Inject
+    public ApplicationMobileView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 
-  @Inject
-  public ApplicationMobileView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
+    @UiHandler("all")
+    void onAllClicked(ClickEvent event) {
+        getUiHandlers().revealAllProductsList();
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @UiHandler("favorites")
+    void onFavoritesClicked(ClickEvent event) {
+        getUiHandlers().revealFavoriteProductsList();
+    }
 
-  @UiHandler("all")
-  void onAllClicked(ClickEvent event) {
-    getUiHandlers().revealAllProductsList();
-  }
-
-  @UiHandler("favorites")
-  void onFavoritesClicked(ClickEvent event) {
-    getUiHandlers().revealFavoriteProductsList();
-  }
-
-  @UiHandler("specials")
-  void onSpecialsClicked(ClickEvent event) {
-    getUiHandlers().revealSpecialsList();
-  }
+    @UiHandler("specials")
+    void onSpecialsClicked(ClickEvent event) {
+        getUiHandlers().revealSpecialsList();
+    }
 }

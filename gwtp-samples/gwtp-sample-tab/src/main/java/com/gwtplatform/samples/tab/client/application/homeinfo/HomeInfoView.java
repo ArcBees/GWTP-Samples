@@ -22,27 +22,14 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.homeinfo.HomeInfoPresenter}
- * .
- * 
- * @author Christian Goudreau
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homeinfo.HomeInfoPresenter} .
  */
 public class HomeInfoView extends ViewImpl implements HomeInfoPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, HomeInfoView> {
-  }
-
-  private final Widget widget;
-
-  @Inject
-  public HomeInfoView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    public interface Binder extends UiBinder<Widget, HomeInfoView> {
+    }
+    
+    @Inject
+    public HomeInfoView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
+    }
 }

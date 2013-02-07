@@ -28,88 +28,81 @@ import com.gwtplatform.samples.tab.client.application.ui.linkmenu.LinkMenu;
 import com.gwtplatform.samples.tab.client.application.ui.tabs.RoundTabPanel;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.ApplicationPresenter}.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.ApplicationPresenter}.
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ApplicationView> {
-  }
-
-  @UiField(provided = true)
-  RoundTabPanel tabPanel;
-  @UiField
-  InlineLabel topMessage;
-  @UiField(provided = true)
-  LinkMenu linkMenu;
-
-  public final Widget widget;
-
-  @Inject
-  public ApplicationView(Binder uiBinder, RoundTabPanel tabPanel, final LinkMenu linkMenu) {
-    this.tabPanel = tabPanel;
-    this.linkMenu = linkMenu;
-
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Tab addTab(TabData tabData, String historyToken) {
-    return tabPanel.addTab(tabData, historyToken);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void removeTab(Tab tab) {
-    tabPanel.removeTab(tab);
-  }
-
-  @Override
-  public void removeTabs() {
-    tabPanel.removeTabs();
-  }
-
-  @Override
-  public void setActiveTab(Tab tab) {
-    tabPanel.setActiveTab(tab);
-  }
-
-  @Override
-  public void changeTab(Tab tab, TabData tabData, String historyToken) {
-    tabPanel.changeTab(tab, tabData, historyToken);
-  }
-
-  @Override
-  public void setInSlot(Object slot, Widget content) {
-    if (slot == ApplicationPresenter.TYPE_SetTabContent) {
-      tabPanel.setPanelContent(content);
-    } else {
-      super.setInSlot(slot, content);
+    public interface Binder extends UiBinder<Widget, ApplicationView> {
     }
-  }
 
-  @Override
-  public void refreshTabs() {
-    tabPanel.refreshTabs();
-  }
+    @UiField(provided = true)
+    RoundTabPanel tabPanel;
+    @UiField
+    InlineLabel topMessage;
+    @UiField(provided = true)
+    LinkMenu linkMenu;
 
-  @Override
-  public void setTopMessage(String string) {
-    if (string == null || string.length() == 0) {
-      topMessage.setVisible(false);
-      topMessage.setText("");
-    } else {
-      topMessage.setVisible(true);
-      topMessage.setText(string);
+    public final Widget widget;
+
+    @Inject
+    public ApplicationView(Binder uiBinder, RoundTabPanel tabPanel, final LinkMenu linkMenu) {
+        this.tabPanel = tabPanel;
+        this.linkMenu = linkMenu;
+
+        widget = uiBinder.createAndBindUi(this);
     }
-  }
+
+    @Override
+    public Tab addTab(TabData tabData, String historyToken) {
+        return tabPanel.addTab(tabData, historyToken);
+    }
+
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
+
+    @Override
+    public void removeTab(Tab tab) {
+        tabPanel.removeTab(tab);
+    }
+
+    @Override
+    public void removeTabs() {
+        tabPanel.removeTabs();
+    }
+
+    @Override
+    public void setActiveTab(Tab tab) {
+        tabPanel.setActiveTab(tab);
+    }
+
+    @Override
+    public void changeTab(Tab tab, TabData tabData, String historyToken) {
+        tabPanel.changeTab(tab, tabData, historyToken);
+    }
+
+    @Override
+    public void setInSlot(Object slot, Widget content) {
+        if (slot == ApplicationPresenter.TYPE_SetTabContent) {
+            tabPanel.setPanelContent(content);
+        } else {
+            super.setInSlot(slot, content);
+        }
+    }
+
+    @Override
+    public void refreshTabs() {
+        tabPanel.refreshTabs();
+    }
+
+    @Override
+    public void setTopMessage(String string) {
+        if (string == null || string.length() == 0) {
+            topMessage.setVisible(false);
+            topMessage.setText("");
+        } else {
+            topMessage.setVisible(true);
+            topMessage.setText(string);
+        }
+    }
 }

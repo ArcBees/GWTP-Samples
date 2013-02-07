@@ -28,56 +28,44 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ProductView extends ViewImpl implements ProductPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ProductView> {
-  }
+    public interface Binder extends UiBinder<Widget, ProductView> {
+    }
 
-  @UiField
-  Hyperlink backLink;
-  @UiField
-  Button buyButton;
-  @UiField
-  InlineLabel price;
-  @UiField
-  HTMLPanel productDetails;
-  @UiField
-  InlineLabel quantity;
-  @UiField
-  HeadingElement title;
+    @UiField
+    Hyperlink backLink;
+    @UiField
+    Button buyButton;
+    @UiField
+    InlineLabel price;
+    @UiField
+    HTMLPanel productDetails;
+    @UiField
+    InlineLabel quantity;
+    @UiField
+    HeadingElement title;
 
-  private final Widget widget;
+    @Inject
+    public ProductView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 
-  @Inject
-  public ProductView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
+    @Override
+    public void setBackLinkHistoryToken(String historyToken) {
+        backLink.setTargetHistoryToken(historyToken);
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Override
+    public void setMessage(String string) {
+        title.setInnerText(string);
+        productDetails.setVisible(false);
+    }
 
-  @Override
-  public void setBackLinkHistoryToken(String historyToken) {
-    backLink.setTargetHistoryToken(historyToken);
-  }
-
-  @Override
-  public void setMessage(String string) {
-    title.setInnerText(string);
-    productDetails.setVisible(false);
-  }
-
-  @Override
-  public void setProductDetails(Product product) {
-    productDetails.setVisible(true);
-    title.setInnerText(product.getName());
-    price.setText(product.getPrice());
-    quantity.setText(Integer.toString(product.getQuantity()));
-  }
+    @Override
+    public void setProductDetails(Product product) {
+        productDetails.setVisible(true);
+        title.setInnerText(product.getName());
+        price.setText(product.getPrice());
+        quantity.setText(Integer.toString(product.getQuantity()));
+    }
 }

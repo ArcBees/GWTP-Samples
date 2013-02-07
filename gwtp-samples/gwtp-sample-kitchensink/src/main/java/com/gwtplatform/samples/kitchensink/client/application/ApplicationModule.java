@@ -25,9 +25,6 @@ import com.gwtplatform.samples.kitchensink.client.application.contact.ContactVie
 import com.gwtplatform.samples.kitchensink.client.application.home.HomePresenter;
 import com.gwtplatform.samples.kitchensink.client.application.home.HomeView;
 
-/**
- * @author Brandon Donnelson
- */
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

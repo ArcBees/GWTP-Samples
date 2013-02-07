@@ -20,11 +20,11 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 /**
  * {@link ApplicationView}'s {@link UiHandlers}.
- *
- * @author Philippe Beaudoin
  */
 public interface ApplicationUiHandlers extends UiHandlers {
-  void revealAllProductsList();
-  void revealFavoriteProductsList();
-  void revealSpecialsList();
+    void revealAllProductsList();
+
+    void revealFavoriteProductsList();
+
+    void revealSpecialsList();
 }

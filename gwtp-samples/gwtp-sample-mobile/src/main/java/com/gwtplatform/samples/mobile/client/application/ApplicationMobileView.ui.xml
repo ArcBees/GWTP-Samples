@@ -8,18 +8,18 @@
         }
     </ui:style>
     <g:HTMLPanel>
-    
-    <div class="{style.links}">
-        GWTP Mobile Sample<br/> 
-        <a href="https://github.com/ArcBees/GWTP">Project Home</a><br/>
-        <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-hplace">Source</a>
-    </div>
+        <div class="{style.links}">
+            GWTP Mobile Sample
+            <br />
+            <a href="https://github.com/ArcBees/GWTP">Project Home</a>
+            <br />
+            <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-hplace">Source</a>
+        </div>
 
-    <h1>Choose one of the following... Mobile View</h1>
+        <h1>Choose one of the following... Mobile View</h1>
 
-    <g:Button ui:field='all'>All Products</g:Button>
-    <g:Button ui:field='favorites'>Favorite Products</g:Button>
-    <g:Button ui:field='specials'>Specials</g:Button>
-    
+        <g:Button ui:field='all'>All Products</g:Button>
+        <g:Button ui:field='favorites'>Favorite Products</g:Button>
+        <g:Button ui:field='specials'>Specials</g:Button>
     </g:HTMLPanel>
 </ui:UiBinder>

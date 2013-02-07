@@ -21,24 +21,12 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-/**
- * @author Christian Goudreau
- */
 public class AboutUsView extends ViewImpl implements AboutUsPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, AboutUsView> {
-  }
+    public interface Binder extends UiBinder<Widget, AboutUsView> {
+    }
 
-  private final Widget widget;
-
-  @Inject
-  public AboutUsView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Inject
+    public AboutUsView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 }
