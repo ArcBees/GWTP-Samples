@@ -44,18 +44,8 @@
   </tr>
 </table>
 
-##Archetype Tools
-[More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
-
-```
-mvn archetype:generate -DarchetypeGroupId=com.arcbees \
--DarchetypeArtifactId=gwtp-basic-appengine-archetype \
--DarchetypeVersion=0.1-SNAPSHOT \
--DgroupId=com.projectname \
--DartifactId=new-project-name \
--DremoteRepositories=https://oss.sonatype.org/content/repositories/snapshots/
-```
-
+##Archetypes
+[Create a project from Archetype here](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start the project from a template.
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/ad.png)](http://arcbees.com)
