@@ -13,7 +13,6 @@
     <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
 
     <!-- Other module inherits                                      -->
-    <inherits name='com.gwtplatform.dispatch.Dispatch'/>
     
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
