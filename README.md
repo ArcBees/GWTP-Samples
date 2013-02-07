@@ -45,7 +45,7 @@
 </table>
 
 ##Archetypes
-[Create a project from Archetype here](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start the project from a template.
+* [Create a project from Archetype here](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start the project from a template.
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/ad.png)](http://arcbees.com)
