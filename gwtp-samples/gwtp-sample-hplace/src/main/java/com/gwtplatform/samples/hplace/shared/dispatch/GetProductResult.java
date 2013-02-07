@@ -1,22 +1,19 @@
 package com.gwtplatform.samples.hplace.shared.dispatch;
 
-
-
 import com.gwtplatform.dispatch.shared.Result;
 
 public class GetProductResult implements Result { 
-
-  com.gwtplatform.samples.hplace.shared.dispatch.Product product;
+  private Product product;
 
   protected GetProductResult() {
     // Possibly for serialization.
   }
 
-  public GetProductResult(com.gwtplatform.samples.hplace.shared.dispatch.Product product) {
+  public GetProductResult(Product product) {
     this.product = product;
   }
 
-  public com.gwtplatform.samples.hplace.shared.dispatch.Product getProduct(){
+  public Product getProduct(){
     return product;
   }
 

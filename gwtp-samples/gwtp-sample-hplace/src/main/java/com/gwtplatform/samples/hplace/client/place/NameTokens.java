@@ -28,14 +28,10 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
  * <p />
  * Also note the exclamation mark in front of the tokens, this is used for search engine crawling support.
  * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
  */
 public class NameTokens {
     public static final String homePage = "!homePage";
-
     public static final String product = "!product";
-
     public static final String productList = "!productList";
 
     public static String getHomePage() {

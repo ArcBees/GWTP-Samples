@@ -3,8 +3,7 @@ package com.gwtplatform.samples.hplace.shared.dispatch;
 import com.gwtplatform.dispatch.shared.Action;
 
 public class GetProductAction implements Action<GetProductResult> { 
-
-  int id;
+  private int id;
 
   protected GetProductAction() {
     // Possibly for serialization.
