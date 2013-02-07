@@ -21,8 +21,6 @@ import com.google.gwt.i18n.client.Constants;
 /**
  * Constants to allow translation of various strings. Note that the translations themselves are not part of this
  * example.
- * 
- * @author Philippe Beaudoin
  */
 public interface MyConstants extends Constants {
     @DefaultStringValue("News")
