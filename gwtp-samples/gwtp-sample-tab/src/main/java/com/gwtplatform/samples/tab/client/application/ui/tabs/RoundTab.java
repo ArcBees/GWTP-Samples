@@ -23,34 +23,32 @@ import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
 /**
- * A {@link BaseTab} styled with rounded upper corners and meant to be contained
- * in a {@link RoundTabPanel}. This tab can be protected so that it is only
- * displayed when a given {@link Gatekeeper} can allow access. If a {@code null}
+ * A {@link BaseTab} styled with rounded upper corners and meant to be contained in a {@link RoundTabPanel}. This tab
+ * can be protected so that it is only displayed when a given {@link Gatekeeper} can allow access. If a {@code null}
  * {@link Gatekeeper} is used then the tab is always accessible.
- * 
- * @author Philippe Beaudoin
  */
 public class RoundTab extends BaseTab {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, RoundTab> {
-  }
+    public interface Binder extends UiBinder<Widget, RoundTab> {
+    }
 
-  // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
-  // the binder.
-  private static final Binder binder = GWT.create(Binder.class);
+    // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
+    // the binder.
+    private static final Binder binder = GWT.create(Binder.class);
 
-  private final Gatekeeper gatekeeper;
+    private final Gatekeeper gatekeeper;
 
-  RoundTab(TabData tabData, Gatekeeper gatekeeper) {
-    super(tabData);
-    this.gatekeeper = gatekeeper;
-    initWidget(binder.createAndBindUi(this));
-    setText(tabData.getLabel());
-  }
+    RoundTab(TabData tabData, Gatekeeper gatekeeper) {
+        super(tabData);
+        
+        this.gatekeeper = gatekeeper;
+        
+        initWidget(binder.createAndBindUi(this));
+        
+        setText(tabData.getLabel());
+    }
 
-  @Override
-  public boolean canUserAccess() {
-    return gatekeeper == null || gatekeeper.canReveal();
-  }
+    @Override
+    public boolean canUserAccess() {
+        return gatekeeper == null || gatekeeper.canReveal();
+    }
 }

@@ -11,7 +11,7 @@
 
     <artifactId>gwtp-sample-basic</artifactId>
     <packaging>war</packaging>
-    <name>GWTP Samples - basic</name>
+    <name>GWTP Samples - Basic</name>
 
     <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

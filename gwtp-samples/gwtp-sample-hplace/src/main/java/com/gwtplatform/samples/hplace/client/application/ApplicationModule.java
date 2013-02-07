@@ -24,9 +24,6 @@ import com.gwtplatform.samples.hplace.client.application.product.ProductView;
 import com.gwtplatform.samples.hplace.client.application.products.ProductsPresenter;
 import com.gwtplatform.samples.hplace.client.application.products.ProductsView;
 
-/**
- * @author Brandon Donnelson
- */
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

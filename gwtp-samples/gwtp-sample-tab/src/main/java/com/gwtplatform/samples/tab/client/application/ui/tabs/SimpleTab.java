@@ -23,25 +23,22 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.TabData;
 
 /**
- * A {@link BaseTab} styled as a square and meant to be contained in a
- * {@link SimpleTabPanel}.
- * 
- * @author Philippe Beaudoin
+ * A {@link BaseTab} styled as a square and meant to be contained in a {@link SimpleTabPanel}.
  */
 public class SimpleTab extends BaseTab {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, SimpleTab> {
-  }
+    public interface Binder extends UiBinder<Widget, SimpleTab> {
+    }
 
-  // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
-  // the binder.
-  private static final Binder binder = GWT.create(Binder.class);
+    // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
+    // the binder.
+    private static final Binder binder = GWT.create(Binder.class);
 
-  @UiConstructor
-  SimpleTab(TabData tabData) {
-    super(tabData);
-    initWidget(binder.createAndBindUi(this));
-    setText(tabData.getLabel());
-  }
+    @UiConstructor
+    SimpleTab(TabData tabData) {
+        super(tabData);
+        
+        initWidget(binder.createAndBindUi(this));
+        
+        setText(tabData.getLabel());
+    }
 }
