@@ -1,4 +1,5 @@
 #GWTP-Samples
+Project samples display GWT-Platform features configuration and uses. 
 
 #[Find out more about GWTP](https://github.com/ArcBees/GWTP)
 
