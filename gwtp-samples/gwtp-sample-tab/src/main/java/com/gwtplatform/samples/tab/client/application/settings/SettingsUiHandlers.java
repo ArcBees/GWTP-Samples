@@ -20,9 +20,7 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 /**
  * {@link SettingsView}'s {@link UiHandlers}.
- * 
- * @author Philippe Beaudoin
  */
 public interface SettingsUiHandlers extends UiHandlers {
-  void togglePrivileges();
+    void togglePrivileges();
 }

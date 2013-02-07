@@ -27,49 +27,43 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.settings.SettingsPresenter}
- * .
- * 
- * @author Christian Goudreau
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.settings.SettingsPresenter} .
  */
 public class SettingsView extends ViewWithUiHandlers<SettingsUiHandlers> implements SettingsPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, SettingsView> {
-  }
-
-  private final Widget widget;
-
-  @UiField
-  InlineLabel userPrivileges;
-  @UiField
-  Button togglePrivileges;
-
-  @Inject
-  public SettingsView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void setAdmin(boolean isAdmin) {
-    if (isAdmin) {
-      userPrivileges.setText("Admin");
-      togglePrivileges.setText("Toggle to non-admin user");
-    } else {
-      userPrivileges.setText("Non-admin");
-      togglePrivileges.setText("Toggle to admin user");
+    public interface Binder extends UiBinder<Widget, SettingsView> {
     }
-    togglePrivileges.setVisible(true);
-  }
 
-  @UiHandler("togglePrivileges")
-  void onSwitchSecurityClicked(ClickEvent event) {
-    getUiHandlers().togglePrivileges();
-  }
+    private final Widget widget;
+
+    @UiField
+    InlineLabel userPrivileges;
+    @UiField
+    Button togglePrivileges;
+
+    @Inject
+    public SettingsView(Binder uiBinder) {
+        widget = uiBinder.createAndBindUi(this);
+    }
+
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
+
+    @Override
+    public void setAdmin(boolean isAdmin) {
+        if (isAdmin) {
+            userPrivileges.setText("Admin");
+            togglePrivileges.setText("Toggle to non-admin user");
+        } else {
+            userPrivileges.setText("Non-admin");
+            togglePrivileges.setText("Toggle to admin user");
+        }
+        togglePrivileges.setVisible(true);
+    }
+
+    @UiHandler("togglePrivileges")
+    void onSwitchSecurityClicked(ClickEvent event) {
+        getUiHandlers().togglePrivileges();
+    }
 }

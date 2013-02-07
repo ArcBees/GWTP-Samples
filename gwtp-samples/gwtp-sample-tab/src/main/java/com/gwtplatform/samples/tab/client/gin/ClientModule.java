@@ -17,32 +17,36 @@
 package com.gwtplatform.samples.tab.client.gin;
 
 import com.google.inject.Singleton;
+import com.gwtplatform.mvp.client.annotations.DefaultPlace;
+import com.gwtplatform.mvp.client.annotations.ErrorPlace;
+import com.gwtplatform.mvp.client.annotations.GaAccount;
+import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.ApplicationModule;
-import com.gwtplatform.samples.tab.client.place.DefaultPlace;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
-import com.gwtplatform.samples.tab.client.place.PlaceManager;
 import com.gwtplatform.samples.tab.client.security.CurrentUser;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
-/**
- * @author Christian Goudreau
- */
 public class ClientModule extends AbstractPresenterModule {
-  @Override
-  protected void configure() {
-    // Default implementation of standard resources
-    install(new DefaultModule(PlaceManager.class));
+    @Override
+    protected void configure() {
+        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new ApplicationModule());
 
-    bind(MyConstants.class).in(Singleton.class);
-    bind(CurrentUser.class).in(Singleton.class);
-    bind(IsAdminGatekeeper.class).in(Singleton.class);
+        // Constants
+        bind(MyConstants.class).in(Singleton.class);
+        bind(CurrentUser.class).in(Singleton.class);
+        bind(IsAdminGatekeeper.class).in(Singleton.class);
 
-    // Constants
-    bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homeNewsPage);
+        // DefaultPlaceManager Constants
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homeNewsPage);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homeNewsPage);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homeNewsPage);
 
-    install(new ApplicationModule());
-  }
+        // Google Analytics
+        bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
+    }
 }

@@ -3,8 +3,7 @@ package com.gwtplatform.samples.hplace.shared.dispatch;
 import com.gwtplatform.dispatch.shared.Action;
 
 public class GetProductListAction implements Action<GetProductListResult> { 
-
-  int flags;
+  private int flags;
 
   protected GetProductListAction() {
     // Possibly for serialization.

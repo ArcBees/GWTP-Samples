@@ -22,36 +22,32 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 import com.gwtplatform.samples.tab.client.application.adminarea.TabDataExt;
+import com.gwtplatform.samples.tab.client.application.ui.linkmenu.LinkMenu;
 
 /**
  * A {@link BaseTabPanel} styled to contain {@link RoundTab}.
  * <p />
- * Look at {@link LinkMenu} to see how we can use this widget within a UiBinder
- * file even though its constructor relies on dependency injection.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
+ * Look at {@link LinkMenu} to see how we can use this widget within a UiBinder file even though its constructor relies
+ * on dependency injection.
  */
 public class RoundTabPanel extends BaseTabPanel {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, RoundTabPanel> {
-  }
-
-  @Inject
-  public RoundTabPanel(Binder binder) {
-    initWidget(binder.createAndBindUi(this));
-  }
-
-  @Override
-  protected BaseTab createNewTab(TabData tabData) {
-    Gatekeeper gatekeeper = null;
-    if (tabData instanceof TabDataExt) {
-      TabDataExt tabDataExt = (TabDataExt) tabData;
-      gatekeeper = tabDataExt.getGatekeeper();
+    public interface Binder extends UiBinder<Widget, RoundTabPanel> {
     }
 
-    // TODO Try using assisted injection here (to inject UiBinder in RoundTab)
-    return new RoundTab(tabData, gatekeeper);
-  }
+    @Inject
+    public RoundTabPanel(Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
+
+    @Override
+    protected BaseTab createNewTab(TabData tabData) {
+        Gatekeeper gatekeeper = null;
+        if (tabData instanceof TabDataExt) {
+            TabDataExt tabDataExt = (TabDataExt) tabData;
+            gatekeeper = tabDataExt.getGatekeeper();
+        }
+
+        // TODO Try using assisted injection here (to inject UiBinder in RoundTab)
+        return new RoundTab(tabData, gatekeeper);
+    }
 }
