@@ -22,6 +22,6 @@ import com.gwtplatform.samples.mobile.client.gin.ClientGinjector;
 
 /**
  */
-@GinModules({DispatchAsyncModule.class, DesktopModule.class})
+@GinModules({ DispatchAsyncModule.class, DesktopModule.class })
 public interface DesktopGinjector extends ClientGinjector {
 }

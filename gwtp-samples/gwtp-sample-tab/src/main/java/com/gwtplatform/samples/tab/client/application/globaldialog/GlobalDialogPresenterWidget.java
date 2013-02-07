@@ -23,53 +23,48 @@ import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.proxy.NavigationEvent;
 import com.gwtplatform.mvp.client.proxy.NavigationHandler;
+import com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogPresenterWidget;
 
 /**
- * The {@link PresenterWidget} of a dialog box that is meant to be displayed no
- * matter which presenter is visible. Compare to
- * {@link LocalDialogPresenterWidget}.
- * 
- * @author Philippe Beaudoin
+ * The {@link PresenterWidget} of a dialog box that is meant to be displayed no matter which presenter is visible.
+ * Compare to {@link LocalDialogPresenterWidget}.
  */
 public class GlobalDialogPresenterWidget extends PresenterWidget<GlobalDialogPresenterWidget.MyView> implements
-    NavigationHandler {
-  /**
-   * @author Philippe beaudoin
-   */
-  public interface MyView extends PopupView {
-    void setNavigationPlace(String placeName);
-  }
-
-  private HandlerRegistration handlerRegistration;
-
-  @Inject
-  public GlobalDialogPresenterWidget(final EventBus eventBus, final MyView view) {
-    super(eventBus, view);
-  }
-
-  @Override
-  public void onReveal() {
-    super.onReveal();
-    getView().setNavigationPlace(null);
-    unregisterNavigationHandler(); // Be on the safe side
-    handlerRegistration = addHandler(NavigationEvent.getType(), this);
-  }
-
-  @Override
-  public void onHide() {
-    super.onHide();
-    unregisterNavigationHandler();
-  }
-
-  @Override
-  public void onNavigation(NavigationEvent navigationEvent) {
-    getView().setNavigationPlace(navigationEvent.getRequest().getNameToken());
-  }
-
-  private void unregisterNavigationHandler() {
-    if (handlerRegistration != null) {
-      handlerRegistration.removeHandler();
-      handlerRegistration = null;
+        NavigationHandler {
+    public interface MyView extends PopupView {
+        void setNavigationPlace(String placeName);
     }
-  }
+
+    private HandlerRegistration handlerRegistration;
+
+    @Inject
+    public GlobalDialogPresenterWidget(final EventBus eventBus, final MyView view) {
+        super(eventBus, view);
+    }
+
+    @Override
+    public void onReveal() {
+        super.onReveal();
+        getView().setNavigationPlace(null);
+        unregisterNavigationHandler(); // Be on the safe side
+        handlerRegistration = addHandler(NavigationEvent.getType(), this);
+    }
+
+    @Override
+    public void onHide() {
+        super.onHide();
+        unregisterNavigationHandler();
+    }
+
+    @Override
+    public void onNavigation(NavigationEvent navigationEvent) {
+        getView().setNavigationPlace(navigationEvent.getRequest().getNameToken());
+    }
+
+    private void unregisterNavigationHandler() {
+        if (handlerRegistration != null) {
+            handlerRegistration.removeHandler();
+            handlerRegistration = null;
+        }
+    }
 }

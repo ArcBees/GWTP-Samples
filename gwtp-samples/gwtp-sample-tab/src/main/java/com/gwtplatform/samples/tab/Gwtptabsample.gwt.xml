@@ -4,23 +4,24 @@
 
 <module rename-to='gwtptabsample'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
-  <inherits name="com.google.gwt.uibinder.GinUiBinder" /> <!-- GinUiBinder allows injecting widgets in UiBinder -->
+  
+  <!-- GinUiBinder allows injecting widgets in UiBinder -->
+  <inherits name="com.google.gwt.uibinder.GinUiBinder" /> 
 
-  <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+  
 
   <!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
   <inherits name='com.google.gwt.user.theme.standard.Standard'/>
   <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
 
   <set-configuration-property name="gin.ginjector.modules"
-                              value="com.gwtplatform.samples.tab.client.gin.ClientModule,
-                                     com.gwtplatform.samples.tab.client.application.ui.UiModule"/>
+                              value="com.gwtplatform.samples.tab.client.gin.ClientModule"/>
 
   <set-configuration-property name="gin.ginjector.extensions"
                               value="com.gwtplatform.samples.tab.client.gin.GinjectorExtension"/>

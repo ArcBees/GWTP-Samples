@@ -20,21 +20,18 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
 /**
- * This gatekeeper only allows access if the user currently logged in has
- * administrator privileges.
- * 
- * @author Philippe Beaudoin
+ * This gatekeeper only allows access if the user currently logged in has administrator privileges.
  */
 public class IsAdminGatekeeper implements Gatekeeper {
-  private final CurrentUser currentUser;
+    private final CurrentUser currentUser;
 
-  @Inject
-  public IsAdminGatekeeper(CurrentUser currentUser) {
-    this.currentUser = currentUser;
-  }
+    @Inject
+    public IsAdminGatekeeper(CurrentUser currentUser) {
+        this.currentUser = currentUser;
+    }
 
-  @Override
-  public boolean canReveal() {
-    return currentUser.isAdmin();
-  }
+    @Override
+    public boolean canReveal() {
+        return currentUser.isAdmin();
+    }
 }

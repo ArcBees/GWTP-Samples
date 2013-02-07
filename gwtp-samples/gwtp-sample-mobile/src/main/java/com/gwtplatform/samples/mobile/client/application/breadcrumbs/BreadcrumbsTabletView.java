@@ -21,81 +21,61 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.InlineHyperlink;
 import com.google.gwt.user.client.ui.InlineLabel;
+import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 /**
- * This is the top-level view of the application. Every time another presenter
- * wants to reveal itself, {@link BreadcrumbPresenterView} will add its content
- * of the target inside the {@code mainContantPanel}.
- *
- * @author Philippe Beaudoin
- * @author Christian Goudreau
+ * This is the top-level view of the application. Every time another presenter wants to reveal itself,
+ * {@link BreadcrumbPresenterView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class BreadcrumbsTabletView extends ViewImpl implements BreadcrumbsPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, BreadcrumbsTabletView> {
-  }
-
-  @UiField
-  FlowPanel breadcrumbs;
-  @UiField
-  FlowPanel mainContentPanel;
-
-  private final PlaceManager placeManager;
-  private final Widget widget;
-
-  @Inject
-  public BreadcrumbsTabletView(final Binder binder, final PlaceManager placeManager) {
-    this.placeManager = placeManager;
-
-    widget = binder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void clearBreadcrumbs(int breadcrumbSize) {
-    breadcrumbs.clear();
-    for (int i = 0; i < breadcrumbSize; ++i) {
-      if (i > 0) {
-        breadcrumbs.add(new InlineLabel(" > "));
-      }
-      breadcrumbs.add(new InlineHyperlink("Loading title...",
-          placeManager.buildRelativeHistoryToken(i + 1)));
+    public interface Binder extends UiBinder<Widget, BreadcrumbsTabletView> {
     }
-  }
 
-  @Override
-  public void setBreadcrumbs(int index, String title) {
-    InlineHyperlink hyperlink = (InlineHyperlink) breadcrumbs.getWidget(index * 2);
-    if (title == null) {
-      hyperlink.setHTML("Unknown title");
-    } else {
-      hyperlink.setHTML(title);
+    @UiField
+    FlowPanel breadcrumbs;
+    @UiField
+    SimplePanel mainContentPanel;
+
+    private final PlaceManager placeManager;
+
+    @Inject
+    public BreadcrumbsTabletView(final Binder binder, final PlaceManager placeManager) {
+        this.placeManager = placeManager;
+
+        initWidget(binder.createAndBindUi(this));
     }
-  }
 
-  @Override
-  public void setInSlot(Object slot, Widget content) {
-    if (slot == BreadcrumbsPresenter.TYPE_SetMainContent) {
-      setMainContent(content);
-    } else {
-      super.setInSlot(slot, content);
+    @Override
+    public void clearBreadcrumbs(int breadcrumbSize) {
+        breadcrumbs.clear();
+        for (int i = 0; i < breadcrumbSize; ++i) {
+            if (i > 0) {
+                breadcrumbs.add(new InlineLabel(" > "));
+            }
+            breadcrumbs.add(new InlineHyperlink("Loading title...", placeManager.buildRelativeHistoryToken(i + 1)));
+        }
     }
-  }
 
-  private void setMainContent(Widget content) {
-    mainContentPanel.clear();
-
-    if (content != null) {
-      mainContentPanel.add(content);
+    @Override
+    public void setBreadcrumbs(int index, String title) {
+        InlineHyperlink hyperlink = (InlineHyperlink) breadcrumbs.getWidget(index * 2);
+        if (title == null) {
+            hyperlink.setHTML("Unknown title");
+        } else {
+            hyperlink.setHTML(title);
+        }
     }
-  }
+
+    @Override
+    public void setInSlot(Object slot, Widget content) {
+        if (slot == BreadcrumbsPresenter.TYPE_SetMainContent) {
+            mainContentPanel.setWidget(content);
+        } else {
+            super.setInSlot(slot, content);
+        }
+    }
 }
