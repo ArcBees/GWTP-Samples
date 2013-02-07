@@ -30,55 +30,53 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 import com.gwtplatform.samples.tab.client.security.CurrentUser;
 
 /**
- * A sample {@link Presenter} that lets user toggle between being an
- * administrator and a regular user.
+ * A sample {@link Presenter} that lets user toggle between being an administrator and a regular user.
  * <p />
  * It demonstrates the option 1 described in {@link TabInfo}.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
  */
 public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, SettingsPresenter.MyProxy> implements
-    SettingsUiHandlers {
-  /**
-   * {@link SettingsPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.settingsPage)
-  @TabInfo(container = ApplicationPresenter.class, label = "Settings", priority = 2)
-  // The third tab in the main page
-  public interface MyProxy extends TabContentProxyPlace<SettingsPresenter> {
-  }
+        SettingsUiHandlers {
+    /**
+     * {@link SettingsPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.settingsPage)
+    @TabInfo(container = ApplicationPresenter.class, label = "Settings", priority = 2)
+    // The third tab in the main page
+    public interface MyProxy extends TabContentProxyPlace<SettingsPresenter> {
+    }
 
-  /**
-   * {@link SettingsPresenter}'s view.
-   */
-  public interface MyView extends View, HasUiHandlers<SettingsUiHandlers> {
-    void setAdmin(boolean isAdmin);
-  }
+    /**
+     * {@link SettingsPresenter}'s view.
+     */
+    public interface MyView extends View, HasUiHandlers<SettingsUiHandlers> {
+        void setAdmin(boolean isAdmin);
+    }
 
-  private final CurrentUser currentUser;
+    private final CurrentUser currentUser;
 
-  @Inject
-  public SettingsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-      final CurrentUser currentUser) {
-    super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
-    this.currentUser = currentUser;
-    view.setUiHandlers(this);
-  }
+    @Inject
+    public SettingsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
+            final CurrentUser currentUser) {
+        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
+        
+        this.currentUser = currentUser;
+        
+        view.setUiHandlers(this);
+    }
 
-  @Override
-  protected void onReveal() {
-    updateView();
-  }
+    @Override
+    protected void onReveal() {
+        updateView();
+    }
 
-  @Override
-  public void togglePrivileges() {
-    currentUser.setAdmin(!currentUser.isAdmin());
-    updateView();
-  }
+    @Override
+    public void togglePrivileges() {
+        currentUser.setAdmin(!currentUser.isAdmin());
+        updateView();
+    }
 
-  private void updateView() {
-    getView().setAdmin(currentUser.isAdmin());
-  }
+    private void updateView() {
+        getView().setAdmin(currentUser.isAdmin());
+    }
 }

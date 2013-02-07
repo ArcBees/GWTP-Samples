@@ -27,44 +27,40 @@ import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
  * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}
- * .
- * 
- * @author Philippe Beaudoin
- * @author Christian Goudreau
+ * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}.
  */
 public class LocalDialogSubTabView extends ViewImpl implements LocalDialogSubTabPresenter.MyView {
-  /**
+    /**
    */
-  public interface Binder extends UiBinder<Widget, LocalDialogSubTabView> {
-  }
-
-  @UiField
-  Button localDialog;
-
-  private final Widget widget;
-
-  private LocalDialogSubTabPresenter presenter;
-
-  @Inject
-  public LocalDialogSubTabView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void setPresenter(LocalDialogSubTabPresenter presenter) {
-    this.presenter = presenter;
-  }
-
-  @UiHandler("localDialog")
-  void onLocalClicked(ClickEvent event) {
-    if (presenter != null) {
-      presenter.showLocalDialog();
+    public interface Binder extends UiBinder<Widget, LocalDialogSubTabView> {
     }
-  }
+
+    @UiField
+    Button localDialog;
+
+    private final Widget widget;
+
+    private LocalDialogSubTabPresenter presenter;
+
+    @Inject
+    public LocalDialogSubTabView(Binder uiBinder) {
+        widget = uiBinder.createAndBindUi(this);
+    }
+
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
+
+    @Override
+    public void setPresenter(LocalDialogSubTabPresenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @UiHandler("localDialog")
+    void onLocalClicked(ClickEvent event) {
+        if (presenter != null) {
+            presenter.showLocalDialog();
+        }
+    }
 }

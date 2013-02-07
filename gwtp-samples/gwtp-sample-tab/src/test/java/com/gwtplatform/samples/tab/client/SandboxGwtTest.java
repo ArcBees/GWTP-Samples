@@ -18,16 +18,13 @@ package com.gwtplatform.samples.tab.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.tab.Gwtptabsample";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.tab.Gwtptabsample";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }
