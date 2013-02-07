@@ -10,9 +10,6 @@ Project samples display GWT-Platform features configuration and uses.
 * [Join the GWT-Platform G+ Community](https://plus.google.com/communities/113139554133824081251) - See whats happening in the community.
 * [GWTP Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwt-platform) - Ask for help here.
 
-##License
-* GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
-
 ##Demos
 <table>
   <tr>
@@ -52,8 +49,8 @@ Project samples display GWT-Platform features configuration and uses.
   </tr>
 </table>
 
-##Archetypes
-* [Create a project from Archetype here](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start the project from a template.
+##License
+* GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/ad.png)](http://arcbees.com)
