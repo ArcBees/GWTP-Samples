@@ -33,9 +33,6 @@ import com.gwtplatform.samples.basic.client.application.response.ResponsePresent
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
     /**
      * {@link ApplicationPresenter}'s proxy.

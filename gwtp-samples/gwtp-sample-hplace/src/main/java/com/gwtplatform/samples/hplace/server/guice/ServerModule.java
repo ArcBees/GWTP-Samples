@@ -24,13 +24,11 @@ import com.gwtplatform.samples.hplace.shared.dispatch.GetProductListAction;
 
 /**
  * Module which binds the handlers and configurations.
- *
- * @author Philippe Beaudoin
  */
 public class ServerModule extends HandlerModule {
-  @Override
-  protected void configureHandlers() {
-    bindHandler(GetProductAction.class, GetProductHandler.class);
-    bindHandler(GetProductListAction.class, GetProductListHandler.class);
-  }
+    @Override
+    protected void configureHandlers() {
+        bindHandler(GetProductAction.class, GetProductHandler.class);
+        bindHandler(GetProductListAction.class, GetProductListHandler.class);
+    }
 }
