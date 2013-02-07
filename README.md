@@ -1,7 +1,10 @@
 #GWTP-Samples
 Project samples display GWT-Platform features configuration and uses. 
 
-#[Find out more about GWTP](https://github.com/ArcBees/GWTP)
+##GWTP
+* [GWTP Home](https://github.com/ArcBees/GWTP) - Find the GWT-Platform home here.
+* [GWTP Docuementation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
+* [GWTP Archetypes](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start a project from a template here.
 
 ##License
 * GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
