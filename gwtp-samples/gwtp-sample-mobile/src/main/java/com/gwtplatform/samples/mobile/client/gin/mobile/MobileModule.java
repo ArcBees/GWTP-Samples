@@ -17,6 +17,8 @@
 package com.gwtplatform.samples.mobile.client.gin.mobile;
 
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
+import com.gwtplatform.mvp.client.annotations.ErrorPlace;
+import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
@@ -29,7 +31,9 @@ public class MobileModule extends AbstractPresenterModule {
         install(new DefaultModule(DefaultPlaceManager.class));
         install(new ApplicationMobileModule());
 
-        // Constants
+        // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homePage);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homePage);
     }
 }
