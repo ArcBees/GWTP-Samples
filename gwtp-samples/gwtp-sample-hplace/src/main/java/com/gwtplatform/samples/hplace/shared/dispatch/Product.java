@@ -18,66 +18,61 @@ package com.gwtplatform.samples.hplace.shared.dispatch;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-/**
- * @author Philippe Beaudoin
- */
 public class Product implements IsSerializable {
-  public static int FLAG_FAVORITE = 0x1;
-  public static int FLAG_SPECIAL = 0x2;
+    public static int FLAG_FAVORITE = 0x1;
+    public static int FLAG_SPECIAL = 0x2;
 
-  private static int nextId = 1;
+    private static int nextId = 1;
 
-  private int flags;
-  private int id;
-  private String name;
-  private String price;
-  private int quantity;
+    private int flags;
+    private int id;
+    private String name;
+    private String price;
+    private int quantity;
 
-  public Product(String name, int flags, String price, int quantity) {
-    this.id = nextId++;
-    this.name = name;
-    this.flags = flags;
-    this.price = price;
-    this.quantity = quantity;
-  }
+    public Product(String name, int flags, String price, int quantity) {
+        this.id = nextId++;
+        this.name = name;
+        this.flags = flags;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
-  Product() {
-    // For serialization only
-  }
+    Product() {
+        // For serialization only
+    }
 
-  /**
-   * Checks if all the passed flags are set. Passing 0 always returns
-   * {@code true}.
-   *
-   * @param flags A bitwise combination of the flags
-   * @return {@code true} if all the passed flags are set, {@code false}
-   *         otherwise.
-   */
-  public boolean flagsSet(int flags) {
-    return (this.flags & flags) == flags;
-  }
+    /**
+     * Checks if all the passed flags are set. Passing 0 always returns {@code true}.
+     * 
+     * @param flags A bitwise combination of the flags
+     * @return {@code true} if all the passed flags are set, {@code false} otherwise.
+     */
+    public boolean flagsSet(int flags) {
+        return (this.flags & flags) == flags;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public String getPrice() {
-    return price;
-  }
+    public String getPrice() {
+        return price;
+    }
 
-  public int getQuantity() {
-    return quantity;
-  }
+    public int getQuantity() {
+        return quantity;
+    }
 
-  public boolean isFavorite() {
-    return (flags & FLAG_FAVORITE) != 0;
-  }
+    public boolean isFavorite() {
+        return (flags & FLAG_FAVORITE) != 0;
+    }
 
-  public boolean isSpecial() {
-    return (flags & FLAG_SPECIAL) != 0;
-  }
+    public boolean isSpecial() {
+        return (flags & FLAG_SPECIAL) != 0;
+    }
 }

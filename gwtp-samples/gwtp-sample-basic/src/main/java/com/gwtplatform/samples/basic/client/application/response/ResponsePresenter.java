@@ -35,9 +35,6 @@ import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy> {
     /**
      * {@link ResponsePresenter}'s proxy.

@@ -23,8 +23,6 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- */
 @RunWith(JukitoRunner.class)
 public class SandboxJukitoTest {
     /**

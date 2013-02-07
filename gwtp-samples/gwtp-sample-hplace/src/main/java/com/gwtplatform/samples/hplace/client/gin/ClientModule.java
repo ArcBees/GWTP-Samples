@@ -16,25 +16,30 @@
 
 package com.gwtplatform.samples.hplace.client.gin;
 
+import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
+import com.gwtplatform.mvp.client.annotations.DefaultPlace;
+import com.gwtplatform.mvp.client.annotations.ErrorPlace;
+import com.gwtplatform.mvp.client.annotations.GaAccount;
+import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.hplace.client.application.ApplicationModule;
-import com.gwtplatform.samples.hplace.client.place.DefaultPlace;
 import com.gwtplatform.samples.hplace.client.place.NameTokens;
-import com.gwtplatform.samples.hplace.client.place.PlaceManager;
 
-/**
- * @author Christian Goudreau
- */
 public class ClientModule extends AbstractPresenterModule {
-  @Override
-  protected void configure() {
-    // Default implementation of standard resources
-    install(new DefaultModule(PlaceManager.class));
+    @Override
+    protected void configure() {
+        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new DispatchAsyncModule());
+        install(new ApplicationModule());
 
-    // Constants
-    bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
+        // DefaultPlaceManager Places
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homePage);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homePage);
 
-    install(new ApplicationModule());
-  }
+        // Google Analytics
+        bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
+    }
 }

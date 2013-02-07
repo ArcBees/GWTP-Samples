@@ -36,110 +36,107 @@ import com.gwtplatform.samples.hplace.shared.dispatch.GetProductListAction;
 import com.gwtplatform.samples.hplace.shared.dispatch.GetProductListResult;
 import com.gwtplatform.samples.hplace.shared.dispatch.Product;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, ProductsPresenter.MyProxy> {
-  /**
-   * {@link ProductsPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.productList)
-  public interface MyProxy extends ProxyPlace<ProductsPresenter> {
-  }
-
-  /**
-   * {@link ProductsPresenter}'s view.
-   */
-  public interface MyView extends View {
-    void setBackLinkHistoryToken(String historyToken);
-
-    void setList(List<Product> products);
-
-    void setMessage(String string);
-
-    void setTitle(String title);
-  }
-
-  public static final String TOKEN_TYPE = "type";
-  public static final String TYPE_ALL_PRODUCTS = "all";
-  public static final String TYPE_FAVORITE_PRODUCTS = "fav";
-  public static final String TYPE_SPECIALS = "spec";
-
-  @TitleFunction
-  public static String getListTitle(PlaceRequest request) {
-    return getTitleFor(request.getParameter(TOKEN_TYPE, null));
-  }
-
-  private static String getTitleFor(String type) {
-    if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
-      return "Favorite products";
-    } else if (type.equals(TYPE_SPECIALS)) {
-      return "Specials";
-    } else {
-      return "All products";
-    }
-  }
-
-  private final DispatchAsync dispatcher;
-  private final PlaceManager placeManager;
-
-  private String currentType = TYPE_ALL_PRODUCTS;
-
-  @Inject
-  public ProductsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-      final PlaceManager placeManager, final DispatchAsync dispatcher) {
-    super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
-
-    this.placeManager = placeManager;
-    this.dispatcher = dispatcher;
-  }
-
-  @Override
-  public void prepareFromRequest(PlaceRequest request) {
-    super.prepareFromRequest(request);
-
-    String type = request.getParameter(TOKEN_TYPE, TYPE_ALL_PRODUCTS);
-    if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
-      currentType = TYPE_FAVORITE_PRODUCTS;
-    } else if (type.equals(TYPE_SPECIALS)) {
-      currentType = TYPE_SPECIALS;
-    } else {
-      currentType = TYPE_ALL_PRODUCTS;
+    /**
+     * {@link ProductsPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.productList)
+    public interface MyProxy extends ProxyPlace<ProductsPresenter> {
     }
 
-    setViewTitle();
-  }
+    /**
+     * {@link ProductsPresenter}'s view.
+     */
+    public interface MyView extends View {
+        void setBackLinkHistoryToken(String historyToken);
 
-  @Override
-  protected void onReset() {
-    super.onReset();
+        void setList(List<Product> products);
 
-    getView().setMessage("Loading list...");
-    getView().setBackLinkHistoryToken(placeManager.buildRelativeHistoryToken(-1));
-    dispatcher.execute(new GetProductListAction(getFlags()), new AsyncCallback<GetProductListResult>() {
-      @Override
-      public void onFailure(Throwable caught) {
-        getView().setMessage("Loading error!");
-      }
+        void setMessage(String string);
 
-      @Override
-      public void onSuccess(GetProductListResult result) {
-        getView().setList(result.getProducts());
-      }
-    });
-  }
-
-  private int getFlags() {
-    if (currentType.equals(TYPE_FAVORITE_PRODUCTS)) {
-      return Product.FLAG_FAVORITE;
-    } else if (currentType.equals(TYPE_SPECIALS)) {
-      return Product.FLAG_SPECIAL;
+        void setTitle(String title);
     }
-    return 0;
-  }
 
-  private void setViewTitle() {
-    getView().setTitle(getTitleFor(currentType));
-  }
+    public static final String TOKEN_TYPE = "type";
+    public static final String TYPE_ALL_PRODUCTS = "all";
+    public static final String TYPE_FAVORITE_PRODUCTS = "fav";
+    public static final String TYPE_SPECIALS = "spec";
+
+    @TitleFunction
+    public static String getListTitle(PlaceRequest request) {
+        return getTitleFor(request.getParameter(TOKEN_TYPE, null));
+    }
+
+    private static String getTitleFor(String type) {
+        if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
+            return "Favorite products";
+        } else if (type.equals(TYPE_SPECIALS)) {
+            return "Specials";
+        } else {
+            return "All products";
+        }
+    }
+
+    private final DispatchAsync dispatcher;
+    private final PlaceManager placeManager;
+
+    private String currentType = TYPE_ALL_PRODUCTS;
+
+    @Inject
+    public ProductsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
+            final PlaceManager placeManager, final DispatchAsync dispatcher) {
+        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+
+        this.placeManager = placeManager;
+        this.dispatcher = dispatcher;
+    }
+
+    @Override
+    public void prepareFromRequest(PlaceRequest request) {
+        super.prepareFromRequest(request);
+
+        String type = request.getParameter(TOKEN_TYPE, TYPE_ALL_PRODUCTS);
+        if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
+            currentType = TYPE_FAVORITE_PRODUCTS;
+        } else if (type.equals(TYPE_SPECIALS)) {
+            currentType = TYPE_SPECIALS;
+        } else {
+            currentType = TYPE_ALL_PRODUCTS;
+        }
+
+        setViewTitle();
+    }
+
+    @Override
+    protected void onReset() {
+        super.onReset();
+
+        getView().setMessage("Loading list...");
+        getView().setBackLinkHistoryToken(placeManager.buildRelativeHistoryToken(-1));
+        dispatcher.execute(new GetProductListAction(getFlags()), new AsyncCallback<GetProductListResult>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                getView().setMessage("Loading error!");
+            }
+
+            @Override
+            public void onSuccess(GetProductListResult result) {
+                getView().setList(result.getProducts());
+            }
+        });
+    }
+
+    private int getFlags() {
+        if (currentType.equals(TYPE_FAVORITE_PRODUCTS)) {
+            return Product.FLAG_FAVORITE;
+        } else if (currentType.equals(TYPE_SPECIALS)) {
+            return Product.FLAG_SPECIAL;
+        }
+        return 0;
+    }
+
+    private void setViewTitle() {
+        getView().setTitle(getTitleFor(currentType));
+    }
 }

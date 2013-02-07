@@ -31,43 +31,38 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
 /**
- * A sample {@link Presenter} that should only be displayed to administrator
- * users. It appears as a tab within {@link ApplicationPresenter}.
+ * A sample {@link Presenter} that should only be displayed to administrator users. It appears as a tab within
+ * {@link ApplicationPresenter}.
  * <p />
- * It uses {@link IsAdminGatekeeper} to prevent access to non-administrator
- * users.
+ * It uses {@link IsAdminGatekeeper} to prevent access to non-administrator users.
  * <p />
- * It uses the option 3 described in {@link TabInfo} to describe the tab using a
- * {@link TabDataExt} that ensures the tab is not visible to non-administrator
- * users.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
+ * It uses the option 3 described in {@link TabInfo} to describe the tab using a {@link TabDataExt} that ensures the tab
+ * is not visible to non-administrator users.
  */
 public class AdminAreaPresenter extends Presenter<AdminAreaPresenter.MyView, AdminAreaPresenter.MyProxy> {
-  /**
-   * {@link AdminAreaPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.adminPage)
-  @UseGatekeeper(IsAdminGatekeeper.class)
-  public interface MyProxy extends TabContentProxyPlace<AdminAreaPresenter> {
-  }
+    /**
+     * {@link AdminAreaPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.adminPage)
+    @UseGatekeeper(IsAdminGatekeeper.class)
+    public interface MyProxy extends TabContentProxyPlace<AdminAreaPresenter> {
+    }
 
-  @TabInfo(container = ApplicationPresenter.class)
-  static TabData getTabLabel(IsAdminGatekeeper adminGatekeeper) {
-    // Priority = 1000, means it will be the right-most tab in the home tab
-    return new TabDataExt("Admin area", 1000, adminGatekeeper);
-  }
+    @TabInfo(container = ApplicationPresenter.class)
+    static TabData getTabLabel(IsAdminGatekeeper adminGatekeeper) {
+        // Priority = 1000, means it will be the right-most tab in the home tab
+        return new TabDataExt("Admin area", 1000, adminGatekeeper);
+    }
 
-  /**
-   * {@link AdminAreaPresenter}'s view.
-   */
-  public interface MyView extends View {
-  }
+    /**
+     * {@link AdminAreaPresenter}'s view.
+     */
+    public interface MyView extends View {
+    }
 
-  @Inject
-  public AdminAreaPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
-    super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
-  }
+    @Inject
+    public AdminAreaPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
+    }
 }
