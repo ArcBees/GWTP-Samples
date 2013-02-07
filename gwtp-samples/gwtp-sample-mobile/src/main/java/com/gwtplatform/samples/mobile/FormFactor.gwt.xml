@@ -54,5 +54,4 @@
         <when-type-is class="com.gwtplatform.samples.mobile.client.gin.GinjectorProvider"/>
         <when-property-is name="formfactor" value="mobile"/>
     </replace-with>
-
 </module>

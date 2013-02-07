@@ -27,32 +27,29 @@ import com.gwtplatform.samples.hplace.shared.dispatch.GetProductListAction;
 import com.gwtplatform.samples.hplace.shared.dispatch.GetProductListResult;
 import com.gwtplatform.samples.hplace.shared.dispatch.Product;
 
-/**
- * @author Philippe Beaudoin
- */
 public class GetProductListHandler implements ActionHandler<GetProductListAction, GetProductListResult> {
-  private final ProductDatabase database;
+    private final ProductDatabase database;
 
-  @Inject
-  public GetProductListHandler(ProductDatabase database) {
-    this.database = database;
-  }
+    @Inject
+    public GetProductListHandler(ProductDatabase database) {
+        this.database = database;
+    }
 
-  @Override
-  public GetProductListResult execute(final GetProductListAction action, final ExecutionContext context)
-      throws ActionException {
-    ArrayList<Product> products = database.getMatching(action.getFlags());
-    return new GetProductListResult(products);
-  }
+    @Override
+    public GetProductListResult execute(final GetProductListAction action, final ExecutionContext context)
+            throws ActionException {
+        ArrayList<Product> products = database.getMatching(action.getFlags());
+        return new GetProductListResult(products);
+    }
 
-  @Override
-  public Class<GetProductListAction> getActionType() {
-    return GetProductListAction.class;
-  }
+    @Override
+    public Class<GetProductListAction> getActionType() {
+        return GetProductListAction.class;
+    }
 
-  @Override
-  public void undo(final GetProductListAction action, final GetProductListResult result, final ExecutionContext context)
-      throws ActionException {
-    // No undo
-  }
+    @Override
+    public void undo(final GetProductListAction action, final GetProductListResult result,
+            final ExecutionContext context) throws ActionException {
+        // No undo
+    }
 }

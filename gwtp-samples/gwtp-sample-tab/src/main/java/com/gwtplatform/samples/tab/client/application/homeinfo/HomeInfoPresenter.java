@@ -24,37 +24,35 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.proxy.TabContentProxyPlace;
+import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
 import com.gwtplatform.samples.tab.client.application.home.HomePresenter;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
- * A sample {@link Presenter} filled with arbitrary content. It appears as a tab
- * within {@link HomePresenter}, which is itself a s tab in
- * {@link ApplicationPresenter}.
+ * A sample {@link Presenter} filled with arbitrary content. It appears as a tab within {@link HomePresenter}, which is
+ * itself a s tab in {@link ApplicationPresenter}.
  * <p />
  * It demonstrates the option 1 described in {@link TabInfo}.
- * 
- * @author Christian Goudreau
  */
 public class HomeInfoPresenter extends Presenter<HomeInfoPresenter.MyView, HomeInfoPresenter.MyProxy> {
-  /**
-   * {@link HomeInfoPresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  @NameToken(NameTokens.homeInfoPage)
-  @TabInfo(container = HomePresenter.class, label = "Info", priority = 1)
-  // The second tab in the home tab
-  public interface MyProxy extends TabContentProxyPlace<HomeInfoPresenter> {
-  }
+    /**
+     * {@link HomeInfoPresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    @NameToken(NameTokens.homeInfoPage)
+    @TabInfo(container = HomePresenter.class, label = "Info", priority = 1)
+    // The second tab in the home tab
+    public interface MyProxy extends TabContentProxyPlace<HomeInfoPresenter> {
+    }
 
-  /**
-   * {@link HomeInfoPresenter}'s view.
-   */
-  public interface MyView extends View {
-  }
+    /**
+     * {@link HomeInfoPresenter}'s view.
+     */
+    public interface MyView extends View {
+    }
 
-  @Inject
-  public HomeInfoPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
-    super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
-  }
+    @Inject
+    public HomeInfoPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+        super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
+    }
 }

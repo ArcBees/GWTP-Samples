@@ -23,32 +23,20 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-/**
- * @author Christian Goudreau
- */
 public class ContactView extends ViewImpl implements ContactPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ContactView> {
-  }
+    public interface Binder extends UiBinder<Widget, ContactView> {
+    }
 
-  @UiField
-  Label navigationHistory;
+    @UiField
+    Label navigationHistory;
 
-  private final Widget widget;
+    @Inject
+    public ContactView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 
-  @Inject
-  public ContactView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void setNavigationHistory(String navigationHistory) {
-    this.navigationHistory.setText(navigationHistory);
-  }
+    @Override
+    public void setNavigationHistory(String navigationHistory) {
+        this.navigationHistory.setText(navigationHistory);
+    }
 }

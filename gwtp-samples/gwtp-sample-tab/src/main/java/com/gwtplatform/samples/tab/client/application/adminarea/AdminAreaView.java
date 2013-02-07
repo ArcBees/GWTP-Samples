@@ -22,27 +22,14 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.adminarea.AdminAreaPresenter}
- * .
- * 
- * @author Christian Goudreau
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.adminarea.AdminAreaPresenter}.
  */
 public class AdminAreaView extends ViewImpl implements AdminAreaPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, AdminAreaView> {
-  }
+    public interface Binder extends UiBinder<Widget, AdminAreaView> {
+    }
 
-  private final Widget widget;
-
-  @Inject
-  public AdminAreaView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Inject
+    public AdminAreaView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
+    }
 }
