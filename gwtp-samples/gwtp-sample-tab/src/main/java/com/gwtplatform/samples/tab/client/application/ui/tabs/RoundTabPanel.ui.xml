@@ -1,8 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style src='../../defines.css'>
         .horizontalBar {
             width: 100%;
@@ -18,15 +16,12 @@
             padding: 0;
         }
     </ui:style>
-
     <g:FlowPanel>
         <g:HTMLPanel>
             <g:FlowPanel ui:field="tabPanel" />
             <div style="clear: both;"></div>
             <div class="{style.horizontalBar}" />
         </g:HTMLPanel>
-        <g:FlowPanel addStyleNames="{style.container}"
-            ui:field="tabContentContainer" />
+        <g:FlowPanel addStyleNames="{style.container}" ui:field="tabContentContainer" />
     </g:FlowPanel>
-
 </ui:UiBinder>

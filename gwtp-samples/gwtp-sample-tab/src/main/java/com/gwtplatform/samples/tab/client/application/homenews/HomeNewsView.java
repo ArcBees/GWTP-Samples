@@ -26,47 +26,34 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter}
- * .
- * 
- * @author Christian Goudreau
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter} .
  */
 public class HomeNewsView extends ViewImpl implements HomeNewsPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, HomeNewsView> {
-  }
+    public interface Binder extends UiBinder<Widget, HomeNewsView> {
+    }
 
-  private final Widget widget;
+    @UiField
+    Anchor confirmationLink;
 
-  @UiField
-  Anchor confirmationLink;
+    private HomeNewsPresenter presenter;
 
-  private HomeNewsPresenter presenter;
+    @Inject
+    public HomeNewsView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
+    }
 
-  @Inject
-  public HomeNewsView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
+    @Override
+    public void setConfirmationText(String text) {
+        confirmationLink.setText(text);
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Override
+    public void setPresenter(HomeNewsPresenter presenter) {
+        this.presenter = presenter;
+    }
 
-  @Override
-  public void setConfirmationText(String text) {
-    confirmationLink.setText(text);
-  }
-
-  @Override
-  public void setPresenter(HomeNewsPresenter presenter) {
-    this.presenter = presenter;
-  }
-
-  @UiHandler("confirmationLink")
-  public void onClick(ClickEvent clickEvent) {
-    presenter.toggleConfirmation();
-  }
+    @UiHandler("confirmationLink")
+    public void onClick(ClickEvent clickEvent) {
+        presenter.toggleConfirmation();
+    }
 }

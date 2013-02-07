@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
-        <version>1.0-alpha-1-SNAPSHOT</version>
+        <version>1.0-RC-1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtp-sample-tab</artifactId>
     <packaging>war</packaging>
-    <name>GWTP Samples - tab</name>
+    <name>GWTP Samples - Tab</name>
 
     <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -31,89 +32,58 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/generated-sources/annotations</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
-                <configuration>
-                    <serverId>appengine-credentials</serverId>
-                    <splitJars>true</splitJars>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
 
     <dependencies>
-          <!-- GWTP -->
-          <dependency>
-              <groupId>com.gwtplatform</groupId>
-              <artifactId>gwtp-mvp-client</artifactId>
-          </dependency>
+        <!-- GWTP -->
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-mvp-client</artifactId>
+        </dependency>
 
-          <dependency>
-              <groupId>com.gwtplatform</groupId>
-              <artifactId>gwtp-processors</artifactId>
-          </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-processors</artifactId>
+        </dependency>
 
-          <!-- GWT dependencies -->
-          <dependency>
-              <groupId>com.google.gwt</groupId>
-              <artifactId>gwt-user</artifactId>
-          </dependency>
-          <dependency>
-              <groupId>com.google.gwt</groupId>
-              <artifactId>gwt-dev</artifactId>
-          </dependency>
-          <dependency>
-              <groupId>com.google.gwt</groupId>
-              <artifactId>gwt-servlet</artifactId>
-          </dependency>
+        <!-- GWT dependencies -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+        </dependency>
 
-          <!-- AppEngine dependencies -->
-          <dependency>
-              <groupId>com.google.appengine</groupId>
-              <artifactId>appengine-api-1.0-sdk</artifactId>
-          </dependency>
+        <!-- AppEngine dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+        </dependency>
 
-          <!-- DI dependencies -->
-          <dependency>
-              <groupId>com.google.gwt.inject</groupId>
-              <artifactId>gin</artifactId>
-          </dependency>
+        <!-- DI dependencies -->
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+        </dependency>
 
-          <!-- Testing -->
-          <dependency>
-              <groupId>junit</groupId>
-              <artifactId>junit</artifactId>
-          </dependency>
-          <dependency>
-              <groupId>org.jukito</groupId>
-              <artifactId>jukito</artifactId>
-          </dependency>
-      </dependencies>
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jukito</groupId>
+            <artifactId>jukito</artifactId>
+        </dependency>
+    </dependencies>
 </project>

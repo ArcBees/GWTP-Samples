@@ -28,60 +28,55 @@ import com.gwtplatform.mvp.client.proxy.NonLeafTabContentProxy;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
+import com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
- * A sample {@link com.gwtplatform.mvp.client.TabContainerPresenter
- * TabContainerPresenter} appearing as a tab within {@link ApplicationPresenter}
- * and itself containing two tabs. When the tab for {@link HomePresenter} is
- * clicked, them {@link HomeNewsPresenter} is displayed.
+ * A sample {@link com.gwtplatform.mvp.client.TabContainerPresenter TabContainerPresenter} appearing as a tab within
+ * {@link ApplicationPresenter} and itself containing two tabs. When the tab for {@link HomePresenter} is clicked, them
+ * {@link HomeNewsPresenter} is displayed.
  * <p />
- * It demonstrates the option 2 described in {@link TabInfo}, together with the
- * use of the {@code nameToken} parameter of {@code @TabInfo} to specify which
- * place to show when the tab is clicked.
- * 
- * @author Christian Goudreau
- * @author Philippe Beaudoin
+ * It demonstrates the option 2 described in {@link TabInfo}, together with the use of the {@code nameToken} parameter
+ * of {@code @TabInfo} to specify which place to show when the tab is clicked.
  */
 public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomePresenter.MyProxy> {
-  /**
-   * {@link HomePresenter}'s proxy.
-   */
-  @ProxyCodeSplit
-  public interface MyProxy extends NonLeafTabContentProxy<HomePresenter> {
-  }
+    /**
+     * {@link HomePresenter}'s proxy.
+     */
+    @ProxyCodeSplit
+    public interface MyProxy extends NonLeafTabContentProxy<HomePresenter> {
+    }
 
-  @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
-  nameToken = NameTokens.homeNewsPage)
-  // Go to HomeNewsPresenter when clicked
-  static String getTabLabel(MyConstants constants) {
-    return constants.home();
-  }
+    @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
+    nameToken = NameTokens.homeNewsPage)
+    // Go to HomeNewsPresenter when clicked
+    static String getTabLabel(MyConstants constants) {
+        return constants.home();
+    }
 
-  /**
-   * {@link HomePresenter}'s view.
-   */
-  public interface MyView extends TabView {
-  }
+    /**
+     * {@link HomePresenter}'s view.
+     */
+    public interface MyView extends TabView {
+    }
 
-  /**
-   * This will be the event sent to our "unknown" child presenters, in order for
-   * them to register their tabs.
-   */
-  @RequestTabs
-  public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
-  private final PlaceManager placeManager;
+    /**
+     * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
+     */
+    @RequestTabs
+    public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+    private final PlaceManager placeManager;
 
-  @Inject
-  public HomePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy, PlaceManager placeManager) {
-    super(eventBus, view, proxy, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
-    this.placeManager = placeManager;
-  }
+    @Inject
+    public HomePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy, PlaceManager placeManager) {
+        super(eventBus, view, proxy, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
+        this.placeManager = placeManager;
+    }
 
-  @Override
-  public void onReset() {
-    super.onReset();
-    MyProxy proxy = getProxy();
-    proxy.changeTab(proxy.getTabData(), placeManager.getCurrentPlaceRequest().getNameToken());
-  }
+    @Override
+    public void onReset() {
+        super.onReset();
+        MyProxy proxy = getProxy();
+        proxy.changeTab(proxy.getTabData(), placeManager.getCurrentPlaceRequest().getNameToken());
+    }
 }

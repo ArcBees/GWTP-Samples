@@ -24,48 +24,34 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-/**
- * @author Philippe Beaudoin
- */
 public class ResponseView extends ViewImpl implements ResponsePresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, ResponseView> {
-  }
+    public interface Binder extends UiBinder<Widget, ResponseView> {
+    }
 
-  @UiField
-  HTML textToServer;
-  @UiField
-  HTML serverResponse;
-  @UiField
-  Button closeButton;
+    @UiField
+    HTML textToServer;
+    @UiField
+    HTML serverResponse;
+    @UiField
+    Button closeButton;
 
-  /**
-   */
-  private Widget widget;
+    @Inject
+    public ResponseView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
+    }
 
-  @Inject
-  public ResponseView(final Binder binder) {
-    widget = binder.createAndBindUi(this);
-  }
+    @Override
+    public Button getCloseButton() {
+        return closeButton;
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Override
+    public void setServerResponse(String serverResponse) {
+        this.serverResponse.setHTML(serverResponse);
+    }
 
-  @Override
-  public Button getCloseButton() {
-    return closeButton;
-  }
-
-  @Override
-  public void setServerResponse(String serverResponse) {
-    this.serverResponse.setHTML(serverResponse);
-  }
-
-  @Override
-  public void setTextToServer(String textToServer) {
-    this.textToServer.setHTML(textToServer);
-  }
+    @Override
+    public void setTextToServer(String textToServer) {
+        this.textToServer.setHTML(textToServer);
+    }
 }
