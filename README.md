@@ -3,8 +3,12 @@ Project samples display GWT-Platform features configuration and uses.
 
 ##GWTP Reference
 * [GWTP Home](https://github.com/ArcBees/GWTP) - Find the GWT-Platform home here.
-* [GWTP Docuementation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
+* [GWTP Documentation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
 * [GWTP Archetypes](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start a project from a template here.
+
+##Community
+* [Join the GWT-Platform G+ Community](https://plus.google.com/communities/113139554133824081251) - See whats happening in the community.
+* [GWTP Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwt-platform) - Ask for help here.
 
 ##License
 * GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
