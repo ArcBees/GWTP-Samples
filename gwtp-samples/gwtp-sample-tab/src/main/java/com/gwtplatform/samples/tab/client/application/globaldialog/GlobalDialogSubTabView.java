@@ -29,43 +29,37 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
  * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}
- * .
- * 
- * @author Philippe Beaudoin
- * @author Christian Goudreau
+ * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}.
  */
 public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTabUiHandlers> implements
-    GlobalDialogSubTabPresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, GlobalDialogSubTabView> {
-  }
+        GlobalDialogSubTabPresenter.MyView {
+    public interface Binder extends UiBinder<Widget, GlobalDialogSubTabView> {
+    }
 
-  @UiField
-  Button globalDialog;
-  @UiField
-  Anchor popupLink;
+    @UiField
+    Button globalDialog;
+    @UiField
+    Anchor popupLink;
 
-  private final Widget widget;
+    private final Widget widget;
 
-  @Inject
-  public GlobalDialogSubTabView(Binder uiBinder) {
-    widget = uiBinder.createAndBindUi(this);
-  }
+    @Inject
+    public GlobalDialogSubTabView(Binder uiBinder) {
+        widget = uiBinder.createAndBindUi(this);
+    }
 
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
 
-  @UiHandler("globalDialog")
-  void onGlobalClicked(ClickEvent event) {
-    getUiHandlers().showGlobalDialog();
-  }
+    @UiHandler("globalDialog")
+    void onGlobalClicked(ClickEvent event) {
+        getUiHandlers().showGlobalDialog();
+    }
 
-  @UiHandler("popupLink")
-  void onPopupLinkClicked(MouseDownEvent event) {
-    getUiHandlers().showInfoPopup(event.getClientX(), event.getClientY());
-  }
+    @UiHandler("popupLink")
+    void onPopupLinkClicked(MouseDownEvent event) {
+        getUiHandlers().showInfoPopup(event.getClientX(), event.getClientY());
+    }
 }

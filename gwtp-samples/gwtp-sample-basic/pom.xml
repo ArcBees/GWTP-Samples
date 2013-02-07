@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>1.0-RC-1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtp-sample-basic</artifactId>
     <packaging>war</packaging>
-    <name>GWTP Samples - basic</name>
+    <name>GWTP Samples - Basic</name>
 
     <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

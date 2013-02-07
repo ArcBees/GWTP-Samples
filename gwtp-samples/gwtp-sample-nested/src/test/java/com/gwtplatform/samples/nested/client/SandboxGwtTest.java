@@ -18,16 +18,13 @@ package com.gwtplatform.samples.nested.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * @author Brandon Donnelson
- */
 public class SandboxGwtTest extends GWTTestCase {
-  @Override
-  public String getModuleName() {
-    return "com.gwtplatform.samples.nested.Gwtpnestedsample";
-  }
+    @Override
+    public String getModuleName() {
+        return "com.gwtplatform.samples.nested.Gwtpnestedsample";
+    }
 
-  public void testSandbox() {
-    assertTrue(true);
-  }
+    public void testSandbox() {
+        assertTrue(true);
+    }
 }

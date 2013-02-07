@@ -26,65 +26,60 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.samples.tab.client.application.ui.tabs.SimpleTabPanel;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.home.HomePresenter}.
- * 
- * @author Christian Goudreau
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.home.HomePresenter}.
  */
 public class HomeView extends ViewImpl implements HomePresenter.MyView {
-  /**
-   */
-  public interface Binder extends UiBinder<Widget, HomeView> {
-  }
-
-  @UiField(provided = true)
-  SimpleTabPanel tabPanel;
-
-  private final Widget widget;
-
-  @Inject
-  public HomeView(Binder uiBinder, final SimpleTabPanel tabPanel) {
-    this.tabPanel = tabPanel;
-
-    widget = uiBinder.createAndBindUi(this);
-  }
-
-  @Override
-  public Tab addTab(TabData tabData, String historyToken) {
-    return tabPanel.addTab(tabData, historyToken);
-  }
-
-  @Override
-  public Widget asWidget() {
-    return widget;
-  }
-
-  @Override
-  public void removeTab(Tab tab) {
-    tabPanel.removeTab(tab);
-  }
-
-  @Override
-  public void removeTabs() {
-    tabPanel.removeTabs();
-  }
-
-  @Override
-  public void setActiveTab(Tab tab) {
-    tabPanel.setActiveTab(tab);
-  }
-
-  @Override
-  public void changeTab(Tab tab, TabData tabData, String historyToken) {
-    tabPanel.changeTab(tab, tabData, historyToken);
-  }
-
-  @Override
-  public void setInSlot(Object slot, Widget content) {
-    if (slot == HomePresenter.TYPE_SetTabContent) {
-      tabPanel.setPanelContent(content);
-    } else {
-      super.setInSlot(slot, content);
+    public interface Binder extends UiBinder<Widget, HomeView> {
     }
-  }
+
+    @UiField(provided = true)
+    SimpleTabPanel tabPanel;
+
+    private final Widget widget;
+
+    @Inject
+    public HomeView(Binder uiBinder, final SimpleTabPanel tabPanel) {
+        this.tabPanel = tabPanel;
+
+        widget = uiBinder.createAndBindUi(this);
+    }
+
+    @Override
+    public Tab addTab(TabData tabData, String historyToken) {
+        return tabPanel.addTab(tabData, historyToken);
+    }
+
+    @Override
+    public Widget asWidget() {
+        return widget;
+    }
+
+    @Override
+    public void removeTab(Tab tab) {
+        tabPanel.removeTab(tab);
+    }
+
+    @Override
+    public void removeTabs() {
+        tabPanel.removeTabs();
+    }
+
+    @Override
+    public void setActiveTab(Tab tab) {
+        tabPanel.setActiveTab(tab);
+    }
+
+    @Override
+    public void changeTab(Tab tab, TabData tabData, String historyToken) {
+        tabPanel.changeTab(tab, tabData, historyToken);
+    }
+
+    @Override
+    public void setInSlot(Object slot, Widget content) {
+        if (slot == HomePresenter.TYPE_SetTabContent) {
+            tabPanel.setPanelContent(content);
+        } else {
+            super.setInSlot(slot, content);
+        }
+    }
 }
