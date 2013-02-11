@@ -6,7 +6,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         .label {
             font-weight: bold;
         }
@@ -16,10 +16,10 @@
         <h1>Remote Procedure Call</h1>
 
         <div class="{style.label}">Sending name to server:</div>
-        <g:HTML ui:field="textToServer"/>
+        <g:HTML ui:field="textToServer" />
 
         <div class="{style.label}">Server replies:</div>
-        <g:HTML ui:field="serverResponse"/>
+        <g:HTML ui:field="serverResponse" />
 
         <g:Button ui:field="closeButton">Close</g:Button>
 

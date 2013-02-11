@@ -25,37 +25,34 @@ import com.gwtplatform.samples.hplace.shared.dispatch.GetProductAction;
 import com.gwtplatform.samples.hplace.shared.dispatch.GetProductResult;
 import com.gwtplatform.samples.hplace.shared.dispatch.Product;
 
-/**
- * @author Philippe Beaudoin
- */
 public class GetProductHandler implements ActionHandler<GetProductAction, GetProductResult> {
-  private final ProductDatabase database;
+    private final ProductDatabase database;
 
-  @Inject
-  public GetProductHandler(ProductDatabase database) {
-    this.database = database;
-  }
-
-  @Override
-  public GetProductResult execute(final GetProductAction action, final ExecutionContext context)
-      throws ActionException {
-    Product product = database.get(action.getId());
-
-    if (product == null) {
-      throw new ActionException("Product not found");
+    @Inject
+    public GetProductHandler(ProductDatabase database) {
+        this.database = database;
     }
 
-    return new GetProductResult(product);
-  }
+    @Override
+    public GetProductResult execute(final GetProductAction action, final ExecutionContext context)
+            throws ActionException {
+        Product product = database.get(action.getId());
 
-  @Override
-  public Class<GetProductAction> getActionType() {
-    return GetProductAction.class;
-  }
+        if (product == null) {
+            throw new ActionException("Product not found");
+        }
 
-  @Override
-  public void undo(final GetProductAction action, final GetProductResult result, final ExecutionContext context)
-      throws ActionException {
-    // No undo
-  }
+        return new GetProductResult(product);
+    }
+
+    @Override
+    public Class<GetProductAction> getActionType() {
+        return GetProductAction.class;
+    }
+
+    @Override
+    public void undo(final GetProductAction action, final GetProductResult result, final ExecutionContext context)
+            throws ActionException {
+        // No undo
+    }
 }

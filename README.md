@@ -1,9 +1,14 @@
 #GWTP-Samples
+Project samples display GWT-Platform features configuration and uses. 
 
-#[Find out more about GWTP](https://github.com/ArcBees/GWTP)
+##GWTP Reference
+* [GWTP Home](https://github.com/ArcBees/GWTP) - Find the GWT-Platform home here.
+* [GWTP Documentation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
+* [GWTP Archetypes](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start a project from a template here.
 
-##License
-* GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
+##Community
+* [Join the GWT-Platform G+ Community](https://plus.google.com/communities/113139554133824081251) - See whats happening in the community.
+* [GWTP Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwt-platform) - Ask for help here.
 
 ##Demos
 <table>
@@ -44,18 +49,8 @@
   </tr>
 </table>
 
-##Archetype Tools
-[More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
-
-```
-mvn archetype:generate -DarchetypeGroupId=com.arcbees \
--DarchetypeArtifactId=gwtp-basic-appengine-archetype \
--DarchetypeVersion=0.1-SNAPSHOT \
--DgroupId=com.projectname \
--DartifactId=new-project-name \
--DremoteRepositories=https://oss.sonatype.org/content/repositories/snapshots/
-```
-
+##License
+* GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/ad.png)](http://arcbees.com)

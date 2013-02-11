@@ -27,43 +27,37 @@ import com.gwtplatform.samples.basicspring.shared.FieldVerifier;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerResult;
 
-/**
- * @author Philippe Beaudoin
- */
 public class SendTextToServerHandler extends AbstractActionHandler<SendTextToServerAction, SendTextToServerResult> {
+    @Autowired
+    private ServletContext servletContext;
 
-  @Autowired
-  private ServletContext servletContext;
-
-  public SendTextToServerHandler() {
-    super(SendTextToServerAction.class);
-  }
-
-  @Override
-  public SendTextToServerResult execute(SendTextToServerAction action, ExecutionContext context) throws ActionException {
-
-    String input = action.getTextToServer();
-
-    // Verify that the input is valid.
-    if (!FieldVerifier.isValidName(input)) {
-      // If the input is not valid, throw an IllegalArgumentException back to
-      // the client.
-      throw new ActionException("Name must be at least 4 characters long");
+    public SendTextToServerHandler() {
+        super(SendTextToServerAction.class);
     }
 
-    String serverInfo = servletContext.getServerInfo();
-    return new SendTextToServerResult("Hello, " + input + "!<br><br>I am running " + serverInfo);
-  }
+    @Override
+    public SendTextToServerResult execute(SendTextToServerAction action, ExecutionContext context)
+            throws ActionException {
+        String input = action.getTextToServer();
 
-  @Override
-  public Class<SendTextToServerAction> getActionType() {
-    return SendTextToServerAction.class;
-  }
+        // Verify that the input is valid.
+        if (!FieldVerifier.isValidName(input)) {
+            // If the input is not valid, throw an IllegalArgumentException back to the client.
+            throw new ActionException("Name must be at least 4 characters long");
+        }
 
-  @Override
-  public void undo(SendTextToServerAction action, SendTextToServerResult result, ExecutionContext context)
-      throws ActionException {
-    // Not undoable
-  }
+        String serverInfo = servletContext.getServerInfo();
+        return new SendTextToServerResult("Hello, " + input + "!<br><br>I am running " + serverInfo);
+    }
 
+    @Override
+    public Class<SendTextToServerAction> getActionType() {
+        return SendTextToServerAction.class;
+    }
+
+    @Override
+    public void undo(SendTextToServerAction action, SendTextToServerResult result, ExecutionContext context)
+            throws ActionException {
+        // Not undoable
+    }
 }

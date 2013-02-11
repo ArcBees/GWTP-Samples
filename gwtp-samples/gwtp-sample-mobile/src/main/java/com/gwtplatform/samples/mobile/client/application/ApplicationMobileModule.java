@@ -24,20 +24,17 @@ import com.gwtplatform.samples.mobile.client.application.product.ProductPresente
 import com.gwtplatform.samples.mobile.client.application.products.ProductsMobileView;
 import com.gwtplatform.samples.mobile.client.application.products.ProductsPresenter;
 
-/**
- * @author Brandon Donnelson
- */
 public class ApplicationMobileModule extends AbstractPresenterModule {
-  @Override
-  protected void configure() {
-    // Application Presenters
-    bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsMobileView.class,
-        BreadcrumbsPresenter.MyProxy.class);
-    bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationMobileView.class,
-        ApplicationPresenter.MyProxy.class);
-    bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsMobileView.class,
-        ProductsPresenter.MyProxy.class);
-    bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductMobileView.class,
-        ProductPresenter.MyProxy.class);
-  }
+    @Override
+    protected void configure() {
+        // Application Presenters
+        bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsMobileView.class,
+                BreadcrumbsPresenter.MyProxy.class);
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationMobileView.class,
+                ApplicationPresenter.MyProxy.class);
+        bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsMobileView.class,
+                ProductsPresenter.MyProxy.class);
+        bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductMobileView.class,
+                ProductPresenter.MyProxy.class);
+    }
 }

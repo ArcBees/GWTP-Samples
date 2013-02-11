@@ -23,15 +23,12 @@ import com.gwtplatform.crawler.server.ServiceUrl;
 import com.gwtplatform.dispatch.server.guice.DispatchServiceImpl;
 import com.gwtplatform.dispatch.shared.ActionImpl;
 
-/**
- * @author Philippe Beaudoin
- */
 public class DispatchServletModule extends ServletModule {
-  @Override
-  public void configureServlets() {
-    bindConstant().annotatedWith(ServiceKey.class).to("123456");
-    bindConstant().annotatedWith(ServiceUrl.class).to("http://crawlservice.appspot.com/");
-    filter("/*").through(CrawlFilter.class);
-    serve("/" + ActionImpl.DEFAULT_SERVICE_NAME + "*").with(DispatchServiceImpl.class);
-  }
+    @Override
+    public void configureServlets() {
+        bindConstant().annotatedWith(ServiceKey.class).to("123456");
+        bindConstant().annotatedWith(ServiceUrl.class).to("http://crawlservice.appspot.com/");
+        filter("/*").through(CrawlFilter.class);
+        serve("/" + ActionImpl.DEFAULT_SERVICE_NAME + "*").with(DispatchServiceImpl.class);
+    }
 }
