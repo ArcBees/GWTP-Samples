@@ -55,6 +55,7 @@
     <modules>
         <module>gwtp-sample-basic</module>
         <module>gwtp-sample-basic-spring</module>
+        <module>gwtp-sample-basic-rest</module>
         <module>gwtp-sample-hplace</module>
         <module>gwtp-sample-nested</module>
         <module>gwtp-sample-tab</module>
