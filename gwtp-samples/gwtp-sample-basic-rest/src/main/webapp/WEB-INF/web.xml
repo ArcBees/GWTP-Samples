@@ -2,7 +2,7 @@
 <web-app>
     <!-- Default page to serve -->
     <welcome-file-list>
-        <welcome-file>Gwtpsample.html</welcome-file>
+        <welcome-file>Gwtpsamplerest.html</welcome-file>
     </welcome-file-list>
 
     <servlet>
