@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,20 +14,17 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client;
+package com.gwtplatform.samples.basicrest.client.place;
 
-import com.google.gwt.junit.client.GWTTestCase;
+public class NameTokens {
+    public static final String home = "home";
+    public static final String response = "response";
 
-/**
- * @author Brandon Donnelson
- */
-public class SandboxGwtTest extends GWTTestCase {
-    @Override
-    public String getModuleName() {
-        return "com.gwtplatform.samples.basic.Gwtpsample";
+    public static String getHome() {
+        return home;
     }
 
-    public void testSandbox() {
-        assertTrue(true);
+    public static String getResponse() {
+        return response;
     }
 }

@@ -14,11 +14,11 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.server.rest;
+package com.gwtplatform.samples.basicrest.server.rest;
 
-import com.gwtplatform.samples.basic.shared.FieldVerifier;
-import com.gwtplatform.samples.basic.shared.ResourcesPath;
-import com.gwtplatform.samples.basic.shared.SendTextResult;
+import com.gwtplatform.samples.basicrest.shared.FieldVerifier;
+import com.gwtplatform.samples.basicrest.shared.ResourcesPath;
+import com.gwtplatform.samples.basicrest.shared.SendTextResult;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.GET;
@@ -32,7 +32,6 @@ import javax.ws.rs.core.Response;
 
 @Path(ResourcesPath.TEXT_PATH)
 public class TextResource {
-
     @Context
     ServletContext context;
 
@@ -45,7 +44,6 @@ public class TextResource {
         if (!FieldVerifier.isValidName(input)) {
             rb = Response.serverError().entity("Name must be at least 4 characters long");
         } else {
-
             String serverInfo = context.getServerInfo();
 
             String toSend = "Hello, " + input + "!<br><br>I am running " + serverInfo + ".<br><br>It looks like you are " +

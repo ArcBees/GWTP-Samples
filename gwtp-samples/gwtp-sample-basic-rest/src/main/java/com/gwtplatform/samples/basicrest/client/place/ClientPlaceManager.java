@@ -14,25 +14,22 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.gin;
+package com.gwtplatform.samples.basicrest.client.place;
 
 import javax.inject.Inject;
+import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.proxy.PlaceManagerImpl;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
+import com.gwtplatform.mvp.client.proxy.TokenFormatter;
 
-import com.gwtplatform.mvp.client.Bootstrapper;
-import com.gwtplatform.mvp.client.annotations.Bootstrap;
-import com.gwtplatform.mvp.client.proxy.PlaceManager;
-
-@Bootstrap
-public class BootstrapperImpl implements Bootstrapper {
-    private final PlaceManager placeManager;
-
+public class ClientPlaceManager extends PlaceManagerImpl {
     @Inject
-    public BootstrapperImpl(PlaceManager placeManager) {
-        this.placeManager = placeManager;
+    public ClientPlaceManager(EventBus eventBus, TokenFormatter tokenFormatter) {
+        super(eventBus, tokenFormatter);
     }
 
     @Override
-    public void onBootstrap() {
-        placeManager.revealCurrentPlace();
+    public void revealDefaultPlace() {
+        revealPlace(new PlaceRequest(NameTokens.getHome()), false);
     }
 }

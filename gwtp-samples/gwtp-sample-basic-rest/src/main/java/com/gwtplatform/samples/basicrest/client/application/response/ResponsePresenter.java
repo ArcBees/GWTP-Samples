@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.application.response;
+package com.gwtplatform.samples.basicrest.client.application.response;
 
 import javax.inject.Inject;
 
@@ -33,9 +33,9 @@ import com.gwtplatform.mvp.client.proxy.Place;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.samples.basic.client.place.NameTokens;
-import com.gwtplatform.samples.basic.shared.SendTextResult;
-import com.gwtplatform.samples.basic.client.rest.TextService;
+import com.gwtplatform.samples.basicrest.client.place.NameTokens;
+import com.gwtplatform.samples.basicrest.shared.SendTextResult;
+import com.gwtplatform.samples.basicrest.client.rest.TextService;
 
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy> {
     @ProxyCodeSplit

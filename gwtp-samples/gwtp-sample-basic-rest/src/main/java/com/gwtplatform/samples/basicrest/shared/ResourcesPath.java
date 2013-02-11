@@ -14,25 +14,8 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared;
+package com.gwtplatform.samples.basicrest.shared;
 
-import com.gwtplatform.dispatch.shared.Result;
-
-public class SendTextResult implements Result {
-    private String text;
-
-    public SendTextResult(String text) {
-        this.text = text;
-    }
-
-    public SendTextResult() {
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
+public interface ResourcesPath {
+    String TEXT_PATH = "/text";
 }

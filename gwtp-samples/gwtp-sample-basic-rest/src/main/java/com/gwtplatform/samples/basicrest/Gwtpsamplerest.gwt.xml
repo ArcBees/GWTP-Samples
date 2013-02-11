@@ -22,5 +22,5 @@
     <source path='shared'/>
 
     <set-configuration-property name="gin.ginjector.modules"
-                                value="com.gwtplatform.samples.basic.client.gin.ClientModule"/>
+                                value="com.gwtplatform.samples.basicrest.client.gin.ClientModule"/>
 </module>

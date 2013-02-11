@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared;
+package com.gwtplatform.samples.basicrest.shared;
 
 /**
  * <p>

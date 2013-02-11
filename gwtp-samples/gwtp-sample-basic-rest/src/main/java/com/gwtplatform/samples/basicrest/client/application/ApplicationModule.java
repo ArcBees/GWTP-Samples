@@ -14,11 +14,11 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.application;
+package com.gwtplatform.samples.basicrest.client.application;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
-import com.gwtplatform.samples.basic.client.application.response.ResponsePresenter;
-import com.gwtplatform.samples.basic.client.application.response.ResponseView;
+import com.gwtplatform.samples.basicrest.client.application.response.ResponsePresenter;
+import com.gwtplatform.samples.basicrest.client.application.response.ResponseView;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override

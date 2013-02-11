@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.rest;
+package com.gwtplatform.samples.basicrest.client.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -22,12 +22,11 @@ import javax.ws.rs.QueryParam;
 
 import com.gwtplatform.dispatch.shared.Action;
 import com.gwtplatform.dispatch.shared.rest.RestService;
-import com.gwtplatform.samples.basic.shared.ResourcesPath;
-import com.gwtplatform.samples.basic.shared.SendTextResult;
+import com.gwtplatform.samples.basicrest.shared.ResourcesPath;
+import com.gwtplatform.samples.basicrest.shared.SendTextResult;
 
 @Path(ResourcesPath.TEXT_PATH)
 public interface TextService extends RestService {
-
     @GET
     Action<SendTextResult> getText(@QueryParam("name") String name);
 }

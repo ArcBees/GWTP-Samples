@@ -14,55 +14,52 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.application.response;
-
-import javax.inject.Inject;
+package com.gwtplatform.samples.basicrest.client.application;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import javax.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-
-public class ResponseView extends ViewImpl implements ResponsePresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ResponseView> {
+public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
+    public interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
     @UiField
-    HTML textToServer;
+    TextBox nameField;
     @UiField
-    HTML serverResponse;
+    Button sendButton;
     @UiField
-    Button closeButton;
-
-    /**
-     */
-    private Widget widget;
+    HTML error;
 
     @Inject
-    public ResponseView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
+    public ApplicationView(final Binder binder) {
+        initWidget(binder.createAndBindUi(this));
     }
 
     @Override
-    public Widget asWidget() {
-        return widget;
+    public String getName() {
+        return nameField.getText();
     }
 
     @Override
-    public Button getCloseButton() {
-        return closeButton;
+    public Button getSendButton() {
+        return sendButton;
     }
 
     @Override
-    public void setServerResponse(String serverResponse) {
-        this.serverResponse.setHTML(serverResponse);
+    public void resetAndFocus() {
+        // Focus the cursor on the name field when the app loads
+        nameField.setFocus(true);
+        nameField.selectAll();
     }
 
     @Override
-    public void setTextToServer(String textToServer) {
-        this.textToServer.setHTML(textToServer);
+    public void setError(String errorText) {
+        error.setText(errorText);
     }
 }

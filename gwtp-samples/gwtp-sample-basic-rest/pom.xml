@@ -2,11 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
         <version>1.0-RC-1-SNAPSHOT</version>
     </parent>
+
     <artifactId>gwtp-sample-basic-rest</artifactId>
     <packaging>war</packaging>
     <name>GWTP Samples - basic rest</name>
@@ -25,25 +27,14 @@
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
                     <runTarget>Gwtpsample.html</runTarget>
-                    <module>com.gwtplatform.samples.basic.Gwtpsamplerest</module>
+                    <module>com.gwtplatform.samples.basicrest.Gwtpsamplerest</module>
                 </configuration>
             </plugin>
 
+            <!-- App Engine -->
             <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
-                <configuration>
-                    <serverId>appengine-credentials</serverId>
-                    <splitJars>true</splitJars>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -87,15 +78,10 @@
             <scope>provided</scope>
         </dependency>
 
-
         <!-- GWT dependencies -->
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
         </dependency>
 
         <!-- AppEngine dependencies -->
@@ -133,6 +119,7 @@
             <artifactId>jersey-json</artifactId>
             <version>1.12</version>
         </dependency>
+
         <!-- Testing -->
         <dependency>
             <groupId>junit</groupId>

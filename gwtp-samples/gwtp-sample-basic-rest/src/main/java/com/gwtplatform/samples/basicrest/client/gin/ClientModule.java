@@ -14,13 +14,18 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client.gin;
+package com.gwtplatform.samples.basicrest.client.gin;
 
 import com.gwtplatform.dispatch.client.gin.RestDispatchAsyncModule;
+import com.gwtplatform.mvp.client.annotations.DefaultPlace;
+import com.gwtplatform.mvp.client.annotations.ErrorPlace;
+import com.gwtplatform.mvp.client.annotations.GaAccount;
+import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
-import com.gwtplatform.samples.basic.client.application.ApplicationModule;
-import com.gwtplatform.samples.basic.client.place.ClientPlaceManager;
+import com.gwtplatform.samples.basicrest.client.application.ApplicationModule;
+import com.gwtplatform.samples.basicrest.client.place.ClientPlaceManager;
+import com.gwtplatform.samples.basicrest.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
     @Override
@@ -31,5 +36,13 @@ public class ClientModule extends AbstractPresenterModule {
         install(new RestDispatchAsyncModule.Builder().applicationPath("/a").build());
 
         install(new ApplicationModule());
+
+        // DefaultPlaceManager Places
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
+
+        // Google Analytics
+        bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
     }
 }
