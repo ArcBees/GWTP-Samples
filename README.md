@@ -2,6 +2,7 @@
 Project samples display GWT-Platform features configuration and uses. 
 
 ##GWTP Reference
+* [GWTP Custom Google Search](http://www.google.com/cse/home?cx=011138278718949652927:5yuja8xc600) - Search GWTP documentation, wiki and thread collections.
 * [GWTP Home](https://github.com/ArcBees/GWTP) - Find the GWT-Platform home here.
 * [GWTP Documentation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
 * [GWTP Archetypes](https://github.com/ArcBees/ArcBees-tools/tree/master/archetypes) - Start a project from a template here.
