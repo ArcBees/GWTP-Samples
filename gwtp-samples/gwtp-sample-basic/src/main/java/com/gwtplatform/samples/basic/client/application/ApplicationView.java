@@ -53,7 +53,6 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @Override
     public void resetAndFocus() {
-        // Focus the cursor on the name field when the app loads
         nameField.setFocus(true);
         nameField.selectAll();
     }
