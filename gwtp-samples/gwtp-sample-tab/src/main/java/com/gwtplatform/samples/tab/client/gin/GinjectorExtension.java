@@ -1,7 +1,9 @@
 package com.gwtplatform.samples.tab.client.gin;
 
-import com.gwtplatform.samples.tab.client.MyConstants;
+import com.gwtplatform.samples.tab.client.resources.AppConstants;
+import com.gwtplatform.samples.tab.client.resources.AppMessages;
 
 public interface GinjectorExtension {
-    MyConstants getMyConstants();
+    AppConstants getAppConstants();
+    AppMessages getAppMessages();
 }

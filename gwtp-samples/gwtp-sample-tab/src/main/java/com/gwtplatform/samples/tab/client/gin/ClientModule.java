@@ -24,9 +24,9 @@ import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
-import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.ApplicationModule;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
+import com.gwtplatform.samples.tab.client.resources.AppConstants;
 import com.gwtplatform.samples.tab.client.security.CurrentUser;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
@@ -35,11 +35,12 @@ public class ClientModule extends AbstractPresenterModule {
     protected void configure() {
         install(new DefaultModule(DefaultPlaceManager.class));
         install(new ApplicationModule());
-
-        // Constants
-        bind(MyConstants.class).in(Singleton.class);
+        
         bind(CurrentUser.class).in(Singleton.class);
         bind(IsAdminGatekeeper.class).in(Singleton.class);
+        
+        // Resources
+        bind(AppConstants.class).in(Singleton.class);
 
         // DefaultPlaceManager Constants
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homeNewsPage);
@@ -48,5 +49,8 @@ public class ClientModule extends AbstractPresenterModule {
 
         // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
+        
+        // Load and inject CSS resources
+        bind(ResourceLoader.class).asEagerSingleton();
     }
 }
