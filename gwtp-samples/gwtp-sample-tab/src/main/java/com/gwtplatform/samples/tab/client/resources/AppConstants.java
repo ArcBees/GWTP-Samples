@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.tab.client;
+package com.gwtplatform.samples.tab.client.resources;
 
 import com.google.gwt.i18n.client.Constants;
 
@@ -22,10 +22,12 @@ import com.google.gwt.i18n.client.Constants;
  * Constants to allow translation of various strings. Note that the translations themselves are not part of this
  * example.
  */
-public interface MyConstants extends Constants {
+public interface AppConstants extends Constants {
     @DefaultStringValue("News")
     String news();
 
     @DefaultStringValue("Home")
     String home();
+    
+    String gwtpPlatformTitle();
 }
