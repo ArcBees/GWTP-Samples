@@ -55,6 +55,7 @@
     <modules>
         <module>gwtp-sample-basic</module>
         <module>gwtp-sample-basic-spring</module>
+        <module>gwtp-sample-basic-rest</module>
         <module>gwtp-sample-hplace</module>
         <module>gwtp-sample-nested</module>
         <module>gwtp-sample-tab</module>
@@ -66,7 +67,7 @@
     <properties>
         <!-- client -->
         <gwt.version>2.5.0</gwt.version>
-        <gwtp.version>1.0-RC-1</gwtp.version>
+        <gwtp.version>1.0-RC-2-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
@@ -350,6 +351,16 @@
             <dependency>
                 <groupId>com.gwtplatform</groupId>
                 <artifactId>gwtp-dispatch-server-spring</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-shared</artifactId>
+                <version>${gwtp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-rest</artifactId>
                 <version>${gwtp.version}</version>
             </dependency>
             <dependency>
