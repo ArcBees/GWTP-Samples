@@ -52,6 +52,7 @@
             lacinia
             tortor.</p>
         
+        <!-- Resource Examples Below -->
         <div>Example use of Messages:</div>
         <g:HTML ui:field="orderText"/>
         
@@ -62,6 +63,5 @@
         <g:Image resource="{resources.logo}" styleName="{resources.styles.logo}"/>
         
         <div class="{resources.styles.divBorder}">Example use of Css Resource:</div>
-        
     </g:HTMLPanel>
 </ui:UiBinder> 
