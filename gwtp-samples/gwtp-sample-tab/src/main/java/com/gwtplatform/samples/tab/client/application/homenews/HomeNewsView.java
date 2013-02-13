@@ -21,24 +21,40 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+import com.gwtplatform.samples.tab.client.resources.AppConstants;
+import com.gwtplatform.samples.tab.client.resources.AppMessages;
+import com.gwtplatform.samples.tab.client.resources.AppResources;
 
 /**
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter} .
  */
-public class HomeNewsView extends ViewImpl implements HomeNewsPresenter.MyView {
+public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implements HomeNewsPresenter.MyView {
     public interface Binder extends UiBinder<Widget, HomeNewsView> {
     }
 
+    @UiField(provided = true)
+    AppResources resources;
     @UiField
     Anchor confirmationLink;
+    @UiField
+    HTML orderText;
+    @UiField
+    HTML gwtpTitle;
 
-    private HomeNewsPresenter presenter;
+    private final AppConstants appConstants;
+    private final AppMessages appMessages;
 
     @Inject
-    public HomeNewsView(Binder uiBinder) {
+    public HomeNewsView(Binder uiBinder, final AppResources resources, final AppConstants appConstants,
+            final AppMessages appMessages) {
+        this.resources = resources;
+        this.appConstants = appConstants;
+        this.appMessages = appMessages;
+
         initWidget(uiBinder.createAndBindUi(this));
     }
 
@@ -47,13 +63,17 @@ public class HomeNewsView extends ViewImpl implements HomeNewsPresenter.MyView {
         confirmationLink.setText(text);
     }
 
-    @Override
-    public void setPresenter(HomeNewsPresenter presenter) {
-        this.presenter = presenter;
-    }
-
     @UiHandler("confirmationLink")
     public void onClick(ClickEvent clickEvent) {
-        presenter.toggleConfirmation();
+        getUiHandlers().toggleConfirmation();
+    }
+
+    @Override
+    public void display() {
+        String orderNumberOf = appMessages.iWillOrderNumberOf(5);
+        orderText.setText(orderNumberOf);
+
+        String gwtpTitle = appConstants.gwtpPlatformTitle();
+        this.gwtpTitle.setText(gwtpTitle);
     }
 }

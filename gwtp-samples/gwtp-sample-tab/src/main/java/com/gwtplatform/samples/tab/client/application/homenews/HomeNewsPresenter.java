@@ -18,6 +18,7 @@ package com.gwtplatform.samples.tab.client.application.homenews;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.TabDataBasic;
@@ -27,10 +28,10 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.TabContentProxyPlace;
-import com.gwtplatform.samples.tab.client.MyConstants;
 import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
 import com.gwtplatform.samples.tab.client.application.home.HomePresenter;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
+import com.gwtplatform.samples.tab.client.resources.AppConstants;
 
 /**
  * A sample {@link Presenter} filled with arbitrary content. It appears as a tab within {@link HomePresenter}, which is
@@ -38,7 +39,8 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
  * <p />
  * It demonstrates the option 3 described in {@link TabInfo}.
  */
-public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeNewsPresenter.MyProxy> {
+public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeNewsPresenter.MyProxy> implements
+        HomeNewsUiHandler {
     /**
      * {@link HomeNewsPresenter}'s proxy.
      */
@@ -48,7 +50,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     }
 
     @TabInfo(container = HomePresenter.class)
-    static TabData getTabLabel(MyConstants constants) {
+    static TabData getTabLabel(AppConstants constants) {
         // Priority = 0, means it will be the left-most tab in the home tab
         return new TabDataBasic(constants.news(), 0);
     }
@@ -56,10 +58,10 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     /**
      * {@link HomeNewsPresenter}'s view.
      */
-    public interface MyView extends View {
+    public interface MyView extends View, HasUiHandlers<HomeNewsUiHandler> {
         void setConfirmationText(String text);
 
-        void setPresenter(HomeNewsPresenter presenter);
+        void display();
     }
 
     private final PlaceManager placeManager;
@@ -70,15 +72,25 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     public HomeNewsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
             final PlaceManager placeManager) {
         super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
-        
+
         this.placeManager = placeManager;
-        
-        view.setPresenter(this);
+
+        getView().setUiHandlers(this);
     }
 
     @Override
-    protected void onReveal() {
+    public void onReveal() {
         enableConfirmation(false);
+        
+        getView().display();
+    }
+
+    /**
+     * Toggles the state of the confirmation dialog.
+     */
+    @Override
+    public void toggleConfirmation() {
+        enableConfirmation(!confirmationEnabled);
     }
 
     /**
@@ -95,12 +107,5 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
             placeManager.setOnLeaveConfirmation(null);
             getView().setConfirmationText("Navigation confirmation OFF, click here to enable it!");
         }
-    }
-
-    /**
-     * Toggles the state of the confirmation dialog.
-     */
-    public void toggleConfirmation() {
-        enableConfirmation(!confirmationEnabled);
     }
 }
