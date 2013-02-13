@@ -36,18 +36,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @UiField
     HTML error;
 
-    /**
-     */
-    private Widget widget;
-
     @Inject
     public ApplicationView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(binder.createAndBindUi(this));
     }
 
     @Override
@@ -62,7 +53,6 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @Override
     public void resetAndFocus() {
-        // Focus the cursor on the name field when the app loads
         nameField.setFocus(true);
         nameField.selectAll();
     }
