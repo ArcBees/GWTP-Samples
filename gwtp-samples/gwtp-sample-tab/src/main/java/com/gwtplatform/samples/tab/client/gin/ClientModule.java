@@ -26,7 +26,6 @@ import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.tab.client.application.ApplicationModule;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
-import com.gwtplatform.samples.tab.client.resources.AppConstants;
 import com.gwtplatform.samples.tab.client.security.CurrentUser;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
@@ -38,9 +37,6 @@ public class ClientModule extends AbstractPresenterModule {
         
         bind(CurrentUser.class).in(Singleton.class);
         bind(IsAdminGatekeeper.class).in(Singleton.class);
-        
-        // Resources
-        bind(AppConstants.class).in(Singleton.class);
 
         // DefaultPlaceManager Constants
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homeNewsPage);
