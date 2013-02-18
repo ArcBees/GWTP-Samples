@@ -14,12 +14,14 @@
  * the License.
  */
 
-package com.gwtplatform.samples.mobile.client.gin.tablet;
+package com.gwtplatform.samples.mobile.client.gin;
 
-import com.google.gwt.inject.client.GinModules;
-import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
-import com.gwtplatform.samples.mobile.client.gin.ClientGinjector;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import com.gwtplatform.samples.mobile.client.application.ApplicationMobileModule;
 
-@GinModules({ DispatchAsyncModule.class, TabletModule.class })
-public interface TabletGinjector extends ClientGinjector {
+public class MobileModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        install(new ApplicationMobileModule());
+    }
 }

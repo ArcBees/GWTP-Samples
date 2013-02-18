@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.gwtplatform.samples.mobile.client.gin.tablet;
+package com.gwtplatform.samples.mobile.client.gin;
 
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
@@ -23,14 +23,12 @@ import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
-import com.gwtplatform.samples.mobile.client.application.ApplicationTabletModule;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 
-public class TabletModule extends AbstractPresenterModule {
+public class SharedModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new DefaultModule(DefaultPlaceManager.class));
-        install(new ApplicationTabletModule());
 
         // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);

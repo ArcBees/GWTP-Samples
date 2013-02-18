@@ -26,7 +26,7 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandlers> implements
-        ApplicationPresenter.MyView {
+        AbstractApplicationPresenter.MyView {
     public interface Binder extends UiBinder<Widget, ApplicationTabletView> {
     }
 
