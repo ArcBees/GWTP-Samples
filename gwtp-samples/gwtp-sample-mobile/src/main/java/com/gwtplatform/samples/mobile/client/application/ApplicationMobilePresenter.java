@@ -18,45 +18,25 @@ package com.gwtplatform.samples.mobile.client.application;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.mvp.client.HasUiHandlers;
-import com.gwtplatform.mvp.client.Presenter;
-import com.gwtplatform.mvp.client.View;
-import com.gwtplatform.mvp.client.annotations.NameToken;
-import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.annotations.Title;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
-import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.application.products.ProductsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
-        implements ApplicationUiHandlers {
-    /**
-     * {@link ApplicationPresenter}'s proxy.
-     */
-    @ProxyCodeSplit
-    @NameToken(NameTokens.homePage)
-    @Title("Home")
-    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
-    }
-
-    /**
-     * {@link ApplicationPresenter}'s view.
-     */
-    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
-    }
-
+public class ApplicationMobilePresenter extends AbstractApplicationPresenter implements ApplicationUiHandlers {
     private PlaceManager placeManager;
 
     @Inject
-    public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final PlaceManager placeManager) {
+    public ApplicationMobilePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
-        
+
         this.placeManager = placeManager;
-        
+
         view.setUiHandlers(this);
     }
 

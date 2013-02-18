@@ -19,7 +19,7 @@ package com.gwtplatform.samples.mobile.client.application;
 import com.gwtplatform.mvp.client.UiHandlers;
 
 /**
- * {@link ApplicationView}'s {@link UiHandlers}.
+ * {@link ApplicationDesktopView}'s {@link UiHandlers}.
  */
 public interface ApplicationUiHandlers extends UiHandlers {
     void revealAllProductsList();

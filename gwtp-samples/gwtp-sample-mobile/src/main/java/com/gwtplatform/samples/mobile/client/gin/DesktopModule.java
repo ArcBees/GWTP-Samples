@@ -14,15 +14,14 @@
  * the License.
  */
 
-package com.gwtplatform.samples.mobile.client.gin.tablet;
+package com.gwtplatform.samples.mobile.client.gin;
 
-import com.google.gwt.core.client.GWT;
-import com.gwtplatform.samples.mobile.client.gin.ClientGinjector;
-import com.gwtplatform.samples.mobile.client.gin.GinjectorProvider;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import com.gwtplatform.samples.mobile.client.application.ApplicationDesktopModule;
 
-public class TabletGinjectorProvider implements GinjectorProvider {
+public class DesktopModule extends AbstractPresenterModule {
     @Override
-    public ClientGinjector get() {
-        return GWT.create(TabletGinjector.class);
+    protected void configure() {
+        install(new ApplicationDesktopModule());
     }
 }
