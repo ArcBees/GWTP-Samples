@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='gwtpmobilesample'>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+    <inherits name='com.gwtplatform.dispatch.Dispatch' />
+
+    <!-- Inherit the default GWT style sheet. You can change -->
+    <!-- the theme of your GWT application by uncommenting -->
+    <!-- any one of the following lines. -->
+    <inherits name='com.google.gwt.user.theme.standard.Standard' />
+
+    <!-- Gin modules -->
+    <set-configuration-property name="gin.ginjector.modules"
+                                value="com.gwtplatform.dispatch.client.gin.PhoneGapDispatchAsyncModule"/>
+    <extend-configuration-property name="gin.ginjector.modules"
+                                   value="com.gwtplatform.samples.mobile.client.gin.PhoneGapModule"/>
+
+    <!-- Specify the paths for translatable code -->
+    <source path='client' />
+    <source path='shared' />
+</module>
