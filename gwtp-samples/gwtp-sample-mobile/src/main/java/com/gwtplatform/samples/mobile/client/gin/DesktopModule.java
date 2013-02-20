@@ -14,17 +14,14 @@
  * the License.
  */
 
-package com.gwtplatform.samples.mobile.client.application;
+package com.gwtplatform.samples.mobile.client.gin;
 
-import com.gwtplatform.mvp.client.UiHandlers;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import com.gwtplatform.samples.mobile.client.application.ApplicationDesktopModule;
 
-/**
- * {@link ApplicationDesktopView}'s {@link UiHandlers}.
- */
-public interface ApplicationUiHandlers extends UiHandlers {
-    void revealAllProductsList();
-
-    void revealFavoriteProductsList();
-
-    void revealSpecialsList();
+public class DesktopModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        install(new ApplicationDesktopModule());
+    }
 }

@@ -16,6 +16,8 @@
 
 package com.gwtplatform.samples.mobile.client.application;
 
+import javax.inject.Singleton;
+
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsMobileView;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
@@ -28,10 +30,14 @@ public class ApplicationMobileModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         // Application Presenters
+        bind(ApplicationMobilePresenter.class).in(Singleton.class);
+        bind(ApplicationMobileView.class).in(Singleton.class);
+        bind(AbstractApplicationPresenter.MyProxy.class).asEagerSingleton();
+        bind(AbstractApplicationPresenter.MyView.class).to(ApplicationMobileView.class);
+        bind(AbstractApplicationPresenter.class).to(ApplicationMobilePresenter.class);
+
         bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsMobileView.class,
                 BreadcrumbsPresenter.MyProxy.class);
-        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationMobileView.class,
-                ApplicationPresenter.MyProxy.class);
         bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsMobileView.class,
                 ProductsPresenter.MyProxy.class);
         bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductMobileView.class,
