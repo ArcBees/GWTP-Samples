@@ -25,9 +25,9 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandlers> implements
-        AbstractApplicationPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ApplicationTabletView> {
+public class ApplicationDesktopView extends ViewWithUiHandlers<ApplicationUiHandlers>
+        implements AbstractApplicationPresenter.MyView {
+    public interface Binder extends UiBinder<Widget, ApplicationDesktopView> {
     }
 
     @UiField
@@ -38,7 +38,7 @@ public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandl
     Button specials;
 
     @Inject
-    public ApplicationTabletView(final Binder binder) {
+    public ApplicationDesktopView(final Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 
