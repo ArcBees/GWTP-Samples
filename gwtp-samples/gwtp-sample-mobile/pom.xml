@@ -126,9 +126,6 @@
 
         <profile>
             <id>phonegap</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
 
             <build>
                 <plugins>
