@@ -16,14 +16,12 @@
 
 package com.gwtplatform.samples.mobile.client.gin;
 
-import com.gwtplatform.dispatch.client.gin.PhoneGapDispatchAsyncModule;
+import com.gwtplatform.dispatch.client.RemoteServerUrl;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class PhoneGapModule extends AbstractPresenterModule {
+public class PGMobileLocalModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new PhoneGapDispatchAsyncModule());
-        install(new MobileModule());
-        install(new SharedModule());
+        bindConstant().annotatedWith(RemoteServerUrl.class).to("http://127.0.0.1:8888/");
     }
 }
