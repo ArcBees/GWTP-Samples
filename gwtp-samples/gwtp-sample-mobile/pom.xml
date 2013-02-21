@@ -123,7 +123,7 @@
         </profile>
 
         <profile>
-            <id>phonegap</id>
+            <id>phonegaplocal</id>
 
             <build>
                 <plugins>
@@ -131,7 +131,23 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.Phonegapmobilesample</module>
+                            <module>com.gwtplatform.samples.mobile.PGMobileLocal</module>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>phonegapgae</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>gwt-maven-plugin</artifactId>
+                        <configuration>
+                            <module>com.gwtplatform.samples.mobile.PGMobileGAE</module>
                         </configuration>
                     </plugin>
                 </plugins>
