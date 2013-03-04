@@ -18,6 +18,7 @@ package com.gwtplatform.samples.tab.client.application.home;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.Tab;
@@ -35,23 +36,16 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     @UiField(provided = true)
     SimpleTabPanel tabPanel;
 
-    private final Widget widget;
-
     @Inject
     public HomeView(Binder uiBinder, final SimpleTabPanel tabPanel) {
         this.tabPanel = tabPanel;
 
-        widget = uiBinder.createAndBindUi(this);
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public Tab addTab(TabData tabData, String historyToken) {
         return tabPanel.addTab(tabData, historyToken);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
     }
 
     @Override
@@ -75,7 +69,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     }
 
     @Override
-    public void setInSlot(Object slot, Widget content) {
+    public void setInSlot(Object slot, IsWidget content) {
         if (slot == HomePresenter.TYPE_SetTabContent) {
             tabPanel.setPanelContent(content);
         } else {

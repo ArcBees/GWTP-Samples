@@ -18,6 +18,7 @@ package com.gwtplatform.samples.tab.client.application.dialog;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.Tab;
@@ -68,7 +69,7 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
     }
 
     @Override
-    public void setInSlot(Object slot, Widget content) {
+    public void setInSlot(Object slot, IsWidget content) {
         if (slot == DialogSamplePresenter.TYPE_SetTabContent) {
             tabPanel.setPanelContent(content);
         } else {
