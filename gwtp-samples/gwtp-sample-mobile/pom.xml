@@ -18,9 +18,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <configuration>
-                    <runTarget>Gwtpmobilesample.html</runTarget>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -115,6 +112,7 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
+                            <runTarget>Gwtpmobilesample.html</runTarget>
                             <module>com.gwtplatform.samples.mobile.Gwtpmobilesample</module>
                         </configuration>
                     </plugin>
@@ -131,7 +129,8 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.PGMobileLocal</module>
+                            <runTarget>index.html</runTarget>
+                            <module>com.gwtplatform.samples.mobile.PhoneGapLocal</module>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -147,7 +146,8 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.PGMobileGAE</module>
+                            <runTarget>index.html</runTarget>
+                            <module>com.gwtplatform.samples.mobile.PhoneGapGae</module>
                         </configuration>
                     </plugin>
                 </plugins>

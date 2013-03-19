@@ -5,5 +5,5 @@
     <inherits name="com.gwtplatform.samples.mobile.Phonegap" />
 
     <extend-configuration-property name="gin.ginjector.modules"
-                                   value="com.gwtplatform.samples.mobile.client.gin.PGMobileGAEModule"/>
+                                   value="com.gwtplatform.samples.mobile.client.gin.PhoneGapLocalModule"/>
 </module>
