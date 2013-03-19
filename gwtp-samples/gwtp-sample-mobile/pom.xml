@@ -121,7 +121,7 @@
         </profile>
 
         <profile>
-            <id>phonegaplocal</id>
+            <id>phonegap-local</id>
 
             <build>
                 <plugins>
@@ -138,7 +138,7 @@
         </profile>
 
         <profile>
-            <id>phonegapgae</id>
+            <id>phonegap-remote</id>
 
             <build>
                 <plugins>
@@ -147,7 +147,7 @@
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
                             <runTarget>index.html</runTarget>
-                            <module>com.gwtplatform.samples.mobile.PhoneGapGae</module>
+                            <module>com.gwtplatform.samples.mobile.PhoneGapRemote</module>
                         </configuration>
                     </plugin>
                 </plugins>

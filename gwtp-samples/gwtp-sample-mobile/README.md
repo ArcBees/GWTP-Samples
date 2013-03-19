@@ -5,24 +5,24 @@
 ##Demo
 http://gwtp-sample-mobile.appspot.com
 
-##PhoneGap
-To run the phonegap profile locally in the Mobile sample you must first compile the sample using:
+##PhoneGap Debugging Build
+To run the phonegap profile locally in the mobile sample you must first compile the sample using:
 
-* Run `mvn clean install -Pphonegap`
+* Run `mvn clean install -Pphonegap-local`
 * Then run the GAE server using: `mvn gae:run`
 * Then open your browser to `http://localhost:8080`
 
-###Phonegap Build
+###PhoneGap Device Build
 Generically speaking the PhoneGap build wraps up the GWT module client side and builds a native version. 
 No server side classes will be needed and can be deleted before zipping it and uploading it to Adobe Bd. 
 We do this by exploding the war file and deleting the server side and testing the web mode.
 
-* Run `mvn clean package -Pphonegapgae`
+* Run `mvn clean package -Pphonegap-remote`
 * Goto the target/[build dir]
 * Delete web-inf and meta-inf folders. No server side folders will be needed for native mobile client.
 * Zip up client side files into yourname.zip for uploading to adobe bd.
 
-###Upload to PhoneGab Build
+###Deploy using Adobe Build
 * Goto https://build.phonegap.com/apps
 * Zip up app client side source only
 * Create development Android key like this. Do not loose your key. Do not forget your password/passphrase. 
