@@ -63,7 +63,7 @@
 
     <properties>
         <!-- client -->
-        <gwt.version>2.5.0</gwt.version>
+        <gwt.version>2.5.1</gwt.version>
         <gwtp.version>1.0-RC-3-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
@@ -156,7 +156,7 @@
                         <includes>**/*GwtTest.java</includes>
                         <mode>htmlunit</mode>
 
-                        <extraJvmArgs>-Xss1024k -Xmx512M -XX:MaxPermSize=256m</extraJvmArgs>
+                        <extraJvmArgs>-Xss1024K -Xmx512M -XX:MaxPermSize=256M</extraJvmArgs>
                         <logLevel>INFO</logLevel>
                         <style>${gwt.style}</style>
 
