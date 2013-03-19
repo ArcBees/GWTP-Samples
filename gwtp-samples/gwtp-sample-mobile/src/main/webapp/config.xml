@@ -13,5 +13,5 @@
         ArcBees Team
     </author>
 
-    <icon src="icons/ic_launcher.png" width="70" height="70" />
+    <!-- <icon src="icons/ic_launcher.png" width="70" height="70" /> -->
 </widget>
