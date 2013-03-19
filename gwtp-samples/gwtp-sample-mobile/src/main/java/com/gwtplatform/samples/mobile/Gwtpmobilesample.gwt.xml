@@ -22,7 +22,6 @@
                                 value="com.gwtplatform.dispatch.client.gin.DispatchAsyncModule" />
     <extend-configuration-property name="gin.ginjector.modules"
                                 value="com.gwtplatform.samples.mobile.client.gin.SharedModule"/>
-                                   value="com.gwtplatform.samples.mobile.client.gin.SharedModule" />
 
     <!-- Specify the paths for translatable code -->
     <source path='client' />
