@@ -6,24 +6,22 @@
     <inherits name="com.gwtplatform.mvp.MvpWithFormFactor" />
     <inherits name='com.gwtplatform.dispatch.Dispatch' />
 
-    <!-- Inherit the default GWT style sheet. You can change -->
-    <!-- the theme of your GWT application by uncommenting -->
-    <!-- any one of the following lines. -->
+    <!-- Inherit the default GWT style sheet. -->
     <inherits name='com.google.gwt.user.theme.standard.Standard' />
 
     <!-- Form factor specific modules -->
     <set-configuration-property name="gin.ginjector.module.desktop"
-                                value="com.gwtplatform.samples.mobile.client.gin.DesktopModule"/>
+                                value="com.gwtplatform.samples.mobile.client.gin.DesktopModule" />
     <set-configuration-property name="gin.ginjector.module.mobile"
-                                value="com.gwtplatform.samples.mobile.client.gin.MobileModule"/>
+                                value="com.gwtplatform.samples.mobile.client.gin.MobileModule" />
     <set-configuration-property name="gin.ginjector.module.tablet"
-                                value="com.gwtplatform.samples.mobile.client.gin.TabletModule"/>
+                                value="com.gwtplatform.samples.mobile.client.gin.TabletModule" />
 
     <!-- Shared modules -->
     <set-configuration-property name="gin.ginjector.modules"
-                                value="com.gwtplatform.dispatch.client.gin.DispatchAsyncModule"/>
+                                value="com.gwtplatform.dispatch.client.gin.DispatchAsyncModule" />
     <extend-configuration-property name="gin.ginjector.modules"
-                                   value="com.gwtplatform.samples.mobile.client.gin.SharedModule"/>
+                                   value="com.gwtplatform.samples.mobile.client.gin.SharedModule" />
 
     <!-- Specify the paths for translatable code -->
     <source path='client' />
