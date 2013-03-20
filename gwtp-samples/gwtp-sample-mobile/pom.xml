@@ -115,7 +115,7 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.DefaultBrowser</module>
+                            <module>com.gwtplatform.samples.mobile.GwtpMobileSample</module>
                         </configuration>
                     </plugin>
                 </plugins>
