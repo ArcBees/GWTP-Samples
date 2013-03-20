@@ -19,7 +19,7 @@ package com.gwtplatform.samples.mobile.client.gin;
 import com.gwtplatform.dispatch.client.RemoteServerUrl;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class PGMobileLocalModule extends AbstractPresenterModule {
+public class PhoneGapLocalModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         bindConstant().annotatedWith(RemoteServerUrl.class).to("http://127.0.0.1:8888/");
