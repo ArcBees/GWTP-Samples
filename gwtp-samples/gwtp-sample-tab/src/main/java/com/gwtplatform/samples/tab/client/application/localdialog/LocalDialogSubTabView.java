@@ -31,27 +31,21 @@ import com.gwtplatform.mvp.client.ViewImpl;
  */
 public class LocalDialogSubTabView extends ViewImpl implements LocalDialogSubTabPresenter.MyView {
     /**
-   */
+     */
     public interface Binder extends UiBinder<Widget, LocalDialogSubTabView> {
     }
 
     @UiField
     Button localDialog;
 
-    private final Widget widget;
-
     private LocalDialogSubTabPresenter presenter;
 
     @Inject
     public LocalDialogSubTabView(Binder uiBinder) {
-        widget = uiBinder.createAndBindUi(this);
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
-    @Override
-    public Widget asWidget() {
-        return widget;
-    }
-
+    // TODO: Bad practices, use UiHandlers
     @Override
     public void setPresenter(LocalDialogSubTabPresenter presenter) {
         this.presenter = presenter;

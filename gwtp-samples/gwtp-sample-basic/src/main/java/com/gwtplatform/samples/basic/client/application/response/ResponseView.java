@@ -25,8 +25,6 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 public class ResponseView extends ViewImpl implements ResponsePresenter.MyView {
-    /**
-     */
     public interface Binder extends UiBinder<Widget, ResponseView> {
     }
 
@@ -37,18 +35,9 @@ public class ResponseView extends ViewImpl implements ResponsePresenter.MyView {
     @UiField
     Button closeButton;
 
-    /**
-     */
-    private Widget widget;
-
     @Inject
     public ResponseView(final Binder binder) {
-        widget = binder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(binder.createAndBindUi(this));
     }
 
     @Override
