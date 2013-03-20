@@ -78,7 +78,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.TYPE_SetTabContent) {
-            tabPanel.setPanelContent(content.asWidget());
+            tabPanel.setPanelContent(content);
         } else {
             super.setInSlot(slot, content);
         }
