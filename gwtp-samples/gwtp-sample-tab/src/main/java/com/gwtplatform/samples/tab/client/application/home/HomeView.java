@@ -71,7 +71,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == HomePresenter.TYPE_SetTabContent) {
-            tabPanel.setPanelContent(content);
+            tabPanel.setPanelContent(content.asWidget());
         } else {
             super.setInSlot(slot, content);
         }
