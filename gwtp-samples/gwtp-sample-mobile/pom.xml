@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
-        <version>1.0-RC-1-SNAPSHOT</version>
+        <version>1.0-RC-3-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtp-sample-mobile</artifactId>
@@ -19,7 +19,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <runTarget>Gwtpmobilesample.html</runTarget>
+                    <runTarget>index.html</runTarget>
                 </configuration>
             </plugin>
 
@@ -115,7 +115,7 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.Gwtpmobilesample</module>
+                            <module>com.gwtplatform.samples.mobile.GwtpMobileSample</module>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -123,7 +123,7 @@
         </profile>
 
         <profile>
-            <id>phonegaplocal</id>
+            <id>phonegap-local</id>
 
             <build>
                 <plugins>
@@ -131,7 +131,7 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.PGMobileLocal</module>
+                            <module>com.gwtplatform.samples.mobile.PhoneGapLocal</module>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -139,7 +139,7 @@
         </profile>
 
         <profile>
-            <id>phonegapgae</id>
+            <id>phonegap-remote</id>
 
             <build>
                 <plugins>
@@ -147,7 +147,7 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
                         <configuration>
-                            <module>com.gwtplatform.samples.mobile.PGMobileGAE</module>
+                            <module>com.gwtplatform.samples.mobile.PhoneGapRemote</module>
                         </configuration>
                     </plugin>
                 </plugins>

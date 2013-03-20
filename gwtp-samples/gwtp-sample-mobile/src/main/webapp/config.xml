@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.gwtplatform.samples.mobile"
+        version   = "1.0.0">
+    <name>GWTP Mobile Sample</name>
+
+    <description>
+        GWTP Mobile Sample.
+    </description>
+
+    <author href="http://arcbees.com" email="queenbee@arcbees.com">
+        ArcBees Team
+    </author>
+
+    <!-- <icon src="icons/ic_launcher.png" width="70" height="70" /> -->
+</widget>
