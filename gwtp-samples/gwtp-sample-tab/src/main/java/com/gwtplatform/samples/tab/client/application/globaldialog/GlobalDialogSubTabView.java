@@ -41,16 +41,9 @@ public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTa
     @UiField
     Anchor popupLink;
 
-    private final Widget widget;
-
     @Inject
     public GlobalDialogSubTabView(Binder uiBinder) {
-        widget = uiBinder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @UiHandler("globalDialog")

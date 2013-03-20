@@ -42,24 +42,17 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @UiField(provided = true)
     LinkMenu linkMenu;
 
-    public final Widget widget;
-
     @Inject
     public ApplicationView(Binder uiBinder, RoundTabPanel tabPanel, final LinkMenu linkMenu) {
         this.tabPanel = tabPanel;
         this.linkMenu = linkMenu;
 
-        widget = uiBinder.createAndBindUi(this);
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public Tab addTab(TabData tabData, String historyToken) {
         return tabPanel.addTab(tabData, historyToken);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
     }
 
     @Override
@@ -85,7 +78,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.TYPE_SetTabContent) {
-            tabPanel.setPanelContent(content.asWidget());
+            tabPanel.setPanelContent(content);
         } else {
             super.setInSlot(slot, content);
         }

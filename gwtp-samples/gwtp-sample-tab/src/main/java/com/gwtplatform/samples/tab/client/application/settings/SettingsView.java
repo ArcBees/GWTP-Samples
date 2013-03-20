@@ -33,8 +33,6 @@ public class SettingsView extends ViewWithUiHandlers<SettingsUiHandlers> impleme
     public interface Binder extends UiBinder<Widget, SettingsView> {
     }
 
-    private final Widget widget;
-
     @UiField
     InlineLabel userPrivileges;
     @UiField
@@ -42,12 +40,7 @@ public class SettingsView extends ViewWithUiHandlers<SettingsUiHandlers> impleme
 
     @Inject
     public SettingsView(Binder uiBinder) {
-        widget = uiBinder.createAndBindUi(this);
-    }
-
-    @Override
-    public Widget asWidget() {
-        return widget;
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
