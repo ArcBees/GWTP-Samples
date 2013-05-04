@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -19,9 +19,11 @@ package com.gwtplatform.carstore.client.gin;
 import com.gwtplatform.dispatch.client.rest.RestApplicationPath;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class PhoneGapRemoteModule extends AbstractPresenterModule {
+public class CarStoreModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        bindConstant().annotatedWith(RestApplicationPath.class).to("http://gwtp-carstore.appspot.com/rest");
+        install(new SharedModule());
+
+        bindConstant().annotatedWith(RestApplicationPath.class).to("/rest");
     }
 }
