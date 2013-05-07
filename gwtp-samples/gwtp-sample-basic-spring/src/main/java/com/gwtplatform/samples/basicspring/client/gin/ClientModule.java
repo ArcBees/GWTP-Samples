@@ -28,6 +28,8 @@ import com.gwtplatform.samples.basicspring.client.application.ApplicationModule;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
+    private static final String ANALYTICS_ACCOUNT = "UA-8319339-6";
+
     @Override
     protected void configure() {
         install(new DefaultModule(DefaultPlaceManager.class));
@@ -40,6 +42,6 @@ public class ClientModule extends AbstractPresenterModule {
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
 
         // Google Analytics
-        bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
+        bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
     }
 }

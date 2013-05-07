@@ -16,40 +16,34 @@
 
 package com.gwtplatform.samples.basicspring.client.application;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Button;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
-import com.gwtplatform.mvp.client.proxy.Place;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
-import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.samples.basicspring.client.application.response.ResponsePresenter;
+import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
+import com.gwtplatform.samples.basicspring.client.place.TokenParameters;
 import com.gwtplatform.samples.basicspring.shared.FieldVerifier;
 
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
+public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+        implements ApplicationUiHandlers {
     /**
      * {@link ApplicationPresenter}'s proxy.
      */
     @ProxyStandard
     @NameToken(NameTokens.home)
-    public interface MyProxy extends Proxy<ApplicationPresenter>, Place {
+    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
     /**
      * {@link ApplicationPresenter}'s view.
      */
-    public interface MyView extends View {
-        String getName();
-
-        Button getSendButton();
-
+    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void resetAndFocus();
 
         void setError(String errorText);
@@ -58,22 +52,21 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
+
+        getView().setUiHandlers(this);
     }
 
     @Override
-    protected void onBind() {
-        super.onBind();
-
-        registerHandler(getView().getSendButton().addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                sendNameToServer();
-            }
-        }));
+    public void sendName(String name) {
+        sendNameToServer(name);
     }
 
     @Override
@@ -86,17 +79,19 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     /**
      * Send the name from the nameField to the server and wait for a response.
      */
-    private void sendNameToServer() {
+    private void sendNameToServer(String name) {
         // First, we validate the input.
         getView().setError("");
-        String textToServer = getView().getName();
-        if (!FieldVerifier.isValidName(textToServer)) {
+        if (!FieldVerifier.isValidName(name)) {
             getView().setError("Please enter at least four characters");
             return;
         }
 
         // Then, we transmit it to the ResponsePresenter, which will do the server call
-        placeManager.revealPlace(new PlaceRequest(NameTokens.response).with(ResponsePresenter.textToServerParam,
-                textToServer));
+        PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
+                .nameToken(NameTokens.response)
+                .with(TokenParameters.TEXT_TO_SERVER, name)
+                .build();
+        placeManager.revealPlace(responsePlaceRequest);
     }
 }
