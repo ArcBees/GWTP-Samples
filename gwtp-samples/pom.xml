@@ -5,7 +5,7 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>gwtp-samples</artifactId>
-    <version>1.0-RC-3-SNAPSHOT</version>
+    <version>1.0-RC-4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GWT-Platform Samples</name>
     <inceptionYear>2010</inceptionYear>
@@ -39,7 +39,7 @@
 
     <ciManagement>
         <system>Team City</system>
-        <url>http://teamcity.codebetter.com</url>
+        <url>http://teamcity.arcbees.com/</url>
     </ciManagement>
 
     <mailingLists>
@@ -55,16 +55,16 @@
     <modules>
         <module>gwtp-sample-basic</module>
         <module>gwtp-sample-basic-spring</module>
-        <module>gwtp-sample-nested</module>
-        <module>gwtp-sample-tab</module>
         <module>gwtp-sample-crawler-service</module>
         <module>gwtp-sample-mobile</module>
+        <module>gwtp-sample-nested</module>
+        <module>gwtp-sample-tab</module>
     </modules>
 
     <properties>
         <!-- client -->
         <gwt.version>2.5.1</gwt.version>
-        <gwtp.version>1.0-RC-3-SNAPSHOT</gwtp.version>
+        <gwtp.version>1.0-RC-3.1</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
@@ -139,12 +139,6 @@
                     </configuration>
                 </plugin>
 
-                <!-- GWT -->
-                <!-- 'mvn gwt:run' - runs development mode -->
-                <!-- 'mvn gwt:debug' - runs debug mode -->
-                <!-- 'mvn gwt:compile' - compiles gwt -->
-                <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
@@ -243,96 +237,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-eclipse-plugin</artifactId>
-                    <version>${maven-eclipse-plugin.version}</version>
-                    <configuration>
-                        <useProjectReferences>false</useProjectReferences>
-                        <additionalBuildcommands>
-                            <buildcommand>com.google.gwt.eclipse.core.gwtProjectValidator</buildcommand>
-                        </additionalBuildcommands>
-                        <additionalProjectnatures>
-                            <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
-                            <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-                        </additionalProjectnatures>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.gwtplatform</groupId>
-                            <artifactId>gwtp-build-tools</artifactId>
-                            <version>${gwtp.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven 
-                    build itself. -->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>${lifecycle-mapping-plugin.version}</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.datanucleus</groupId>
-                                        <artifactId>maven-datanucleus-plugin</artifactId>
-                                        <versionRange>[1.1.4,)</versionRange>
-                                        <goals>
-                                            <goal>enhance</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>net.kindleit</groupId>
-                                        <artifactId>maven-gae-plugin</artifactId>
-                                        <versionRange>[0.7.3,)</versionRange>
-                                        <goals>
-                                            <goal>unpack</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <execute />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-enforcer-plugin</artifactId>
-                                        <versionRange>[1.0-beta-1,)</versionRange>
-                                        <goals>
-                                            <goal>enforce</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-compiler-plugin</artifactId>
-                                        <versionRange>[2.0.0,)</versionRange>
-                                        <goals>
-                                            <goal>default-compile</goal>
-                                            <goal>default-testCompile</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -372,12 +276,6 @@
                 <artifactId>gwtp-crawler-service</artifactId>
                 <version>${gwtp.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.gwtplatform</groupId>
-                <artifactId>gwtp-processors</artifactId>
-                <version>${gwtp.version}</version>
-                <scope>provided</scope> <!-- Not needed server-side -->
-            </dependency>
 
             <!-- GWT dependencies -->
             <dependency>
@@ -385,12 +283,6 @@
                 <artifactId>gwt-user</artifactId>
                 <version>${gwt.version}</version>
                 <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.gwt</groupId>
-                <artifactId>gwt-dev</artifactId>
-                <version>${gwt.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.gwt</groupId>
