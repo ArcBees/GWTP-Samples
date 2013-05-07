@@ -25,12 +25,11 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
-import com.gwtplatform.mvp.client.proxy.Place;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
-import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.samples.basic.client.application.response.ResponsePresenter;
+import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
+import com.gwtplatform.samples.basic.client.place.TokenParameters;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
@@ -39,7 +38,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
      */
     @ProxyStandard
     @NameToken(NameTokens.home)
-    public interface MyProxy extends Proxy<ApplicationPresenter>, Place {
+    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
     /**
@@ -58,7 +57,11 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
@@ -97,7 +100,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         }
 
         // Then, we transmit it to the ResponsePresenter, which will do the server call
-        placeManager.revealPlace(new PlaceRequest(NameTokens.response).with(
-                ResponsePresenter.textToServerParam, textToServer));
+        PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
+                .nameToken(NameTokens.response)
+                .with(TokenParameters.TEXT_TO_SERVER, textToServer)
+                .build();
+        placeManager.revealPlace(responsePlaceRequest);
     }
 }

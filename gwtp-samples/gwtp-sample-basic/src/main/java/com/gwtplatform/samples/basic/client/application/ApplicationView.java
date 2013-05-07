@@ -37,8 +37,8 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     HTML error;
 
     @Inject
-    public ApplicationView(final Binder binder) {
-        initWidget(binder.createAndBindUi(this));
+    ApplicationView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override

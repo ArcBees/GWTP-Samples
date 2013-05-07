@@ -7,12 +7,9 @@
 
     <!-- Inherit the default GWT style sheet.  You can change       -->
     <inherits name='com.google.gwt.user.theme.standard.Standard'/>
-    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
     <!-- Other module inherits                                      -->
     <inherits name='com.gwtplatform.dispatch.Dispatch'/>
-    
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
     <!-- Specify the paths for translatable code                    -->
@@ -20,5 +17,5 @@
     <source path='shared'/>
 
     <set-configuration-property name="gin.ginjector.modules"
-                                value="com.gwtplatform.samples.basic.client.gin.ClientModule"/>
+            value="com.gwtplatform.samples.basic.client.gin.ClientModule"/>
 </module>
