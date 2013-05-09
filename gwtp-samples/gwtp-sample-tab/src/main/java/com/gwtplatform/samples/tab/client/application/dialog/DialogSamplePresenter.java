@@ -34,7 +34,7 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 /**
  * A sample {@link com.gwtplatform.mvp.client.Presenter Presenter} that acts as a container for the dialog sub tab
  * presenters. It appears as a tab within {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It demonstrates the option 1 described in {@link TabInfo}.
  */
 public class DialogSamplePresenter extends
@@ -44,7 +44,7 @@ public class DialogSamplePresenter extends
      */
     @ProxyCodeSplit
     @TabInfo(container = ApplicationPresenter.class, label = "Dialogs", priority = 1, // The second tab in the main page
-    nameToken = NameTokens.globalDialogSamplePage)
+             nameToken = NameTokens.globalDialogSamplePage)
     public interface MyProxy extends NonLeafTabContentProxy<DialogSamplePresenter> {
     }
 
@@ -67,7 +67,9 @@ public class DialogSamplePresenter extends
     public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
 
     @Inject
-    public DialogSamplePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    DialogSamplePresenter(EventBus eventBus,
+                          MyView view,
+                          MyProxy proxy) {
         super(eventBus, view, proxy, TYPE_SetTabContent, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
     }
 }

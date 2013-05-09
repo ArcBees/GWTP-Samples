@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,22 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.security;
 
-import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.proxy.Gatekeeper;
+import com.google.gwt.event.shared.EventHandler;
 
-/**
- * This gatekeeper only allows access if the user currently logged in has administrator privileges.
- */
-public class IsAdminGatekeeper implements Gatekeeper {
-    private final CurrentUser currentUser;
-
-    @Inject
-    IsAdminGatekeeper(CurrentUser currentUser) {
-        this.currentUser = currentUser;
-    }
-
-    @Override
-    public boolean canReveal() {
-        return currentUser.isAdmin();
-    }
+public interface CurrentUserChangedHandler extends EventHandler {
+    public void onCurrentUserChanged(CurrentUserChangedEvent event);
 }

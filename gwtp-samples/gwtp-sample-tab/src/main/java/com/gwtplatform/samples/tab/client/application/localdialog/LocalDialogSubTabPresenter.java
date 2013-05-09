@@ -18,6 +18,7 @@ package com.gwtplatform.samples.tab.client.application.localdialog;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -31,11 +32,12 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 /**
  * A sample {@link Presenter} that demonstrates how to trigger a local dialog box. It appears as a tab within
  * {@link DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It demonstrates the option 1 described in {@link TabInfo}.
  */
-public class LocalDialogSubTabPresenter extends
-        Presenter<LocalDialogSubTabPresenter.MyView, LocalDialogSubTabPresenter.MyProxy> {
+public class LocalDialogSubTabPresenter
+        extends Presenter<LocalDialogSubTabPresenter.MyView, LocalDialogSubTabPresenter.MyProxy>
+        implements LocalDialogSubTabUihandlers {
     /**
      * {@link LocalDialogSubTabPresenter}'s proxy.
      */
@@ -49,22 +51,24 @@ public class LocalDialogSubTabPresenter extends
     /**
      * {@link LocalDialogSubTabPresenter}'s view.
      */
-    public interface MyView extends View {
-        void setPresenter(LocalDialogSubTabPresenter presenter);
+    public interface MyView extends View, HasUiHandlers<LocalDialogSubTabUihandlers> {
     }
 
     private final LocalDialogPresenterWidget localDialog;
 
     @Inject
-    public LocalDialogSubTabPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final LocalDialogPresenterWidget localDialog) {
+    LocalDialogSubTabPresenter(EventBus eventBus,
+                               MyView view,
+                               MyProxy proxy,
+                               LocalDialogPresenterWidget localDialog) {
         super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
-        
+
         this.localDialog = localDialog;
-        
-        view.setPresenter(this);
+
+        view.setUiHandlers(this);
     }
 
+    @Override
     public void showLocalDialog() {
         addToPopupSlot(localDialog);
     }

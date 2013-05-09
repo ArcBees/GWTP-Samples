@@ -33,8 +33,8 @@ import com.gwtplatform.mvp.client.PopupViewImpl;
  */
 public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPresenterWidget.MyView {
     /**
-   */
-    public interface Binder extends UiBinder<PopupPanel, GlobalDialogView> {
+     */
+    interface Binder extends UiBinder<PopupPanel, GlobalDialogView> {
     }
 
     @UiField
@@ -43,15 +43,11 @@ public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPrese
     Label navigationMessage;
 
     @Inject
-    public GlobalDialogView(Binder uiBinder, EventBus eventBus) {
+    GlobalDialogView(Binder uiBinder,
+                     EventBus eventBus) {
         super(eventBus);
-        
-        initWidget(uiBinder.createAndBindUi(this));
-    }
 
-    @UiHandler("okButton")
-    void okButtonClicked(ClickEvent event) {
-        hide();
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
@@ -61,5 +57,10 @@ public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPrese
         } else {
             navigationMessage.setText("Looks like you just navigated to '" + placeName + "'.");
         }
+    }
+
+    @UiHandler("okButton")
+    void okButtonClicked(ClickEvent event) {
+        hide();
     }
 }

@@ -33,9 +33,9 @@ import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 /**
  * A sample {@link Presenter} that should only be displayed to administrator users. It appears as a tab within
  * {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It uses {@link IsAdminGatekeeper} to prevent access to non-administrator users.
- * <p />
+ * <p/>
  * It uses the option 3 described in {@link TabInfo} to describe the tab using a {@link TabDataExt} that ensures the tab
  * is not visible to non-administrator users.
  */
@@ -62,7 +62,9 @@ public class AdminAreaPresenter extends Presenter<AdminAreaPresenter.MyView, Adm
     }
 
     @Inject
-    public AdminAreaPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    AdminAreaPresenter(EventBus eventBus,
+                       MyView view,
+                       MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
     }
 }

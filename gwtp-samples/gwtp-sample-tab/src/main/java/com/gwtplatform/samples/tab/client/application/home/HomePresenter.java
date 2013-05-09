@@ -35,7 +35,7 @@ import com.gwtplatform.samples.tab.client.resources.AppConstants;
  * A sample {@link com.gwtplatform.mvp.client.TabContainerPresenter TabContainerPresenter} appearing as a tab within
  * {@link ApplicationPresenter} and itself containing two tabs. When the tab for {@link HomePresenter} is clicked, them
  * {@link HomeNewsPresenter} is displayed.
- * <p />
+ * <p/>
  * It demonstrates the option 2 described in {@link TabInfo}, together with the use of the {@code nameToken} parameter
  * of {@code @TabInfo} to specify which place to show when the tab is clicked.
  */
@@ -48,7 +48,7 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
     }
 
     @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
-    nameToken = NameTokens.homeNewsPage)
+             nameToken = NameTokens.homeNewsPage)
     // Go to HomeNewsPresenter when clicked
     static String getTabLabel(AppConstants constants) {
         return constants.home();
@@ -65,11 +65,16 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
      */
     @RequestTabs
     public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+
     private final PlaceManager placeManager;
 
     @Inject
-    public HomePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy, PlaceManager placeManager) {
+    HomePresenter(EventBus eventBus,
+                  MyView view,
+                  MyProxy proxy,
+                  PlaceManager placeManager) {
         super(eventBus, view, proxy, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
+
         this.placeManager = placeManager;
     }
 

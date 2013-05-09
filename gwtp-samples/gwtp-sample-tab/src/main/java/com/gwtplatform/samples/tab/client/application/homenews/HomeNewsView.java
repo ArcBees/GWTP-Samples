@@ -33,7 +33,7 @@ import com.gwtplatform.samples.tab.client.resources.AppResources;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter} .
  */
 public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implements HomeNewsPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, HomeNewsView> {
+    interface Binder extends UiBinder<Widget, HomeNewsView> {
     }
 
     @UiField(provided = true)
@@ -49,8 +49,10 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
     private final AppMessages appMessages;
 
     @Inject
-    public HomeNewsView(Binder uiBinder, final AppResources resources, final AppConstants appConstants,
-            final AppMessages appMessages) {
+    HomeNewsView(Binder uiBinder,
+                 AppResources resources,
+                 AppConstants appConstants,
+                 AppMessages appMessages) {
         this.resources = resources;
         this.appConstants = appConstants;
         this.appMessages = appMessages;

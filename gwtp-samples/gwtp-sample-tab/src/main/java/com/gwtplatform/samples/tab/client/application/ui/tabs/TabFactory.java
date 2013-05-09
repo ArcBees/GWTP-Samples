@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,24 +14,13 @@
  * the License.
  */
 
-package com.gwtplatform.samples.tab.client.security;
+package com.gwtplatform.samples.tab.client.application.ui.tabs;
 
-import com.google.inject.Inject;
+import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
-/**
- * This gatekeeper only allows access if the user currently logged in has administrator privileges.
- */
-public class IsAdminGatekeeper implements Gatekeeper {
-    private final CurrentUser currentUser;
+public interface TabFactory {
+    RoundTab createRoundTab(TabData tabData, Gatekeeper gatekeeper);
 
-    @Inject
-    IsAdminGatekeeper(CurrentUser currentUser) {
-        this.currentUser = currentUser;
-    }
-
-    @Override
-    public boolean canReveal() {
-        return currentUser.isAdmin();
-    }
+    SimpleTab createSimpleTab(TabData tabData);
 }

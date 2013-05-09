@@ -31,11 +31,11 @@ import com.gwtplatform.samples.tab.client.security.CurrentUser;
 
 /**
  * A sample {@link Presenter} that lets user toggle between being an administrator and a regular user.
- * <p />
+ * <p/>
  * It demonstrates the option 1 described in {@link TabInfo}.
  */
-public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, SettingsPresenter.MyProxy> implements
-        SettingsUiHandlers {
+public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, SettingsPresenter.MyProxy>
+        implements SettingsUiHandlers {
     /**
      * {@link SettingsPresenter}'s proxy.
      */
@@ -56,23 +56,25 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, Setti
     private final CurrentUser currentUser;
 
     @Inject
-    public SettingsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final CurrentUser currentUser) {
+    SettingsPresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy,
+                      CurrentUser currentUser) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
-        
-        this.currentUser = currentUser;
-        
-        view.setUiHandlers(this);
-    }
 
-    @Override
-    protected void onReveal() {
-        updateView();
+        this.currentUser = currentUser;
+
+        view.setUiHandlers(this);
     }
 
     @Override
     public void togglePrivileges() {
         currentUser.setAdmin(!currentUser.isAdmin());
+        updateView();
+    }
+
+    @Override
+    protected void onReveal() {
         updateView();
     }
 

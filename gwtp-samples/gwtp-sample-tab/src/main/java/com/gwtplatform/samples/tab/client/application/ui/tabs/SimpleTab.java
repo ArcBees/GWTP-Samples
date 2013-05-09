@@ -16,29 +16,27 @@
 
 package com.gwtplatform.samples.tab.client.application.ui.tabs;
 
-import com.google.gwt.core.client.GWT;
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.assistedinject.Assisted;
 import com.gwtplatform.mvp.client.TabData;
 
 /**
  * A {@link BaseTab} styled as a square and meant to be contained in a {@link SimpleTabPanel}.
  */
 public class SimpleTab extends BaseTab {
-    public interface Binder extends UiBinder<Widget, SimpleTab> {
+    interface Binder extends UiBinder<Widget, SimpleTab> {
     }
 
-    // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
-    // the binder.
-    private static final Binder binder = GWT.create(Binder.class);
-
-    @UiConstructor
-    SimpleTab(TabData tabData) {
+    @Inject
+    SimpleTab(Binder uiBinder,
+              @Assisted TabData tabData) {
         super(tabData);
-        
-        initWidget(binder.createAndBindUi(this));
-        
+
+        initWidget(uiBinder.createAndBindUi(this));
+
         setText(tabData.getLabel());
     }
 }

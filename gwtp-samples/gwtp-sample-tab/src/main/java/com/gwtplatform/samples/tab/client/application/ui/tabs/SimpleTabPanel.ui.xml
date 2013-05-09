@@ -6,22 +6,22 @@
             background-color: darkPanelColor;
             padding: 0 3px 3px;
         }
-        
+
         .titlebar {
             background-color: darkPanelColor;
             padding: 0 5px 3px;
         }
-        
+
         .title {
             font-weight: titleFontWeight;
             font-size: titleFontSize;
             color: titleColor;
         }
-        
+
         .bar {
             background-color: darkPanelColor;
         }
-        
+
         .panel {
             background-color: lightPanelColor;
             padding: 5px;
@@ -31,10 +31,10 @@
     <g:HTMLPanel>
         <div class="{style.container}">
             <g:HTMLPanel addStyleNames="{style.bar}">
-                <g:FlowPanel ui:field="tabPanel" />
-                <div style="clear: both;" />
+                <g:FlowPanel ui:field="tabPanel"/>
+                <div style="clear: both;"/>
             </g:HTMLPanel>
-            <g:FlowPanel ui:field="tabContentContainer" addStyleNames="{style.panel}" />
+            <g:FlowPanel ui:field="tabContentContainer" addStyleNames="{style.panel}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

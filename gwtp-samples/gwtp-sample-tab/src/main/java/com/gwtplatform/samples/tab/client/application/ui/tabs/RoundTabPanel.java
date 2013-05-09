@@ -26,7 +26,7 @@ import com.gwtplatform.samples.tab.client.application.ui.linkmenu.LinkMenu;
 
 /**
  * A {@link BaseTabPanel} styled to contain {@link RoundTab}.
- * <p />
+ * <p/>
  * Look at {@link LinkMenu} to see how we can use this widget within a UiBinder file even though its constructor relies
  * on dependency injection.
  */
@@ -34,8 +34,13 @@ public class RoundTabPanel extends BaseTabPanel {
     public interface Binder extends UiBinder<Widget, RoundTabPanel> {
     }
 
+    private final TabFactory tabFactory;
+
     @Inject
-    public RoundTabPanel(Binder binder) {
+    RoundTabPanel(Binder binder,
+                  TabFactory tabFactory) {
+        this.tabFactory = tabFactory;
+
         initWidget(binder.createAndBindUi(this));
     }
 
@@ -47,7 +52,6 @@ public class RoundTabPanel extends BaseTabPanel {
             gatekeeper = tabDataExt.getGatekeeper();
         }
 
-        // TODO Try using assisted injection here (to inject UiBinder in RoundTab)
-        return new RoundTab(tabData, gatekeeper);
+        return tabFactory.createRoundTab(tabData, gatekeeper);
     }
 }

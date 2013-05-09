@@ -47,6 +47,7 @@ public abstract class BaseTab extends Composite implements Tab {
 
     public BaseTab(TabData tabData) {
         super();
+
         this.priority = tabData.getPriority();
     }
 
@@ -89,7 +90,7 @@ public abstract class BaseTab extends Composite implements Tab {
 
     /**
      * Checks whether or not the current user has the right to access this tab. By default, all tabs can be accessed.
-     * 
+     *
      * @return {@code true} if the user can access this tab, {@code false} otherwise.
      */
     public boolean canUserAccess() {

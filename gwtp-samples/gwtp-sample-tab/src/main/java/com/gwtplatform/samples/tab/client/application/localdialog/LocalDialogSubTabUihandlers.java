@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,20 +14,10 @@
  * the License.
  */
 
-package com.gwtplatform.samples.tab.client.resources;
+package com.gwtplatform.samples.tab.client.application.localdialog;
 
-import com.google.gwt.i18n.client.Constants;
+import com.gwtplatform.mvp.client.UiHandlers;
 
-/**
- * Constants to allow translation of various strings. Note that the translations themselves are not part of this
- * example.
- */
-public interface AppConstants extends Constants {
-    @DefaultStringValue("News")
-    String news();
-
-    @DefaultStringValue("Home")
-    String home();
-
-    String gwtpPlatformTitle();
+public interface LocalDialogSubTabUihandlers extends UiHandlers {
+    void showLocalDialog();
 }

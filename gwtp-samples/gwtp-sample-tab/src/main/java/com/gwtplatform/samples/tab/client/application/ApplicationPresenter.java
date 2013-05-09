@@ -37,17 +37,16 @@ import com.gwtplatform.mvp.client.proxy.AsyncCallSucceedHandler;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.samples.tab.client.security.CurrentUserChangedEvent;
-import com.gwtplatform.samples.tab.client.security.CurrentUserChangedEvent.CurrentUserChangedHandler;
+import com.gwtplatform.samples.tab.client.security.CurrentUserChangedHandler;
 
 /**
  * The main {@link com.gwtplatform.mvp.client.Presenter} of the application. It contains a number of tabs allowing
  * access to the various parts of the application. Tabs are refreshed whenever the current user's privileges change in
  * order to hide areas that cannot be accessed.
  */
-public class ApplicationPresenter extends
-        TabContainerPresenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> implements
-        CurrentUserChangedHandler, AsyncCallStartHandler, AsyncCallFailHandler, AsyncCallSucceedHandler {
-
+public class ApplicationPresenter
+        extends TabContainerPresenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+        implements CurrentUserChangedHandler, AsyncCallStartHandler, AsyncCallFailHandler, AsyncCallSucceedHandler {
     /**
      * {@link ApplicationPresenter}'s proxy.
      */
@@ -83,7 +82,9 @@ public class ApplicationPresenter extends
     public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
 
     @Inject
-    public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    ApplicationPresenter(EventBus eventBus,
+                         MyView view,
+                         MyProxy proxy) {
         super(eventBus, view, proxy, TYPE_SetTabContent, TYPE_RequestTabs, TYPE_ChangeTab, RevealType.Root);
     }
 

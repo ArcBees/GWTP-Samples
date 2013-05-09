@@ -90,7 +90,7 @@ public abstract class BaseTabPanel extends Composite implements TabPanel {
 
     /**
      * Sets the content displayed in the main panel.
-     * 
+     *
      * @param panelContent The {@link IsWidget} to set in the main panel, or {@code null} to clear the panel.
      */
     public void setPanelContent(IsWidget panelContent) {
@@ -111,7 +111,7 @@ public abstract class BaseTabPanel extends Composite implements TabPanel {
 
     /**
      * Ensures the specified tab is visible or hidden as it should.
-     * 
+     *
      * @param tab The {@link BaseTab} to check.
      */
     private void setTabVisibility(BaseTab tab) {
@@ -121,7 +121,7 @@ public abstract class BaseTabPanel extends Composite implements TabPanel {
 
     /**
      * Returns a new tab of the type specific for this tab panel.
-     * 
+     *
      * @param tabData Some data on the tab to create.
      * @return The new tab.
      */

@@ -15,7 +15,7 @@ import com.google.gwt.resources.client.ImageResource;
 public interface AppResources extends ClientBundle {
     public interface Styles extends CssResource {
         String divBorder();
-        
+
         String logo();
     }
 
