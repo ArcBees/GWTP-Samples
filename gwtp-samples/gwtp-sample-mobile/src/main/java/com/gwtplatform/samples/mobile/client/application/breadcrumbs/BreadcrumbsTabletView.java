@@ -44,7 +44,8 @@ public class BreadcrumbsTabletView extends ViewImpl implements BreadcrumbsPresen
     private final PlaceManager placeManager;
 
     @Inject
-    public BreadcrumbsTabletView(final Binder binder, final PlaceManager placeManager) {
+    BreadcrumbsTabletView(Binder binder,
+                          PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));

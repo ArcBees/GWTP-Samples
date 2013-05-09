@@ -6,8 +6,8 @@
         }
     </ui:style>
     <g:HTMLPanel styleName="{style.main}">
-        <g:FlowPanel ui:field="breadcrumbs" />
+        <g:FlowPanel ui:field="breadcrumbs"/>
 
-        <g:SimplePanel ui:field="mainContentPanel" />
+        <g:SimplePanel ui:field="mainContentPanel"/>
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -5,12 +5,12 @@ import com.gwtplatform.dispatch.shared.Result;
 public class GetProductResult implements Result {
     private Product product;
 
-    protected GetProductResult() {
-        // Possibly for serialization.
-    }
-
     public GetProductResult(Product product) {
         this.product = product;
+    }
+
+    protected GetProductResult() {
+        // Possibly for serialization.
     }
 
     public Product getProduct() {

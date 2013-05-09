@@ -31,6 +31,7 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.SetPlaceTitleHandler;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
+import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductAction;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductResult;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
@@ -55,16 +56,17 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
         void setProductDetails(Product product);
     }
 
-    public static final String TOKEN_ID = "id";
-
     private final DispatchAsync dispatcher;
     private final PlaceManager placeManager;
 
     private int id;
 
     @Inject
-    public ProductPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final PlaceManager placeManager, final DispatchAsync dispatcher) {
+    ProductPresenter(EventBus eventBus,
+                     MyView view,
+                     MyProxy proxy,
+                     PlaceManager placeManager,
+                     DispatchAsync dispatcher) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
 
         this.placeManager = placeManager;
@@ -92,7 +94,7 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
     public void prepareFromRequest(PlaceRequest request) {
         super.prepareFromRequest(request);
 
-        String idString = request.getParameter(TOKEN_ID, null);
+        String idString = request.getParameter(ParameterTokens.TOKEN_ID, null);
         try {
             id = Integer.parseInt(idString);
         } catch (NumberFormatException e) {

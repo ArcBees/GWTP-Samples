@@ -29,7 +29,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
 public class ProductMobileView extends ViewImpl implements ProductPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ProductMobileView> {
+    interface Binder extends UiBinder<Widget, ProductMobileView> {
     }
 
     @UiField
@@ -46,10 +46,10 @@ public class ProductMobileView extends ViewImpl implements ProductPresenter.MyVi
     HeadingElement title;
 
     @Inject
-    public ProductMobileView(final Binder binder) {
+    ProductMobileView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
-    
+
     @Override
     public void setBackLinkHistoryToken(String historyToken) {
         backLink.setTargetHistoryToken(historyToken);
