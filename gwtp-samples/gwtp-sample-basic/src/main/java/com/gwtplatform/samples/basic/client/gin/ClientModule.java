@@ -23,23 +23,24 @@ import com.gwtplatform.mvp.client.annotations.GaAccount;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
-import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.basic.client.application.ApplicationModule;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
+    private static final String ANALYTICS_ACCOUNT = "UA-8319339-6";
+
     @Override
     protected void configure() {
-        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new DefaultModule());
         install(new DispatchAsyncModule());
         install(new ApplicationModule());
-     
+
         // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
-        
+
         // Google Analytics
-        bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
+        bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
     }
 }

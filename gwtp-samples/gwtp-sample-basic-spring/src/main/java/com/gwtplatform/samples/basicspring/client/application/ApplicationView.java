@@ -16,17 +16,19 @@
 
 package com.gwtplatform.samples.basicspring.client.application;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ApplicationView> {
+public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
+    interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
     @UiField
@@ -37,23 +39,12 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     HTML error;
 
     @Inject
-    public ApplicationView(final Binder binder) {
-        initWidget(binder.createAndBindUi(this));
-    }
-
-    @Override
-    public String getName() {
-        return nameField.getText();
-    }
-
-    @Override
-    public Button getSendButton() {
-        return sendButton;
+    ApplicationView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public void resetAndFocus() {
-        // Focus the cursor on the name field when the app loads
         nameField.setFocus(true);
         nameField.selectAll();
     }
@@ -61,5 +52,10 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     @Override
     public void setError(String errorText) {
         error.setText(errorText);
+    }
+
+    @UiHandler("sendButton")
+    void onSend(ClickEvent event) {
+        getUiHandlers().sendName(nameField.getText());
     }
 }

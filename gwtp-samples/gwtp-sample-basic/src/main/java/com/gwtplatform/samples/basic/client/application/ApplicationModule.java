@@ -23,11 +23,10 @@ import com.gwtplatform.samples.basic.client.application.response.ResponseView;
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        // Application Presenters
-        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class,
-                ApplicationView.class, ApplicationPresenter.MyProxy.class);
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
+                ApplicationPresenter.MyProxy.class);
 
-        bindPresenter(ResponsePresenter.class, ResponsePresenter.MyView.class,
-                ResponseView.class, ResponsePresenter.MyProxy.class);
+        bindPresenter(ResponsePresenter.class, ResponsePresenter.MyView.class, ResponseView.class,
+                ResponsePresenter.MyProxy.class);
     }
 }

@@ -28,40 +28,35 @@ import com.gwtplatform.samples.basic.shared.FieldVerifier;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
 
-/**
- * @author Philippe Beaudoin
- */
-public class SendTextToServerHandler implements
-        ActionHandler<SendTextToServerAction, SendTextToServerResult> {
-
+public class SendTextToServerHandler implements ActionHandler<SendTextToServerAction, SendTextToServerResult> {
     private Provider<HttpServletRequest> requestProvider;
     private ServletContext servletContext;
 
     @Inject
     SendTextToServerHandler(ServletContext servletContext,
-            Provider<HttpServletRequest> requestProvider) {
+                            Provider<HttpServletRequest> requestProvider) {
         this.servletContext = servletContext;
         this.requestProvider = requestProvider;
     }
 
     @Override
-    public SendTextToServerResult execute(SendTextToServerAction action,
-            ExecutionContext context) throws ActionException {
-
+    public SendTextToServerResult execute(SendTextToServerAction action, ExecutionContext context)
+            throws ActionException {
         String input = action.getTextToServer();
 
         // Verify that the input is valid.
         if (!FieldVerifier.isValidName(input)) {
-            // If the input is not valid, throw an IllegalArgumentException back to
-            // the client.
-            throw new ActionException("Name must be at least 4 characters long");
+            // If the input is not valid, throw an IllegalArgumentException back to the client.
+            throw new ActionException("Name must be at least 4 characters long.");
         }
 
         String serverInfo = servletContext.getServerInfo();
         String userAgent = requestProvider.get().getHeader("User-Agent");
-        return new SendTextToServerResult("Hello, " + input
-                + "!<br><br>I am running " + serverInfo
-                + ".<br><br>It looks like you are using:<br>" + userAgent);
+        String response = String.format("Hello, %s!<br/><br/>I am running %s.<br/><br/>" +
+                                        "It looks like you are using:<br/>%s",
+                                        input, serverInfo, userAgent);
+
+        return new SendTextToServerResult(response);
     }
 
     @Override
@@ -70,9 +65,8 @@ public class SendTextToServerHandler implements
     }
 
     @Override
-    public void undo(SendTextToServerAction action, SendTextToServerResult result,
-            ExecutionContext context) throws ActionException {
+    public void undo(SendTextToServerAction action, SendTextToServerResult result, ExecutionContext context)
+            throws ActionException {
         // Not undoable
     }
-
 }

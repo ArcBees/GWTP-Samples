@@ -19,14 +19,13 @@ package com.gwtplatform.samples.basic.shared.dispatch;
 import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
 
 /**
- * An action that can be sent using an {@link DispatchAsync} (client-side)
- * corresponding to a {@link com.gwtplatform.dispatch.server.Dispatch}
- * (server-side).
+ * An action that can be sent using an {@link DispatchAsync} (client-side) corresponding to a
+ * {@link com.gwtplatform.dispatch.server.Dispatch} (server-side).
  */
 public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
     private String textToServer;
 
-    public SendTextToServerAction(final String textToServer) {
+    public SendTextToServerAction(String textToServer) {
         this.textToServer = textToServer;
     }
 

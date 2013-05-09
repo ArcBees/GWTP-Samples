@@ -24,9 +24,11 @@ import com.gwtplatform.crawlerservice.server.guice.CrawlServiceModule;
  * Guice module for the crawler service.
  */
 public class CrawlerModule extends AbstractModule {
-  @Override
-  protected void configure() {
-    bindConstant().annotatedWith(ServiceKey.class).to("123456");
-    install(new CrawlServiceModule());
-  }
+    private static final String SERVICE_KEY = "123456";
+
+    @Override
+    protected void configure() {
+        bindConstant().annotatedWith(ServiceKey.class).to(SERVICE_KEY);
+        install(new CrawlServiceModule());
+    }
 }
