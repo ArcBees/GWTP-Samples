@@ -23,10 +23,9 @@ import com.google.inject.servlet.GuiceServletContextListener;
 /**
  * Guice servlet context listener.
  */
- public class CrawlerGuiceServletContextListener extends GuiceServletContextListener {
-
-  @Override
-  protected Injector getInjector() {
-    return Guice.createInjector(new CrawlerModule());
-  }
+public class CrawlerGuiceServletContextListener extends GuiceServletContextListener {
+    @Override
+    protected Injector getInjector() {
+        return Guice.createInjector(new CrawlerModule());
+    }
 }

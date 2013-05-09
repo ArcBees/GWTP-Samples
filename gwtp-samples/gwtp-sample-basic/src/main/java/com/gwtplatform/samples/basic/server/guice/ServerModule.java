@@ -22,11 +22,8 @@ import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 
 /**
  * Module which binds the handlers and configurations.
- *
- * @author Philippe Beaudoin
  */
 public class ServerModule extends HandlerModule {
-
     @Override
     protected void configureHandlers() {
         bindHandler(SendTextToServerAction.class, SendTextToServerHandler.class);

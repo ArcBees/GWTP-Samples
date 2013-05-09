@@ -16,46 +16,41 @@
 
 package com.gwtplatform.samples.basicspring.client.application.response;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.proxy.Place;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
-import com.gwtplatform.mvp.client.proxy.Proxy;
+import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
+import com.gwtplatform.samples.basicspring.client.place.TokenParameters;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerResult;
 
-public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy> {
+public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
+        implements ResponseUiHandlers {
     /**
      * {@link ResponsePresenter}'s proxy.
      */
     @ProxyCodeSplit
     @NameToken(NameTokens.response)
-    public interface MyProxy extends Proxy<ResponsePresenter>, Place {
+    public interface MyProxy extends ProxyPlace<ResponsePresenter> {
     }
 
     /**
      * {@link ResponsePresenter}'s view.
      */
-    public interface MyView extends View {
-        Button getCloseButton();
-
+    public interface MyView extends View, HasUiHandlers<ResponseUiHandlers> {
         void setServerResponse(String serverResponse);
 
         void setTextToServer(String textToServer);
     }
-
-    public static final String textToServerParam = "textToServer";
 
     private final DispatchAsync dispatcher;
     private final PlaceManager placeManager;
@@ -63,36 +58,39 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
     private String textToServer;
 
     @Inject
-    public ResponsePresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager,
-            DispatchAsync dispatcher) {
+    ResponsePresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy,
+                      PlaceManager placeManager,
+                      DispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
+
+        getView().setUiHandlers(this);
     }
 
     @Override
     public void prepareFromRequest(PlaceRequest request) {
         super.prepareFromRequest(request);
-        textToServer = request.getParameter(textToServerParam, null);
+
+        textToServer = request.getParameter(TokenParameters.TEXT_TO_SERVER, null);
     }
 
     @Override
-    protected void onBind() {
-        super.onBind();
-        registerHandler(getView().getCloseButton().addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                placeManager.revealPlace(new PlaceRequest(NameTokens.getHome()));
-            }
-        }));
+    public void onClose() {
+        PlaceRequest homePlaceRequest = new PlaceRequest.Builder().nameToken(NameTokens.home).build();
+        placeManager.revealPlace(homePlaceRequest);
     }
 
     @Override
     protected void onReset() {
         super.onReset();
+
         getView().setTextToServer(textToServer);
         getView().setServerResponse("Waiting for response...");
+
         dispatcher.execute(new SendTextToServerAction(textToServer), new AsyncCallback<SendTextToServerResult>() {
             @Override
             public void onFailure(Throwable caught) {
