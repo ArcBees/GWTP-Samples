@@ -58,12 +58,11 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
     private String textToServer;
 
     @Inject
-    ResponsePresenter(
-            EventBus eventBus,
-            MyView view,
-            MyProxy proxy,
-            PlaceManager placeManager,
-            DispatchAsync dispatcher) {
+    ResponsePresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy,
+                      PlaceManager placeManager,
+                      DispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

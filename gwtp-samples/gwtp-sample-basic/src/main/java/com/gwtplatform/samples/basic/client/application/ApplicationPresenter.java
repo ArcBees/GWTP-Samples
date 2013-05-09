@@ -52,11 +52,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    ApplicationPresenter(
-            EventBus eventBus,
-            MyView view,
-            MyProxy proxy,
-            PlaceManager placeManager) {
+    ApplicationPresenter(EventBus eventBus,
+                         MyView view,
+                         MyProxy proxy,
+                         PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
