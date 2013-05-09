@@ -30,11 +30,11 @@ public class ApplicationModule extends AbstractPresenterModule {
     protected void configure() {
         // Applicaiton Presenters
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
-                ApplicationPresenter.MyProxy.class);
+                      ApplicationPresenter.MyProxy.class);
         bindPresenter(HomePresenter.class, HomePresenter.MyView.class, HomeView.class, HomePresenter.MyProxy.class);
         bindPresenter(AboutUsPresenter.class, AboutUsPresenter.MyView.class, AboutUsView.class,
-                AboutUsPresenter.MyProxy.class);
+                      AboutUsPresenter.MyProxy.class);
         bindPresenter(ContactPresenter.class, ContactPresenterBase.MyView.class, ContactView.class,
-                ContactPresenter.MyProxy.class);
+                      ContactPresenter.MyProxy.class);
     }
 }

@@ -25,7 +25,7 @@ import com.google.gwt.user.client.ui.Widget;
  * A simple menu that can be reused.
  */
 public class MainMenu extends Composite {
-    public interface MainMenuUiBinder extends UiBinder<Widget, MainMenu> {
+    interface MainMenuUiBinder extends UiBinder<Widget, MainMenu> {
     }
 
     private static MainMenuUiBinder uiBinder = GWT.create(MainMenuUiBinder.class);

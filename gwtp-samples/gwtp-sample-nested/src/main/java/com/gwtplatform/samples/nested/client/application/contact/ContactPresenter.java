@@ -37,7 +37,9 @@ public class ContactPresenter extends ContactPresenterBase<ContactPresenter.MyPr
     }
 
     @Inject
-    public ContactPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    ContactPresenter(EventBus eventBus,
+                     MyView view,
+                     MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
     }
 }

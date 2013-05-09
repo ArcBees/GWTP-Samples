@@ -22,11 +22,11 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 public class HomeView extends ViewImpl implements HomePresenter.MyView {
-    public interface Binder extends UiBinder<Widget, HomeView> {
+    interface Binder extends UiBinder<Widget, HomeView> {
     }
 
     @Inject
-    public HomeView(final Binder binder) {
+    public HomeView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 }
