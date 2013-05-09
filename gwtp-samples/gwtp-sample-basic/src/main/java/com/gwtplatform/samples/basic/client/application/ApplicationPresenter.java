@@ -16,11 +16,9 @@
 
 package com.gwtplatform.samples.basic.client.application;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Button;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -32,7 +30,8 @@ import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.place.TokenParameters;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
+public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+        implements ApplicationUiHandlers {
     /**
      * {@link ApplicationPresenter}'s proxy.
      */
@@ -44,11 +43,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     /**
      * {@link ApplicationPresenter}'s view.
      */
-    public interface MyView extends View {
-        String getName();
-
-        Button getSendButton();
-
+    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void resetAndFocus();
 
         void setError(String errorText);
@@ -65,19 +60,13 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
+
+        getView().setUiHandlers(this);
     }
 
     @Override
-    protected void onBind() {
-        super.onBind();
-
-        registerHandler(getView().getSendButton().addClickHandler(
-                new ClickHandler() {
-                    @Override
-                    public void onClick(ClickEvent event) {
-                        sendNameToServer();
-                    }
-                }));
+    public void sendName(String name) {
+        sendNameToServer(name);
     }
 
     @Override
@@ -90,11 +79,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     /**
      * Send the name from the nameField to the server and wait for a response.
      */
-    private void sendNameToServer() {
+    private void sendNameToServer(String name) {
         // First, we validate the input.
         getView().setError("");
-        String textToServer = getView().getName();
-        if (!FieldVerifier.isValidName(textToServer)) {
+        if (!FieldVerifier.isValidName(name)) {
             getView().setError("Please enter at least four characters");
             return;
         }
@@ -102,7 +90,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         // Then, we transmit it to the ResponsePresenter, which will do the server call
         PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
                 .nameToken(NameTokens.response)
-                .with(TokenParameters.TEXT_TO_SERVER, textToServer)
+                .with(TokenParameters.TEXT_TO_SERVER, name)
                 .build();
         placeManager.revealPlace(responsePlaceRequest);
     }
