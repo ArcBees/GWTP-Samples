@@ -7,12 +7,12 @@ import com.gwtplatform.dispatch.shared.Result;
 public class GetProductListResult implements Result {
     private ArrayList<Product> products;
 
-    protected GetProductListResult() {
-        // Possibly for serialization.
-    }
-
     public GetProductListResult(ArrayList<Product> products) {
         this.products = products;
+    }
+
+    protected GetProductListResult() {
+        // Possibly for serialization.
     }
 
     public java.util.ArrayList<Product> getProducts() {

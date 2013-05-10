@@ -16,9 +16,11 @@
 
 package com.gwtplatform.samples.tab.client.application.ui.tabs;
 
-import com.google.gwt.core.client.GWT;
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.assistedinject.Assisted;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
@@ -28,22 +30,21 @@ import com.gwtplatform.mvp.client.proxy.Gatekeeper;
  * {@link Gatekeeper} is used then the tab is always accessible.
  */
 public class RoundTab extends BaseTab {
-    public interface Binder extends UiBinder<Widget, RoundTab> {
+    interface Binder extends UiBinder<Widget, RoundTab> {
     }
-
-    // TODO Once we use assisted injection in {@link SimpleTabPabel}, then inject
-    // the binder.
-    private static final Binder binder = GWT.create(Binder.class);
 
     private final Gatekeeper gatekeeper;
 
-    RoundTab(TabData tabData, Gatekeeper gatekeeper) {
+    @Inject
+    RoundTab(Binder uiBinder,
+             @Assisted TabData tabData,
+             @Assisted Gatekeeper gatekeeper) {
         super(tabData);
-        
+
         this.gatekeeper = gatekeeper;
-        
-        initWidget(binder.createAndBindUi(this));
-        
+
+        initWidget(uiBinder.createAndBindUi(this));
+
         setText(tabData.getLabel());
     }
 

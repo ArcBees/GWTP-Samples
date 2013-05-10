@@ -25,11 +25,11 @@ import com.gwtplatform.mvp.client.ViewImpl;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.adminarea.AdminAreaPresenter}.
  */
 public class AdminAreaView extends ViewImpl implements AdminAreaPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, AdminAreaView> {
+    interface Binder extends UiBinder<Widget, AdminAreaView> {
     }
 
     @Inject
-    public AdminAreaView(Binder uiBinder) {
+    AdminAreaView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 }

@@ -23,16 +23,18 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 
 /**
- * The view implementation for {@link com.gwtplatform.samples.tab.client.application.infopopup.InfoPopupPresenterWidget}.
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.infopopup
+ * .InfoPopupPresenterWidget}.
  */
 public class InfoPopupView extends PopupViewImpl implements InfoPopupPresenterWidget.MyView {
-    public interface Binder extends UiBinder<PopupPanel, InfoPopupView> {
+    interface Binder extends UiBinder<PopupPanel, InfoPopupView> {
     }
 
     @Inject
-    public InfoPopupView(Binder uiBinder, EventBus eventBus) {
+    InfoPopupView(Binder uiBinder,
+                  EventBus eventBus) {
         super(eventBus);
-        
+
         initWidget(uiBinder.createAndBindUi(this));
     }
 }

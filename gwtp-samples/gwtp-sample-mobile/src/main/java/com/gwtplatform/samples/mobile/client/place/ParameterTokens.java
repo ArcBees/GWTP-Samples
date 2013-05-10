@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2013 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,19 +14,13 @@
  * the License.
  */
 
-package com.gwtplatform.samples.nested.client.application.home;
+package com.gwtplatform.samples.mobile.client.place;
 
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+public class ParameterTokens {
+    public static final String TOKEN_ID = "id";
+    public static final String TOKEN_TYPE = "type";
 
-public class HomeView extends ViewImpl implements HomePresenter.MyView {
-    interface Binder extends UiBinder<Widget, HomeView> {
-    }
-
-    @Inject
-    public HomeView(Binder binder) {
-        initWidget(binder.createAndBindUi(this));
-    }
+    public static final String TYPE_ALL_PRODUCTS = "all";
+    public static final String TYPE_FAVORITE_PRODUCTS = "fav";
+    public static final String TYPE_SPECIALS = "spec";
 }

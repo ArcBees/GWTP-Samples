@@ -1,6 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-    xmlns:g="urn:import:com.google.gwt.user.client.ui">
+        xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:style src='../defines.css'>
         .panel {
@@ -14,9 +14,9 @@
 
         <p>
             Currently logged in as:
-            <g:InlineLabel ui:field="userPrivileges" />
+            <g:InlineLabel ui:field="userPrivileges"/>
         </p>
-        <g:Button ui:field="togglePrivileges" visible="false" />
+        <g:Button ui:field="togglePrivileges" visible="false"/>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nulla
@@ -40,7 +40,8 @@
             fringilla interdum libero eu facilisis. Quisque lectus
             odio, aliquam
             sed vehicula at, euismod et nunc. Praesent at lacinia
-            tortor.</p>
+            tortor.
+        </p>
 
         <p>Fusce id blandit augue. Nulla sed velit augue. Vestibulum
             lectus
@@ -68,7 +69,8 @@
             ullamcorper hendrerit. Praesent semper, nunc
             eu condimentum interdum,
             justo nunc semper nulla, nec consequat nisi
-            diam sit amet magna.</p>
+            diam sit amet magna.
+        </p>
 
         <p>Nulla non magna id nunc volutpat tincidunt. Morbi sed velit
             sed
@@ -92,6 +94,7 @@
             fringilla erat. Praesent non condimentum erat. Vestibulum
             ante ipsum
             primis in faucibus orci luctus et ultrices posuere cubilia
-            Curae;</p>
+            Curae;
+        </p>
     </g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

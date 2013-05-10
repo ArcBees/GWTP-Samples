@@ -37,10 +37,10 @@ public class ApplicationDesktopModule extends AbstractPresenterModule {
         bind(AbstractApplicationPresenter.class).to(ApplicationDesktopPresenter.class);
 
         bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsView.class,
-                BreadcrumbsPresenter.MyProxy.class);
+                      BreadcrumbsPresenter.MyProxy.class);
         bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsView.class,
-                ProductsPresenter.MyProxy.class);
+                      ProductsPresenter.MyProxy.class);
         bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductView.class,
-                ProductPresenter.MyProxy.class);
+                      ProductPresenter.MyProxy.class);
     }
 }

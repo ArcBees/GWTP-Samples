@@ -38,7 +38,8 @@ public class GlobalDialogPresenterWidget extends PresenterWidget<GlobalDialogPre
     private HandlerRegistration handlerRegistration;
 
     @Inject
-    public GlobalDialogPresenterWidget(final EventBus eventBus, final MyView view) {
+    GlobalDialogPresenterWidget(EventBus eventBus,
+                                MyView view) {
         super(eventBus, view);
     }
 

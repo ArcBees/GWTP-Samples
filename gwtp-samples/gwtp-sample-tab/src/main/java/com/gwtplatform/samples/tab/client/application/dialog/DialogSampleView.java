@@ -30,14 +30,15 @@ import com.gwtplatform.samples.tab.client.application.ui.tabs.SimpleTabPanel;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.dialog.DialogSamplePresenter}.
  */
 public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.MyView {
-    public interface Binder extends UiBinder<Widget, DialogSampleView> {
+    interface Binder extends UiBinder<Widget, DialogSampleView> {
     }
 
     @UiField(provided = true)
     SimpleTabPanel tabPanel;
 
     @Inject
-    public DialogSampleView(Binder uiBinder, final SimpleTabPanel tabPanel) {
+    DialogSampleView(Binder uiBinder,
+                     SimpleTabPanel tabPanel) {
         this.tabPanel = tabPanel;
 
         initWidget(uiBinder.createAndBindUi(this));

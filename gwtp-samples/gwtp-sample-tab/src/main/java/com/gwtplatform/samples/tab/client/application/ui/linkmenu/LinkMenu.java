@@ -24,11 +24,11 @@ import com.gwtplatform.samples.tab.client.application.ui.UiModule;
 
 /**
  * A simple menu that can be reused.
- * <p />
+ * <p/>
  * Instead of using a static field and {@code GWT.create(Binder.class)} to instantiate the binder we rely on GIN
  * dependency injection. This would facilitate testing if we ever wanted to test this class outside of a
  * {@code GWTTestCase}.
- * <p />
+ * <p/>
  * Even though this widget contains an {@code @Inject} constructor, it can be used within a UiBinder file. This is made
  * possible by using GWTP's {@link com.google.gwt.uibinder.rebind.GinUiBinderGenerator} and our use of
  * {@code &lt;inherits name="com.google.gwt.uibinder.GinUiBinder" /&gt} in {@code Gwtptabsample.gwt.xml}. This also
@@ -41,7 +41,7 @@ public class LinkMenu extends Composite {
     }
 
     @Inject
-    public LinkMenu(Binder binder) {
+    LinkMenu(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 }

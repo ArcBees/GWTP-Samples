@@ -26,7 +26,7 @@ public class IsAdminGatekeeper implements Gatekeeper {
     private final CurrentUser currentUser;
 
     @Inject
-    public IsAdminGatekeeper(CurrentUser currentUser) {
+    IsAdminGatekeeper(CurrentUser currentUser) {
         this.currentUser = currentUser;
     }
 

@@ -39,11 +39,10 @@ public abstract class AbstractApplicationPresenter
     public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
     }
 
-    public AbstractApplicationPresenter(
-            EventBus eventBus,
-            MyView view,
-            MyProxy proxy,
-            GwtEvent.Type<RevealContentHandler<?>> slot) {
+    public AbstractApplicationPresenter(EventBus eventBus,
+                                        MyView view,
+                                        MyProxy proxy,
+                                        GwtEvent.Type<RevealContentHandler<?>> slot) {
         super(eventBus, view, proxy, slot);
     }
 }

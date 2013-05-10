@@ -29,12 +29,12 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
-import com.gwtplatform.samples.mobile.client.application.product.ProductPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
+import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
 public class ProductsView extends ViewImpl implements ProductsPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ProductsView> {
+    interface Binder extends UiBinder<Widget, ProductsView> {
     }
 
     @UiField
@@ -47,7 +47,8 @@ public class ProductsView extends ViewImpl implements ProductsPresenter.MyView {
     private final PlaceManager placeManager;
 
     @Inject
-    public ProductsView(final Binder binder, final PlaceManager placeManager) {
+    ProductsView(Binder binder,
+                 PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));
@@ -62,8 +63,10 @@ public class ProductsView extends ViewImpl implements ProductsPresenter.MyView {
     public void setList(List<Product> products) {
         productList.clear();
         for (Product product : products) {
-            PlaceRequest request = new PlaceRequest(NameTokens.product).with(ProductPresenter.TOKEN_ID,
-                    Integer.toString(product.getId()));
+            PlaceRequest request = new PlaceRequest.Builder()
+                    .nameToken(NameTokens.product)
+                    .with(ParameterTokens.TOKEN_ID, Integer.toString(product.getId()))
+                    .build();
             productList.add(new Hyperlink(product.getName(), placeManager.buildRelativeHistoryToken(request)));
         }
     }

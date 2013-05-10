@@ -31,7 +31,7 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 /**
  * A sample {@link Presenter} filled with arbitrary content. It appears as a tab within {@link HomePresenter}, which is
  * itself a s tab in {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It demonstrates the option 1 described in {@link TabInfo}.
  */
 public class HomeInfoPresenter extends Presenter<HomeInfoPresenter.MyView, HomeInfoPresenter.MyProxy> {
@@ -52,7 +52,9 @@ public class HomeInfoPresenter extends Presenter<HomeInfoPresenter.MyView, HomeI
     }
 
     @Inject
-    public HomeInfoPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    HomeInfoPresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy) {
         super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
     }
 }

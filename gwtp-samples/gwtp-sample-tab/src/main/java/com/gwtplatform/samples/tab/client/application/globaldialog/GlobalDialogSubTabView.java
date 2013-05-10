@@ -33,7 +33,7 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
  */
 public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTabUiHandlers> implements
         GlobalDialogSubTabPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, GlobalDialogSubTabView> {
+    interface Binder extends UiBinder<Widget, GlobalDialogSubTabView> {
     }
 
     @UiField
@@ -42,7 +42,7 @@ public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTa
     Anchor popupLink;
 
     @Inject
-    public GlobalDialogSubTabView(Binder uiBinder) {
+    GlobalDialogSubTabView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

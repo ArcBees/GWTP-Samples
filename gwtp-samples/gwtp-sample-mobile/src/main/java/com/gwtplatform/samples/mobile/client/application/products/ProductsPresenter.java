@@ -32,6 +32,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
+import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductListAction;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductListResult;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
@@ -58,20 +59,15 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
         void setTitle(String title);
     }
 
-    public static final String TOKEN_TYPE = "type";
-    public static final String TYPE_ALL_PRODUCTS = "all";
-    public static final String TYPE_FAVORITE_PRODUCTS = "fav";
-    public static final String TYPE_SPECIALS = "spec";
-
     @TitleFunction
     public static String getListTitle(PlaceRequest request) {
-        return getTitleFor(request.getParameter(TOKEN_TYPE, null));
+        return getTitleFor(request.getParameter(ParameterTokens.TOKEN_TYPE, null));
     }
 
     private static String getTitleFor(String type) {
-        if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
+        if (type.equals(ParameterTokens.TYPE_FAVORITE_PRODUCTS)) {
             return "Favorite products";
-        } else if (type.equals(TYPE_SPECIALS)) {
+        } else if (type.equals(ParameterTokens.TYPE_SPECIALS)) {
             return "Specials";
         } else {
             return "All products";
@@ -81,11 +77,14 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
     private final DispatchAsync dispatcher;
     private final PlaceManager placeManager;
 
-    private String currentType = TYPE_ALL_PRODUCTS;
+    private String currentType = ParameterTokens.TYPE_ALL_PRODUCTS;
 
     @Inject
-    public ProductsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final PlaceManager placeManager, final DispatchAsync dispatcher) {
+    ProductsPresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy,
+                      PlaceManager placeManager,
+                      DispatchAsync dispatcher) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
 
         this.placeManager = placeManager;
@@ -96,13 +95,13 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
     public void prepareFromRequest(PlaceRequest request) {
         super.prepareFromRequest(request);
 
-        String type = request.getParameter(TOKEN_TYPE, TYPE_ALL_PRODUCTS);
-        if (type.equals(TYPE_FAVORITE_PRODUCTS)) {
-            currentType = TYPE_FAVORITE_PRODUCTS;
-        } else if (type.equals(TYPE_SPECIALS)) {
-            currentType = TYPE_SPECIALS;
+        String type = request.getParameter(ParameterTokens.TOKEN_TYPE, ParameterTokens.TYPE_ALL_PRODUCTS);
+        if (type.equals(ParameterTokens.TYPE_FAVORITE_PRODUCTS)) {
+            currentType = ParameterTokens.TYPE_FAVORITE_PRODUCTS;
+        } else if (type.equals(ParameterTokens.TYPE_SPECIALS)) {
+            currentType = ParameterTokens.TYPE_SPECIALS;
         } else {
-            currentType = TYPE_ALL_PRODUCTS;
+            currentType = ParameterTokens.TYPE_ALL_PRODUCTS;
         }
 
         setViewTitle();
@@ -128,9 +127,9 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
     }
 
     private int getFlags() {
-        if (currentType.equals(TYPE_FAVORITE_PRODUCTS)) {
+        if (currentType.equals(ParameterTokens.TYPE_FAVORITE_PRODUCTS)) {
             return Product.FLAG_FAVORITE;
-        } else if (currentType.equals(TYPE_SPECIALS)) {
+        } else if (currentType.equals(ParameterTokens.TYPE_SPECIALS)) {
             return Product.FLAG_SPECIAL;
         }
         return 0;

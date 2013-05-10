@@ -29,7 +29,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
 public class ProductView extends ViewImpl implements ProductPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ProductView> {
+    interface Binder extends UiBinder<Widget, ProductView> {
     }
 
     @UiField
@@ -46,7 +46,7 @@ public class ProductView extends ViewImpl implements ProductPresenter.MyView {
     HeadingElement title;
 
     @Inject
-    public ProductView(final Binder binder) {
+    ProductView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

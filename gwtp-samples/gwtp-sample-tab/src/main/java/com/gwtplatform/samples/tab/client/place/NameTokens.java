@@ -22,10 +22,10 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 /**
  * The central location of all name tokens for the application. All {@link ProxyPlace} classes get their tokens from
  * here. This class also makes it easy to use name tokens as a resource within UIBinder xml files.
- * <p />
+ * <p/>
  * The String constants are used within the {@link NameToken} annotations, which can't use a method. The static method
  * corresponding to these constants are used within UiBinder which can't access static fields.
- * <p />
+ * <p/>
  * Also note the exclamation mark in front of the tokens, this is the first step towards search engine crawling support.
  */
 public class NameTokens {

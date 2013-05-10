@@ -30,7 +30,10 @@ public class Product implements IsSerializable {
     private String price;
     private int quantity;
 
-    public Product(String name, int flags, String price, int quantity) {
+    public Product(String name,
+                   int flags,
+                   String price,
+                   int quantity) {
         this.id = nextId++;
         this.name = name;
         this.flags = flags;
@@ -44,7 +47,7 @@ public class Product implements IsSerializable {
 
     /**
      * Checks if all the passed flags are set. Passing 0 always returns {@code true}.
-     * 
+     *
      * @param flags A bitwise combination of the flags
      * @return {@code true} if all the passed flags are set, {@code false} otherwise.
      */

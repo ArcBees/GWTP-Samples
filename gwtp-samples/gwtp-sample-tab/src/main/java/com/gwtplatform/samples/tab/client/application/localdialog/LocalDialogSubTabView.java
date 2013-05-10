@@ -23,38 +23,27 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
  * The view implementation for
  * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}.
  */
-public class LocalDialogSubTabView extends ViewImpl implements LocalDialogSubTabPresenter.MyView {
-    /**
-     */
-    public interface Binder extends UiBinder<Widget, LocalDialogSubTabView> {
+public class LocalDialogSubTabView extends ViewWithUiHandlers<LocalDialogSubTabUihandlers>
+        implements LocalDialogSubTabPresenter.MyView {
+    interface Binder extends UiBinder<Widget, LocalDialogSubTabView> {
     }
 
     @UiField
     Button localDialog;
 
-    private LocalDialogSubTabPresenter presenter;
-
     @Inject
-    public LocalDialogSubTabView(Binder uiBinder) {
+    LocalDialogSubTabView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-    }
-
-    // TODO: Bad practices, use UiHandlers
-    @Override
-    public void setPresenter(LocalDialogSubTabPresenter presenter) {
-        this.presenter = presenter;
     }
 
     @UiHandler("localDialog")
     void onLocalClicked(ClickEvent event) {
-        if (presenter != null) {
-            presenter.showLocalDialog();
-        }
+        getUiHandlers().showLocalDialog();
     }
 }

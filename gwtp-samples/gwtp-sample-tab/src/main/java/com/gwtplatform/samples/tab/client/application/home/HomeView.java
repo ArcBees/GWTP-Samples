@@ -30,14 +30,15 @@ import com.gwtplatform.samples.tab.client.application.ui.tabs.SimpleTabPanel;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.home.HomePresenter}.
  */
 public class HomeView extends ViewImpl implements HomePresenter.MyView {
-    public interface Binder extends UiBinder<Widget, HomeView> {
+    interface Binder extends UiBinder<Widget, HomeView> {
     }
 
     @UiField(provided = true)
     SimpleTabPanel tabPanel;
 
     @Inject
-    public HomeView(Binder uiBinder, final SimpleTabPanel tabPanel) {
+    HomeView(Binder uiBinder,
+             SimpleTabPanel tabPanel) {
         this.tabPanel = tabPanel;
 
         initWidget(uiBinder.createAndBindUi(this));

@@ -9,16 +9,16 @@
             <p>
                 Try clicking tabs and navigating while the dialog is
                 showing and
-                <br />
+                <br/>
                 it will not disappear.
-                <br />
+                <br/>
                 Compare this to the behavior of the presenter-local
                 dialog box you
-                <br />
+                <br/>
                 get by clicking on the "Launch local dialog" button.
             </p>
-            <g:Label ui:field="navigationMessage" />
+            <g:Label ui:field="navigationMessage"/>
             <g:Button ui:field="okButton">Ok</g:Button>
         </g:HTMLPanel>
     </g:DialogBox>
-</ui:UiBinder> 
+</ui:UiBinder>

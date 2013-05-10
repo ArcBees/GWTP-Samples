@@ -7,7 +7,7 @@
             height: 5px;
             background-color: darkPanelColor;
         }
-        
+
         .container {
             border-width: 1px 5px 5px 5px;
             border-style: solid;
@@ -18,10 +18,10 @@
     </ui:style>
     <g:FlowPanel>
         <g:HTMLPanel>
-            <g:FlowPanel ui:field="tabPanel" />
+            <g:FlowPanel ui:field="tabPanel"/>
             <div style="clear: both;"></div>
-            <div class="{style.horizontalBar}" />
+            <div class="{style.horizontalBar}"/>
         </g:HTMLPanel>
-        <g:FlowPanel addStyleNames="{style.container}" ui:field="tabContentContainer" />
+        <g:FlowPanel addStyleNames="{style.container}" ui:field="tabContentContainer"/>
     </g:FlowPanel>
 </ui:UiBinder>

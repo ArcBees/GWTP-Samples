@@ -7,21 +7,21 @@
             margin-right: 8px;
             padding: 2px 13px;
         }
-        
+
         .active {
             background-color: lightPanelColor;
             font-weight: bold;
         }
-        
+
         .inactive {
             background-color: darkPanelColor;
             font-weight: bold;
         }
-        
-        .active a,.active a:visited,.active a:hover {
+
+        .active a, .active a:visited, .active a:hover {
             text-decoration: none;
             color: black;
         }
     </ui:style>
-    <g:Hyperlink addStyleNames="{style.tab} {style.inactive}" ui:field="hyperlink" />
+    <g:Hyperlink addStyleNames="{style.tab} {style.inactive}" ui:field="hyperlink"/>
 </ui:UiBinder>

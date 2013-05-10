@@ -58,8 +58,10 @@ public class BreadcrumbsPresenter extends Presenter<BreadcrumbsPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    public BreadcrumbsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final PlaceManager placeManager) {
+    BreadcrumbsPresenter(EventBus eventBus,
+                         MyView view,
+                         MyProxy proxy,
+                         PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

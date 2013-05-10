@@ -5,5 +5,5 @@ import com.google.gwt.i18n.client.Messages;
 
 @LocalizableResource.DefaultLocale("en")
 public interface AppMessages extends Messages {
-     String iWillOrderNumberOf(Integer number);
+    String iWillOrderNumberOf(Integer number);
 }
