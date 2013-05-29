@@ -21,18 +21,17 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
-import com.gwtplatform.samples.mobile.client.application.products.ProductsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
+import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
 
 public class ApplicationDesktopPresenter extends AbstractApplicationPresenter implements ApplicationUiHandlers {
     private PlaceManager placeManager;
 
     @Inject
-    public ApplicationDesktopPresenter(
-            EventBus eventBus,
-            MyView view,
-            MyProxy proxy,
-            PlaceManager placeManager) {
+    ApplicationDesktopPresenter(EventBus eventBus,
+                                MyView view,
+                                MyProxy proxy,
+                                PlaceManager placeManager) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
 
         this.placeManager = placeManager;
@@ -42,19 +41,28 @@ public class ApplicationDesktopPresenter extends AbstractApplicationPresenter im
 
     @Override
     public void revealAllProductsList() {
-        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-                ProductsPresenter.TYPE_ALL_PRODUCTS));
+        PlaceRequest request = new PlaceRequest.Builder()
+                .nameToken(NameTokens.productList)
+                .with(ParameterTokens.TOKEN_TYPE, ParameterTokens.TYPE_ALL_PRODUCTS)
+                .build();
+        placeManager.revealRelativePlace(request);
     }
 
     @Override
     public void revealFavoriteProductsList() {
-        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-                ProductsPresenter.TYPE_FAVORITE_PRODUCTS));
+        PlaceRequest request = new PlaceRequest.Builder()
+                .nameToken(NameTokens.productList)
+                .with(ParameterTokens.TOKEN_TYPE, ParameterTokens.TYPE_FAVORITE_PRODUCTS)
+                .build();
+        placeManager.revealRelativePlace(request);
     }
 
     @Override
     public void revealSpecialsList() {
-        placeManager.revealRelativePlace(new PlaceRequest(NameTokens.productList).with(ProductsPresenter.TOKEN_TYPE,
-                ProductsPresenter.TYPE_SPECIALS));
+        PlaceRequest request = new PlaceRequest.Builder()
+                .nameToken(NameTokens.productList)
+                .with(ParameterTokens.TOKEN_TYPE, ParameterTokens.TYPE_SPECIALS)
+                .build();
+        placeManager.revealRelativePlace(request);
     }
 }

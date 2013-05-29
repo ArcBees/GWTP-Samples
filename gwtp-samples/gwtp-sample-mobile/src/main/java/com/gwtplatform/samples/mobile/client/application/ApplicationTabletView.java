@@ -27,7 +27,7 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandlers> implements
         AbstractApplicationPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ApplicationTabletView> {
+    interface Binder extends UiBinder<Widget, ApplicationTabletView> {
     }
 
     @UiField
@@ -38,7 +38,7 @@ public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandl
     Button specials;
 
     @Inject
-    public ApplicationTabletView(final Binder binder) {
+    ApplicationTabletView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

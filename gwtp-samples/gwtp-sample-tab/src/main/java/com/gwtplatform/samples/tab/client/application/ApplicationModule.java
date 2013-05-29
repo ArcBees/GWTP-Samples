@@ -51,27 +51,27 @@ public class ApplicationModule extends AbstractPresenterModule {
 
         // Applicaiton Presenters
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
-                ApplicationPresenter.MyProxy.class);
+                      ApplicationPresenter.MyProxy.class);
         bindPresenter(HomePresenter.class, HomePresenter.MyView.class, HomeView.class, HomePresenter.MyProxy.class);
         bindPresenter(DialogSamplePresenter.class, DialogSamplePresenter.MyView.class, DialogSampleView.class,
-                DialogSamplePresenter.MyProxy.class);
+                      DialogSamplePresenter.MyProxy.class);
         bindPresenter(LocalDialogSubTabPresenter.class, LocalDialogSubTabPresenter.MyView.class,
-                LocalDialogSubTabView.class, LocalDialogSubTabPresenter.MyProxy.class);
+                      LocalDialogSubTabView.class, LocalDialogSubTabPresenter.MyProxy.class);
         bindPresenter(GlobalDialogSubTabPresenter.class, GlobalDialogSubTabPresenter.MyView.class,
-                GlobalDialogSubTabView.class, GlobalDialogSubTabPresenter.MyProxy.class);
+                      GlobalDialogSubTabView.class, GlobalDialogSubTabPresenter.MyProxy.class);
         bindPresenter(SettingsPresenter.class, SettingsPresenter.MyView.class, SettingsView.class,
-                SettingsPresenter.MyProxy.class);
+                      SettingsPresenter.MyProxy.class);
         bindPresenter(AdminAreaPresenter.class, AdminAreaPresenter.MyView.class, AdminAreaView.class,
-                AdminAreaPresenter.MyProxy.class);
+                      AdminAreaPresenter.MyProxy.class);
         bindPresenter(HomeNewsPresenter.class, HomeNewsPresenter.MyView.class, HomeNewsView.class,
-                HomeNewsPresenter.MyProxy.class);
+                      HomeNewsPresenter.MyProxy.class);
         bindPresenter(HomeInfoPresenter.class, HomeInfoPresenter.MyView.class, HomeInfoView.class,
-                HomeInfoPresenter.MyProxy.class);
+                      HomeInfoPresenter.MyProxy.class);
         bindSingletonPresenterWidget(InfoPopupPresenterWidget.class, InfoPopupPresenterWidget.MyView.class,
-                InfoPopupView.class);
+                                     InfoPopupView.class);
         bindSingletonPresenterWidget(LocalDialogPresenterWidget.class, LocalDialogPresenterWidget.MyView.class,
-                LocalDialogView.class);
+                                     LocalDialogView.class);
         bindSingletonPresenterWidget(GlobalDialogPresenterWidget.class, GlobalDialogPresenterWidget.MyView.class,
-                GlobalDialogView.class);
+                                     GlobalDialogView.class);
     }
 }

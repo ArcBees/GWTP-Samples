@@ -31,16 +31,17 @@ import com.gwtplatform.mvp.client.PopupViewImpl;
  * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogPresenterWidget}.
  */
 public class LocalDialogView extends PopupViewImpl implements LocalDialogPresenterWidget.MyView {
-    public interface Binder extends UiBinder<PopupPanel, LocalDialogView> {
+    interface Binder extends UiBinder<PopupPanel, LocalDialogView> {
     }
 
     @UiField
     Button okButton;
 
     @Inject
-    public LocalDialogView(Binder uiBinder, EventBus eventBus) {
+    LocalDialogView(Binder uiBinder,
+                    EventBus eventBus) {
         super(eventBus);
-        
+
         initWidget(uiBinder.createAndBindUi(this));
     }
 

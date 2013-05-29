@@ -28,6 +28,6 @@ public interface AppConstants extends Constants {
 
     @DefaultStringValue("Home")
     String home();
-    
+
     String gwtpPlatformTitle();
 }

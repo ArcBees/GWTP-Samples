@@ -29,7 +29,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
 public class ProductTabletView extends ViewImpl implements ProductPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ProductTabletView> {
+    interface Binder extends UiBinder<Widget, ProductTabletView> {
     }
 
     @UiField
@@ -44,9 +44,9 @@ public class ProductTabletView extends ViewImpl implements ProductPresenter.MyVi
     InlineLabel quantity;
     @UiField
     HeadingElement title;
-    
+
     @Inject
-    public ProductTabletView(final Binder binder) {
+    ProductTabletView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

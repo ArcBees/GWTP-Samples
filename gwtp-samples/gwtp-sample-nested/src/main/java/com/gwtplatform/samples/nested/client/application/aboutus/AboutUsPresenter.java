@@ -42,7 +42,9 @@ public class AboutUsPresenter extends Presenter<AboutUsPresenter.MyView, AboutUs
     }
 
     @Inject
-    public AboutUsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
+    AboutUsPresenter(EventBus eventBus,
+                     MyView view,
+                     MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
     }
 }

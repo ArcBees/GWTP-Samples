@@ -25,11 +25,11 @@ import com.gwtplatform.mvp.client.ViewImpl;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homeinfo.HomeInfoPresenter} .
  */
 public class HomeInfoView extends ViewImpl implements HomeInfoPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, HomeInfoView> {
+    interface Binder extends UiBinder<Widget, HomeInfoView> {
     }
-    
+
     @Inject
-    public HomeInfoView(Binder uiBinder) {
+    HomeInfoView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 }

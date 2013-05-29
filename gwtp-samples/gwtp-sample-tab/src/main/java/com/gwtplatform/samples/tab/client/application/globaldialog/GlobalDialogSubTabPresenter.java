@@ -35,7 +35,7 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 /**
  * A sample {@link Presenter} that demonstrates how to trigger a global dialog box. It appears as a tab within
  * {@link DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It demonstrates the option 3 described in {@link TabInfo}.
  */
 public class GlobalDialogSubTabPresenter extends
@@ -61,9 +61,13 @@ public class GlobalDialogSubTabPresenter extends
     private final InfoPopupPresenterWidget infoPopup;
 
     @Inject
-    public GlobalDialogSubTabPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final GlobalDialogPresenterWidget globalDialog, final InfoPopupPresenterWidget infoPopup) {
+    GlobalDialogSubTabPresenter(EventBus eventBus,
+                                MyView view,
+                                MyProxy proxy,
+                                GlobalDialogPresenterWidget globalDialog,
+                                InfoPopupPresenterWidget infoPopup) {
         super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
+
         this.globalDialog = globalDialog;
         this.infoPopup = infoPopup;
 

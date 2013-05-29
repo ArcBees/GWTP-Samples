@@ -30,7 +30,7 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.settings.SettingsPresenter} .
  */
 public class SettingsView extends ViewWithUiHandlers<SettingsUiHandlers> implements SettingsPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, SettingsView> {
+    interface Binder extends UiBinder<Widget, SettingsView> {
     }
 
     @UiField
@@ -39,7 +39,7 @@ public class SettingsView extends ViewWithUiHandlers<SettingsUiHandlers> impleme
     Button togglePrivileges;
 
     @Inject
-    public SettingsView(Binder uiBinder) {
+    SettingsView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

@@ -34,7 +34,7 @@ public class ClientModule extends AbstractPresenterModule {
     protected void configure() {
         install(new DefaultModule(DefaultPlaceManager.class));
         install(new ApplicationModule());
-        
+
         bind(CurrentUser.class).in(Singleton.class);
         bind(IsAdminGatekeeper.class).in(Singleton.class);
 
@@ -45,7 +45,7 @@ public class ClientModule extends AbstractPresenterModule {
 
         // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");
-        
+
         // Load and inject CSS resources
         bind(ResourceLoader.class).asEagerSingleton();
     }

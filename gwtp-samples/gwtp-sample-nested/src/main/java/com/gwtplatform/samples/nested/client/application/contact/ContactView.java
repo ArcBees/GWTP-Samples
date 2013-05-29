@@ -24,14 +24,14 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 public class ContactView extends ViewImpl implements ContactPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ContactView> {
+    interface Binder extends UiBinder<Widget, ContactView> {
     }
 
     @UiField
     Label navigationHistory;
 
     @Inject
-    public ContactView(final Binder binder) {
+    ContactView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

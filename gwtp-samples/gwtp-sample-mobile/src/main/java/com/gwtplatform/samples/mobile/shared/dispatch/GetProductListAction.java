@@ -5,12 +5,12 @@ import com.gwtplatform.dispatch.shared.Action;
 public class GetProductListAction implements Action<GetProductListResult> {
     private int flags;
 
-    protected GetProductListAction() {
-        // Possibly for serialization.
-    }
-
     public GetProductListAction(int flags) {
         this.flags = flags;
+    }
+
+    protected GetProductListAction() {
+        // Possibly for serialization.
     }
 
     @Override

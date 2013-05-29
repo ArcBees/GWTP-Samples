@@ -33,9 +33,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
  * {@link BreadcrumbPresenterView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class BreadcrumbsMobileView extends ViewImpl implements BreadcrumbsPresenter.MyView {
-    /**
-   */
-    public interface Binder extends UiBinder<Widget, BreadcrumbsMobileView> {
+    interface Binder extends UiBinder<Widget, BreadcrumbsMobileView> {
     }
 
     @UiField
@@ -46,7 +44,8 @@ public class BreadcrumbsMobileView extends ViewImpl implements BreadcrumbsPresen
     private final PlaceManager placeManager;
 
     @Inject
-    public BreadcrumbsMobileView(final Binder binder, final PlaceManager placeManager) {
+    BreadcrumbsMobileView(Binder binder,
+                          PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));

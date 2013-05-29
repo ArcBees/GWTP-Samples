@@ -31,7 +31,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
  * {@link ApplicationView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ApplicationView> {
+    interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
     @UiField
@@ -40,10 +40,10 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     Element loadingMessage;
 
     @Inject
-    public ApplicationView(final Binder binder) {
+    ApplicationView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
-    
+
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.TYPE_SetMainContent) {

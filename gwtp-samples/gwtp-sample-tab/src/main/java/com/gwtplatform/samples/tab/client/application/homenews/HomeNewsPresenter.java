@@ -36,7 +36,7 @@ import com.gwtplatform.samples.tab.client.resources.AppConstants;
 /**
  * A sample {@link Presenter} filled with arbitrary content. It appears as a tab within {@link HomePresenter}, which is
  * itself a s tab in {@link ApplicationPresenter}.
- * <p />
+ * <p/>
  * It demonstrates the option 3 described in {@link TabInfo}.
  */
 public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeNewsPresenter.MyProxy> implements
@@ -69,8 +69,10 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     private boolean confirmationEnabled;
 
     @Inject
-    public HomeNewsPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
-            final PlaceManager placeManager) {
+    HomeNewsPresenter(EventBus eventBus,
+                      MyView view,
+                      MyProxy proxy,
+                      PlaceManager placeManager) {
         super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
 
         this.placeManager = placeManager;
@@ -81,7 +83,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     @Override
     public void onReveal() {
         enableConfirmation(false);
-        
+
         getView().display();
     }
 
@@ -95,7 +97,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
 
     /**
      * Enables or disables the confirmation dialog.
-     * 
+     *
      * @param enabled {@code true} to enable the confirmation dialog, {@code false} to disable it.
      */
     private void enableConfirmation(boolean enabled) {

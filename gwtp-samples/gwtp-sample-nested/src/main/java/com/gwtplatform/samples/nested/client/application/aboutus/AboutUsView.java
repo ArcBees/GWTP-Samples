@@ -22,11 +22,11 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 public class AboutUsView extends ViewImpl implements AboutUsPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, AboutUsView> {
+    interface Binder extends UiBinder<Widget, AboutUsView> {
     }
 
     @Inject
-    public AboutUsView(final Binder binder) {
+    public AboutUsView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 }

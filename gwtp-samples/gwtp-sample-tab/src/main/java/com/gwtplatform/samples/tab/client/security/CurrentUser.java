@@ -30,7 +30,7 @@ public class CurrentUser implements HasHandlers {
     private final EventBus eventBus;
 
     @Inject
-    public CurrentUser(EventBus eventBus) {
+    CurrentUser(EventBus eventBus) {
         this.eventBus = eventBus;
     }
 

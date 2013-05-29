@@ -6,7 +6,7 @@
             border: 3px double black;
             padding: 0 15px;
         }
-        
+
         .bold {
             font-weight: bold;
         }
@@ -16,14 +16,14 @@
         <g:HTMLPanel>
             <p class="{style.bold}">
                 This is an example of an auto-hiding
-                <br />
+                <br/>
                 popup PresenterWidget.
             </p>
             <p>
                 It will automatically go away if you click
-                <br />
+                <br/>
                 anywhere or navigate.
             </p>
         </g:HTMLPanel>
     </g:PopupPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

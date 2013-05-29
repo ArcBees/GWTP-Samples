@@ -5,12 +5,12 @@ import com.gwtplatform.dispatch.shared.Action;
 public class GetProductAction implements Action<GetProductResult> {
     private int id;
 
-    protected GetProductAction() {
-        // Possibly for serialization.
-    }
-
     public GetProductAction(int id) {
         this.id = id;
+    }
+
+    protected GetProductAction() {
+        // Possibly for serialization.
     }
 
     @Override

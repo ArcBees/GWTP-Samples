@@ -34,7 +34,8 @@ public class LocalDialogPresenterWidget extends PresenterWidget<LocalDialogPrese
     }
 
     @Inject
-    public LocalDialogPresenterWidget(final EventBus eventBus, final MyView view) {
+    LocalDialogPresenterWidget(EventBus eventBus,
+                               MyView view) {
         super(eventBus, view);
     }
 }

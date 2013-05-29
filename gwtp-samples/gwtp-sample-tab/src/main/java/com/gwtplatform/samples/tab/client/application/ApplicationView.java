@@ -32,7 +32,7 @@ import com.gwtplatform.samples.tab.client.application.ui.tabs.RoundTabPanel;
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.ApplicationPresenter}.
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, ApplicationView> {
+    interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
     @UiField(provided = true)
@@ -43,7 +43,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     LinkMenu linkMenu;
 
     @Inject
-    public ApplicationView(Binder uiBinder, RoundTabPanel tabPanel, final LinkMenu linkMenu) {
+    public ApplicationView(Binder uiBinder,
+                           RoundTabPanel tabPanel,
+                           LinkMenu linkMenu) {
         this.tabPanel = tabPanel;
         this.linkMenu = linkMenu;
 
