@@ -5,7 +5,7 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>gwtp-samples</artifactId>
-    <version>1.0-RC-4-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GWT-Platform Samples</name>
     <inceptionYear>2010</inceptionYear>
@@ -64,7 +64,7 @@
     <properties>
         <!-- client -->
         <gwt.version>2.5.1</gwt.version>
-        <gwtp.version>1.0-RC-3.1</gwtp.version>
+        <gwtp.version>1.0</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
