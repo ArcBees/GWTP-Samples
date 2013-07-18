@@ -3,18 +3,17 @@
 
   <!-- Java-based annotation-driven Spring container definition -->
   <context-param>
-    <param-name>contextClass</param-name>
-    <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-  </context-param>
-
-  <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>com.gwtplatform.samples.basicspring.server</param-value>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
 
   <!-- Creates the Spring Container shared by all Servlets and Filters -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
   </listener>
 
   <servlet>

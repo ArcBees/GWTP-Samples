@@ -17,6 +17,7 @@
 package com.gwtplatform.samples.basicspring.client.gin;
 
 import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
+import com.gwtplatform.dispatch.shared.SecurityCookie;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
@@ -29,6 +30,7 @@ import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
     private static final String ANALYTICS_ACCOUNT = "UA-8319339-6";
+    private static final String COOKIE_NAME = "JSESSIONID";
 
     @Override
     protected void configure() {
@@ -43,5 +45,8 @@ public class ClientModule extends AbstractPresenterModule {
 
         // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
+
+        // Security Cookie
+        bindConstant().annotatedWith(SecurityCookie.class).to(COOKIE_NAME);
     }
 }
