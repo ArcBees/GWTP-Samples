@@ -69,12 +69,12 @@
         <gwt.style>OBF</gwt.style>
 
         <!-- server -->
-        <gae.version>1.7.4</gae.version>
+        <gae.version>1.8.1</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
         <!-- maven -->
-        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+        <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
         <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
@@ -221,13 +221,41 @@
                     <groupId>net.kindleit</groupId>
                     <artifactId>maven-gae-plugin</artifactId>
                     <version>${maven-gae-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.kindleit</groupId>
+                            <artifactId>gae-runtime</artifactId>
+                            <version>1.7.7.1</version>
+                            <type>pom</type>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.google.appengine</groupId>
+                            <artifactId>appengine-api-1.0-sdk</artifactId>
+                            <version>${gae.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.google.appengine</groupId>
+                            <artifactId>appengine-tools-sdk</artifactId>
+                            <version>${gae.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-utils</artifactId>
+                            <version>3.0.10</version>
+                        </dependency>
+                    </dependencies>
                     <configuration>
-                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+                        <sdkDir>${gae.home}</sdkDir>
+                        <appDir>${webappDirectory}</appDir>
                         <serverId>appengine-credentials</serverId>
                         <splitJars>true</splitJars>
-                        <sdkDir>${gae.home}</sdkDir>
+                        <monitorKey>stop-jetty</monitorKey>
+                        <monitorPort>9966</monitorPort>
+                        <wait>false</wait>
+                        <port>8888</port>
                     </configuration>
                     <executions>
+                        <!-- First time GAE users, run 'mvn gae:unpack' -->
                         <execution>
                             <id>install-server-jar</id>
                             <phase>validate</phase>
