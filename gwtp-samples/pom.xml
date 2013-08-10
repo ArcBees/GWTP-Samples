@@ -64,7 +64,7 @@
     <properties>
         <!-- client -->
         <gwt.version>2.5.1</gwt.version>
-        <gwtp.version>1.0-RC-3.1</gwtp.version>
+        <gwtp.version>1.1-SNAPSHOT</gwtp.version>
         <gin.version>2.0.0</gin.version>
         <gwt.style>OBF</gwt.style>
 
