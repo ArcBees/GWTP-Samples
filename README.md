@@ -1,5 +1,6 @@
 #GWTP-Samples
-Project samples display GWT-Platform features configuration and uses. 
+[![githalytics.com alpha](https://cruel-carlota.gopagoda.com/4867431f43e47d4d0d375872d3515925 "githalytics.com")](http://githalytics.com/ArcBees/GWTP-Samples)
+Project samples display GWT-Platform features configuration and uses.
 
 ##GWTP Reference
 * [GWTP Custom Google Search](http://www.google.com/cse/home?cx=011138278718949652927:5yuja8xc600) - Search GWTP documentation, wiki and thread collections.
