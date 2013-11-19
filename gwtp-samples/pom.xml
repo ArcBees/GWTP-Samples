@@ -69,12 +69,12 @@
         <gwt.style>OBF</gwt.style>
 
         <!-- server -->
-        <gae.version>1.7.4</gae.version>
+        <gae.version>1.8.6</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
         <!-- maven -->
-        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+        <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
         <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
@@ -227,6 +227,14 @@
                         <splitJars>true</splitJars>
                         <sdkDir>${gae.home}</sdkDir>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.kindleit</groupId>
+                            <artifactId>gae-runtime</artifactId>
+                            <version>${gae.version}</version>
+                            <type>pom</type>
+                        </dependency>
+                    </dependencies>
                     <executions>
                         <execution>
                             <id>install-server-jar</id>
