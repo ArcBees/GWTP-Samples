@@ -16,7 +16,6 @@
 
 package com.gwtplatform.samples.mobile.client.application.breadcrumbs;
 
-
 import javax.inject.Inject;
 
 import com.google.gwt.event.shared.GwtEvent.Type;
