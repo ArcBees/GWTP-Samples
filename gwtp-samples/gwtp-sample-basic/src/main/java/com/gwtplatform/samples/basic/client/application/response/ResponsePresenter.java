@@ -20,7 +20,7 @@ import javax.inject.Inject;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.rpc.client.RpcDispatchAsync;
+import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -47,7 +47,7 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
         void setTextToServer(String textToServer);
     }
 
-    private final RpcDispatchAsync dispatcher;
+    private final DispatchAsync dispatcher;
     private final PlaceManager placeManager;
 
     private String textToServer;
@@ -57,7 +57,7 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
                       MyView view,
                       MyProxy proxy,
                       PlaceManager placeManager,
-                      RpcDispatchAsync dispatcher) {
+                      DispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

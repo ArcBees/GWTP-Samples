@@ -16,9 +16,9 @@
 
 package com.gwtplatform.samples.basic.shared.dispatch;
 
-import com.gwtplatform.dispatch.rpc.shared.ActionImpl;
+import com.gwtplatform.dispatch.rpc.shared.UnsecuredActionImpl;
 
-public class SendTextToServerAction extends ActionImpl<SendTextToServerResult> {
+public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
     private String textToServer;
 
     public SendTextToServerAction(String textToServer) {
