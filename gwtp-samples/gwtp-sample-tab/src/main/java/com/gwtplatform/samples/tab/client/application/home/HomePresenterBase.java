@@ -41,12 +41,12 @@ public abstract class HomePresenterBase<V extends View & TabPanel, P extends Pro
                       P proxy,
                       Type<RequestTabsHandler> requestTabsEventType,
                       GwtEvent.Type<RevealContentHandler<?>> slot) {
-        super(eventBus, view, proxy, TYPE_SetTabContent, requestTabsEventType, slot);
+        super(eventBus, view, proxy, SLOT_SetTabContent, requestTabsEventType, slot);
     }
 
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<RevealContentHandler<?>>();
 }

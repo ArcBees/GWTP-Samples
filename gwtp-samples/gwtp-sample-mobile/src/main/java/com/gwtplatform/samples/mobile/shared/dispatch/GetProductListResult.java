@@ -2,7 +2,7 @@ package com.gwtplatform.samples.mobile.shared.dispatch;
 
 import java.util.ArrayList;
 
-import com.gwtplatform.dispatch.shared.Result;
+import com.gwtplatform.dispatch.rpc.shared.Result;
 
 public class GetProductListResult implements Result {
     private ArrayList<Product> products;

@@ -18,6 +18,8 @@ package com.gwtplatform.samples.mobile.client.application.products;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import com.google.gwt.dom.client.HeadingElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -25,7 +27,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -63,8 +64,10 @@ public class ProductsTabletView extends ViewImpl implements ProductsPresenter.My
     public void setList(List<Product> products) {
         productList.clear();
         for (Product product : products) {
-            PlaceRequest request = new PlaceRequest(NameTokens.product).with(ParameterTokens.TOKEN_ID,
-                                                                             Integer.toString(product.getId()));
+            PlaceRequest request = new PlaceRequest.Builder()
+                    .nameToken(NameTokens.product)
+                    .with(ParameterTokens.TOKEN_ID, Integer.toString(product.getId()))
+                    .build();
             productList.add(new Hyperlink(product.getName(), placeManager.buildRelativeHistoryToken(request)));
         }
     }

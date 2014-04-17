@@ -53,7 +53,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetMainContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<RevealContentHandler<?>>();
 
     @Inject
     ApplicationPresenter(EventBus eventBus,

@@ -71,7 +71,7 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
 
     @Override
     public void setInSlot(Object slot, IsWidget content) {
-        if (slot == DialogSamplePresenter.TYPE_SetTabContent) {
+        if (slot == DialogSamplePresenter.SLOT_SetTabContent) {
             tabPanel.setPanelContent(content);
         } else {
             super.setInSlot(slot, content);

@@ -58,18 +58,18 @@ public class DialogSamplePresenter extends
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<RequestTabsHandler>();
 
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<RevealContentHandler<?>>();
 
     @Inject
     DialogSamplePresenter(EventBus eventBus,
                           MyView view,
                           MyProxy proxy) {
-        super(eventBus, view, proxy, TYPE_SetTabContent, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
     }
 }

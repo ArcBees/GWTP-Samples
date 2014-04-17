@@ -64,7 +64,7 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<RequestTabsHandler>();
 
     private final PlaceManager placeManager;
 
@@ -73,7 +73,7 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
                   MyView view,
                   MyProxy proxy,
                   PlaceManager placeManager) {
-        super(eventBus, view, proxy, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
 
         this.placeManager = placeManager;
     }

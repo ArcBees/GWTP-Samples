@@ -16,10 +16,11 @@
 
 package com.gwtplatform.samples.mobile.client.application.product;
 
+import javax.inject.Inject;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.shared.DispatchAsync;
+import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -67,7 +68,7 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
                      MyProxy proxy,
                      PlaceManager placeManager,
                      DispatchAsync dispatcher) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;

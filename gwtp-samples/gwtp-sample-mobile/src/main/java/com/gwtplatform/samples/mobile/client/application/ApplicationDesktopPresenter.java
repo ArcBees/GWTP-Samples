@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.mobile.client.application;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -32,7 +33,7 @@ public class ApplicationDesktopPresenter extends AbstractApplicationPresenter im
                                 MyView view,
                                 MyProxy proxy,
                                 PlaceManager placeManager) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;
 

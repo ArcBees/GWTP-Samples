@@ -55,6 +55,6 @@ public class HomeInfoPresenter extends Presenter<HomeInfoPresenter.MyView, HomeI
     HomeInfoPresenter(EventBus eventBus,
                       MyView view,
                       MyProxy proxy) {
-        super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, HomePresenter.SLOT_SetTabContent);
     }
 }

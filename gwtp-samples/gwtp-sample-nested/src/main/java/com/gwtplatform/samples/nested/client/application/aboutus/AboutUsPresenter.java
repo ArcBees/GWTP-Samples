@@ -45,6 +45,6 @@ public class AboutUsPresenter extends Presenter<AboutUsPresenter.MyView, AboutUs
     AboutUsPresenter(EventBus eventBus,
                      MyView view,
                      MyProxy proxy) {
-        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
     }
 }

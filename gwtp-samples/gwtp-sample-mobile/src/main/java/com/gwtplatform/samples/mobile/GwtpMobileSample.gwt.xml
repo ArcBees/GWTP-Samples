@@ -19,7 +19,7 @@
 
     <!-- Shared modules -->
     <set-configuration-property name="gin.ginjector.modules"
-                                value="com.gwtplatform.dispatch.client.gin.DispatchAsyncModule" />
+                                value="com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule" />
     <extend-configuration-property name="gin.ginjector.modules"
                                    value="com.gwtplatform.samples.mobile.client.gin.SharedModule" />
 

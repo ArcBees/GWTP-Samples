@@ -32,7 +32,7 @@ public class ApplicationMobilePresenter extends AbstractApplicationPresenter imp
                                MyView view,
                                MyProxy proxy,
                                PlaceManager placeManager) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;
 
