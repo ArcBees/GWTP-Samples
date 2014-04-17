@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import com.gwtplatform.dispatch.server.ExecutionContext;
-import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
+import com.gwtplatform.dispatch.rpc.server.ExecutionContext;
+import com.gwtplatform.dispatch.rpc.server.actionhandler.ActionHandler;
 import com.gwtplatform.dispatch.shared.ActionException;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;

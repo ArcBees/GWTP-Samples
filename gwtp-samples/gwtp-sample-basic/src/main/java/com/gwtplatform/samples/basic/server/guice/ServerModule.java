@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.basic.server.guice;
 
-import com.gwtplatform.dispatch.server.guice.HandlerModule;
+import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
 import com.gwtplatform.samples.basic.server.dispatch.SendTextToServerHandler;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 

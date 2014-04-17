@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,8 +18,6 @@ package com.gwtplatform.samples.basic.client.place;
 
 /**
  * Main presenters name tokens.
- *
- * @author Brandon Donnelson
  */
 public class NameTokens {
     public static final String home = "home";

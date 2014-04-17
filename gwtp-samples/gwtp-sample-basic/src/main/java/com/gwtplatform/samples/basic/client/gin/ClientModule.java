@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.basic.client.gin;
 
-import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
+import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
@@ -32,15 +32,13 @@ public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new DefaultModule());
-        install(new DispatchAsyncModule());
+        install(new RpcDispatchAsyncModule());
         install(new ApplicationModule());
 
-        // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
 
-        // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
     }
 }

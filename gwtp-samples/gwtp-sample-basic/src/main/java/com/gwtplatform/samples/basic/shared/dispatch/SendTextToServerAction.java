@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,13 +16,9 @@
 
 package com.gwtplatform.samples.basic.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
+import com.gwtplatform.dispatch.rpc.shared.ActionImpl;
 
-/**
- * An action that can be sent using an {@link DispatchAsync} (client-side) corresponding to a
- * {@link com.gwtplatform.dispatch.server.Dispatch} (server-side).
- */
-public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
+public class SendTextToServerAction extends ActionImpl<SendTextToServerResult> {
     private String textToServer;
 
     public SendTextToServerAction(String textToServer) {

@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,17 +16,18 @@
 
 package com.gwtplatform.samples.basic.client.application.response;
 
+import javax.inject.Inject;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.shared.DispatchAsync;
+import com.gwtplatform.dispatch.rpc.client.RpcDispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.client.proxy.PlaceRequest;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.place.TokenParameters;
@@ -35,24 +36,18 @@ import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
 
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
         implements ResponseUiHandlers {
-    /**
-     * {@link ResponsePresenter}'s proxy.
-     */
     @ProxyCodeSplit
     @NameToken(NameTokens.response)
     public interface MyProxy extends ProxyPlace<ResponsePresenter> {
     }
 
-    /**
-     * {@link ResponsePresenter}'s view.
-     */
     public interface MyView extends View, HasUiHandlers<ResponseUiHandlers> {
         void setServerResponse(String serverResponse);
 
         void setTextToServer(String textToServer);
     }
 
-    private final DispatchAsync dispatcher;
+    private final RpcDispatchAsync dispatcher;
     private final PlaceManager placeManager;
 
     private String textToServer;
@@ -62,7 +57,7 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
                       MyView view,
                       MyProxy proxy,
                       PlaceManager placeManager,
-                      DispatchAsync dispatcher) {
+                      RpcDispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

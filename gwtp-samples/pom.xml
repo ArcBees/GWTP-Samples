@@ -63,18 +63,18 @@
 
     <properties>
         <!-- client -->
-        <gwt.version>2.5.1</gwt.version>
-        <gwtp.version>1.0-RC-3.1</gwtp.version>
-        <gin.version>2.0.0</gin.version>
+        <gwt.version>2.6.0</gwt.version>
+        <gwtp.version>1.2.1</gwtp.version>
+        <gin.version>2.1.2</gin.version>
         <gwt.style>OBF</gwt.style>
 
         <!-- server -->
-        <gae.version>1.7.4</gae.version>
+        <gae.version>1.9.2</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
         <!-- maven -->
-        <maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
+        <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
         <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
         <maven.deploy.version>2.7</maven.deploy.version>
         <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
@@ -86,9 +86,9 @@
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
-        <jukito.version>1.1</jukito.version>
+        <jukito.version>1.4</jukito.version>
 
-        <target.jdk>1.6</target.jdk>
+        <target.jdk>1.7</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -150,8 +150,6 @@
                     <artifactId>gwt-maven-plugin</artifactId>
                     <version>${gwt.version}</version>
                     <configuration>
-                        <strict>true</strict>
-
                         <testTimeOut>180</testTimeOut>
                         <includes>**/*GwtTest.java</includes>
                         <mode>htmlunit</mode>
@@ -259,19 +257,19 @@
             </dependency>
             <dependency>
                 <groupId>com.gwtplatform</groupId>
-                <artifactId>gwtp-dispatch-client</artifactId>
+                <artifactId>gwtp-dispatch-rpc-client</artifactId>
                 <version>${gwtp.version}</version>
                 <scope>provided</scope>
                 <!-- Not needed server-side -->
             </dependency>
             <dependency>
                 <groupId>com.gwtplatform</groupId>
-                <artifactId>gwtp-dispatch-server-guice</artifactId>
+                <artifactId>gwtp-dispatch-rpc-server-guice</artifactId>
                 <version>${gwtp.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.gwtplatform</groupId>
-                <artifactId>gwtp-dispatch-server-spring</artifactId>
+                <artifactId>gwtp-dispatch-rpc-server-spring</artifactId>
                 <version>${gwtp.version}</version>
             </dependency>
             <dependency>
