@@ -79,14 +79,12 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
      * Send the name from the nameField to the server and wait for a response.
      */
     private void sendNameToServer(String name) {
-        // First, we validate the input.
         getView().setError("");
         if (!FieldVerifier.isValidName(name)) {
             getView().setError("Please enter at least four characters");
             return;
         }
 
-        // Then, we transmit it to the ResponsePresenter, which will do the server call
         PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
                 .nameToken(NameTokens.response)
                 .with(TokenParameters.TEXT_TO_SERVER, name)
