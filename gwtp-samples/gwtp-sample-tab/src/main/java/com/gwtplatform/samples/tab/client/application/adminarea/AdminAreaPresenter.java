@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.adminarea;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.TabData;

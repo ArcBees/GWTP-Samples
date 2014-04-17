@@ -16,8 +16,9 @@
 
 package com.gwtplatform.samples.tab.client.application.home;
 
+import javax.inject.Inject;
+
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.RequestTabsHandler;
 import com.gwtplatform.mvp.client.TabView;
@@ -64,7 +65,7 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<RequestTabsHandler>();
+    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<>();
 
     private final PlaceManager placeManager;
 

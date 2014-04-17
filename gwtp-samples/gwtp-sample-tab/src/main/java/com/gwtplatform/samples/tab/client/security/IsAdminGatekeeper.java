@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.security;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
 /**

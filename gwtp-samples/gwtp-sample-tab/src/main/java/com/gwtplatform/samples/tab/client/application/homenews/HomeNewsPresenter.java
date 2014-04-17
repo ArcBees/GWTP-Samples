@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.homenews;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;

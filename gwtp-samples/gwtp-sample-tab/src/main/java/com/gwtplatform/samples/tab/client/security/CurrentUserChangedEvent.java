@@ -17,7 +17,7 @@ public class CurrentUserChangedEvent extends GwtEvent<CurrentUserChangedHandler>
         source.fireEvent(eventInstance);
     }
 
-    private static final Type<CurrentUserChangedHandler> TYPE = new Type<CurrentUserChangedHandler>();
+    private static final Type<CurrentUserChangedHandler> TYPE = new Type<>();
 
     public static Type<CurrentUserChangedHandler> getType() {
         return TYPE;

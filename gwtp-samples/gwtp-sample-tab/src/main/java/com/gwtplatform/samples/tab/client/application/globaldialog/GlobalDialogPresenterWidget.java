@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.globaldialog;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 import com.gwtplatform.mvp.client.PopupView;

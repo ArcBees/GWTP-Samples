@@ -48,5 +48,5 @@ public abstract class HomePresenterBase<V extends View & TabPanel, P extends Pro
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
 }
