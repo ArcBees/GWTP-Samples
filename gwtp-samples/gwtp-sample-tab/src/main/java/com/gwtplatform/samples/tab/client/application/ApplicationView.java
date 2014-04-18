@@ -44,9 +44,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     LinkMenu linkMenu;
 
     @Inject
-    public ApplicationView(Binder uiBinder,
-                           RoundTabPanel tabPanel,
-                           LinkMenu linkMenu) {
+    ApplicationView(Binder uiBinder,
+                    RoundTabPanel tabPanel,
+                    LinkMenu linkMenu) {
         this.tabPanel = tabPanel;
         this.linkMenu = linkMenu;
 
