@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.basic.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.Result;
+
+import com.gwtplatform.dispatch.rpc.shared.Result;
 
 /**
  * The result of a {@link SendTextToServerAction} action.

@@ -1,6 +1,6 @@
 package com.gwtplatform.samples.mobile.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.Action;
+import com.gwtplatform.dispatch.rpc.shared.Action;
 
 public class GetProductListAction implements Action<GetProductListResult> {
     private int flags;
@@ -36,9 +36,8 @@ public class GetProductListAction implements Action<GetProductListResult> {
         if (getClass() != obj.getClass())
             return false;
         GetProductListAction other = (GetProductListAction) obj;
-        if (flags != other.flags)
-            return false;
-        return true;
+
+        return flags == other.flags;
     }
 
     @Override

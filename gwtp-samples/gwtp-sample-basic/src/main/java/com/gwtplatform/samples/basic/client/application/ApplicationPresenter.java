@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.basic.client.application;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -24,25 +25,19 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.place.TokenParameters;
 import com.gwtplatform.samples.basic.shared.FieldVerifier;
 
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
         implements ApplicationUiHandlers {
-    /**
-     * {@link ApplicationPresenter}'s proxy.
-     */
     @ProxyStandard
     @NameToken(NameTokens.home)
     public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
-    /**
-     * {@link ApplicationPresenter}'s view.
-     */
     public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void resetAndFocus();
 
@@ -75,18 +70,13 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         getView().resetAndFocus();
     }
 
-    /**
-     * Send the name from the nameField to the server and wait for a response.
-     */
     private void sendNameToServer(String name) {
-        // First, we validate the input.
         getView().setError("");
         if (!FieldVerifier.isValidName(name)) {
             getView().setError("Please enter at least four characters");
             return;
         }
 
-        // Then, we transmit it to the ResponsePresenter, which will do the server call
         PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
                 .nameToken(NameTokens.response)
                 .with(TokenParameters.TEXT_TO_SERVER, name)

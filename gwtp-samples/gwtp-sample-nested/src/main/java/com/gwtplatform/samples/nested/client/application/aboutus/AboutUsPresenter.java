@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.nested.client.application.aboutus;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -45,6 +46,6 @@ public class AboutUsPresenter extends Presenter<AboutUsPresenter.MyView, AboutUs
     AboutUsPresenter(EventBus eventBus,
                      MyView view,
                      MyProxy proxy) {
-        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
     }
 }

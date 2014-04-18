@@ -16,10 +16,11 @@
 
 package com.gwtplatform.samples.mobile.client.application;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.client.proxy.PlaceRequest;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
@@ -32,7 +33,7 @@ public class ApplicationTabletPresenter extends AbstractApplicationPresenter imp
                                MyView view,
                                MyProxy proxy,
                                PlaceManager placeManager) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;
 

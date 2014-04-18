@@ -67,25 +67,25 @@ public class ApplicationPresenter
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<>();
 
     /**
      * Fired by child proxie's when their tab content is changed.
      */
     @ChangeTab
-    public static final Type<ChangeTabHandler> TYPE_ChangeTab = new Type<ChangeTabHandler>();
+    public static final Type<ChangeTabHandler> SLOT_ChangeTab = new Type<>();
 
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
 
     @Inject
     ApplicationPresenter(EventBus eventBus,
                          MyView view,
                          MyProxy proxy) {
-        super(eventBus, view, proxy, TYPE_SetTabContent, TYPE_RequestTabs, TYPE_ChangeTab, RevealType.Root);
+        super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, SLOT_ChangeTab, RevealType.Root);
     }
 
     @ProxyEvent

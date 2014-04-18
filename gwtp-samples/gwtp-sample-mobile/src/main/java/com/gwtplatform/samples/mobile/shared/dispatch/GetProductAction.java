@@ -1,6 +1,6 @@
 package com.gwtplatform.samples.mobile.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.Action;
+import com.gwtplatform.dispatch.rpc.shared.Action;
 
 public class GetProductAction implements Action<GetProductResult> {
     private int id;
@@ -36,9 +36,8 @@ public class GetProductAction implements Action<GetProductResult> {
         if (getClass() != obj.getClass())
             return false;
         GetProductAction other = (GetProductAction) obj;
-        if (id != other.id)
-            return false;
-        return true;
+
+        return id == other.id;
     }
 
     @Override

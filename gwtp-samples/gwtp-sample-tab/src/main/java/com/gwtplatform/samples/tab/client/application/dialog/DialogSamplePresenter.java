@@ -16,8 +16,9 @@
 
 package com.gwtplatform.samples.tab.client.application.dialog;
 
+import javax.inject.Inject;
+
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.RequestTabsHandler;
 import com.gwtplatform.mvp.client.TabContainerPresenter;
@@ -58,18 +59,18 @@ public class DialogSamplePresenter extends
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> TYPE_RequestTabs = new Type<RequestTabsHandler>();
+    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<>();
 
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetTabContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
 
     @Inject
     DialogSamplePresenter(EventBus eventBus,
                           MyView view,
                           MyProxy proxy) {
-        super(eventBus, view, proxy, TYPE_SetTabContent, TYPE_RequestTabs, ApplicationPresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
     }
 }

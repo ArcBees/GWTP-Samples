@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.homenews;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -73,7 +74,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
                       MyView view,
                       MyProxy proxy,
                       PlaceManager placeManager) {
-        super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, HomePresenter.SLOT_SetTabContent);
 
         this.placeManager = placeManager;
 
