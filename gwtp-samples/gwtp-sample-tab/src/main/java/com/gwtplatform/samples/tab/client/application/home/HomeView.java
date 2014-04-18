@@ -16,11 +16,12 @@
 
 package com.gwtplatform.samples.tab.client.application.home;
 
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.Tab;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.ViewImpl;
@@ -71,7 +72,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
 
     @Override
     public void setInSlot(Object slot, IsWidget content) {
-        if (slot == HomePresenter.TYPE_SetTabContent) {
+        if (slot == HomePresenter.SLOT_SetTabContent) {
             tabPanel.setPanelContent(content);
         } else {
             super.setInSlot(slot, content);

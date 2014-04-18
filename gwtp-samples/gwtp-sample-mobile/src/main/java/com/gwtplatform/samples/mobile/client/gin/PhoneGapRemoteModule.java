@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.mobile.client.gin;
 
-import com.gwtplatform.dispatch.client.RemoteServerUrl;
+import com.gwtplatform.dispatch.rpc.client.RemoteServerUrl;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
 public class PhoneGapRemoteModule extends AbstractPresenterModule {

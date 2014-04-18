@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.basic.server.guice;
 
-import com.gwtplatform.dispatch.server.guice.HandlerModule;
+import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
 import com.gwtplatform.samples.basic.server.dispatch.SendTextToServerHandler;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 

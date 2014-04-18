@@ -18,9 +18,10 @@ package com.gwtplatform.samples.mobile.server.dispatch;
 
 import java.util.ArrayList;
 
-import com.google.inject.Inject;
-import com.gwtplatform.dispatch.server.ExecutionContext;
-import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
+import javax.inject.Inject;
+
+import com.gwtplatform.dispatch.rpc.server.ExecutionContext;
+import com.gwtplatform.dispatch.rpc.server.actionhandler.ActionHandler;
 import com.gwtplatform.dispatch.shared.ActionException;
 import com.gwtplatform.samples.mobile.server.ProductDatabase;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductListAction;

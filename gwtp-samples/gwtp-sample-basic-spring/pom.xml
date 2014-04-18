@@ -46,11 +46,11 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>gwtp-dispatch-client</artifactId>
+            <artifactId>gwtp-dispatch-rpc-client</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>gwtp-dispatch-server-spring</artifactId>
+            <artifactId>gwtp-dispatch-rpc-server-spring</artifactId>
         </dependency>
 
         <!-- GWT dependencies -->

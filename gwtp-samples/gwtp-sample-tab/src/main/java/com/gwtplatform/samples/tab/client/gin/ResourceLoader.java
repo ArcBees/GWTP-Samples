@@ -1,6 +1,7 @@
 package com.gwtplatform.samples.tab.client.gin;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.gwtplatform.samples.tab.client.resources.AppResources;
 
 public class ResourceLoader {

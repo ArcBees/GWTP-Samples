@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.nested.client.application.contact;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -40,6 +41,6 @@ public class ContactPresenter extends ContactPresenterBase<ContactPresenter.MyPr
     ContactPresenter(EventBus eventBus,
                      MyView view,
                      MyProxy proxy) {
-        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
+        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
     }
 }

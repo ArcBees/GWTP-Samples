@@ -42,7 +42,7 @@ public class ProductDatabase {
     }
 
     public ArrayList<Product> getMatching(int flags) {
-        ArrayList<Product> result = new ArrayList<Product>();
+        ArrayList<Product> result = new ArrayList<>();
         for (Product product : products) {
             if (product.flagsSet(flags)) {
                 result.add(product);

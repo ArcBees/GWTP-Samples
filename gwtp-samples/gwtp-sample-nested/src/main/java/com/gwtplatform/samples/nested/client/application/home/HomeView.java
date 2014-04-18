@@ -16,9 +16,10 @@
 
 package com.gwtplatform.samples.nested.client.application.home;
 
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 public class HomeView extends ViewImpl implements HomePresenter.MyView {
@@ -26,7 +27,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     }
 
     @Inject
-    public HomeView(Binder binder) {
+    HomeView(Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 }
