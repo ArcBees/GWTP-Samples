@@ -37,7 +37,7 @@ import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerActio
  */
 @Configuration
 @Import(DefaultModule.class)
-@ComponentScan(basePackages = "com.gwtplatform.dispatch.server.spring")
+@ComponentScan(basePackages = "com.gwtplatform.dispatch.rpc.server.spring")
 public class ServerModule extends HandlerModule {
     public ServerModule() {
     }
