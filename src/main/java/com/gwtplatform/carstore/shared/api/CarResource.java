@@ -14,23 +14,20 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.client.rest;
+package com.gwtplatform.carstore.shared.api;
 
-import java.util.Date;
-
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
-import com.gwtplatform.dispatch.rest.client.DateFormat;
-import com.gwtplatform.dispatch.rest.shared.RestAction;
+import com.gwtplatform.carstore.shared.dto.CarDto;
 
-import static com.gwtplatform.carstore.shared.rest.ResourcesPath.STATS;
-import static com.gwtplatform.carstore.shared.rest.RestParameter.DATE;
-import static com.gwtplatform.carstore.shared.rest.RestParameter.DATE_FORMAT;
-
-@Path(STATS)
-public interface StatisticsService {
+@Produces(MediaType.APPLICATION_JSON)
+public interface CarResource {
     @GET
-    RestAction<Integer> extractYearFromDate(@QueryParam(DATE) @DateFormat(DATE_FORMAT) Date date);
+    CarDto get();
+
+    @DELETE
+    void delete();
 }

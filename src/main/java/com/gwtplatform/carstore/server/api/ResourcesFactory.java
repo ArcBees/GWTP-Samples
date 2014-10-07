@@ -1,5 +1,5 @@
 /**
- * Copyright 2013 ArcBees Inc.
+ * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,13 +14,10 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.shared.rest;
+package com.gwtplatform.carstore.server.api;
 
-public class ResourcesPath {
-    public static final String CARS = "/cars";
-    public static final String MANUFACTURER = "/manufacturers";
-    public static final String RATING = "/ratings";
-    public static final String SESSION = "/session";
-    public static final String COUNT = "/count";
-    public static final String STATS = "/stats";
+import com.gwtplatform.carstore.shared.api.CarResource;
+
+public interface ResourcesFactory {
+    CarResource createCarResource(Long carId);
 }

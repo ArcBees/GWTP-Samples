@@ -14,12 +14,24 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.shared.rest;
+package com.gwtplatform.carstore.shared.api;
 
-public class RestParameter {
-    public static final String ID = "id";
-    public static final String LIMIT = "limit";
-    public static final String OFFSET = "offset";
-    public static final String DATE = "date";
-    public static final String DATE_FORMAT = "MM-yyyy-dd";
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.gwtplatform.carstore.shared.dto.CurrentUserDto;
+
+import static com.gwtplatform.carstore.shared.api.ApiPaths.SESSION;
+
+@Path(SESSION)
+@Produces(MediaType.APPLICATION_JSON)
+public interface SessionResource {
+    @DELETE
+    void logout();
+
+    @GET
+    CurrentUserDto getCurrentUser();
 }

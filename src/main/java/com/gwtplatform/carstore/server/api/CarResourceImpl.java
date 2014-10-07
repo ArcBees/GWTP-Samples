@@ -14,24 +14,35 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.client.application.testutils;
+package com.gwtplatform.carstore.server.api;
 
-import com.google.inject.TypeLiteral;
-import com.gwtplatform.carstore.client.rest.CarService;
+import javax.inject.Inject;
+
+import com.google.inject.assistedinject.Assisted;
+import com.gwtplatform.carstore.server.dao.CarDao;
+import com.gwtplatform.carstore.server.dao.domain.Car;
+import com.gwtplatform.carstore.shared.api.CarResource;
 import com.gwtplatform.carstore.shared.dto.CarDto;
-import com.gwtplatform.dispatch.rest.shared.RestAction;
 
-public class CarServiceImpl implements CarService {
-    public CarServiceImpl(Long carId) {
+public class CarResourceImpl implements CarResource {
+    private final CarDao carDao;
+    private final Long carId;
+
+    @Inject
+    CarResourceImpl(
+            CarDao carDao,
+            @Assisted Long carId) {
+        this.carDao = carDao;
+        this.carId = carId;
     }
 
     @Override
-    public RestAction<CarDto> get() {
-        return new ActionImpl<CarDto>(new TypeLiteral<RestAction<CarDto>>() {});
+    public CarDto get() {
+        return Car.createDto(carDao.get(carId));
     }
 
     @Override
-    public RestAction<Void> delete() {
-        return new ActionImpl<Void>(new TypeLiteral<RestAction<Void>>() {});
+    public void delete() {
+        carDao.delete(carId);
     }
 }

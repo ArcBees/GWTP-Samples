@@ -14,20 +14,17 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.server.rest;
+package com.gwtplatform.carstore.shared.api;
 
-import javax.inject.Singleton;
+public class ApiPaths {
+    public static final String ROOT = "/api";
 
-import com.google.inject.AbstractModule;
+    public static final String CARS = "/cars";
+    public static final String MANUFACTURER = "/manufacturers";
+    public static final String RATING = "/ratings";
+    public static final String SESSION = "/session";
+    public static final String COUNT = "/count";
+    public static final String STATS = "/stats";
 
-public class RestModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(CarResource.class);
-        bind(ManufacturerResource.class);
-        bind(SessionResource.class);
-        bind(RatingResource.class);
-        bind(StatisticsResource.class);
-        bind(JacksonProvider.class).in(Singleton.class);
-    }
+    public static final String PATH_ID = "/{" + ApiParameters.ID + "}";
 }
