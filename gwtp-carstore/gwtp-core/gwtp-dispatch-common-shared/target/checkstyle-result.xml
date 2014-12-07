@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\ActionException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\DispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\HasSecured.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\SecurityCookie.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\SecurityCookieAccessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\src\main\java\com\gwtplatform\dispatch\shared\TypedAction.java">
+</file>
+</checkstyle>

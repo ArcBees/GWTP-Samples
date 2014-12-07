@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\AbstractActionMetadataProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\AbstractDispatchRestEntryPoint.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\AbstractRestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\ActionMetadataProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DefaultDateFormat.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DefaultRestDispatchCallFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DefaultRestDispatchHooks.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DefaultRestRequestBuilderFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DefaultRestResponseDeserializer.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\DispatchRestEntryPoint.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\gin\RestDispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\gin\RestDispatchAsyncModuleBuilder.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\gin\RestParameterBuilder.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\GlobalHeaderParams.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\GlobalQueryParams.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\HttpRequestBuilderFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\AbstractRestInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\DefaultRestInterceptorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\DuplicateInterceptorContextException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\InterceptorContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\InterceptRestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\RestInterceptedAsyncCallback.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\RestInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\interceptor\RestInterceptorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\MetadataType.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RequestTimeout.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\ResponseWrapper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestApplicationPath.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestBinding.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestCallback.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestDispatch.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestDispatchCall.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestDispatchCallFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestDispatchHooks.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestRequestBuilderFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\RestResponseDeserializer.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\serialization\AbstractJacksonMapperProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\serialization\JacksonMapperProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\serialization\JsonSerialization.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\serialization\RestParameterBindingsSerializer.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\serialization\Serialization.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\utils\RestParameterBindings.java">
+<error line="29" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\client\XsrfHeaderName.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\AbstractGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\AbstractVelocityGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionMethodDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionMethodGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\ActionModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\action\RestActionGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\DispatchRestGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\DispatchRestIncrementalGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\DispatchRestRebindModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\entrypoint\DefaultEntryPointGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\entrypoint\EntryPointGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\entrypoint\EntryPointModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\events\RegisterGinBindingEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\events\RegisterMetadataEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\events\RegisterSerializableTypeEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\extension\EmptyExtension.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\extension\ExtensionContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\extension\ExtensionGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\extension\ExtensionModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\extension\ExtensionPoint.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\GeneratorWithInput.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\GeneratorWithoutInput.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\gin\DefaultGinModuleGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\gin\GinModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\gin\GinModuleGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\HasPriority.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\HttpVerb.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\FormParamValueResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\HeaderParamValueResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\HttpParameter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\HttpParameterFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\HttpParameterType.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\HttpParamValueResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\PathParamValueResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\parameter\QueryParamValueResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\Parameter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\AbstractMethodGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\AbstractResourceGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\MethodContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\MethodDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\MethodGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\ResourceContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\ResourceDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\ResourceGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\ResourceModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\resource\TopLevelResourceGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\serialization\ActionMetadataProviderGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\serialization\JacksonMapperGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\serialization\JacksonMapperProviderGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\serialization\RegisterMetadataHolder.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\serialization\SerializationModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceMethodDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceMethodGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\subresource\SubResourceModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\Arrays.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\ClassDefinition.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\ClassNameGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\Generators.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\Logger.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\utils\PathResolver.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\java\com\gwtplatform\dispatch\rest\rebind\VelocityProperties.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\DefaultRestRequestBuilderFactoryTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\ExposedRestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\interceptor\RestInterceptorRegistryTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\interceptor\SampleRestInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\RestActionTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\SecuredRestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\serialization\RestParameterBindingsJsonSerializerTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\test\java\com\gwtplatform\dispatch\rest\client\UnsecuredRestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest\src\main\resources\com\gwtplatform\dispatch\rest\rebind\velocity.properties">
+</file>
+</checkstyle>

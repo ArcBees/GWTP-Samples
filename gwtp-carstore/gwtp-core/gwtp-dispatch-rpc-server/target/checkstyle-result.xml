@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\AbstractDispatchImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\AbstractDispatchServiceImpl.java">
+<error line="186" severity="info" message="First sentence should end with a period." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\AbstractHttpSessionSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\AbstractRandomSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandler\AbstractActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandler\ActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandler\ActionResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandler\BatchActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\AbstractEagerActionHandlerValidatorRegistryImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorClass.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorInstance.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorLinkerHelper.java">
+<error line="26" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="27" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorMap.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorMapImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\ActionHandlerValidatorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\EagerActionHandlerValidatorRegistry.java">
+<error line="22" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionhandlervalidator\LazyActionHandlerValidatorRegistry.java">
+<error line="22" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionvalidator\AbstractDefaultActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\actionvalidator\ActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\Dispatch.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\ExecutionContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\RequestProvider.java">
+<error line="21" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\rpc\server\Utils.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\AbstractDispatchImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\AbstractDispatchServiceImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\AbstractHttpSessionSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\AbstractRandomSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandler\AbstractActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandler\ActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandler\ActionResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandler\BatchActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\AbstractEagerActionHandlerValidatorRegistryImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorClass.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorInstance.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorLinkerHelper.java">
+<error line="32" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorMap.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorMapImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\ActionHandlerValidatorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\EagerActionHandlerValidatorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionhandlervalidator\LazyActionHandlerValidatorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionvalidator\AbstractDefaultActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\actionvalidator\ActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\Dispatch.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\ExecutionContext.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\RequestProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\src\main\java\com\gwtplatform\dispatch\server\Utils.java">
+</file>
+</checkstyle>

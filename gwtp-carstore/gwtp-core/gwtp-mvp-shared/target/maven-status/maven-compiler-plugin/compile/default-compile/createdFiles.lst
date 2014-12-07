@@ -1,0 +1,10 @@
+com\gwtplatform\mvp\shared\proxy\PlaceRequest.class
+com\gwtplatform\mvp\shared\proxy\RouteTokenFormatter.class
+com\gwtplatform\mvp\shared\proxy\TokenFormatException.class
+com\gwtplatform\mvp\shared\proxy\TokenFormatter.class
+com\gwtplatform\mvp\shared\proxy\PlaceRequest$1.class
+com\gwtplatform\mvp\shared\proxy\RouteTokenFormatter$RouteMatch.class
+com\gwtplatform\mvp\shared\proxy\PlaceRequest$Builder.class
+com\gwtplatform\mvp\shared\proxy\ParameterTokenFormatter.class
+com\gwtplatform\mvp\shared\proxy\PlaceTokenRegistry.class
+com\gwtplatform\mvp\shared\proxy\RouteTokenFormatter$RouteMatcher.class

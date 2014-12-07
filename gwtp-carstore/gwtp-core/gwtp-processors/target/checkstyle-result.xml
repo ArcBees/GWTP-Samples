@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\GenDispatch.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\GenDto.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\GenEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\GenProxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\helper\BuilderGenerationHelper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\helper\ClassGenerationHelper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\helper\GenerationHelper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\helper\InterfaceGenerationHelper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\helper\ReflectionHelper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\In.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\Optional.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\Order.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\Out.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\processor\GenDispatchProcessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\processor\GenDtoProcessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\processor\GenEventProcessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\processor\GenProcessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\processor\GenProxyProcessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\UseProxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\main\java\com\gwtplatform\dispatch\annotation\UseProxyName.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\Address.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\Detail.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\DetailProxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\DispatchAnnotationProcessingTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\DtoAnnotationProcessingTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\Employee.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\EmployeeLocator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\EventAnnotationProcessingTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\Foo.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\FooChanged.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\HasThing.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\Person.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\PersonName.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\ProxyAnnotationProcessingTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\RetrieveBar.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-processors\src\test\java\com\gwtplatform\dispatch\annotation\RetrieveFoo.java">
+</file>
+</checkstyle>

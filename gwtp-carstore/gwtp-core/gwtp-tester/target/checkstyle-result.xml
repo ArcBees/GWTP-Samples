@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\AsyncMockProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\DeferredCommandManager.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\MockClientActionHandlerMap.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\MockFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\MockHandlerModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\MockingBinder.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\MockProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\TestDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\TestDispatchModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\main\java\com\gwtplatform\tester\TestDispatchService.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\test\java\com\gwtplatform\tester\MockingBinderTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\test\java\com\gwtplatform\tester\MockitoMockFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\src\test\java\com\gwtplatform\tester\TestView.java">
+</file>
+</checkstyle>

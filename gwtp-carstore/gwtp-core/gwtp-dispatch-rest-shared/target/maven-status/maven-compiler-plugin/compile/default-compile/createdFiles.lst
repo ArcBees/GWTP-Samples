@@ -1,0 +1,5 @@
+com\gwtplatform\dispatch\rest\shared\NoXsrfHeader.class
+com\gwtplatform\dispatch\rest\shared\RestAction.class
+com\gwtplatform\dispatch\rest\shared\DateFormat.class
+com\gwtplatform\dispatch\rest\shared\HttpMethod.class
+com\gwtplatform\dispatch\rest\shared\RestParameter.class

@@ -1,0 +1,13 @@
+com\gwtplatform\crawlerservice\server\domain\CachedPage.class
+com\gwtplatform\crawlerservice\server\CrawlServiceServlet.class
+com\gwtplatform\crawlerservice\server\CachedPageTimeoutSec.class
+com\gwtplatform\crawlerservice\server\HtmlUnitTimeoutMillis.class
+com\gwtplatform\crawlerservice\server\guice\CrawlServiceModule.class
+com\gwtplatform\crawlerservice\server\CrawlServiceServlet$1.class
+com\gwtplatform\crawlerservice\server\service\CachedPageDao.class
+com\gwtplatform\crawlerservice\server\domain\DatastoreObject.class
+com\gwtplatform\crawlerservice\server\CrawlServiceServlet$SyncAllAjaxController.class
+com\gwtplatform\crawlerservice\server\ServiceKey.class
+com\gwtplatform\crawlerservice\server\service\ObjectifyDao.class
+com\gwtplatform\crawlerservice\server\objectify\OfyService.class
+com\gwtplatform\crawlerservice\server\InvalidKeyException.class

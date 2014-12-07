@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\actionhandlervalidator\ActionHandlerValidatorLinker.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\actionhandlervalidator\EagerActionHandlerValidatorRegistryImpl.java">
+<error line="22" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\actionhandlervalidator\LazyActionHandlerValidatorRegistryImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\actionvalidator\DefaultActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\DispatchImpl.java">
+<error line="25" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\DispatchModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\DispatchServiceImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\GuiceBeanProvider.java">
+<error line="30" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\HandlerModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\HttpSessionSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\RandomSecurityCookieFilter.java">
+<error line="25" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\request\DefaultRequestProvider.java">
+<error line="26" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\rpc\server\guice\SecureRandomSingleton.java">
+<error line="23" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\actionhandlervalidator\ActionHandlerValidatorLinker.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\actionhandlervalidator\EagerActionHandlerValidatorRegistryImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\actionhandlervalidator\LazyActionHandlerValidatorRegistryImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\actionvalidator\DefaultActionValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\DispatchImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\DispatchModule.java">
+<error line="49" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\DispatchServiceImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\GuiceBeanProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\HandlerModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\HttpSessionSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\RandomSecurityCookieFilter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\request\DefaultRequestProvider.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\main\java\com\gwtplatform\dispatch\server\guice\SecureRandomSingleton.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ActionExceptionThrownByHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ActionExceptionThrownByValidator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ActionThrownByHandlerTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ActionThrownByValidatorTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ActionValidatorThatThrows.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\guice\ActionModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\HandlerThatThrowsActionException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\ServiceModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server-guice\src\test\java\com\gwtplatform\dispatch\rpc\server\SomeAction.java">
+</file>
+</checkstyle>

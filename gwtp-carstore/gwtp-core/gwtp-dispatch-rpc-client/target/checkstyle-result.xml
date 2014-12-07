@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\AbstractDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\DefaultDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\gin\DispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\gin\PhoneGapDispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\PhoneGapDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\RemoteServerUrl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\client\RpcDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\DefaultRpcDispatchCallFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\DefaultRpcDispatchHooks.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\gin\PhoneGapDispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\gin\RpcDispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\AbstractRpcInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\caching\AbstractCachingRpcInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\caching\Cache.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\caching\CachingInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\caching\DefaultCacheImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\DefaultRpcInterceptorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\RpcInterceptedAsyncCallback.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\RpcInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\RpcInterceptorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\interceptor\UndoCommand.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\PhoneGapDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RemoteServerUrl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcBinding.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcDispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcDispatchCallFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcDispatchExecuteCall.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcDispatchHooks.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\main\java\com\gwtplatform\dispatch\rpc\client\RpcDispatchUndoCall.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\src\test\java\com\gwtplatform\dispatch\rpc\client\interceptor\AbstractRpcInterceptorTest.java">
+</file>
+</checkstyle>

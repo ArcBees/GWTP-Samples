@@ -1,0 +1,11 @@
+com\gwtplatform\dispatch\rpc\server\ActionThrownByHandlerTest.class
+com\gwtplatform\dispatch\rpc\server\ActionExceptionThrownByValidator.class
+com\gwtplatform\dispatch\rpc\server\ActionValidatorThatThrows.class
+com\gwtplatform\dispatch\rpc\server\ServiceModule.class
+com\gwtplatform\dispatch\rpc\server\HandlerThatThrowsActionException.class
+com\gwtplatform\dispatch\rpc\server\ActionThrownByValidatorTest.class
+com\gwtplatform\dispatch\rpc\server\SomeAction.class
+com\gwtplatform\dispatch\rpc\server\ActionExceptionThrownByHandler.class
+com\gwtplatform\dispatch\rpc\server\guice\ActionModule.class
+com\gwtplatform\dispatch\rpc\server\ActionThrownByValidatorTest$MyModule.class
+com\gwtplatform\dispatch\rpc\server\ActionThrownByHandlerTest$MyModule.class

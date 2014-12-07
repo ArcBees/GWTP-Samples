@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\main\java\com\gwtplatform\dispatch\rest\shared\DateFormat.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\main\java\com\gwtplatform\dispatch\rest\shared\HttpMethod.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\main\java\com\gwtplatform\dispatch\rest\shared\NoXsrfHeader.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\main\java\com\gwtplatform\dispatch\rest\shared\RestAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\main\java\com\gwtplatform\dispatch\rest\shared\RestParameter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rest-shared\src\test\java\com\gwtplatform\dispatch\rest\shared\RestParameterTest.java">
+</file>
+</checkstyle>

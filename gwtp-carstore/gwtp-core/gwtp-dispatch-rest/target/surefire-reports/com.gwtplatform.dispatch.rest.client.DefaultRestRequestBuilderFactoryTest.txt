@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.gwtplatform.dispatch.rest.client.DefaultRestRequestBuilderFactoryTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.487 sec - in com.gwtplatform.dispatch.rest.client.DefaultRestRequestBuilderFactoryTest

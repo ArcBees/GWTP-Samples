@@ -1,0 +1,9 @@
+com\gwtplatform\dispatch\rest\client\interceptor\RestInterceptorRegistryTest.class
+com\gwtplatform\dispatch\rest\client\RestActionTest.class
+com\gwtplatform\dispatch\rest\client\UnsecuredRestAction.class
+com\gwtplatform\dispatch\rest\client\interceptor\SampleRestInterceptor.class
+com\gwtplatform\dispatch\rest\client\DefaultRestRequestBuilderFactoryTest.class
+com\gwtplatform\dispatch\rest\client\DefaultRestRequestBuilderFactoryTest$Module.class
+com\gwtplatform\dispatch\rest\client\ExposedRestAction.class
+com\gwtplatform\dispatch\rest\client\SecuredRestAction.class
+com\gwtplatform\dispatch\rest\client\serialization\RestParameterBindingsJsonSerializerTest.class

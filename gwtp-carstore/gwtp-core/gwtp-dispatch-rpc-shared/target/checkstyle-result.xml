@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\AbstractSimpleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\AbstractUpdateResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\Action.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\ActionImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\BatchAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\BatchResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\DispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\DispatchService.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\DispatchServiceAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\MultipleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\NoResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\Result.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\ServiceException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\SimpleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\UnsecuredActionImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\rpc\shared\UnsupportedActionException.java">
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\AbstractSimpleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\AbstractUpdateResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\Action.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\ActionImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\BatchAction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\BatchResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\DispatchAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\DispatchService.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\DispatchServiceAsync.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\MultipleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\NoResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\Result.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\ServiceException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\SimpleResult.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\UnsecuredActionImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\src\main\java\com\gwtplatform\dispatch\shared\UnsupportedActionException.java">
+</file>
+</checkstyle>

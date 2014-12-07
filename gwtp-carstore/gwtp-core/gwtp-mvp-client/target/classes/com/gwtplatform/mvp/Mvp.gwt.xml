@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+        "https://raw.githubusercontent.com/gwtproject/gwt/2.7.0/distro-source/core/src/gwt-module.dtd">
+<module>
+    <!-- Inherit the core Web Toolkit stuff.                        -->
+    <inherits name="com.google.gwt.inject.Inject"/>
+
+    <!-- Inherit shared modules -->
+    <inherits name='com.gwtplatform.common.ClientsCommon'/>
+    <inherits name='com.gwtplatform.mvp.MvpShared'/>
+    <inherits name='com.google.gwt.place.Place'/>
+
+    <generate-with class="com.gwtplatform.mvp.rebind.ApplicationControllerGenerator">
+        <when-type-is class="com.gwtplatform.mvp.client.ApplicationController"/>
+    </generate-with>
+
+    <generate-with class="com.gwtplatform.mvp.rebind.ProxyGenerator">
+        <when-type-assignable class="com.gwtplatform.mvp.client.proxy.Proxy"/>
+    </generate-with>
+
+    <!-- Specify the paths for translatable code                    -->
+    <source path='client' excludes="**/*Test.java,**/*TestSuite.java,**/*TestUtil.java"/>
+
+    <!-- gin.ginjector is set to a default value, no other value must be set for Ginjector generation -->
+    <!-- if another value is set, it must point to a valid manual Ginjector class -->
+    <define-configuration-property name="gin.ginjector" is-multi-valued="false"/>
+    <set-configuration-property name="gin.ginjector" value="com.gwtplatform.mvp.client.ClientGinjector"/>
+
+    <!-- optional comma separated list of extension interface to the ginjector -->
+    <define-configuration-property name="gin.ginjector.extensions" is-multi-valued="true"/>
+    <set-configuration-property name="gin.ginjector.extensions" value=""/>
+
+    <!-- kicks off the gwtp application flow -->
+    <define-configuration-property name="gwtp.bootstrapper" is-multi-valued="false"/>
+    <set-configuration-property name="gwtp.bootstrapper" value="com.gwtplatform.mvp.client.DefaultBootstrapper"/>
+
+    <!-- hooks into the GWTP bootstrapping process right before it starts -->
+    <define-configuration-property name="gwtp.prebootstrapper" is-multi-valued="true"/>
+
+    <!-- Form factor specific modules -->
+    <define-configuration-property name="gin.ginjector.module.desktop" is-multi-valued="false"/>
+    <set-configuration-property name="gin.ginjector.module.desktop" value=""/>
+
+    <define-configuration-property name="gin.ginjector.module.mobile" is-multi-valued="false"/>
+    <set-configuration-property name="gin.ginjector.module.mobile" value=""/>
+
+    <define-configuration-property name="gin.ginjector.module.tablet" is-multi-valued="false"/>
+    <set-configuration-property name="gin.ginjector.module.tablet" value=""/>
+
+    <!-- Default form factor Desktop -->
+    <replace-with class="com.gwtplatform.mvp.client.DesktopGinjectorProvider">
+        <when-type-is class="com.gwtplatform.mvp.client.GinjectorProvider"/>
+    </replace-with>
+
+    <!-- Generate the place token index -->
+    <generate-with class="com.gwtplatform.mvp.rebind.PlaceTokenRegistryGenerator">
+        <when-type-assignable class="com.gwtplatform.mvp.shared.proxy.PlaceTokenRegistry"/>
+    </generate-with>
+
+    <replace-with class="com.google.gwt.place.shared.PlaceHistoryHandler.DefaultHistorian">
+        <when-type-assignable class="com.google.gwt.place.shared.PlaceHistoryHandler.Historian" />
+    </replace-with>
+</module>

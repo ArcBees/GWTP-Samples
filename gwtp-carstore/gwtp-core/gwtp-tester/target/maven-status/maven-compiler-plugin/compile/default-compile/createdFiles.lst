@@ -1,0 +1,14 @@
+com\gwtplatform\tester\TestDispatchAsync$1.class
+com\gwtplatform\tester\TestDispatchAsync$2.class
+com\gwtplatform\tester\MockHandlerModule.class
+com\gwtplatform\tester\DeferredCommandManager.class
+com\gwtplatform\tester\AsyncMockProvider.class
+com\gwtplatform\tester\MockHandlerModule$MockClientActionHandlerMapImpl.class
+com\gwtplatform\tester\MockProvider.class
+com\gwtplatform\tester\TestDispatchAsync.class
+com\gwtplatform\tester\MockClientActionHandlerMap.class
+com\gwtplatform\tester\TestDispatchAsync$TestingDispatchRequest.class
+com\gwtplatform\tester\TestDispatchModule.class
+com\gwtplatform\tester\TestDispatchService.class
+com\gwtplatform\tester\MockFactory.class
+com\gwtplatform\tester\MockingBinder.class

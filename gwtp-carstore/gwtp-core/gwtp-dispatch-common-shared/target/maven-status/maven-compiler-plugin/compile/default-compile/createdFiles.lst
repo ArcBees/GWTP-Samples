@@ -1,0 +1,6 @@
+com\gwtplatform\dispatch\shared\SecurityCookie.class
+com\gwtplatform\dispatch\shared\ActionException.class
+com\gwtplatform\dispatch\shared\TypedAction.class
+com\gwtplatform\dispatch\shared\SecurityCookieAccessor.class
+com\gwtplatform\dispatch\shared\HasSecured.class
+com\gwtplatform\dispatch\shared\DispatchRequest.class

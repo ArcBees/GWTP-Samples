@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\CachedPageTimeoutSec.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\CrawlServiceServlet.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\domain\CachedPage.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\domain\DatastoreObject.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\guice\CrawlServiceModule.java">
+<error line="27" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\HtmlUnitTimeoutMillis.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\InvalidKeyException.java">
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\objectify\OfyService.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\service\CachedPageDao.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\service\ObjectifyDao.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-crawler-service\src\main\java\com\gwtplatform\crawlerservice\server\ServiceKey.java">
+</file>
+</checkstyle>

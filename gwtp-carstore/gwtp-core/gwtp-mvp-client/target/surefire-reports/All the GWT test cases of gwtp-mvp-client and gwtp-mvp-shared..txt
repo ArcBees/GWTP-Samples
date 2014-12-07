@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------
+Test set: All the GWT test cases of gwtp-mvp-client and gwtp-mvp-shared.
+-------------------------------------------------------------------------------
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.356 sec
+testToPlaceRequestMissingNameToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 30.206 sec
+testToHistoryTokenSingleRequestInRequestHierarchy(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.02 sec
+testToHistoryTokenIsReverseOfToPlaceRequestHierarchy(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.02 sec
+testToPlaceRequestRegularPlaceToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.02 sec
+testToHistoryTokenValidRequestHierarchy(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.019 sec
+testToPlaceTokenShouldEscapeSeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.019 sec
+testToPlaceRequestDiscardsTrailingHierarchySeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.018 sec
+testToPlaceRequestHierarchyUnescapedHierarchySeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.025 sec
+testToPlaceRequestHierarchyHistoryTokenWithEmptyPlaceToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.029 sec
+testToPlaceRequestPlaceTokenWithSameKeysKeepsLastValue(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.029 sec
+testToPlaceRequestHierarchyEmptyHistoryToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.03 sec
+testToPlaceRequestPlaceTokenWithEmptyTrailingValue(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.028 sec
+testToPlaceRequestPlaceTokenWithEmptyParamValues(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.029 sec
+testToPlaceRequestHierarchyValidHistoryToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.03 sec
+testToHistoryTokenEmptyRequestHierarchy(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.034 sec
+testToPlaceRequestPlaceTokenWithUnescapedParamSeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.034 sec
+testToPlaceTokenValidPlaceRequest(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.032 sec
+testToPlaceRequestDiscardsTrailingParamSeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.031 sec
+testToPlaceRequestPlaceTokenWithEmptyKey(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.032 sec
+testToPlaceRequestEmptyPlaceToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.033 sec
+testToPlaceRequestPlaceTokenWithSameValues(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.034 sec
+testToPlaceRequestIsReverseOfToPlaceTokenAfterFullUrlEncode(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.046 sec
+testToPlaceTokenIsReverseOfToPlaceRequest(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.032 sec
+testToPlaceRequestPlaceTokenWithUnescapedValueSeparators(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.018 sec
+testToPlaceRequestHierarchyIsReverseOfToHistoryTokenAfterFullUrlEncode(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.021 sec
+testToPlaceRequestPlaceTokenKeyMissingValue(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.017 sec
+testToPlaceRequestHierarchyIsReverseOfToHistoryToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.02 sec
+testToPlaceRequestIsReverseOfToPlaceToken(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.025 sec
+testToPlaceRequestPlaceTokenWithEmptyValue(com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite)  Time elapsed: 0.014 sec
+testPopupViewCloseHandlerIsCalledWhenHidden(com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite)  Time elapsed: 1.143 sec
+testMultipleTokens(com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite)  Time elapsed: 0.117 sec
+testShouldCreateOnlyOneGinjector(com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite)  Time elapsed: 0.019 sec
+testPopupViewCloseHandlerNotCalledWhenShown(com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite)  Time elapsed: 0.121 sec

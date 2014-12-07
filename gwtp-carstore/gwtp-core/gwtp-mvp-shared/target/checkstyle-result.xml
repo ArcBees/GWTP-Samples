@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\ParameterTokenFormatter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\PlaceRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\PlaceTokenRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\RouteTokenFormatter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\TokenFormatException.java">
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\main\java\com\gwtplatform\mvp\shared\proxy\TokenFormatter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\test\java\com\gwtplatform\mvp\shared\proxy\PlaceRequestTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\src\test\java\com\gwtplatform\mvp\shared\proxy\RouteTokenFormatterTest.java">
+</file>
+</checkstyle>

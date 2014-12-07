@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="32.349" errors="0" skipped="0" tests="33" name="All the GWT test cases of gwtp-mvp-client and gwtp-mvp-shared.">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
+    <property name="java.vm.version" value="24.51-b03"/>
+    <property name="org.w3c.css.sac.parser" value="com.steadystate.css.parser.SACParserCSS3"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="surefire.reports" value="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\target\surefire-reports"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\coding\projects\arcbees\gwt-platform\gwtp"/>
+    <property name="java.runtime.version" value="1.7.0_51-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\coding\cygwin64\tmp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\coding\cygwin64\usr\local\bin;C:\coding\cygwin64\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Program Files\AuthenTec TrueSuite;C:\Program Files\AuthenTec TrueSuite\x86;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Java\jdk1.7.0_51\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\AuthenTec TrueSuite\x86;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\apache-maven-3.2.1\bin;C:\Ruby\Ruby200\bin;C:\coding\libs\apache-ant-1.9.2\bin;C:\Program Files (x86)\Gource\cmd;C:\Program Files\nodejs;%GOROOT\bin;C:\coding\libs\Python27;C:\Program Files (x86)\Bitvise SSH Client;C:\Users\Christopher\AppData\Roaming\npm;C:\coding\libs\appengine-python;C:\coding\scripts\;."/>
+    <property name="gwt.args" value="-war C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\target/www-test -logLevel INFO -devMode -nocheckAssertions -XclusterFunctions -XcheckCasts -XclassMetadata -XcodeSplitting -nodraftCompile -XinlineLiteralParameters -XoptimizeDataflow -XordinalizeEnums -XremoveDuplicateFunctions -noshowUi -sourceLevel 1.6 -testBeginTimeout 1 -testMethodTimeout 5 -Xtries 1 -noincremental -precompile simple -runStyle HtmlUnit:FF17"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\Christopher"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Christopher"/>
+    <property name="java.class.path" value="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\target\classes;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\resources;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\target\test-classes;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-clients-common\target\gwtp-clients-common-1.4-SNAPSHOT.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-shared\target\gwtp-mvp-shared-1.4-SNAPSHOT.jar;C:\Users\Christopher\.m2\repository\com\google\gwt\gwt-user\2.7.0\gwt-user-2.7.0.jar;C:\Users\Christopher\.m2\repository\javax\validation\validation-api\1.0.0.GA\validation-api-1.0.0.GA.jar;C:\Users\Christopher\.m2\repository\javax\validation\validation-api\1.0.0.GA\validation-api-1.0.0.GA-sources.jar;C:\Users\Christopher\.m2\repository\com\google\gwt\gwt-dev\2.7.0\gwt-dev-2.7.0.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-util\5.0.3\asm-util-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-tree\5.0.3\asm-tree-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-commons\5.0.3\asm-commons-5.0.3.jar;C:\Users\Christopher\.m2\repository\com\google\gwt\inject\gin\2.1.2\gin-2.1.2.jar;C:\Users\Christopher\.m2\repository\com\google\inject\extensions\guice-assistedinject\3.0\guice-assistedinject-3.0.jar;C:\Users\Christopher\.m2\repository\com\google\inject\guice\3.0\guice-3.0.jar;C:\Users\Christopher\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Christopher\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Christopher\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar;C:\Users\Christopher\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\Christopher\.m2\repository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;C:\Users\Christopher\.m2\repository\com\google\guava\guava\17.0\guava-17.0.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-tester\target\gwtp-tester-1.4-SNAPSHOT.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-shared\target\gwtp-dispatch-rpc-shared-1.4-SNAPSHOT.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-shared\target\gwtp-dispatch-common-shared-1.4-SNAPSHOT.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\target\gwtp-dispatch-common-client-1.4-SNAPSHOT.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-server\target\gwtp-dispatch-rpc-server-1.4-SNAPSHOT.jar;C:\Users\Christopher\.m2\repository\org\jukito\jukito\1.4.1\jukito-1.4.1.jar;C:\Users\Christopher\.m2\repository\org\mockito\mockito-core\1.9.5\mockito-core-1.9.5.jar;C:\Users\Christopher\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\Christopher\.m2\repository\org\objenesis\objenesis\1.0\objenesis-1.0.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-rpc-client\target\gwtp-dispatch-rpc-client-1.4-SNAPSHOT.jar;C:\Users\Christopher\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-build-tools\target\gwtp-build-tools-1.4-SNAPSHOT.jar;C:\Users\Christopher\.m2\repository\com\google\gwt\gwt-user\2.7.0\gwt-user-2.7.0.jar;C:\Users\Christopher\.m2\repository\javax\validation\validation-api\1.0.0.GA\validation-api-1.0.0.GA.jar;C:\Users\Christopher\.m2\repository\javax\validation\validation-api\1.0.0.GA\validation-api-1.0.0.GA-sources.jar;C:\Users\Christopher\.m2\repository\com\google\gwt\gwt-dev\2.7.0\gwt-dev-2.7.0.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-util\5.0.3\asm-util-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-tree\5.0.3\asm-tree-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\ow2\asm\asm-commons\5.0.3\asm-commons-5.0.3.jar;C:\Users\Christopher\.m2\repository\org\codehaus\mojo\gwt-maven-plugin\2.7.0\gwt-maven-plugin-2.7.0.jar;C:\Users\Christopher\.m2\repository\org\apache\maven\surefire\surefire-api\2.4.3\surefire-api-2.4.3.jar"/>
+    <property name="build.compiler" value="com.google.gwt.dev.shell.jetty.JettyLauncher$JDTCompiler16"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_51\jre"/>
+    <property name="sun.java.command" value="org.codehaus.mojo.gwt.test.MavenTestRunner com.gwtplatform.mvp.client.MvpClientGwtTestSuite"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="org.eclipse.jetty.xml.XmlParser.Validating" value="false"/>
+    <property name="java.version" value="1.7.0_51"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_51\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="30.205" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestMissingNameToken"/>
+  <testcase time="0.02" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToHistoryTokenSingleRequestInRequestHierarchy"/>
+  <testcase time="0.02" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToHistoryTokenIsReverseOfToPlaceRequestHierarchy"/>
+  <testcase time="0.02" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestRegularPlaceToken"/>
+  <testcase time="0.019" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToHistoryTokenValidRequestHierarchy"/>
+  <testcase time="0.019" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceTokenShouldEscapeSeparators"/>
+  <testcase time="0.018" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestDiscardsTrailingHierarchySeparators"/>
+  <testcase time="0.025" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyUnescapedHierarchySeparators"/>
+  <testcase time="0.029" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyHistoryTokenWithEmptyPlaceToken"/>
+  <testcase time="0.029" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithSameKeysKeepsLastValue"/>
+  <testcase time="0.03" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyEmptyHistoryToken"/>
+  <testcase time="0.028" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithEmptyTrailingValue"/>
+  <testcase time="0.029" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithEmptyParamValues"/>
+  <testcase time="0.03" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyValidHistoryToken"/>
+  <testcase time="0.034" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToHistoryTokenEmptyRequestHierarchy"/>
+  <testcase time="0.034" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithUnescapedParamSeparators"/>
+  <testcase time="0.032" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceTokenValidPlaceRequest"/>
+  <testcase time="0.031" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestDiscardsTrailingParamSeparators"/>
+  <testcase time="0.032" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithEmptyKey"/>
+  <testcase time="0.033" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestEmptyPlaceToken"/>
+  <testcase time="0.034" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithSameValues"/>
+  <testcase time="0.046" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestIsReverseOfToPlaceTokenAfterFullUrlEncode"/>
+  <testcase time="0.032" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceTokenIsReverseOfToPlaceRequest"/>
+  <testcase time="0.018" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithUnescapedValueSeparators"/>
+  <testcase time="0.021" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyIsReverseOfToHistoryTokenAfterFullUrlEncode"/>
+  <testcase time="0.017" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenKeyMissingValue"/>
+  <testcase time="0.02" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestHierarchyIsReverseOfToHistoryToken"/>
+  <testcase time="0.025" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestIsReverseOfToPlaceToken"/>
+  <testcase time="0.014" classname="com.gwtplatform.mvp.shared.proxy.ParameterTokenFormatterGwtTestInSuite" name="testToPlaceRequestPlaceTokenWithEmptyValue"/>
+  <testcase time="1.143" classname="com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite" name="testPopupViewCloseHandlerIsCalledWhenHidden"/>
+  <testcase time="0.117" classname="com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite" name="testMultipleTokens"/>
+  <testcase time="0.019" classname="com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite" name="testShouldCreateOnlyOneGinjector"/>
+  <testcase time="0.121" classname="com.gwtplatform.mvp.client.gwt.mvp.MvpGwtTestInSuite" name="testPopupViewCloseHandlerNotCalledWhenShown"/>
+</testsuite>

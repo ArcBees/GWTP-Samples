@@ -1,0 +1,13 @@
+com\gwtplatform\common\client\StandardProvider.class
+com\gwtplatform\common\client\CodeSplitBundleProvider.class
+com\gwtplatform\common\client\CodeSplitBundleProvider$1.class
+com\gwtplatform\common\shared\UrlUtils.class
+com\gwtplatform\common\rebind\Dependency.class
+com\gwtplatform\common\client\CodeSplitProvider.class
+com\gwtplatform\common\client\CommonGinModule.class
+com\gwtplatform\common\rebind\VersionInspectorLinker.class
+com\gwtplatform\common\rebind\Logger.class
+com\gwtplatform\common\client\ProviderBundle.class
+com\gwtplatform\common\rebind\DependencyImpl.class
+com\gwtplatform\common\client\ClientUrlUtils.class
+com\gwtplatform\common\client\IndirectProvider.class

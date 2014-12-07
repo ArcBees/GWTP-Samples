@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ChangeTab.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ContentSlot.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\DefaultGatekeeper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\DefaultPlace.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ErrorPlace.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\GaAccount.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\GatekeeperParams.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\NameToken.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\NoGatekeeper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ProxyCodeSplit.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ProxyCodeSplitBundle.java">
+<error line="73" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ProxyEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\ProxyStandard.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\RequestTabs.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\TabInfo.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\Title.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\TitleFunction.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\UnauthorizedPlace.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\annotations\UseGatekeeper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\ApplicationController.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\AutobindDisable.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\Bootstrapper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\ChangeTabEvent.java">
+<error line="44" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="45" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="54" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\ChangeTabHandler.java">
+<error line="21" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\DefaultBootstrapper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\DelayedBind.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\DelayedBindRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\gin\AbstractPresenterModule.java">
+<error line="26" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\gin\DefaultModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\gin\PresenterSetupModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\googleanalytics\GoogleAnalytics.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\googleanalytics\GoogleAnalyticsImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\googleanalytics\GoogleAnalyticsNavigationTracker.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HandlerContainer.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HandlerContainerImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HasHandlerContainer.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HasPopupSlot.java">
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HasSlots.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\HasUiHandlers.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PopupView.java">
+<error line="73" column="8" severity="info" message="Unused @param tag for &apos;positioner&apos;." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PopupViewCloseHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PopupViewImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PopupViewWithUiHandlers.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PreBootstrapper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\Presenter.java">
+<error line="384" column="13" severity="info" message="switch without &quot;default&quot; clause." source="com.puppycrawl.tools.checkstyle.checks.coding.MissingSwitchDefaultCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\PresenterWidget.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallFailEvent.java">
+<error line="58" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="66" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallFailHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallStartEvent.java">
+<error line="61" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallStartHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallSucceedEvent.java">
+<error line="56" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\AsyncCallSucceedHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\DefaultPlaceManager.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\Gatekeeper.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\GatekeeperWithParams.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\GetPlaceTitleEvent.java">
+<error line="65" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="67" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="69" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="71" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\GetPlaceTitleHandler.java">
+<error line="21" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\LockInteractionEvent.java">
+<error line="54" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="56" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\LockInteractionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ManualRevealCallback.java">
+<error line="55" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="60" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NavigationEvent.java">
+<error line="53" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="62" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NavigationHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NavigationRefusedEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NavigationRefusedHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NonLeafTabContentProxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NonLeafTabContentProxyImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\NotifyingAsyncCallback.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\Place.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceImpl.java">
+<error line="23" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceManager.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceManagerImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceRequestInternalEvent.java">
+<error line="62" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="70" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="72" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="73" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="75" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceRequestInternalHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceWithGatekeeper.java">
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\PlaceWithGatekeeperWithParams.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\Proxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ProxyImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ProxyPlace.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ProxyPlaceAbstract.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ProxyPlaceImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ProxyRaw.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ResetPresentersEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\ResetPresentersHandler.java">
+<error line="21" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealContentEvent.java">
+<error line="55" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="57" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="59" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealContentHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootContentEvent.java">
+<error line="55" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="57" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootContentHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootLayoutContentEvent.java">
+<error line="57" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="59" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootLayoutContentHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootPopupContentEvent.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\RevealRootPopupContentHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\SetPlaceTitleHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\TabContentProxy.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\TabContentProxyPlace.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\proxy\TabContentProxyPlaceImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\RequestTabsEvent.java">
+<error line="43" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="44" column="5" severity="warning" message="Instance variable definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+<error line="53" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\RequestTabsHandler.java">
+<error line="21" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\RootPresenter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\Tab.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\TabContainerPresenter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\TabData.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\TabDataBasic.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\TabPanel.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\TabView.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\UiHandlers.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\view\CenterPopupPositioner.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\view\PopupPositioner.java">
+<error line="18" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="19" severity="info" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\view\RelativeToWidgetPopupPositioner.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\view\TopLeftPopupPositioner.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\View.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\ViewImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\client\ViewWithUiHandlers.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\AbstractGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ApplicationControllerGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\BasicProxyOutputter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ClassCollection.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ClassInspector.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\GinjectorGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\GinjectorInspector.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\linker\FormFactorPropertyGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\NonLeafTabContentProxyOutputter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\PlaceTokenRegistryGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\PresenterDefinitions.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\PresenterInspector.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\PresenterTitleMethod.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProviderBundleGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyEventMethod.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyOutputter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyOutputterBase.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyOutputterFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\ProxyPlaceOutputter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\TabContentProxyPlaceOutputter.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\TabInfoMethod.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\AbstractVelocityGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\GenerateFormFactorGinjectors.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\GeneratorUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\ginjectors\FormFactorGinjectorFactory.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\ginjectors\FormFactorGinjectorGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\ginjectors\FormFactorGinjectorProviderGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\ginjectors\GinjectorProviderGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\proxy\VelocityPlacetokenGenerator.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\RebindModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\java\com\gwtplatform\mvp\rebind\velocity\VelocityProperties.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\AdminPresenterTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\AdminViewTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\ClientModuleTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\GinjectorTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\InstantiationCounterTestUtilGwt.java">
+<error line="35" column="5" severity="warning" message="Constructor definition in wrong order." source="com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck"/>
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\MainPresenterTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\MainViewTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\MvpGwtTestInSuite.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\PlaceManagerTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\PopupPresenterTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\gwt\mvp\PopupViewTestUtilGwt.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\HandlerContainerImpl2Test.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\HandlerContainerImplTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\mvp\MainPresenterTestUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\mvp\MockInjectionTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\mvp\RealInjectionTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\mvp\SubPresenterWidgetTestUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\MvpClientGwtTestSuite.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\PresenterTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\PresenterWidgetTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\AsyncEventPresenterTestUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\AsyncEventTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\GatekeeperTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\GatekeeperWithParamsTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\PlaceManagerImpl2Test.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\PlaceManagerImplTest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\PlaceManagerTestUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\client\proxy\PlaceManagerWindowMethodsTestUtil.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\test\java\com\gwtplatform\mvp\shared\proxy\ParameterTokenFormatterGwtTestInSuite.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\resources\com\gwtplatform\mvp\rebind\velocity.properties">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-mvp-client\src\main\resources\com\gwtplatform\mvp\rebind\velocity.properties">
+</file>
+</checkstyle>

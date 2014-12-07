@@ -1,0 +1,4 @@
+com\gwtplatform\dispatch\rpc\shared\action\TestResult.class
+com\gwtplatform\dispatch\rpc\server\ActionTestBase.class
+com\gwtplatform\dispatch\rpc\shared\action\TestAction.class
+com\gwtplatform\dispatch\rpc\server\actionhandler\TestActionHandler.class

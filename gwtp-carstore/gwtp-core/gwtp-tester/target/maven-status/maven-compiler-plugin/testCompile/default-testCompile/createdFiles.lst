@@ -1,0 +1,6 @@
+com\gwtplatform\tester\MockingBinderTest$Module.class
+com\gwtplatform\tester\MockingBinderTest.class
+com\gwtplatform\tester\TestView.class
+com\gwtplatform\tester\MockitoMockFactory.class
+com\gwtplatform\tester\TestView$Binder.class
+com\gwtplatform\tester\MockingBinderTest$Module$MyTestBinder.class

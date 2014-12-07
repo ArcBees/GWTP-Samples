@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\AbstractClientActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\caching\AbstractCachingClientActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\caching\ActionCachingHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\caching\Cache.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\caching\DefaultCacheImpl.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\ClientActionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\ClientActionHandlerMismatchException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\ClientActionHandlerRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\DefaultClientActionHandlerRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\ExecuteCommand.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\actionhandler\UndoCommand.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\CallbackDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\CompletedDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DefaultCallbackDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DefaultExceptionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DefaultSecurityCookieAccessor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DelegatingAsyncCallback.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DelegatingCallbackDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DelegatingDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\DispatchCall.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\ExceptionHandler.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\gin\AbstractDispatchAsyncModule.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\GwtHttpDispatchRequest.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\interceptor\AbstractInterceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\interceptor\ExecuteCommand.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\interceptor\Interceptor.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\interceptor\InterceptorMismatchException.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\interceptor\InterceptorRegistry.java">
+</file>
+<file name="C:\coding\projects\arcbees\gwt-platform\gwtp\gwtp-core\gwtp-dispatch-common-client\src\main\java\com\gwtplatform\dispatch\client\OldDelegatingAsyncCallback.java">
+</file>
+</checkstyle>
