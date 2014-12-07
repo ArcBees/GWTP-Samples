@@ -20,6 +20,8 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.VoidWork;
 import com.gwtplatform.carstore.server.authentication.PasswordSecurity;
 import com.gwtplatform.carstore.server.dao.CarDao;
 import com.gwtplatform.carstore.server.dao.CarPropertiesDao;
@@ -45,12 +47,13 @@ public class DevBootStrapper {
     private final CarPropertiesDao carPropertiesDao;
 
     @Inject
-    DevBootStrapper(UserDao userDao,
-                    PasswordSecurity passwordSecurity,
-                    ManufacturerDao manufacturerDao,
-                    CarDao carDao,
-                    RatingDao ratingDao,
-                    CarPropertiesDao carPropertiesDao) {
+    DevBootStrapper(
+            UserDao userDao,
+            PasswordSecurity passwordSecurity,
+            ManufacturerDao manufacturerDao,
+            CarDao carDao,
+            RatingDao ratingDao,
+            CarPropertiesDao carPropertiesDao) {
         this.userDao = userDao;
         this.passwordSecurity = passwordSecurity;
         this.manufacturerDao = manufacturerDao;
@@ -58,10 +61,15 @@ public class DevBootStrapper {
         this.ratingDao = ratingDao;
         this.carPropertiesDao = carPropertiesDao;
 
-        init();
+        ObjectifyService.run(new VoidWork() {
+            @Override
+            public void vrun() {
+                init();
+            }
+        });
     }
 
-    public void init() {
+    private void init() {
         deleteAllEntities();
 
         long userCount = userDao.countAll();
@@ -84,7 +92,6 @@ public class DevBootStrapper {
         UserDto userDto = new UserDto("admin", passwordSecurity.hashPassword("qwerty"), "FirstName", "LastName");
         userDao.put(User.create(userDto));
     }
-
 
     private void createMockData() {
         long manufacturerCount = manufacturerDao.countAll();

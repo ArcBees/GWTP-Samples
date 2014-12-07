@@ -24,6 +24,6 @@ public class UserDao extends BaseDao<User> {
     }
 
     public User findByUsername(String username) {
-        return ofy().query(User.class).filter("username", username).first().now();
+        return ofy().load().type(User.class).filter("username", username).first().now();
     }
 }

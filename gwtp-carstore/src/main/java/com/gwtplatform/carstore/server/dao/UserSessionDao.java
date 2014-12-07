@@ -65,15 +65,15 @@ public class UserSessionDao extends BaseDao<UserSession> {
     public UserDto getUserFromCookie(String loggedInCookie) {
         Date twoWeeksAgo = getTwoWeeksAgo();
 
-        UserSession userSession = ofy().query(UserSession.class)
+        UserSession userSession = ofy().load().type(UserSession.class)
                 .filter("cookie", loggedInCookie)
                 .filter("dateCreated > ", twoWeeksAgo)
                 .first().now();
-        
+
         if (userSession == null) {
             return null;
         }
-        
+
         Long userId = userSession.getUserId();
 
         UserDto userDto = null;
@@ -92,6 +92,6 @@ public class UserSessionDao extends BaseDao<UserSession> {
     }
 
     private UserSession findUserSession(Long userId) {
-        return ofy().query(UserSession.class).filter("userId", userId).first().now();
+        return ofy().load().type(UserSession.class).filter("userId", userId).first().now();
     }
 }

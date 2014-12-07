@@ -24,20 +24,21 @@ import java.util.Map;
 
 import com.google.common.collect.Lists;
 import com.googlecode.objectify.Key;
+import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.cmd.LoadType;
-import com.gwtplatform.carstore.server.dao.objectify.Ofy;
 import com.gwtplatform.carstore.server.dao.objectify.OfyService;
 import com.gwtplatform.carstore.shared.dto.Dto;
 
 public class BaseDao<T extends Dto> {
     private final Class<T> clazz;
 
-    protected BaseDao(final Class<T> clazz) {
+    protected BaseDao(
+            Class<T> clazz) {
         this.clazz = clazz;
     }
 
     public List<T> getAll() {
-        return ofy().query(clazz).list();
+        return ofy().load().type(clazz).list();
     }
 
     public T put(T object) {
@@ -51,11 +52,11 @@ public class BaseDao<T extends Dto> {
     }
 
     public T get(Key<T> key) {
-        return ofy().get(key);
+        return ofy().load().key(key).now();
     }
 
     public T get(Long id) {
-        return ofy().get(clazz, id);
+        return ofy().load().type(clazz).id(id).now();
     }
 
     public Boolean exists(Key<T> key) {
@@ -67,11 +68,11 @@ public class BaseDao<T extends Dto> {
     }
 
     public List<T> getSubset(List<Long> ids) {
-        return new ArrayList<>(ofy().query(clazz).ids(ids).values());
+        return new ArrayList<>(ofy().load().type(clazz).ids(ids).values());
     }
 
     public Map<Long, T> getSubsetMap(List<Long> ids) {
-        return new HashMap<>(ofy().query(clazz).ids(ids));
+        return new HashMap<>(ofy().load().type(clazz).ids(ids));
     }
 
     public void delete(T object) {
@@ -101,14 +102,14 @@ public class BaseDao<T extends Dto> {
     }
 
     public List<T> getSome(Integer offset, Integer limit) {
-        return ofy().query(clazz).offset(offset).limit(limit).list();
+        return ofy().load().type(clazz).offset(offset).limit(limit).list();
     }
 
-    protected Ofy ofy() {
+    protected Objectify ofy() {
         return OfyService.ofy();
     }
 
     protected LoadType<T> query() {
-        return ofy().query(clazz);
+        return ofy().load().type(clazz);
     }
 }
