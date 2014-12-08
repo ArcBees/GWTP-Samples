@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gwtplatform</groupId>
-    <artifactId>gwtp-carstore</artifactId>
+    <artifactId>carstore</artifactId>
     <version>1.4-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>GWTP Carstore</name>
