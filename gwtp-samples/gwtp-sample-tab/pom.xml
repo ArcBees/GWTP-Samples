@@ -76,6 +76,12 @@
             <artifactId>gwtp-mvp-client</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.gwtplatform.extensions</groupId>
+            <artifactId>ginuibinder</artifactId>
+            <version>${gwt.version}-SNAPSHOT</version>
+        </dependency>
+
         <!-- GWT dependencies -->
         <dependency>
             <groupId>com.google.gwt</groupId>

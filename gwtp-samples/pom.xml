@@ -63,13 +63,13 @@
 
     <properties>
         <!-- client -->
-        <gwt.version>2.6.0</gwt.version>
-        <gwtp.version>1.2.1</gwtp.version>
+        <gwt.version>2.7.0</gwt.version>
+        <gwtp.version>1.4-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwt.style>OBF</gwt.style>
 
         <!-- server -->
-        <gae.version>1.9.2</gae.version>
+        <gae.version>1.9.17</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
