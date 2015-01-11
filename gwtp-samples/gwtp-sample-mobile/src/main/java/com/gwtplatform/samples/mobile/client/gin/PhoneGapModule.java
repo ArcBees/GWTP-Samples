@@ -22,7 +22,7 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 public class PhoneGapModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new PhoneGapDispatchAsyncModule());
+        install(new PhoneGapDispatchAsyncModule.Builder().build());
         install(new MobileModule());
         install(new SharedModule());
     }
