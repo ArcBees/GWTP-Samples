@@ -24,11 +24,11 @@ import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.carstore.client.application.event.DisplayMessageEvent;
 import com.gwtplatform.carstore.client.application.event.UserLoginEvent;
-import com.gwtplatform.carstore.client.application.login.LoginPresenter;
 import com.gwtplatform.carstore.client.application.widget.message.Message;
 import com.gwtplatform.carstore.client.application.widget.message.MessageStyle;
 import com.gwtplatform.carstore.client.resources.HeaderMessages;
 import com.gwtplatform.carstore.client.security.CurrentUser;
+import com.gwtplatform.carstore.shared.api.ApiParameters;
 import com.gwtplatform.carstore.shared.api.SessionResource;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
 import com.gwtplatform.mvp.client.HasUiHandlers;
@@ -121,7 +121,7 @@ public class HeaderPresenter extends PresenterWidget<HeaderPresenter.MyView>
     }
 
     private void resetLoggedInCookie() {
-        Cookies.removeCookie(LoginPresenter.LOGIN_COOKIE_NAME);
+        Cookies.removeCookie(ApiParameters.LOGIN_COOKIE);
 
         logger.info("HeaderPresenter.resetLoggedInCookie(): The cookie was removed from client.");
     }

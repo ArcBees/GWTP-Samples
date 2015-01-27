@@ -16,7 +16,10 @@
 
 package com.gwtplatform.carstore.server.api;
 
+import java.util.logging.Logger;
+
 import javax.inject.Inject;
+import javax.ws.rs.core.Cookie;
 
 import com.gwtplatform.carstore.server.authentication.Authenticator;
 import com.gwtplatform.carstore.server.authentication.CurrentUserDtoProvider;
@@ -24,13 +27,16 @@ import com.gwtplatform.carstore.shared.api.SessionResource;
 import com.gwtplatform.carstore.shared.dto.CurrentUserDto;
 
 public class SessionResourceImpl implements SessionResource {
+    private final Logger logger;
     private final Authenticator authenticator;
     private final CurrentUserDtoProvider currentUserDtoProvider;
 
     @Inject
     SessionResourceImpl(
+            Logger logger,
             Authenticator authenticator,
             CurrentUserDtoProvider currentUserDtoProvider) {
+        this.logger = logger;
         this.authenticator = authenticator;
         this.currentUserDtoProvider = currentUserDtoProvider;
     }
@@ -43,5 +49,10 @@ public class SessionResourceImpl implements SessionResource {
     @Override
     public void logout() {
         authenticator.logout();
+    }
+
+    @Override
+    public void rememberMe(Cookie cookie) {
+        logger.info("Remember me: " + String.valueOf(cookie));
     }
 }

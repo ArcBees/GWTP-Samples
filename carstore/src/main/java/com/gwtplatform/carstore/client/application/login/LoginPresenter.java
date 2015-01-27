@@ -16,15 +16,15 @@
 
 package com.gwtplatform.carstore.client.application.login;
 
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.ws.rs.core.NewCookie;
 
 import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.datepicker.client.CalendarUtil;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.carstore.client.application.event.ActionBarVisibilityEvent;
@@ -36,10 +36,13 @@ import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.client.place.ParameterTokens;
 import com.gwtplatform.carstore.client.resources.LoginMessages;
 import com.gwtplatform.carstore.client.security.CurrentUser;
+import com.gwtplatform.carstore.shared.api.ApiParameters;
+import com.gwtplatform.carstore.shared.api.SessionResource;
 import com.gwtplatform.carstore.shared.dispatch.ActionType;
 import com.gwtplatform.carstore.shared.dispatch.LogInAction;
 import com.gwtplatform.carstore.shared.dispatch.LogInResult;
 import com.gwtplatform.carstore.shared.dto.CurrentUserDto;
+import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
 import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -65,27 +68,30 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     interface MyProxy extends ProxyPlace<LoginPresenter> {
     }
 
-    public static final String LOGIN_COOKIE_NAME = "LoggedInCookie";
-
-    private static final Logger logger = Logger.getLogger(LoginPresenter.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(LoginPresenter.class.getName());
+    private static final int REMEMBER_ME_DAYS = 14;
 
     private final PlaceManager placeManager;
     private final DispatchAsync dispatcher;
+    private final ResourceDelegate<SessionResource> sessionResource;
     private final CurrentUser currentUser;
     private final LoginMessages messages;
 
     @Inject
-    LoginPresenter(EventBus eventBus,
-                   MyView view,
-                   MyProxy proxy,
-                   PlaceManager placeManager,
-                   DispatchAsync dispatcher,
-                   CurrentUser currentUser,
-                   LoginMessages messages) {
+    LoginPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager,
+            DispatchAsync dispatcher,
+            ResourceDelegate<SessionResource> sessionResource,
+            CurrentUser currentUser,
+            LoginMessages messages) {
         super(eventBus, view, proxy, RevealType.RootLayout);
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
+        this.sessionResource = sessionResource;
         this.currentUser = currentUser;
         this.messages = messages;
 
@@ -114,8 +120,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
                 DisplayMessageEvent.fire(LoginPresenter.this, new Message(messages.unableToContactServer(),
                         MessageStyle.ERROR));
 
-                logger.log(Level.SEVERE, "callServerLoginAction(): Server failed to process login call.", e);
-                e.printStackTrace();
+                LOGGER.log(Level.SEVERE, "callServerLoginAction(): Server failed to process login call.", e);
             }
 
             @Override
@@ -164,16 +169,15 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     }
 
     private void setLoggedInCookie(String value) {
-        Cookies.removeCookie(LOGIN_COOKIE_NAME);
-
-        Date expires = new Date();
-        CalendarUtil.addDaysToDate(expires, 14);
-        String domain = getDomain();
         String path = "/";
+        String domain = getDomain();
+        int maxAge = REMEMBER_ME_DAYS * 24 * 60 * 60 * 1000;
         boolean secure = false;
-        Cookies.setCookie(LOGIN_COOKIE_NAME, value, expires, domain, path, secure);
 
-        logger.info("LoginPresenter.setLoggedInCookie() Set client cookie=" + value);
+        NewCookie newCookie = new NewCookie(ApiParameters.LOGIN_COOKIE, value, path, domain, "", maxAge, secure);
+        sessionResource.withoutCallback().rememberMe(newCookie);
+
+        LOGGER.info("LoginPresenter.setLoggedInCookie() Set client cookie=" + value);
     }
 
     private String getDomain() {
@@ -192,6 +196,6 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     }
 
     private String getLoggedInCookie() {
-        return Cookies.getCookie(LOGIN_COOKIE_NAME);
+        return Cookies.getCookie(ApiParameters.LOGIN_COOKIE);
     }
 }

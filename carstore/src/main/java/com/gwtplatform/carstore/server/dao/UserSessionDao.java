@@ -92,6 +92,6 @@ public class UserSessionDao extends BaseDao<UserSession> {
     }
 
     private UserSession findUserSession(Long userId) {
-        return ofy().load().type(UserSession.class).filter("userId", userId).first().now();
+        return ofy().load().type(UserSession.class).filterKey(userId).first().now();
     }
 }

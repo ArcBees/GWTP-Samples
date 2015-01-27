@@ -16,14 +16,19 @@
 
 package com.gwtplatform.carstore.shared.api;
 
+import javax.ws.rs.CookieParam;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
 
 import com.gwtplatform.carstore.shared.dto.CurrentUserDto;
 
+import static com.gwtplatform.carstore.shared.api.ApiParameters.LOGIN_COOKIE;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.REMEMBER_ME;
 import static com.gwtplatform.carstore.shared.api.ApiPaths.SESSION;
 
 @Path(SESSION)
@@ -34,4 +39,8 @@ public interface SessionResource {
 
     @GET
     CurrentUserDto getCurrentUser();
+
+    @POST
+    @Path(REMEMBER_ME)
+    void rememberMe(@CookieParam(LOGIN_COOKIE) Cookie cookie);
 }
