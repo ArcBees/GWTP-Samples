@@ -181,12 +181,12 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     }
 
     private String getDomain() {
-        String domain = GWT.getHostPageBaseURL();
-        domain = domain.replaceAll(".*//", "");
-        domain = domain.replaceAll("/", "");
-        domain = domain.replaceAll(":.*", "");
+        String domain = GWT.getHostPageBaseURL()
+                .replaceAll(".*//", "")
+                .replaceAll("/", "")
+                .replaceAll(":.*", "");
 
-        return domain;
+        return "localhost".equalsIgnoreCase(domain) ? null : domain;
     }
 
     private void tryLoggingInWithCookieFirst() {
