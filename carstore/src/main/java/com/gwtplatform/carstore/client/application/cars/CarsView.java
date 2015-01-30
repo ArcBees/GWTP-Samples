@@ -20,6 +20,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.google.common.base.Strings;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.ActionCell.Delegate;
 import com.google.gwt.cell.client.Cell;
@@ -53,7 +54,6 @@ public class CarsView extends ViewWithUiHandlers<CarsUiHandlers> implements MyVi
 
     @UiField(provided = true)
     CellTable<CarDto> carGrid;
-
     @UiField(provided = true)
     SimplePager pager;
 
@@ -95,9 +95,15 @@ public class CarsView extends ViewWithUiHandlers<CarsUiHandlers> implements MyVi
     }
 
     @UiHandler("create")
-    @SuppressWarnings("unused")
-    void onCreateClicked(ClickEvent ignored) {
+    void onCreateClicked(ClickEvent event) {
         getUiHandlers().onCreate();
+    }
+
+    @UiHandler("filter")
+    void onFilter(ClickEvent event) {
+        String color = Strings.emptyToNull(Window.prompt("Enter a color:", ""));
+
+        getUiHandlers().filter(color, 0, pager.getPageSize());
     }
 
     private void initCarGrid() {

@@ -134,7 +134,7 @@ public class RatingDetailPresenter extends Presenter<MyView, MyProxy>
                         onGetCarsSuccess(cars);
                     }
                 })
-                .getCars();
+                .getCars(null, 0, CarsResource.LIMIT_ALL);
     }
 
     private void onGetCarsSuccess(List<CarDto> carDtos) {

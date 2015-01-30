@@ -17,6 +17,7 @@
 package com.gwtplatform.carstore.server.api;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
@@ -32,30 +33,30 @@ public class CarsResourceImpl implements CarsResource {
     private static final Integer INT_DEFAULT_LIMIT = Integer.valueOf(DEFAULT_LIMIT);
     private static final Integer INT_DEFAULT_OFFSET = Integer.valueOf(DEFAULT_OFFSET);
 
+    private final Logger logger;
     private final ResourcesFactory resourcesFactory;
     private final CarDao carDao;
     private final CarPropertiesDao carPropertiesDao;
 
     @Inject
     CarsResourceImpl(
+            Logger logger,
             ResourcesFactory resourcesFactory,
             CarDao carDao,
             CarPropertiesDao carPropertiesDao) {
+        this.logger = logger;
         this.resourcesFactory = resourcesFactory;
         this.carDao = carDao;
         this.carPropertiesDao = carPropertiesDao;
     }
 
     @Override
-    public List<CarDto> getCars() {
-        return getCars(INT_DEFAULT_OFFSET, INT_DEFAULT_LIMIT);
-    }
-
-    @Override
-    public List<CarDto> getCars(int offset, int limit) {
+    public List<CarDto> getCars(String colorFilter, int offset, int limit) {
         List<CarDto> cars;
 
-        if (offset == INT_DEFAULT_OFFSET && limit == INT_DEFAULT_LIMIT) {
+        logger.info("User wants cars filtered by: " + colorFilter);
+
+        if (limit == LIMIT_ALL) {
             cars = Car.createDto(carDao.getAll());
         } else {
             cars = Car.createDto(carDao.getSome(offset, limit));

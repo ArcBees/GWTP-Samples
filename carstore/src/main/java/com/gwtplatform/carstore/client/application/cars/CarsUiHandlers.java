@@ -27,4 +27,6 @@ public interface CarsUiHandlers extends UiHandlers {
     void onCreate();
 
     void fetchData(int offset, int limit);
+
+    void filter(String color, int offset, int limit);
 }
