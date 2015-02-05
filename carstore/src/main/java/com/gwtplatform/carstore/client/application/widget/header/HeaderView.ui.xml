@@ -2,6 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
     <ui:import field="com.gwtplatform.carstore.client.place.NameTokens.*"/>
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <ui:with field="resource" type="com.gwtplatform.carstore.client.resources.AppResources"/>
 
@@ -80,7 +81,7 @@
                 <g:Label text="CarStore"/>
             </div>
 
-            <g:HTMLPanel styleName="{style.floatLeft} {style.menuBarWrapper}" ui:field="menubar" debugId="menubar">
+            <g:HTMLPanel styleName="{style.floatLeft} {style.menuBarWrapper}" ui:field="menubar" debugId="{MENUBAR}">
                 <g:InlineHyperlink targetHistoryToken="{MANUFACTURER}">Manufacturers</g:InlineHyperlink>
                 <g:InlineHyperlink targetHistoryToken="{CARS}">Cars</g:InlineHyperlink>
                 <g:InlineHyperlink targetHistoryToken="{RATING}">Ratings</g:InlineHyperlink>
@@ -96,7 +97,7 @@
                 </div>
 
                 <div class="{style.floatLeft}">
-                    <g:Button ui:field="logout" debugId="logout" text="Logout"
+                    <g:Button ui:field="logout" debugId="{LOGOUT}" text="Logout"
                               styleName="{style.logoutButton}"/>
                 </div>
 

@@ -2,6 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
     <ui:with field="resource" type="com.gwtplatform.carstore.client.resources.AppResources"/>
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <ui:style>
         .loginWrapper {
@@ -44,19 +45,19 @@
     <g:HTMLPanel styleName="{style.loginWrapper}">
         <h1>Car Store</h1>
 
-        <g:HTMLPanel styleName="{style.loginPanel}" debugId="loginPanel">
+        <g:HTMLPanel styleName="{style.loginPanel}" debugId="{LOGIN_PANEL}">
             <div class="{style.formRow}">
-                <g:TextBox ui:field="username" debugId="username"
+                <g:TextBox ui:field="username" debugId="{USERNAME}"
                            styleName="{resource.styles.mobileTextField}"/>
             </div>
 
             <div class="{style.formRow}">
-                <g:PasswordTextBox ui:field="password" debugId="password"
+                <g:PasswordTextBox ui:field="password" debugId="{PASSWORD}"
                                    styleName="{resource.styles.mobileTextField}"/>
             </div>
 
             <g:Button ui:field="login" styleName="{style.loginButton}"
-                      debugId="login" text="Login"/>
+                      debugId="{LOGIN}" text="Login"/>
         </g:HTMLPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

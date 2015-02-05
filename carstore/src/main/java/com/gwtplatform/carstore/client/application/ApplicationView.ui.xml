@@ -1,6 +1,8 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
+
     <ui:style>
         .globalWrapper {
             position: relative;
@@ -28,6 +30,6 @@
         <g:HTMLPanel ui:field="container" styleName="{style.container}">
             <g:SimplePanel ui:field="main"/>
         </g:HTMLPanel>
-        <g:InlineLabel debugId="dom"/>
+        <g:InlineLabel debugId="{DOM}"/>
     </g:HTMLPanel>
 </ui:UiBinder>

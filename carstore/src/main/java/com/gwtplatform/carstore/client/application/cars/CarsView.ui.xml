@@ -3,6 +3,7 @@
              xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
 
     <ui:with field="resources" type="com.gwtplatform.carstore.client.resources.AppResources"/>
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <ui:style>
         .tableWrapper {
@@ -16,13 +17,13 @@
                 <g:InlineLabel text="Cars"/>
             </h2>
             <div>
-                <g:Button ui:field="create" debugId="carCreate" styleName="{resources.styles.addAction}"/>
+                <g:Button ui:field="create" debugId="{CAR_CREATE}" styleName="{resources.styles.addAction}"/>
             </div>
             <span style="display: block; clear: both;"/>
         </g:HTMLPanel>
 
         <div class="{style.tableWrapper}">
-            <cell:CellTable ui:field="carGrid" width="100%" debugId="cars"/>
+            <cell:CellTable ui:field="carGrid" width="100%" debugId="{CARS}"/>
         </div>
 
         <cell:SimplePager ui:field='pager'/>

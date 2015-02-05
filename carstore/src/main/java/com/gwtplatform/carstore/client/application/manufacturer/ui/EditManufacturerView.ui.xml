@@ -1,14 +1,17 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
+
     <g:PopupPanel glassEnabled="true" autoHideEnabled="true" animationEnabled="true">
-        <g:HTMLPanel debugId="manufacturer-editor">
+        <g:HTMLPanel debugId="{MANUFACTURER_EDITOR}">
             <div>
                 <g:InlineLabel>Name:</g:InlineLabel>
-                <g:TextBox ui:field="name" debugId="manufacturer-input"/>
+                <g:TextBox ui:field="name" debugId="{MANUFACTURER_INPUT}"/>
             </div>
 
             <div>
-                <g:Button ui:field="save" debugId="manufacturer-save">Save</g:Button>
-                <g:Button ui:field="close" debugId="manufacturer-close">Close</g:Button>
+                <g:Button ui:field="save" debugId="{MANUFACTURER_SAVE}">Save</g:Button>
+                <g:Button ui:field="close" debugId="{MANUFACTURER_CLOSE}">Close</g:Button>
             </div>
         </g:HTMLPanel>
     </g:PopupPanel>
