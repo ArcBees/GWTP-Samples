@@ -19,12 +19,40 @@ package com.gwtplatform.carstore.server.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import com.googlecode.objectify.Key;
+import com.googlecode.objectify.cmd.Query;
 import com.gwtplatform.carstore.server.dao.domain.Car;
+import com.gwtplatform.carstore.server.dao.domain.Rating;
 import com.gwtplatform.carstore.shared.dto.ManufacturerRatingDto;
 
 public class CarDao extends BaseDao<Car> {
-    public CarDao() {
+    private final CarPropertiesDao carPropertiesDao;
+    private final RatingDao ratingDao;
+
+    @Inject
+    public CarDao(
+            CarPropertiesDao carPropertiesDao,
+            RatingDao ratingDao) {
         super(Car.class);
+
+        this.carPropertiesDao = carPropertiesDao;
+        this.ratingDao = ratingDao;
+    }
+
+    // TODO overwrite other delete methods
+    // TODO test that associated ratings and carProperties get deleted
+    @Override
+    public void delete(Long id) {
+        Car car = get(id);
+        carPropertiesDao.delete(car.getCarProperties());
+
+        Key<Car> carKey = Key.create(Car.class, id);
+        Query<Rating> ratings = ratingDao.query().filter("car", carKey);
+        ratingDao.delete(ratings.list());
+
+        super.delete(id);
     }
 
     public List<ManufacturerRatingDto> getAverageCarRatingByManufacturer() {

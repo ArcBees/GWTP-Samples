@@ -22,4 +22,6 @@ public class ManufacturerDao extends BaseDao<Manufacturer> {
     public ManufacturerDao() {
         super(Manufacturer.class);
     }
+
+    // TODO overwrite delete to delete associated cars
 }
