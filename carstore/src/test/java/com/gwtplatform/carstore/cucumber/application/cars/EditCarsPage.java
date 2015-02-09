@@ -21,48 +21,54 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.gwtplatform.carstore.cucumber.application.BasePage;
-import com.gwtplatform.carstore.cucumber.util.FindByDebugId;
+import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
 public class EditCarsPage extends BasePage {
-    @FindByDebugId("cars-tab-panel")
-    private WebElement carsTabs;
-
-    @FindByDebugId("car-model-input")
-    private WebElement carModelInput;
-
-    @FindByDebugId("car-manufacturer-input")
-    private WebElement carManufacturerInput;
-
-    @FindByDebugId("car-properties-editor")
-    private WebElement carPropertiesEditor;
-
-    @FindByDebugId("car-save")
-    private WebElement saveButton;
-
-    @FindByDebugId("car-close")
-    private WebElement closeButton;
-
     public String getCurrentCarTabName() {
-        WebElement selectedTab = carsTabs.findElement(By.className("gwt-TabBarItem-selected"));
+        WebElement selectedTab = getCarsTabs().findElement(By.className("gwt-TabBarItem-selected"));
         WebElement tabNameContainer = selectedTab.findElement(By.cssSelector("span"));
         return tabNameContainer.getText();
     }
 
     public void setCarManufacturer(String manufacturer) {
-        Select manufacturerSelect = new Select(carManufacturerInput);
+        Select manufacturerSelect = new Select(getCarManufacturerInput());
         manufacturerSelect.selectByVisibleText(manufacturer);
     }
 
     public void setCarModel(String model) {
-        carModelInput.clear();
-        carModelInput.sendKeys(model);
+        getCarModelInput().clear();
+        getCarModelInput().sendKeys(model);
     }
 
     public void clickOnSave() {
-        saveButton.click();
+        getSaveButton().click();
     }
 
     public void clickOnClose() {
-        closeButton.click();
+        getCloseButton().click();
+    }
+
+    private WebElement getCarsTabs() {
+        return waitUntilElementIsClickable(ByDebugId.id("cars-tab-panel"));
+    }
+
+    private WebElement getCarModelInput() {
+        return waitUntilElementIsClickable(ByDebugId.id("car-model-input"));
+    }
+
+    private WebElement getCarManufacturerInput() {
+        return waitUntilElementIsClickable(ByDebugId.id("car-manufacturer-input"));
+    }
+
+    private WebElement getCarPropertiesEditor() {
+        return waitUntilElementIsVisible(ByDebugId.id("car-properties-editor"));
+    }
+
+    private WebElement getSaveButton() {
+        return waitUntilElementIsClickable(ByDebugId.id("car-save"));
+    }
+
+    private WebElement getCloseButton() {
+        return waitUntilElementIsClickable(ByDebugId.id("car-close"));
     }
 }
