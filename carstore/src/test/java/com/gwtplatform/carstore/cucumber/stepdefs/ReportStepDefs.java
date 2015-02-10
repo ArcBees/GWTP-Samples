@@ -22,9 +22,11 @@ import com.gwtplatform.carstore.cucumber.application.ratings.RatingPage;
 import com.gwtplatform.carstore.cucumber.application.reports.ReportPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.runtime.java.guice.ScenarioScoped;
 
 import static org.junit.Assert.assertTrue;
 
+@ScenarioScoped
 public class ReportStepDefs {
     private static final String CAR_COL = "Car";
     private static final String RATING_COL = "Rating";

@@ -16,6 +16,9 @@
 
 package com.gwtplatform.carstore.cucumber.stepdefs;
 
+import cucumber.runtime.java.guice.ScenarioScoped;
+
+@ScenarioScoped
 public class StepDefs {
     protected void sleep(long timeout) {
         try {

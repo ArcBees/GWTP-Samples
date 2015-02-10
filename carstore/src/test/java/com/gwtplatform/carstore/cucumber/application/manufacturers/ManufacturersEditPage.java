@@ -19,36 +19,44 @@ package com.gwtplatform.carstore.cucumber.application.manufacturers;
 import org.openqa.selenium.WebElement;
 
 import com.gwtplatform.carstore.cucumber.application.BasePage;
-import com.gwtplatform.carstore.cucumber.util.FindByDebugId;
+import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
 public class ManufacturersEditPage extends BasePage {
-    @FindByDebugId("manufacturer-input")
-    private WebElement manufacturerInput;
-    @FindByDebugId("manufacturer-save")
-    private WebElement saveButton;
-    @FindByDebugId("manufacturer-close")
-    private WebElement closeButton;
-    @FindByDebugId("manufacturer-editor")
-    private WebElement manufacturerEditor;
-
     public void setManufacturer(String manufacturer) {
+        WebElement manufacturerInput = getManufacturerInput();
         manufacturerInput.clear();
         manufacturerInput.sendKeys(manufacturer);
     }
 
     public String getManufacturer() {
-        return manufacturerInput.getText();
+        return getManufacturerInput().getText();
     }
 
     public void clickOnSave() {
-        saveButton.click();
+        getSaveButton().click();
     }
 
     public void clickOnClose() {
-        closeButton.click();
+        getCloseButton().click();
     }
 
     public boolean isManufacturerEditorVisible() {
-        return manufacturerEditor.isDisplayed();
+        return getManufacturerEditor().isDisplayed();
+    }
+
+    private WebElement getManufacturerInput() {
+        return waitUntilPresenceOfElementLocated(ByDebugId.id("manufacturer-input"));
+    }
+
+    private WebElement getSaveButton() {
+        return waitUntilElementIsClickable(ByDebugId.id("manufacturer-save"));
+    }
+
+    private WebElement getCloseButton() {
+        return waitUntilElementIsClickable(ByDebugId.id("manufacturer-close"));
+    }
+
+    private WebElement getManufacturerEditor() {
+        return waitUntilElementIsVisible(ByDebugId.id("manufacturer-editor"));
     }
 }

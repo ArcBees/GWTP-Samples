@@ -22,9 +22,11 @@ import com.gwtplatform.carstore.cucumber.application.stats.StatsPage;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.java.guice.ScenarioScoped;
 
 import static org.junit.Assert.assertEquals;
 
+@ScenarioScoped
 public class StatsStepDefs {
     private final StatsPage statsPage;
 

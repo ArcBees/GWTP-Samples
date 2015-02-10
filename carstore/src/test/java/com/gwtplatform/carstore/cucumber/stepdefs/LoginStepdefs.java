@@ -24,9 +24,11 @@ import com.gwtplatform.carstore.cucumber.application.login.LoginPage;
 import com.gwtplatform.carstore.cucumber.application.widgets.HeaderWidgetPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.java.guice.ScenarioScoped;
 
 import static org.junit.Assert.assertTrue;
 
+@ScenarioScoped
 public class LoginStepdefs {
     private final HeaderWidgetPage headerWidgetPage;
     private final LoginPage loginPage;
