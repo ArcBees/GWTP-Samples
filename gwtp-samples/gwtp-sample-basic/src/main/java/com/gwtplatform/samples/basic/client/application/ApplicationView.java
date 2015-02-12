@@ -52,7 +52,7 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
 
     @Override
     public void setError(String errorText) {
-        error.setText(errorText);
+        error.setHTML(errorText);
     }
 
     @UiHandler("sendButton")

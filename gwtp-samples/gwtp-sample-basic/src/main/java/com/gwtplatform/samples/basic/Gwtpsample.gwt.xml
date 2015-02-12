@@ -5,9 +5,6 @@
     <!-- Inherit the core Web Toolkit stuff.                        -->
     <inherits name='com.google.gwt.user.User'/>
 
-    <!-- Inherit the default GWT style sheet.  You can change       -->
-    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
-
     <!-- Other module inherits                                      -->
     <inherits name='com.gwtplatform.dispatch.Dispatch'/>
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
@@ -18,4 +15,6 @@
 
     <set-configuration-property name="gin.ginjector.modules"
             value="com.gwtplatform.samples.basic.client.gin.ClientModule"/>
+
+    <set-configuration-property name="CssResource.enableGss" value="true" />
 </module>
