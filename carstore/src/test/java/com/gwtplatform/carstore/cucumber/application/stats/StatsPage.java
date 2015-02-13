@@ -25,22 +25,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.gwtplatform.carstore.cucumber.application.BasePage;
-import com.gwtplatform.carstore.cucumber.util.FindByDebugId;
+import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
 public class StatsPage extends BasePage {
-    @FindByDebugId("extract-year-date-picker")
-    private WebElement datePicker;
-    @FindByDebugId("extract-year-button")
-    private WebElement button;
-    @FindByDebugId("extract-year-result")
-    private WebElement result;
-
     public void selectDate(int year, int month, int day) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month - 1, day);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy MMM");
-        WebElement datePickerMonth = datePicker.findElement(By.className("datePickerMonth"));
+        WebElement datePickerMonth = getDatePicker().findElement(By.className("datePickerMonth"));
         Date datePickerDate = getCurrentDatePickerDate(dateFormat, datePickerMonth);
         WebElement navigateCalendarButton = getNavigateCalendarButton(calendar, datePickerDate);
 
@@ -49,11 +42,11 @@ public class StatsPage extends BasePage {
     }
 
     public void extractYear() {
-        button.click();
+        getButton().click();
     }
 
     public int getExtractedYear() {
-        String year = result.getText();
+        String year = getResult().getText();
 
         try {
             return Integer.valueOf(year);
@@ -75,9 +68,9 @@ public class StatsPage extends BasePage {
     private WebElement getNavigateCalendarButton(Calendar calendar, Date datePickerDate) {
         WebElement navigateCalendarButton;
         if (calendar.before(datePickerDate)) {
-            navigateCalendarButton = datePicker.findElement(By.className("datePickerNextButton"));
+            navigateCalendarButton = getDatePicker().findElement(By.className("datePickerNextButton"));
         } else {
-            navigateCalendarButton = datePicker.findElement(By.className("datePickerPreviousButton"));
+            navigateCalendarButton = getDatePicker().findElement(By.className("datePickerPreviousButton"));
         }
         return navigateCalendarButton;
     }
@@ -91,9 +84,21 @@ public class StatsPage extends BasePage {
     }
 
     private void clickCalendarDay(int day) {
-        WebElement dayElement = datePicker.findElement(By.xpath("//div[contains(@class,'datePickerDay')" +
+        WebElement dayElement = getDatePicker().findElement(By.xpath("//div[contains(@class,'datePickerDay')" +
                 "and not(contains(@class,'datePickerDayIsFiller'))" +
                 "and text()=" + day + "]"));
         dayElement.click();
+    }
+
+    private WebElement getDatePicker() {
+        return waitUntilElementIsClickable(ByDebugId.id("extract-year-date-picker"));
+    }
+
+    private WebElement getButton() {
+        return waitUntilElementIsClickable(ByDebugId.id("extract-year-button"));
+    }
+
+    private WebElement getResult() {
+        return waitUntilElementIsClickable(ByDebugId.id("extract-year-result"));
     }
 }

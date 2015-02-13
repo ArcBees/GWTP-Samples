@@ -22,16 +22,9 @@ import com.google.inject.Inject;
 import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.application.widgets.HeaderWidgetPage;
-import com.gwtplatform.carstore.cucumber.util.FindByDebugId;
+import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
 public class LoginPage extends BasePage {
-    @FindByDebugId("username")
-    private WebElement username;
-    @FindByDebugId("password")
-    private WebElement password;
-    @FindByDebugId("login")
-    private WebElement login;
-
     private final HeaderWidgetPage headerWidgetPage;
 
     @Inject
@@ -40,18 +33,15 @@ public class LoginPage extends BasePage {
     }
 
     public void setUsername(String username) {
-        waitUntilElementIsVisible(this.username);
-        this.username.sendKeys(username);
+        getUserName().sendKeys(username);
     }
 
     public void setPassword(String password) {
-        waitUntilElementIsVisible(this.password);
-        this.password.sendKeys(password);
+        getPassword().sendKeys(password);
     }
 
     public void submitLoginForm() {
-        waitUntilElementIsVisible(login);
-        login.click();
+        getLogin().click();
     }
 
     public Boolean isOnLoginPage() {
@@ -60,5 +50,17 @@ public class LoginPage extends BasePage {
 
     public void waitUntilLoggedIn() {
         headerWidgetPage.waitUntilLogoutIsClickable();
+    }
+
+    private WebElement getUserName() {
+        return waitUntilElementIsClickable(ByDebugId.id("username"));
+    }
+
+    private WebElement getPassword() {
+        return waitUntilElementIsClickable(ByDebugId.id("password"));
+    }
+
+    private WebElement getLogin() {
+        return waitUntilElementIsClickable(ByDebugId.id("login"));
     }
 }

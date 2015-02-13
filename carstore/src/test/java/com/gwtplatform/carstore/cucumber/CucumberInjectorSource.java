@@ -1,5 +1,5 @@
 /**
- * Copyright 2013 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,15 +14,17 @@
  * the License.
  */
 
-package com.gwtplatform.carstore.cucumber.util;
+package com.gwtplatform.carstore.cucumber;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Stage;
+import cucumber.api.guice.CucumberModules;
+import cucumber.runtime.java.guice.InjectorSource;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface LongImplicitWait {
-    long timeout() default 10L;
+public class CucumberInjectorSource implements InjectorSource {
+    @Override
+    public Injector getInjector() {
+        return Guice.createInjector(Stage.PRODUCTION, CucumberModules.SCENARIO, new CucumberModule());
+    }
 }

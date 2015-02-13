@@ -24,8 +24,6 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,14 +33,7 @@ import com.gwtplatform.carstore.cucumber.util.TestParameters;
 
 public class BasePage {
     @Inject
-    private static ElementLocatorFactory elementLocatorFactory;
-
-    @Inject
     protected WebDriver webDriver;
-
-    protected BasePage() {
-        PageFactory.initElements(elementLocatorFactory, this);
-    }
 
     public void getUrl(String url) {
         webDriver.get(url);

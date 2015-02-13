@@ -13,7 +13,7 @@
     <properties>
         <!-- Client -->
         <gwt.version>2.7.0</gwt.version>
-        <gwtp.version>1.4-SNAPSHOT</gwtp.version>
+        <gwtp.version>1.5-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwtquery.version>1.4.2</gwtquery.version>
         <objectify-gwt.version>1.2.1</objectify-gwt.version>

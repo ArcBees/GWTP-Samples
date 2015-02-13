@@ -24,10 +24,12 @@ import com.gwtplatform.carstore.cucumber.application.widgets.MessageWidgetPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.java.guice.ScenarioScoped;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+@ScenarioScoped
 public class RatingStepdefs {
     private final RatingPage ratingPage;
     private final MessageWidgetPage messageWidgetPage;
