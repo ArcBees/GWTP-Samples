@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-samples</artifactId>
-        <version>1.0-RC-4-SNAPSHOT</version>
+        <version>1.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gwtp-sample-tab</artifactId>
@@ -74,6 +74,12 @@
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gwtplatform.extensions</groupId>
+            <artifactId>ginuibinder</artifactId>
+            <version>${gwt.version}-SNAPSHOT</version>
         </dependency>
 
         <!-- GWT dependencies -->

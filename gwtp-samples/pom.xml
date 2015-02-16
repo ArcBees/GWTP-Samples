@@ -5,7 +5,7 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>gwtp-samples</artifactId>
-    <version>1.0-RC-4-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GWT-Platform Samples</name>
     <inceptionYear>2010</inceptionYear>
@@ -63,13 +63,13 @@
 
     <properties>
         <!-- client -->
-        <gwt.version>2.6.0</gwt.version>
-        <gwtp.version>1.2.1</gwtp.version>
+        <gwt.version>2.7.0</gwt.version>
+        <gwtp.version>1.5-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwt.style>OBF</gwt.style>
 
         <!-- server -->
-        <gae.version>1.9.2</gae.version>
+        <gae.version>1.9.17</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
@@ -93,7 +93,7 @@
 
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
         <gae.home>
-            ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
+            ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}
         </gae.home>
     </properties>
 
@@ -176,6 +176,42 @@
                     </executions>
                 </plugin>
 
+                <!-- App Engine -->
+                <plugin>
+                    <groupId>net.kindleit</groupId>
+                    <artifactId>maven-gae-plugin</artifactId>
+                    <version>${maven-gae-plugin.version}</version>
+                    <configuration>
+                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+                        <serverId>appengine-credentials</serverId>
+                        <splitJars>true</splitJars>
+                        <sdkDir>${gae.home}</sdkDir>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>install-server-jar</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>deploy</id>
+                            <goals>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.kindleit</groupId>
+                            <artifactId>gae-runtime</artifactId>
+                            <version>1.8.8</version>
+                            <type>pom</type>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -212,42 +248,6 @@
                     <configuration>
                         <skip>true</skip>
                     </configuration>
-                </plugin>
-
-                <!-- App Engine -->
-                <plugin>
-                    <groupId>net.kindleit</groupId>
-                    <artifactId>maven-gae-plugin</artifactId>
-                    <version>${maven-gae-plugin.version}</version>
-                    <configuration>
-                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-                        <serverId>appengine-credentials</serverId>
-                        <splitJars>true</splitJars>
-                        <sdkDir>${gae.home}</sdkDir>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>install-server-jar</id>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>unpack</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>deploy</id>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.kindleit</groupId>
-                            <artifactId>gae-runtime</artifactId>
-                            <version>1.8.8</version>
-                            <type>pom</type>
-                        </dependency>
-                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
