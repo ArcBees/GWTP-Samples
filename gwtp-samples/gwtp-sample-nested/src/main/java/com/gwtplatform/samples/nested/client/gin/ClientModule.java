@@ -23,6 +23,7 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.nested.client.application.ApplicationModule;
+import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
 import com.gwtplatform.samples.nested.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
@@ -35,5 +36,7 @@ public class ClientModule extends AbstractPresenterModule {
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
         bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homePage);
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homePage);
+
+        bind(ResourceLoader.class).asEagerSingleton();
     }
 }
