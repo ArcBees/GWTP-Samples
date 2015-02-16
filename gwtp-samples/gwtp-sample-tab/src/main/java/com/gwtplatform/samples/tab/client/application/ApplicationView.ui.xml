@@ -6,12 +6,8 @@
     <ui:with field="resources" type="com.gwtplatform.samples.tab.client.resources.AppResources"/>
 
     <g:HTMLPanel>
-        <div style="float: right; position: relative; left: -50%;">
-            <div style="position: relative; left: 50%;">
-                <g:InlineLabel ui:field="topMessage" styleName="{resources.style.topMessage}" visible="false"/>
-            </div>
-        </div>
-        
+        <g:InlineLabel ui:field="topMessage" styleName="{resources.style.topMessage}" visible="false"/>
+
         <header>
             <div class="{resources.style.container}">
                 <h1>GWTP Tabs Sample</h1>
@@ -21,7 +17,7 @@
                 </ul>
             </div>
         </header>
-        
+
         <div class="{resources.style.container}">
             <npui:RoundTabPanel ui:field="tabPanel"/>
             <npui2:LinkMenu ui:field="linkMenu"/>

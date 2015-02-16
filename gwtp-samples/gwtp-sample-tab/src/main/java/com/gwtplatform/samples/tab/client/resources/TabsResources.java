@@ -46,5 +46,5 @@ public interface TabsResources extends ClientBundle {
     }
 
     @Source({"css/variables.gss", "css/tabs.gss"})
-    public Style style();
+    Style style();
 }

@@ -29,7 +29,6 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import com.gwtplatform.samples.tab.client.resources.AppConstants;
 import com.gwtplatform.samples.tab.client.resources.AppMessages;
 import com.gwtplatform.samples.tab.client.resources.AppResources;
-import org.apache.xpath.operations.Bool;
 
 /**
  * The view implementation for {@link com.gwtplatform.samples.tab.client.application.homenews.HomeNewsPresenter} .
@@ -63,7 +62,7 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
     }
 
     @Override
-    public void setConfirmation(Boolean state) {
+    public void setConfirmation(boolean state) {
         if(state) {
             confirmationLink.addStyleName(resources.style().isOn());
             confirmationLink.setText("Navigation confirmation ON, click here to disable it!");

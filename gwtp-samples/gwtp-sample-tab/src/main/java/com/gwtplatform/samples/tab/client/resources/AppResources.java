@@ -54,15 +54,11 @@ public interface AppResources extends ClientBundle {
         String isOn();
     }
 
-    interface Sprites extends CssResource {
-        String logo();
-    }
-
     @Source("css/normalize.gss")
     Normalize normalize();
 
     @Source({"css/variables.gss", "css/style.gss"})
-    public Style style();
+    Style style();
 
     @Source("images/logo.png")
     ImageResource logo();

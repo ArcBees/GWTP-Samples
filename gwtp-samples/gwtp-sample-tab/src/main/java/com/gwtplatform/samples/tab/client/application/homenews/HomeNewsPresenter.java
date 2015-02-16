@@ -60,7 +60,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
      * {@link HomeNewsPresenter}'s view.
      */
     public interface MyView extends View, HasUiHandlers<HomeNewsUiHandler> {
-        void setConfirmation(Boolean state);
+        void setConfirmation(boolean state);
 
         void display();
     }

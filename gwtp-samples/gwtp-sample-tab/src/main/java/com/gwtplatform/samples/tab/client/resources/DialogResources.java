@@ -25,5 +25,5 @@ public interface DialogResources extends ClientBundle {
     }
 
     @Source({"css/variables.gss", "css/dialog.gss"})
-    public Style style();
+    Style style();
 }
