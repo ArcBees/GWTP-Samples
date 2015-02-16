@@ -78,6 +78,7 @@
 
 .titlebar {
     background-color: C_PANEL_DARK;
+    
     padding: 0 5px 3px;
 }
 

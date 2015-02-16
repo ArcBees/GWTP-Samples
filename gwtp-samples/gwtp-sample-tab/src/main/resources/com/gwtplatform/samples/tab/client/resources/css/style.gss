@@ -95,6 +95,7 @@ nav > ul > li > a:hover {
 
 h2 {
     font-size: 1.6rem;
+    
     margin-bottom: 1rem;
 }
 
@@ -159,15 +160,17 @@ input {
 }
 
 .links {
+    font-style: italic;
+    
     margin-bottom: 20px;
     margin-top: 20px;
-    font-style: italic;
 }
 
 .topMessage {
     background-color: yellow;
-    padding: 5px;
     font-weight: bold;
+    
+    padding: 5px;
 }
 
 .divBorder {
@@ -181,6 +184,7 @@ input {
 .anchor {
     text-decoration: underline;
     font-weight: bold;
+    
     cursor: pointer;
 }
 
@@ -203,9 +207,10 @@ input {
 }
 
 .links {
+    font-style: italic;
+    
     margin-bottom: 20px;
     margin-top: 20px;
-    font-style: italic;
 }
 
 .popup {
