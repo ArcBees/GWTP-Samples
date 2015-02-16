@@ -24,6 +24,7 @@ import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.basic.client.application.ApplicationModule;
+import com.gwtplatform.samples.basic.client.resources.ResourceLoader;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
@@ -40,5 +41,7 @@ public class ClientModule extends AbstractPresenterModule {
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
 
         bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
+        
+        bind(ResourceLoader.class).asEagerSingleton();
     }
 }
