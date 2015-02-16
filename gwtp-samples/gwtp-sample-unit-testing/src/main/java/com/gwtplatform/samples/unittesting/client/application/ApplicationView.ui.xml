@@ -1,7 +1,0 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:HTMLPanel>
-        <g:SimplePanel ui:field="headerContainer"/>
-        <g:Label ui:field="titleLabel"/>
-    </g:HTMLPanel>
-</ui:UiBinder>

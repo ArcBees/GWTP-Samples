@@ -59,6 +59,7 @@
         <module>gwtp-sample-mobile</module>
         <module>gwtp-sample-nested</module>
         <module>gwtp-sample-tab</module>
+        <module>gwtp-sample-unit-testing</module>
     </modules>
 
     <properties>
@@ -139,12 +140,6 @@
                     </configuration>
                 </plugin>
 
-                <!-- GWT -->
-                <!-- 'mvn gwt:run' - runs development mode -->
-                <!-- 'mvn gwt:debug' - runs debug mode -->
-                <!-- 'mvn gwt:compile' - compiles gwt -->
-                <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
