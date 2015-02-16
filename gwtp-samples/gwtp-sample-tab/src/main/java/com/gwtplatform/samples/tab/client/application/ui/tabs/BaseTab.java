@@ -16,32 +16,24 @@
 
 package com.gwtplatform.samples.tab.client.application.ui.tabs;
 
-import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.Tab;
 import com.gwtplatform.mvp.client.TabData;
+import com.gwtplatform.samples.tab.client.resources.TabsResources;
 
 /**
  * This is a basic implementation of a {@link Tab} that must be subclassed. Subclasses can style the tab in any way they
  * want. A {@link BaseTab} is added to a {@link BaseTabPanel}.
  */
 public abstract class BaseTab extends Composite implements Tab {
-    /**
-     * {@link BaseTab}'s CssResource.
-     */
-    protected interface Style extends CssResource {
-        String active();
-
-        String inactive();
-    }
+    private static TabsResources RESOURCES = GWT.create(TabsResources.class);
 
     @UiField
     Hyperlink hyperlink;
-    @UiField
-    Style style;
 
     private final float priority;
 
@@ -53,8 +45,8 @@ public abstract class BaseTab extends Composite implements Tab {
 
     @Override
     public void activate() {
-        removeStyleName(style.inactive());
-        addStyleName(style.active());
+        removeStyleName(RESOURCES.style().inactive());
+        addStyleName(RESOURCES.style().active());
     }
 
     @Override
@@ -64,8 +56,8 @@ public abstract class BaseTab extends Composite implements Tab {
 
     @Override
     public void deactivate() {
-        removeStyleName(style.active());
-        addStyleName(style.inactive());
+        removeStyleName(RESOURCES.style().active());
+        addStyleName(RESOURCES.style().inactive());
     }
 
     @Override

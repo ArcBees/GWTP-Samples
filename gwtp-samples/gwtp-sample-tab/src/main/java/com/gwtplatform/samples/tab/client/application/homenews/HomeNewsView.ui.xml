@@ -1,75 +1,34 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    
     <ui:with field="resources" type="com.gwtplatform.samples.tab.client.resources.AppResources"/>
 
-    <ui:style>
-        .confirmationLink {
-            background-color: red;
-            margin-right: 10px;
-            padding: 2px 5px;
-            float: left;
-        }
-
-        .confirmationLink a, .confirmationLink a:visited, .confirmationLink a:hover {
-            color: white;
-            cursor: pointer;
-        }
-
-        .links {
-            margin-bottom: 20px;
-            margin-top: 20px;
-            font-style: italic;
-        }
-    </ui:style>
-
     <g:HTMLPanel>
-        <h1>News</h1>
+        <h2>News</h2>
 
-        <div class="{style.links}">
-            GWTP Tabs Sample
-            <br/>
-            <a href="https://github.com/ArcBees/GWTP">Project Home</a>
-            <br/>
-            <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-tab">Source</a>
-        </div>
+        <p>Clicking on the <strong>Home</strong> tab will always come back to the last tab selected.</p>
 
-        <p>Clicking on the
-            <b>Home</b>
-            tab will always come back to the last tab selected.
+        <p class="{resources.style.confirmationLink}">
+            <g:Anchor ui:field='confirmationLink'/>
         </p>
 
-        <div class="{style.confirmationLink}">
-            <g:Anchor ui:field='confirmationLink'/>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nulla
-            varius malesuada mollis. Nunc elit justo, pellentesque at condimentum
-            a, egestas eget ipsum. Sed pulvinar metus non purus sollicitudin
-            porta. Donec est diam, auctor a feugiat ac, elementum in felis. Donec
-            non fringilla nisi. Etiam sollicitudin sapien vitae ipsum porta
-            dictum blandit metus consectetur. Duis libero est, consectetur in
-            tincidunt eu, ultricies eget dui. Integer felis elit, porttitor at
-            convallis sed, venenatis eu metus. Nam ac metus at nibh placerat
-            interdum vel vel mauris. In lacinia tellus sed leo cursus sodales.
-            Vivamus in purus a nunc fermentum viverra quis non mauris. Nulla nec
-            justo tellus. Maecenas leo velit, bibendum at dapibus at, vulputate
-            et turpis. Sed fringilla interdum libero eu facilisis. Quisque lectus
-            odio, aliquam sed vehicula at, euismod et nunc. Praesent at
-            lacinia
-            tortor.
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque cum deleniti incidunt. A ab at 
+            aut blanditiis dolor eligendi enim expedita necessitatibus, omnis provident quis sit suscipit tempore vel?
         </p>
 
         <!-- Resource Examples Below -->
-        <div>Example use of Messages:</div>
-        <g:HTML ui:field="orderText"/>
+        <h3>Example use of Messages:</h3>
+        <p>
+            <g:HTML ui:field="orderText"/>
+        </p>
 
-        <div>Example use of Constants:</div>
-        <g:HTML ui:field="gwtpTitle"/>
+        <h3>Example use of Constants:</h3>
+        <p>
+            <g:HTML ui:field="gwtpTitle"/>
+        </p>
 
-        <div>Example use of ImageResource:</div>
-        <g:Image resource="{resources.logo}" styleName="{resources.styles.logo}"/>
-
-        <div class="{resources.styles.divBorder}">Example use of Css Resource:</div>
+        <h3>Example use of ImageResource:</h3>
+        <g:Image resource="{resources.logo}" styleName="{resources.style.logo}"/>
     </g:HTMLPanel>
 </ui:UiBinder>

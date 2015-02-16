@@ -60,7 +60,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
      * {@link HomeNewsPresenter}'s view.
      */
     public interface MyView extends View, HasUiHandlers<HomeNewsUiHandler> {
-        void setConfirmationText(String text);
+        void setConfirmation(boolean state);
 
         void display();
     }
@@ -105,10 +105,10 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
         this.confirmationEnabled = enabled;
         if (enabled) {
             placeManager.setOnLeaveConfirmation("Are you sure you want to navigate away from this page?");
-            getView().setConfirmationText("Navigation confirmation ON, click here to disable it!");
+            getView().setConfirmation(true);
         } else {
             placeManager.setOnLeaveConfirmation(null);
-            getView().setConfirmationText("Navigation confirmation OFF, click here to enable it!");
+            getView().setConfirmation(false);
         }
     }
 }

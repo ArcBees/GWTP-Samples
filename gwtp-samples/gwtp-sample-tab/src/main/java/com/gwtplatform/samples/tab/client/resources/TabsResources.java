@@ -20,46 +20,31 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.ImageResource;
 
-/**
- * {@link ResourceLoader} injects the css on boostrapping from the {@Link ClientModule} and the resources
- * exist in src/main/resources/com.gwtplatform.samples.tab.client.resources/*
- */
-public interface AppResources extends ClientBundle {
-    interface Normalize extends CssResource {
-    }
-    
+public interface TabsResources extends ClientBundle {
     interface Style extends CssResource {
-        String divBorder();
+        String tab();
 
-        String logo();
+        String inactive();
+
+        String tab_inner();
         
-        String label_error();
+        String active();
+
+        String horizontalBar();
 
         String container();
 
-        String box();
-
-        String links();
+        String bar();
 
         String panel();
+        
+        String title();
+        
+        String titlebar();
 
-        String anchor();
-
-        String confirmationLink();
-
-        String popup();
-
-        String topMessage();
-
-        String isOn();
+        String rounded();
     }
 
-    @Source("css/normalize.gss")
-    Normalize normalize();
-
-    @Source({"css/variables.gss", "css/style.gss"})
+    @Source({"css/variables.gss", "css/tabs.gss"})
     Style style();
-
-    @Source("images/logo.png")
-    ImageResource logo();
 }
