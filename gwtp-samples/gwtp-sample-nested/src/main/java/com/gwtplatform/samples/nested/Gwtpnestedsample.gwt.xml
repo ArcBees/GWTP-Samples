@@ -22,4 +22,6 @@
 
     <set-configuration-property name="gin.ginjector.modules"
                                 value="com.gwtplatform.samples.nested.client.gin.ClientModule"/>
+
+    <set-configuration-property name="CssResource.enableGss" value="true" />
 </module>

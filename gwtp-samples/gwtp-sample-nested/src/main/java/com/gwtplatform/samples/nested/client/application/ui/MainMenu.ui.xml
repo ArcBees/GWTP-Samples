@@ -4,11 +4,17 @@
 
     <ui:with type="com.gwtplatform.samples.nested.client.place.NameTokens" field="nameTokens"></ui:with>
 
-    <g:HTMLPanel>
-        <g:InlineHyperlink targetHistoryToken="{nameTokens.getHomePage}">Home</g:InlineHyperlink>
-        |
-        <g:InlineHyperlink targetHistoryToken="{nameTokens.getAboutUsePage}">About Us</g:InlineHyperlink>
-        |
-        <g:InlineHyperlink targetHistoryToken="{nameTokens.getContactPage}">Contact</g:InlineHyperlink>
+    <g:HTMLPanel tag="nav">
+        <ul>
+            <li>
+                <a href="#{nameTokens.getHomePage}">Home</a>
+            </li>
+            <li>
+                <a href="#{nameTokens.getAboutUsePage}">About Us</a>
+            </li>
+            <li>
+                <a href="#{nameTokens.getContactPage}">Contact</a>
+            </li>
+        </ul>
     </g:HTMLPanel>
 </ui:UiBinder>
