@@ -62,8 +62,7 @@ h2 {
     padding: 15px;
     border: 1px solid #bbb;
     margin-bottom: 1rem;
-    
-    border-radius: 5px;
+
     box-sizing: border-box;
 }
 
