@@ -23,6 +23,8 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.PageWithEditTable;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.REPORTS;
+
 public class ReportPage extends PageWithEditTable {
     private static final String MANUFACTURER_COL = "Manufacturer";
     private static final String RATING_COL = "Rating";
@@ -56,7 +58,7 @@ public class ReportPage extends PageWithEditTable {
     }
 
     private WebElement getReportsTable() {
-        return waitUntilElementIsVisible(ByDebugId.id("reports"));
+        return waitUntilElementIsVisible(ByDebugId.id(REPORTS));
     }
 
     private boolean almostEqual(Double a, Double b, double epsilon) {

@@ -21,6 +21,11 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.PageWithEditTable;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.RATINGS;
+import static com.gwtplatform.carstore.client.debug.DebugIds.RATING_CREATE;
+import static com.gwtplatform.carstore.client.debug.DebugIds.RATING_INPUT;
+import static com.gwtplatform.carstore.client.debug.DebugIds.RATING_SAVE;
+
 public class RatingPage extends PageWithEditTable {
     private static final String A_VALID_RATING = "10";
 
@@ -30,7 +35,7 @@ public class RatingPage extends PageWithEditTable {
 
     public void fillForm() {
         getRatingsInput().sendKeys(A_VALID_RATING);
-        WebElement save = waitUntilElementIsClickable(ByDebugId.id("ratingSave"));
+        WebElement save = waitUntilElementIsClickable(ByDebugId.id(RATING_SAVE));
         save.click();
         waitUntilElementIsDetached(save);
     }
@@ -48,14 +53,14 @@ public class RatingPage extends PageWithEditTable {
     }
 
     private WebElement getCreateButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("ratingCreate"));
+        return waitUntilElementIsClickable(ByDebugId.id(RATING_CREATE));
     }
 
     private WebElement getRatingsTable() {
-        return waitUntilElementIsVisible(ByDebugId.id("ratings"));
+        return waitUntilElementIsVisible(ByDebugId.id(RATINGS));
     }
 
     private WebElement getRatingsInput() {
-        return waitUntilElementIsVisible(ByDebugId.id("ratingInput"));
+        return waitUntilElementIsVisible(ByDebugId.id(RATING_INPUT));
     }
 }

@@ -21,6 +21,9 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.PageWithEditTable;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.CARS;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_CREATE;
+
 public class CarsPage extends PageWithEditTable {
     public void clickOnCreate() {
         getCreateButton().click();
@@ -50,10 +53,10 @@ public class CarsPage extends PageWithEditTable {
     }
 
     private WebElement getCarsTable() {
-        return waitUntilElementIsLoaded(ByDebugId.id("cars"));
+        return waitUntilElementIsLoaded(ByDebugId.id(CARS));
     }
 
     private WebElement getCreateButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("carCreate"));
+        return waitUntilElementIsClickable(ByDebugId.id(CAR_CREATE));
     }
 }

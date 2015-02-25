@@ -22,6 +22,9 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.LOGOUT;
+import static com.gwtplatform.carstore.client.debug.DebugIds.MENUBAR;
+
 public class HeaderWidgetPage extends BasePage {
     public void clickOnLogOut() {
         getLogoutButton().click();
@@ -37,10 +40,10 @@ public class HeaderWidgetPage extends BasePage {
     }
 
     private WebElement getMenuBar() {
-        return waitUntilElementIsVisible(ByDebugId.id("menubar"));
+        return waitUntilElementIsVisible(ByDebugId.id(MENUBAR));
     }
 
     private WebElement getLogoutButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("logout"));
+        return waitUntilElementIsClickable(ByDebugId.id(LOGOUT));
     }
 }

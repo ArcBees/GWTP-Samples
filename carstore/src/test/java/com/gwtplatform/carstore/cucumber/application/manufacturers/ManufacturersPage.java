@@ -22,6 +22,9 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.PageWithEditTable;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.CREATE_MANUFACTURER;
+import static com.gwtplatform.carstore.client.debug.DebugIds.MANUFACTURERS;
+
 public class ManufacturersPage extends PageWithEditTable {
     public void clickOnCreate() {
         getCreateButton().click();
@@ -52,10 +55,10 @@ public class ManufacturersPage extends PageWithEditTable {
     }
 
     private WebElement getCreateButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("create-manufacturer"));
+        return waitUntilElementIsClickable(ByDebugId.id(CREATE_MANUFACTURER));
     }
 
     private WebElement getManufacturersTable() {
-        return waitUntilElementIsVisible(ByDebugId.id("manufacturers"));
+        return waitUntilElementIsVisible(ByDebugId.id(MANUFACTURERS));
     }
 }

@@ -27,6 +27,10 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_BUTTON;
+import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_DATE_PICKER;
+import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_RESULT;
+
 public class StatsPage extends BasePage {
     public void selectDate(int year, int month, int day) {
         Calendar calendar = Calendar.getInstance();
@@ -91,14 +95,14 @@ public class StatsPage extends BasePage {
     }
 
     private WebElement getDatePicker() {
-        return waitUntilElementIsClickable(ByDebugId.id("extract-year-date-picker"));
+        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_DATE_PICKER));
     }
 
     private WebElement getButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("extract-year-button"));
+        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_BUTTON));
     }
 
     private WebElement getResult() {
-        return waitUntilElementIsClickable(ByDebugId.id("extract-year-result"));
+        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_RESULT));
     }
 }

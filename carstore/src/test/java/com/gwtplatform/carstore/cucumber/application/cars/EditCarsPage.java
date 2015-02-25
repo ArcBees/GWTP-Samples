@@ -23,6 +23,13 @@ import org.openqa.selenium.support.ui.Select;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.CARS_TAB_PANEL;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_CLOSE;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_MANUFACTURER_INPUT;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_MODEL_INPUT;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_PROPERTIES_EDITOR;
+import static com.gwtplatform.carstore.client.debug.DebugIds.CAR_SAVE;
+
 public class EditCarsPage extends BasePage {
     public String getCurrentCarTabName() {
         WebElement selectedTab = getCarsTabs().findElement(By.className("gwt-TabBarItem-selected"));
@@ -49,26 +56,26 @@ public class EditCarsPage extends BasePage {
     }
 
     private WebElement getCarsTabs() {
-        return waitUntilElementIsClickable(ByDebugId.id("cars-tab-panel"));
+        return waitUntilElementIsClickable(ByDebugId.id(CARS_TAB_PANEL));
     }
 
     private WebElement getCarModelInput() {
-        return waitUntilElementIsClickable(ByDebugId.id("car-model-input"));
+        return waitUntilElementIsClickable(ByDebugId.id(CAR_MODEL_INPUT));
     }
 
     private WebElement getCarManufacturerInput() {
-        return waitUntilElementIsClickable(ByDebugId.id("car-manufacturer-input"));
+        return waitUntilElementIsClickable(ByDebugId.id(CAR_MANUFACTURER_INPUT));
     }
 
     private WebElement getCarPropertiesEditor() {
-        return waitUntilElementIsVisible(ByDebugId.id("car-properties-editor"));
+        return waitUntilElementIsVisible(ByDebugId.id(CAR_PROPERTIES_EDITOR));
     }
 
     private WebElement getSaveButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("car-save"));
+        return waitUntilElementIsClickable(ByDebugId.id(CAR_SAVE));
     }
 
     private WebElement getCloseButton() {
-        return waitUntilElementIsClickable(ByDebugId.id("car-close"));
+        return waitUntilElementIsClickable(ByDebugId.id(CAR_CLOSE));
     }
 }
