@@ -2,9 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
 
-    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
-
-    <g:ScrollPanel debugId="{DBG_MANUFACTURER_PANEL}">
+    <g:ScrollPanel>
         <cell:CellList ui:field="manufacturerList"/>
     </g:ScrollPanel>
 </ui:UiBinder>

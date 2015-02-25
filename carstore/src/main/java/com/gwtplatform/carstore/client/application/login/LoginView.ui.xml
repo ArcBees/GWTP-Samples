@@ -42,7 +42,7 @@
     </ui:style>
 
     <g:HTMLPanel styleName="{style.loginWrapper}">
-        <g:HTMLPanel styleName="{style.loginPanel}" debugId="{DBG_LOGIN_PANEL}">
+        <g:HTMLPanel styleName="{style.loginPanel}">
             <div class="{style.formRow}">
                 <g:TextBox ui:field="username" debugId="{DBG_USERNAME}"
                            styleName="{resource.styles.mobileTextField}"/>

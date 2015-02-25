@@ -11,7 +11,7 @@
         }
     </ui:style>
 
-    <g:HTMLPanel debugId="{DBG_MANUFACTURER_PANEL}">
+    <g:HTMLPanel>
         <div class="{resources.styles.bigTitle}">
             <h2>
                 <g:InlineLabel text="Manufacturers"/>
