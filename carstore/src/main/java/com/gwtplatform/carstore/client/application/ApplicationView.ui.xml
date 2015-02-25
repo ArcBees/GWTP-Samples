@@ -30,6 +30,6 @@
         <g:HTMLPanel ui:field="container" styleName="{style.container}">
             <g:SimplePanel ui:field="main"/>
         </g:HTMLPanel>
-        <g:InlineLabel debugId="{DOM}"/>
+        <g:InlineLabel debugId="{DBG_DOM}"/>
     </g:HTMLPanel>
 </ui:UiBinder>

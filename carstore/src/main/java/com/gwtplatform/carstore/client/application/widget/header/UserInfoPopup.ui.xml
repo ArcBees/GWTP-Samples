@@ -37,7 +37,7 @@
             <g:InlineLabel ui:field="username"/>
         </div>
         <div class="{style.logoutWrapper}">
-            <g:Button text="Logout" debugId="{LOGOUT}" ui:field="logout" styleName="{style.logoutButton}"/>
+            <g:Button text="Logout" debugId="{DBG_LOGOUT}" ui:field="logout" styleName="{style.logoutButton}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -42,19 +42,19 @@
     </ui:style>
 
     <g:HTMLPanel styleName="{style.loginWrapper}">
-        <g:HTMLPanel styleName="{style.loginPanel}" debugId="{LOGIN_PANEL}">
+        <g:HTMLPanel styleName="{style.loginPanel}" debugId="{DBG_LOGIN_PANEL}">
             <div class="{style.formRow}">
-                <g:TextBox ui:field="username" debugId="{USERNAME}"
+                <g:TextBox ui:field="username" debugId="{DBG_USERNAME}"
                            styleName="{resource.styles.mobileTextField}"/>
             </div>
 
             <div class="{style.formRow}">
-                <g:PasswordTextBox ui:field="password" debugId="{PASSWORD}"
+                <g:PasswordTextBox ui:field="password" debugId="{DBG_PASSWORD}"
                                    styleName="{resource.styles.mobileTextField}"/>
             </div>
 
             <g:Button ui:field="login" styleName="{style.loginButton}"
-                      debugId="{LOGIN}" text="Login"/>
+                      debugId="{DBG_LOGIN}" text="Login"/>
         </g:HTMLPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

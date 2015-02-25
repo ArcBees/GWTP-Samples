@@ -5,6 +5,6 @@
 
     <g:HTMLPanel>
         You are not authorized to view this page.
-        <g:Hyperlink ui:field="linkToLogin" debugId="{LINK_TO_LOGIN}">Please login first</g:Hyperlink>
+        <g:Hyperlink ui:field="linkToLogin" debugId="{DBG_LINK_TO_LOGIN}">Please login first</g:Hyperlink>
     </g:HTMLPanel>
 </ui:UiBinder>

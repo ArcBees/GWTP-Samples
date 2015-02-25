@@ -7,21 +7,21 @@
         <g:HTMLPanel>
             <div>
                 <g:InlineLabel>Model:</g:InlineLabel>
-                <g:TextBox ui:field="model" debugId="{CAR_MODEL_INPUT}"/>
+                <g:TextBox ui:field="model" debugId="{DBG_CAR_MODEL_INPUT}"/>
             </div>
 
             <div>
                 <g:InlineLabel>Manufacturer:</g:InlineLabel>
-                <g:ValueListBox ui:field="manufacturer" debugId="{CAR_MANUFACTURER_INPUT}"/>
+                <g:ValueListBox ui:field="manufacturer" debugId="{DBG_CAR_MANUFACTURER_INPUT}"/>
             </div>
 
             <div>
-                <c:CarPropertiesEditor ui:field="carProperties" debugId="{CAR_PROPERTIES_EDITOR}"/>
+                <c:CarPropertiesEditor ui:field="carProperties" debugId="{DBG_CAR_PROPERTIES_EDITOR}"/>
             </div>
 
             <div>
-                <g:Button ui:field="save" debugId="{CAR_SAVE}">Save</g:Button>
-                <g:Button ui:field="close" debugId="{CAR_CLOSE}">Close</g:Button>
+                <g:Button ui:field="save" debugId="{DBG_CAR_SAVE}">Save</g:Button>
+                <g:Button ui:field="close" debugId="{DBG_CAR_CLOSE}">Close</g:Button>
             </div>
         </g:HTMLPanel>
     </g:PopupPanel>

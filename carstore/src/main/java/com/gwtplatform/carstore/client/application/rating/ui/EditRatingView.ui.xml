@@ -11,11 +11,11 @@
 
             <div>
                 <g:InlineLabel>Your rating:</g:InlineLabel>
-                <g:IntegerBox ui:field="rating" maxLength="3" debugId="{RATING_INPUT}"/>
+                <g:IntegerBox ui:field="rating" maxLength="3" debugId="{DBG_RATING_INPUT}"/>
             </div>
 
             <div>
-                <g:Button ui:field="save" debugId="{RATING_SAVE}">Save</g:Button>
+                <g:Button ui:field="save" debugId="{DBG_RATING_SAVE}">Save</g:Button>
                 <g:Button ui:field="close">Close</g:Button>
             </div>
         </g:HTMLPanel>

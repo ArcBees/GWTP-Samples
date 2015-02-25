@@ -27,9 +27,9 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
-import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_BUTTON;
-import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_DATE_PICKER;
-import static com.gwtplatform.carstore.client.debug.DebugIds.EXTRACT_YEAR_RESULT;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_EXTRACT_YEAR_BUTTON;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_EXTRACT_YEAR_DATE_PICKER;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_EXTRACT_YEAR_RESULT;
 
 public class StatsPage extends BasePage {
     public void selectDate(int year, int month, int day) {
@@ -95,14 +95,14 @@ public class StatsPage extends BasePage {
     }
 
     private WebElement getDatePicker() {
-        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_DATE_PICKER));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_EXTRACT_YEAR_DATE_PICKER));
     }
 
     private WebElement getButton() {
-        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_BUTTON));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_EXTRACT_YEAR_BUTTON));
     }
 
     private WebElement getResult() {
-        return waitUntilElementIsClickable(ByDebugId.id(EXTRACT_YEAR_RESULT));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_EXTRACT_YEAR_RESULT));
     }
 }

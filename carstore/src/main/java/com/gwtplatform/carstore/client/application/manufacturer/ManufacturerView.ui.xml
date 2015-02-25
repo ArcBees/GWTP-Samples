@@ -11,19 +11,19 @@
         }
     </ui:style>
 
-    <g:HTMLPanel debugId="{MANUFACTURER_PANEL}">
+    <g:HTMLPanel debugId="{DBG_MANUFACTURER_PANEL}">
         <div class="{resources.styles.bigTitle}">
             <h2>
                 <g:InlineLabel text="Manufacturers"/>
             </h2>
             <div>
-                <g:Button ui:field="create" styleName="{resources.styles.addAction}" debugId="{CREATE_MANUFACTURER}"/>
+                <g:Button ui:field="create" styleName="{resources.styles.addAction}" debugId="{DBG_CREATE_MANUFACTURER}"/>
             </div>
             <span style="display: block; clear: both;"/>
         </div>
 
         <div class="{style.tableWrapper}">
-            <cell:CellTable ui:field="manufacturerGrid" width="100%" debugId="{MANUFACTURERS}"/>
+            <cell:CellTable ui:field="manufacturerGrid" width="100%" debugId="{DBG_MANUFACTURERS}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

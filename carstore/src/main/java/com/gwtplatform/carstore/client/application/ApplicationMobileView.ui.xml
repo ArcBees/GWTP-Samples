@@ -25,7 +25,7 @@
             <g:HTMLPanel ui:field="headerWrapper">
                 <g:SimplePanel ui:field="header" addStyleNames="{style.headerWrapper}"/>
 
-                <g:InlineLabel debugId="{DOM}"/>
+                <g:InlineLabel debugId="{DBG_DOM}"/>
             </g:HTMLPanel>
         </g:layer>
 

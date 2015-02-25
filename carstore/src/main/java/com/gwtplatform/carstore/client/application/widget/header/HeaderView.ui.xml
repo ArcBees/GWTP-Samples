@@ -81,7 +81,7 @@
                 <g:Label text="CarStore"/>
             </div>
 
-            <g:HTMLPanel styleName="{style.floatLeft} {style.menuBarWrapper}" ui:field="menubar" debugId="{MENUBAR}">
+            <g:HTMLPanel styleName="{style.floatLeft} {style.menuBarWrapper}" ui:field="menubar" debugId="{DBG_MENUBAR}">
                 <g:InlineHyperlink targetHistoryToken="{MANUFACTURER}">Manufacturers</g:InlineHyperlink>
                 <g:InlineHyperlink targetHistoryToken="{CARS}">Cars</g:InlineHyperlink>
                 <g:InlineHyperlink targetHistoryToken="{RATING}">Ratings</g:InlineHyperlink>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="{style.floatLeft}">
-                    <g:Button ui:field="logout" debugId="{LOGOUT}" text="Logout"
+                    <g:Button ui:field="logout" debugId="{DBG_LOGOUT}" text="Logout"
                               styleName="{style.logoutButton}"/>
                 </div>
 

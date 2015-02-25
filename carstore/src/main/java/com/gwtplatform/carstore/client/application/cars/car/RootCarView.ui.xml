@@ -4,7 +4,7 @@
     <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <g:HTMLPanel>
-        <g:SimplePanel ui:field="tabBarPanel" debugId="{CARS_TAB_PANEL}"/>
+        <g:SimplePanel ui:field="tabBarPanel" debugId="{DBG_CARS_TAB_PANEL}"/>
         <g:SimplePanel ui:field="contentPanel"/>
     </g:HTMLPanel>
 </ui:UiBinder>

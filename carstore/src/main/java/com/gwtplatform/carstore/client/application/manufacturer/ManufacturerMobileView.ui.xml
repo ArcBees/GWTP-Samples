@@ -4,7 +4,7 @@
 
     <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
-    <g:ScrollPanel debugId="{MANUFACTURER_PANEL}">
+    <g:ScrollPanel debugId="{DBG_MANUFACTURER_PANEL}">
         <cell:CellList ui:field="manufacturerList"/>
     </g:ScrollPanel>
 </ui:UiBinder>

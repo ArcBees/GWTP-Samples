@@ -24,9 +24,9 @@ import com.gwtplatform.carstore.cucumber.application.BasePage;
 import com.gwtplatform.carstore.cucumber.application.widgets.HeaderWidgetPage;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
-import static com.gwtplatform.carstore.client.debug.DebugIds.LOGIN;
-import static com.gwtplatform.carstore.client.debug.DebugIds.PASSWORD;
-import static com.gwtplatform.carstore.client.debug.DebugIds.USERNAME;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_LOGIN;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_PASSWORD;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_USERNAME;
 
 public class LoginPage extends BasePage {
     private final HeaderWidgetPage headerWidgetPage;
@@ -57,14 +57,14 @@ public class LoginPage extends BasePage {
     }
 
     private WebElement getUserName() {
-        return waitUntilElementIsClickable(ByDebugId.id(USERNAME));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_USERNAME));
     }
 
     private WebElement getPassword() {
-        return waitUntilElementIsClickable(ByDebugId.id(PASSWORD));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_PASSWORD));
     }
 
     private WebElement getLogin() {
-        return waitUntilElementIsClickable(ByDebugId.id(LOGIN));
+        return waitUntilElementIsClickable(ByDebugId.id(DBG_LOGIN));
     }
 }

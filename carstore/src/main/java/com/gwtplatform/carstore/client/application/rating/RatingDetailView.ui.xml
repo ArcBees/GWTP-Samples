@@ -24,7 +24,7 @@
 
         <div>
             <g:IntegerBox ui:field="rating" maxLength="3" styleName="{resource.styles.mobileTextField}"
-                          debugId="{RATING_INPUT}"/>
+                          debugId="{DBG_RATING_INPUT}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -20,12 +20,12 @@ import javax.inject.Inject;
 
 import org.openqa.selenium.TimeoutException;
 
-import com.gwtplatform.carstore.client.debug.DebugIds;
 import com.gwtplatform.carstore.cucumber.application.widgets.HeaderWidgetPage;
 import com.gwtplatform.carstore.cucumber.application.widgets.MessageWidgetPage;
 import com.gwtplatform.carstore.cucumber.util.TestParameters;
 
 import static com.google.gwt.user.client.ui.UIObject.DEBUG_ID_PREFIX;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_DOM;
 
 public class ApplicationPage extends BasePage {
     private final HeaderWidgetPage headerWidgetPage;
@@ -42,7 +42,7 @@ public class ApplicationPage extends BasePage {
     public Boolean waitUntilDomIsLoaded(String nameToken) {
         try {
             waitUntilPlaceIsLoaded(nameToken);
-            waitUntilElementIsLoaded(DEBUG_ID_PREFIX + DebugIds.DOM);
+            waitUntilElementIsLoaded(DEBUG_ID_PREFIX + DBG_DOM);
             return true;
         } catch (TimeoutException e) {
             return false;

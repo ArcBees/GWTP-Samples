@@ -27,6 +27,6 @@ public class UnauthorizedPage extends BasePage {
     }
 
     private WebElement getLinkToLogin() {
-        return waitUntilElementIsClickable(ByDebugId.id(DebugIds.LINK_TO_LOGIN));
+        return waitUntilElementIsClickable(ByDebugId.id(DebugIds.DBG_LINK_TO_LOGIN));
     }
 }

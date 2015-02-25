@@ -23,7 +23,7 @@ import org.openqa.selenium.WebElement;
 import com.gwtplatform.carstore.cucumber.application.PageWithEditTable;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
-import static com.gwtplatform.carstore.client.debug.DebugIds.REPORTS;
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_REPORTS;
 
 public class ReportPage extends PageWithEditTable {
     private static final String MANUFACTURER_COL = "Manufacturer";
@@ -58,7 +58,7 @@ public class ReportPage extends PageWithEditTable {
     }
 
     private WebElement getReportsTable() {
-        return waitUntilElementIsVisible(ByDebugId.id(REPORTS));
+        return waitUntilElementIsVisible(ByDebugId.id(DBG_REPORTS));
     }
 
     private boolean almostEqual(Double a, Double b, double epsilon) {
