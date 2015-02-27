@@ -18,6 +18,7 @@ package com.gwtplatform.carstore.shared.api;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -34,6 +35,7 @@ import static com.gwtplatform.carstore.shared.api.ApiParameters.ID;
 
 @Path(RATING)
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface RatingResource {
     @GET
     List<RatingDto> getRatings();

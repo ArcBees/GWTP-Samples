@@ -18,12 +18,9 @@ package com.gwtplatform.carstore.shared.api;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import com.gwtplatform.carstore.shared.dto.CarDto;
 
-@Produces(MediaType.APPLICATION_JSON)
 public interface CarResource {
     @GET
     CarDto get();
