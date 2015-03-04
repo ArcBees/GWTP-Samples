@@ -66,9 +66,9 @@ public class LoginMobileView extends ViewWithUiHandlers<LoginUiHandlers> impleme
     }
 
     private void processLogin() {
-        String username = this.username.getValue();
-        String password = this.password.getValue();
+        getUiHandlers().login(username.getValue(), password.getValue());
 
-        getUiHandlers().login(username, password);
+        username.setText("");
+        password.setText("");
     }
 }

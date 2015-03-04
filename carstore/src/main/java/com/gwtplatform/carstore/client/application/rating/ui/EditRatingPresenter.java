@@ -99,7 +99,7 @@ public class EditRatingPresenter extends PresenterWidget<MyView> implements Edit
                         onGetCarsSuccess(cars);
                     }
                 })
-                .getCars();
+                .getCars(null, 0, CarsResource.LIMIT_ALL);
     }
 
     private void onGetCarsSuccess(List<CarDto> carDtos) {

@@ -20,6 +20,7 @@ import java.util.List;
 
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
+import javax.ws.rs.MatrixParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -29,24 +30,24 @@ import javax.ws.rs.core.MediaType;
 
 import com.gwtplatform.carstore.shared.dto.CarDto;
 
-import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
-import static com.gwtplatform.carstore.shared.api.ApiPaths.CARS;
-import static com.gwtplatform.carstore.shared.api.ApiPaths.COUNT;
+import static com.gwtplatform.carstore.shared.api.ApiParameters.COLOR;
 import static com.gwtplatform.carstore.shared.api.ApiParameters.ID;
 import static com.gwtplatform.carstore.shared.api.ApiParameters.LIMIT;
 import static com.gwtplatform.carstore.shared.api.ApiParameters.OFFSET;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.CARS;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.COUNT;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
 
 @Path(CARS)
 @Produces(MediaType.APPLICATION_JSON)
 public interface CarsResource {
     String DEFAULT_LIMIT = "1000";
     String DEFAULT_OFFSET = "0";
+    int LIMIT_ALL = -1;
 
     @GET
-    List<CarDto> getCars();
-
-    @GET
-    List<CarDto> getCars(@DefaultValue(DEFAULT_OFFSET) @QueryParam(OFFSET) int offset,
+    List<CarDto> getCars(@MatrixParam(COLOR) String colorFilter,
+            @DefaultValue(DEFAULT_OFFSET) @QueryParam(OFFSET) int offset,
             @DefaultValue(DEFAULT_LIMIT) @QueryParam(LIMIT) int limit);
 
     @GET

@@ -1,6 +1,6 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'
-             xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
+        xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
 
     <ui:with field="resources" type="com.gwtplatform.carstore.client.resources.AppResources"/>
 
@@ -16,6 +16,7 @@
                 <g:InlineLabel text="Cars"/>
             </h2>
             <div>
+                <g:Button ui:field="filter">Filter</g:Button>
                 <g:Button ui:field="create" debugId="carCreate" styleName="{resources.styles.addAction}"/>
             </div>
             <span style="display: block; clear: both;"/>
