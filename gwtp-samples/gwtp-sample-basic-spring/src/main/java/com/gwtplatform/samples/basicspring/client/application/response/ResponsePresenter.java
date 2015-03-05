@@ -16,17 +16,18 @@
 
 package com.gwtplatform.samples.basicspring.client.application.response;
 
+import javax.inject.Inject;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.shared.DispatchAsync;
+import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.client.proxy.PlaceRequest;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 import com.gwtplatform.samples.basicspring.client.place.TokenParameters;
@@ -35,17 +36,11 @@ import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerResul
 
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
         implements ResponseUiHandlers {
-    /**
-     * {@link ResponsePresenter}'s proxy.
-     */
     @ProxyCodeSplit
     @NameToken(NameTokens.response)
     public interface MyProxy extends ProxyPlace<ResponsePresenter> {
     }
 
-    /**
-     * {@link ResponsePresenter}'s view.
-     */
     public interface MyView extends View, HasUiHandlers<ResponseUiHandlers> {
         void setServerResponse(String serverResponse);
 

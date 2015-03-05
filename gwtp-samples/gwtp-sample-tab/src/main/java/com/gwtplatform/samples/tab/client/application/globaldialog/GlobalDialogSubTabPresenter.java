@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.globaldialog;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.PopupView;
@@ -66,7 +67,7 @@ public class GlobalDialogSubTabPresenter extends
                                 MyProxy proxy,
                                 GlobalDialogPresenterWidget globalDialog,
                                 InfoPopupPresenterWidget infoPopup) {
-        super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
 
         this.globalDialog = globalDialog;
         this.infoPopup = infoPopup;
@@ -81,7 +82,7 @@ public class GlobalDialogSubTabPresenter extends
     @Override
     public void showInfoPopup(int mousePosX, int mousePosY) {
         addToPopupSlot(infoPopup, false);
-        PopupView popupView = (PopupView) infoPopup.getView();
+        PopupView popupView = infoPopup.getView();
         popupView.setPosition(mousePosX + 15, mousePosY);
     }
 }

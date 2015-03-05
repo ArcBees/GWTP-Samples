@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.basic.client.gin;
 
-import com.gwtplatform.dispatch.client.gin.DispatchAsyncModule;
+import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
@@ -24,6 +24,7 @@ import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.basic.client.application.ApplicationModule;
+import com.gwtplatform.samples.basic.client.resources.ResourceLoader;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
@@ -32,15 +33,15 @@ public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new DefaultModule());
-        install(new DispatchAsyncModule());
+        install(new RpcDispatchAsyncModule());
         install(new ApplicationModule());
 
-        // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
 
-        // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
+        
+        bind(ResourceLoader.class).asEagerSingleton();
     }
 }

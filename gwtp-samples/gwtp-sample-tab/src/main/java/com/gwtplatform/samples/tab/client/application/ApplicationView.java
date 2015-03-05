@@ -16,12 +16,13 @@
 
 package com.gwtplatform.samples.tab.client.application;
 
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.Tab;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.ViewImpl;
@@ -43,9 +44,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     LinkMenu linkMenu;
 
     @Inject
-    public ApplicationView(Binder uiBinder,
-                           RoundTabPanel tabPanel,
-                           LinkMenu linkMenu) {
+    ApplicationView(Binder uiBinder,
+                    RoundTabPanel tabPanel,
+                    LinkMenu linkMenu) {
         this.tabPanel = tabPanel;
         this.linkMenu = linkMenu;
 
@@ -79,7 +80,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @Override
     public void setInSlot(Object slot, IsWidget content) {
-        if (slot == ApplicationPresenter.TYPE_SetTabContent) {
+        if (slot == ApplicationPresenter.SLOT_SetTabContent) {
             tabPanel.setPanelContent(content);
         } else {
             super.setInSlot(slot, content);

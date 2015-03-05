@@ -16,13 +16,13 @@
 
 package com.gwtplatform.samples.mobile.client.gin;
 
-import com.gwtplatform.dispatch.client.gin.PhoneGapDispatchAsyncModule;
+import com.gwtplatform.dispatch.rpc.client.gin.PhoneGapDispatchAsyncModule;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
 public class PhoneGapModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new PhoneGapDispatchAsyncModule());
+        install(new PhoneGapDispatchAsyncModule.Builder().build());
         install(new MobileModule());
         install(new SharedModule());
     }

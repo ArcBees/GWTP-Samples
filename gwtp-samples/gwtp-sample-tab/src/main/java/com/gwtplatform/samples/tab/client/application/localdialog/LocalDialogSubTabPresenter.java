@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.localdialog;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -61,7 +62,7 @@ public class LocalDialogSubTabPresenter
                                MyView view,
                                MyProxy proxy,
                                LocalDialogPresenterWidget localDialog) {
-        super(eventBus, view, proxy, DialogSamplePresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
 
         this.localDialog = localDialog;
 

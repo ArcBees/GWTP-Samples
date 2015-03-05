@@ -16,8 +16,9 @@
 
 package com.gwtplatform.samples.mobile.client.application.breadcrumbs;
 
+import javax.inject.Inject;
+
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -53,7 +54,7 @@ public class BreadcrumbsPresenter extends Presenter<BreadcrumbsPresenter.MyView,
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> TYPE_SetMainContent = new Type<RevealContentHandler<?>>();
+    public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<>();
 
     private final PlaceManager placeManager;
 

@@ -1,6 +1,6 @@
 package com.gwtplatform.samples.mobile.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.Result;
+import com.gwtplatform.dispatch.rpc.shared.Result;
 
 public class GetProductResult implements Result {
     private Product product;

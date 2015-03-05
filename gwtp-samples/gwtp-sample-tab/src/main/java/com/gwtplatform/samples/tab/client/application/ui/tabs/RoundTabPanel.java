@@ -16,9 +16,10 @@
 
 package com.gwtplatform.samples.tab.client.application.ui.tabs;
 
+import javax.inject.Inject;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 import com.gwtplatform.samples.tab.client.application.adminarea.TabDataExt;

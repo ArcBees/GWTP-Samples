@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.mobile.server.guice;
 
-import com.gwtplatform.dispatch.server.guice.HandlerModule;
+import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
 import com.gwtplatform.samples.mobile.server.dispatch.GetProductHandler;
 import com.gwtplatform.samples.mobile.server.dispatch.GetProductListHandler;
 import com.gwtplatform.samples.mobile.shared.dispatch.GetProductAction;

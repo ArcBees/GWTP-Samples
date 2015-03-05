@@ -1,5 +1,17 @@
-/*
- * Copyright 2012 ArcBees Inc. All rights reserved.
+/**
+ * Copyright 2015 ArcBees Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 package com.gwtplatform.samples.tab.client.resources;
@@ -13,21 +25,41 @@ import com.google.gwt.resources.client.ImageResource;
  * exist in src/main/resources/com.gwtplatform.samples.tab.client.resources/*
  */
 public interface AppResources extends ClientBundle {
-    public interface Styles extends CssResource {
+    interface Normalize extends CssResource {
+    }
+    
+    interface Style extends CssResource {
         String divBorder();
 
         String logo();
+        
+        String label_error();
+
+        String container();
+
+        String box();
+
+        String links();
+
+        String panel();
+
+        String anchor();
+
+        String confirmationLink();
+
+        String popup();
+
+        String topMessage();
+
+        String isOn();
     }
 
-    public interface Sprites extends CssResource {
-        String logo();
-    }
+    @Source("css/normalize.gss")
+    Normalize normalize();
 
-    public Styles styles();
-
-    public Sprites sprites();
+    @Source({"css/variables.gss", "css/style.gss"})
+    Style style();
 
     @Source("images/logo.png")
-    @ImageResource.ImageOptions(repeatStyle = ImageResource.RepeatStyle.Horizontal, width = 50)
     ImageResource logo();
 }

@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.homenews;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -59,7 +60,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
      * {@link HomeNewsPresenter}'s view.
      */
     public interface MyView extends View, HasUiHandlers<HomeNewsUiHandler> {
-        void setConfirmationText(String text);
+        void setConfirmation(boolean state);
 
         void display();
     }
@@ -73,7 +74,7 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
                       MyView view,
                       MyProxy proxy,
                       PlaceManager placeManager) {
-        super(eventBus, view, proxy, HomePresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, HomePresenter.SLOT_SetTabContent);
 
         this.placeManager = placeManager;
 
@@ -104,10 +105,10 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
         this.confirmationEnabled = enabled;
         if (enabled) {
             placeManager.setOnLeaveConfirmation("Are you sure you want to navigate away from this page?");
-            getView().setConfirmationText("Navigation confirmation ON, click here to disable it!");
+            getView().setConfirmation(true);
         } else {
             placeManager.setOnLeaveConfirmation(null);
-            getView().setConfirmationText("Navigation confirmation OFF, click here to enable it!");
+            getView().setConfirmation(false);
         }
     }
 }

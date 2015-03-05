@@ -16,6 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.homenews;
 
+import javax.inject.Inject;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -23,7 +25,6 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import com.gwtplatform.samples.tab.client.resources.AppConstants;
 import com.gwtplatform.samples.tab.client.resources.AppMessages;
@@ -61,8 +62,14 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
     }
 
     @Override
-    public void setConfirmationText(String text) {
-        confirmationLink.setText(text);
+    public void setConfirmation(boolean state) {
+        if(state) {
+            confirmationLink.addStyleName(resources.style().isOn());
+            confirmationLink.setText("Navigation confirmation ON, click here to disable it!");
+        } else {
+            confirmationLink.removeStyleName(resources.style().isOn());
+            confirmationLink.setText("Navigation confirmation OFF, click here to enable it!");
+        }
     }
 
     @UiHandler("confirmationLink")

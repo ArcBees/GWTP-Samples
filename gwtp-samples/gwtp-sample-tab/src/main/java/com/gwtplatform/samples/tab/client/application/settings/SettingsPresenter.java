@@ -16,7 +16,8 @@
 
 package com.gwtplatform.samples.tab.client.application.settings;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
+
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -60,7 +61,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, Setti
                       MyView view,
                       MyProxy proxy,
                       CurrentUser currentUser) {
-        super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetTabContent);
+        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetTabContent);
 
         this.currentUser = currentUser;
 

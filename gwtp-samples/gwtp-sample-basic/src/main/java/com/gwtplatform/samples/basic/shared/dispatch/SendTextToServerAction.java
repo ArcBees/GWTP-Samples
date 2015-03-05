@@ -16,12 +16,8 @@
 
 package com.gwtplatform.samples.basic.shared.dispatch;
 
-import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
+import com.gwtplatform.dispatch.rpc.shared.UnsecuredActionImpl;
 
-/**
- * An action that can be sent using an {@link DispatchAsync} (client-side) corresponding to a
- * {@link com.gwtplatform.dispatch.server.Dispatch} (server-side).
- */
 public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
     private String textToServer;
 

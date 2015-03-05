@@ -24,11 +24,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import com.gwtplatform.dispatch.server.actionvalidator.ActionValidator;
-import com.gwtplatform.dispatch.server.spring.HandlerModule;
-import com.gwtplatform.dispatch.server.spring.LoggerFactoryBean;
-import com.gwtplatform.dispatch.server.spring.actionvalidator.DefaultActionValidator;
-import com.gwtplatform.dispatch.server.spring.configuration.DefaultModule;
+import com.gwtplatform.dispatch.rpc.server.actionvalidator.ActionValidator;
+import com.gwtplatform.dispatch.rpc.server.spring.HandlerModule;
+import com.gwtplatform.dispatch.rpc.server.spring.LoggerFactoryBean;
+import com.gwtplatform.dispatch.rpc.server.spring.actionvalidator.DefaultActionValidator;
+import com.gwtplatform.dispatch.rpc.server.spring.configuration.DefaultModule;
 import com.gwtplatform.samples.basicspring.server.dispatch.SendTextToServerHandler;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerAction;
 
@@ -37,7 +37,7 @@ import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerActio
  */
 @Configuration
 @Import(DefaultModule.class)
-@ComponentScan(basePackages = "com.gwtplatform.dispatch.server.spring")
+@ComponentScan(basePackages = "com.gwtplatform.dispatch.rpc.server.spring")
 public class ServerModule extends HandlerModule {
     public ServerModule() {
     }

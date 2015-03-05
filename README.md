@@ -1,5 +1,5 @@
 #GWTP-Samples
-Project samples display GWT-Platform features configuration and uses. 
+Project samples display GWT-Platform features configuration and uses.
 
 ##GWTP Reference
 * [GWTP Custom Google Search](http://www.google.com/cse/home?cx=011138278718949652927:5yuja8xc600) - Search GWTP documentation, wiki and thread collections.
@@ -49,6 +49,8 @@ Project samples display GWT-Platform features configuration and uses.
 * GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##Thanks to
-[![Arcbees.com](http://arcbees-ads.appspot.com/ad.png)](http://arcbees.com)
+[![Arcbees.com](http://i.imgur.com/HDf1qfq.png)](http://arcbees.com)
+
+[![Atlassian](http://i.imgur.com/BKkj8Rg.png)](https://www.atlassian.com/)
 
 [![IntelliJ](https://lh6.googleusercontent.com/--QIIJfKrjSk/UJJ6X-UohII/AAAAAAAAAVM/cOW7EjnH778/s800/banner_IDEA.png)](http://www.jetbrains.com/idea/index.html)
