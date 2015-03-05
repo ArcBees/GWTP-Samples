@@ -16,11 +16,11 @@
 
 package com.gwtplatform.samples.basicspring.shared.dispatch;
 
-import com.gwtplatform.dispatch.rpc.shared.UnsecuredActionImpl;
+import com.gwtplatform.dispatch.rpc.shared.ActionImpl;
 
 /**
  * An action that can be sent using an {@link DispatchAsync} (client-side) corresponding to a
- * {@link com.gwtplatform.dispatch.server.Dispatch} (server-side).
+ * {@link com.gwtplatform.dispatch.rpc.server.Dispatch} (server-side).
  */
 public class SendTextToServerAction extends ActionImpl<SendTextToServerResult> {
     private String textToServer;
