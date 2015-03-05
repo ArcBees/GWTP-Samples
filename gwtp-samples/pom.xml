@@ -177,6 +177,42 @@
                     </executions>
                 </plugin>
 
+                <!-- App Engine -->
+                <plugin>
+                    <groupId>net.kindleit</groupId>
+                    <artifactId>maven-gae-plugin</artifactId>
+                    <version>${maven-gae-plugin.version}</version>
+                    <configuration>
+                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+                        <serverId>appengine-credentials</serverId>
+                        <splitJars>true</splitJars>
+                        <sdkDir>${gae.home}</sdkDir>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>install-server-jar</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>deploy</id>
+                            <goals>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.kindleit</groupId>
+                            <artifactId>gae-runtime</artifactId>
+                            <version>1.8.8</version>
+                            <type>pom</type>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -213,34 +249,6 @@
                     <configuration>
                         <skip>true</skip>
                     </configuration>
-                </plugin>
-
-                <!-- App Engine -->
-                <plugin>
-                    <groupId>net.kindleit</groupId>
-                    <artifactId>maven-gae-plugin</artifactId>
-                    <version>${maven-gae-plugin.version}</version>
-                    <configuration>
-                        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-                        <serverId>appengine-credentials</serverId>
-                        <splitJars>true</splitJars>
-                        <sdkDir>${gae.home}</sdkDir>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>install-server-jar</id>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>unpack</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>deploy</id>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
