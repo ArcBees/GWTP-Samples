@@ -45,7 +45,7 @@ public class DialogSamplePresenter extends
      */
     @ProxyCodeSplit
     @TabInfo(container = ApplicationPresenter.class, label = "Dialogs", priority = 1, // The second tab in the main page
-             nameToken = NameTokens.globalDialogSamplePage)
+            nameToken = NameTokens.globalDialogSamplePage)
     public interface MyProxy extends NonLeafTabContentProxy<DialogSamplePresenter> {
     }
 
@@ -68,9 +68,10 @@ public class DialogSamplePresenter extends
     public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
 
     @Inject
-    DialogSamplePresenter(EventBus eventBus,
-                          MyView view,
-                          MyProxy proxy) {
+    DialogSamplePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
     }
 }

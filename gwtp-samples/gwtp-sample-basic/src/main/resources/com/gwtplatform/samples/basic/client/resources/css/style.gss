@@ -19,7 +19,7 @@ body {
 
 header {
     background-color: #333;
-    
+
     padding: 30px 0 5px;
     margin-bottom: 20px;
 }
@@ -32,7 +32,7 @@ header h1 {
 
 header ul {
     padding: 0;
-    
+
     list-style-type: none;
 }
 
@@ -58,7 +58,7 @@ h2 {
 
 .box {
     background-color: #eee;
-    
+
     padding: 15px;
     border: 1px solid #bbb;
     margin-bottom: 1rem;
@@ -73,7 +73,7 @@ p {
 button {
     background: #333;
     color: #fff;
-    
+
     border: 0;
     padding: 7px 6px 6px;
 }

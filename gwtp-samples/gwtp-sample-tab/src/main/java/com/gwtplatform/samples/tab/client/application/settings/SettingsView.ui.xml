@@ -1,6 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-        xmlns:g="urn:import:com.google.gwt.user.client.ui">
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="resources" type="com.gwtplatform.samples.tab.client.resources.AppResources"/>
 
@@ -16,18 +16,18 @@
         </div>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur cum debitis dolorem eius et, fuga 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur cum debitis dolorem eius et, fuga
             id ipsum minus necessitatibus numquam omnis perspiciatis possimus qui quibusdam quisquam ratione, sit vitae.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores deserunt dolore, dolores 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores deserunt dolore, dolores
             eos error facilis molestias quasi quo ratione rerum sapiente sint sunt.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, ducimus enim error et ipsa mollitia 
-            obcaecati odio porro praesentium provident quaerat quibusdam quisquam recusandae reiciendis repudiandae 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, ducimus enim error et ipsa mollitia
+            obcaecati odio porro praesentium provident quaerat quibusdam quisquam recusandae reiciendis repudiandae
             tempora velit veritatis voluptatibus.
         </p>
     </g:HTMLPanel>

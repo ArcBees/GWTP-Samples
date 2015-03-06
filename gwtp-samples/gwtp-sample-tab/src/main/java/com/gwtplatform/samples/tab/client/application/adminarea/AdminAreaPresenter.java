@@ -32,8 +32,8 @@ import com.gwtplatform.samples.tab.client.place.NameTokens;
 import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 
 /**
- * A sample {@link Presenter} that should only be displayed to administrator users. It appears as a tab within
- * {@link ApplicationPresenter}.
+ * A sample {@link Presenter} that should only be displayed to administrator users. It appears as a tab within {@link
+ * ApplicationPresenter}.
  * <p/>
  * It uses {@link IsAdminGatekeeper} to prevent access to non-administrator users.
  * <p/>
@@ -50,12 +50,6 @@ public class AdminAreaPresenter extends Presenter<AdminAreaPresenter.MyView, Adm
     public interface MyProxy extends TabContentProxyPlace<AdminAreaPresenter> {
     }
 
-    @TabInfo(container = ApplicationPresenter.class)
-    static TabData getTabLabel(IsAdminGatekeeper adminGatekeeper) {
-        // Priority = 1000, means it will be the right-most tab in the home tab
-        return new TabDataExt("Admin area", 1000, adminGatekeeper);
-    }
-
     /**
      * {@link AdminAreaPresenter}'s view.
      */
@@ -63,9 +57,16 @@ public class AdminAreaPresenter extends Presenter<AdminAreaPresenter.MyView, Adm
     }
 
     @Inject
-    AdminAreaPresenter(EventBus eventBus,
-                       MyView view,
-                       MyProxy proxy) {
+    AdminAreaPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetTabContent);
+    }
+
+    @TabInfo(container = ApplicationPresenter.class)
+    static TabData getTabLabel(IsAdminGatekeeper adminGatekeeper) {
+        // Priority = 1000, means it will be the right-most tab in the home tab
+        return new TabDataExt("Admin area", 1000, adminGatekeeper);
     }
 }

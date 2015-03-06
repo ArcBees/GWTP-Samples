@@ -5,10 +5,10 @@
     <ui:with field="tabsResources" type="com.gwtplatform.samples.tab.client.resources.TabsResources"/>
 
     <g:HTMLPanel>
-            <g:HTMLPanel addStyleNames="{tabsResources.style.bar}">
-                <g:FlowPanel ui:field="tabPanel"/>
-                <div style="clear: both;"/>
-            </g:HTMLPanel>
-            <g:FlowPanel ui:field="tabContentContainer" addStyleNames="{tabsResources.style.panel}"/>
+        <g:HTMLPanel addStyleNames="{tabsResources.style.bar}">
+            <g:FlowPanel ui:field="tabPanel"/>
+            <div style="clear: both;"/>
+        </g:HTMLPanel>
+        <g:FlowPanel ui:field="tabContentContainer" addStyleNames="{tabsResources.style.panel}"/>
     </g:HTMLPanel>
 </ui:UiBinder>

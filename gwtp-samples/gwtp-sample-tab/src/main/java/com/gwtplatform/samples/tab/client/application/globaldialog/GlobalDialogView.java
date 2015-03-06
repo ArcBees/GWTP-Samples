@@ -29,8 +29,8 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.globaldialog.GlobalDialogPresenterWidget} .
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.globaldialog
+ * .GlobalDialogPresenterWidget} .
  */
 public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPresenterWidget.MyView {
     /**
@@ -44,8 +44,9 @@ public class GlobalDialogView extends PopupViewImpl implements GlobalDialogPrese
     Label navigationMessage;
 
     @Inject
-    GlobalDialogView(Binder uiBinder,
-                     EventBus eventBus) {
+    GlobalDialogView(
+            Binder uiBinder,
+            EventBus eventBus) {
         super(eventBus);
 
         initWidget(uiBinder.createAndBindUi(this));

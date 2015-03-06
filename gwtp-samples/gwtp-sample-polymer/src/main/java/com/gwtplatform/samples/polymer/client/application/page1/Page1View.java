@@ -26,7 +26,8 @@ public class Page1View extends ViewImpl implements Page1Presenter.MyView {
     }
 
     @Inject
-    Page1View(Binder uiBinder) {
+    Page1View(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 }

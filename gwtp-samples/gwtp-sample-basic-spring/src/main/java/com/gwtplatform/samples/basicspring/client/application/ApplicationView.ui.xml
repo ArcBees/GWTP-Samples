@@ -2,26 +2,34 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="res" type="com.gwtplatform.samples.basicspring.client.resources.AppResources"/>
-    
+
     <g:HTMLPanel>
 
         <header>
             <div class="{res.style.container}">
                 <h1>GWTP Basic Spring Example</h1>
                 <ul>
-                    <li><a href="https://github.com/ArcBees/GWTP">[ Project Home ]</a></li>
-                    <li><a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic-spring">[ Source ]</a></li>
+                    <li>
+                        <a href="https://github.com/ArcBees/GWTP">[ Project Home ]</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic-spring">
+                            [ Source ]
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
 
         <div class="{res.style.container} {res.style.box}">
-            <p><strong>Please enter your name:</strong></p>
+            <p>
+                <strong>Please enter your name:</strong>
+            </p>
             <g:TextBox ui:field="nameField"/>
 
             <g:Button ui:field="sendButton">Submit</g:Button>
-            <g:HTML ui:field="error" styleName="{res.style.label_error}"/>
+            <g:HTML ui:field="error" styleName="{res.style.labelError}"/>
         </div>
-    
+
     </g:HTMLPanel>
 </ui:UiBinder> 

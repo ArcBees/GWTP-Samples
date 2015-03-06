@@ -19,5 +19,5 @@ package com.gwtplatform.samples.tab.client.security;
 import com.google.gwt.event.shared.EventHandler;
 
 public interface CurrentUserChangedHandler extends EventHandler {
-    public void onCurrentUserChanged(CurrentUserChangedEvent event);
+    void onCurrentUserChanged(CurrentUserChangedEvent event);
 }

@@ -39,7 +39,8 @@ public class ResponseView extends ViewWithUiHandlers<ResponseUiHandlers> impleme
     Button closeButton;
 
     @Inject
-    ResponseView(Binder uiBinder) {
+    ResponseView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

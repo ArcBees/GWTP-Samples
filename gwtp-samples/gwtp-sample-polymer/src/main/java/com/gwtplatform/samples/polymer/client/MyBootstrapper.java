@@ -26,7 +26,8 @@ public class MyBootstrapper implements Bootstrapper {
     private final PlaceManager placeManager;
 
     @Inject
-    MyBootstrapper(PlaceManager placeManager) {
+    MyBootstrapper(
+            PlaceManager placeManager) {
         this.placeManager = placeManager;
     }
 

@@ -4,16 +4,16 @@
 
 <module rename-to='gwtpnestedsample'>
     <!-- Inherit the core Web Toolkit stuff. -->
-    <inherits name='com.google.gwt.user.User' />
-    <inherits name="com.google.gwt.inject.Inject" />
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.inject.Inject"/>
 
     <!-- Inherit the default GWT style sheet. You can change -->
-    <inherits name='com.google.gwt.user.theme.standard.Standard' />
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
     <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
     <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
 
     <!-- Other module inherits                                      -->
-    
+
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
     <!-- Specify the paths for translatable code                    -->
@@ -23,5 +23,5 @@
     <set-configuration-property name="gin.ginjector.modules"
                                 value="com.gwtplatform.samples.nested.client.gin.ClientModule"/>
 
-    <set-configuration-property name="CssResource.enableGss" value="true" />
+    <set-configuration-property name="CssResource.enableGss" value="true"/>
 </module>

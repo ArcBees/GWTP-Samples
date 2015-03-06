@@ -50,12 +50,6 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     public interface MyProxy extends TabContentProxyPlace<HomeNewsPresenter> {
     }
 
-    @TabInfo(container = HomePresenter.class)
-    static TabData getTabLabel(AppConstants constants) {
-        // Priority = 0, means it will be the left-most tab in the home tab
-        return new TabDataBasic(constants.news(), 0);
-    }
-
     /**
      * {@link HomeNewsPresenter}'s view.
      */
@@ -70,15 +64,22 @@ public class HomeNewsPresenter extends Presenter<HomeNewsPresenter.MyView, HomeN
     private boolean confirmationEnabled;
 
     @Inject
-    HomeNewsPresenter(EventBus eventBus,
-                      MyView view,
-                      MyProxy proxy,
-                      PlaceManager placeManager) {
+    HomeNewsPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, HomePresenter.SLOT_SetTabContent);
 
         this.placeManager = placeManager;
 
         getView().setUiHandlers(this);
+    }
+
+    @TabInfo(container = HomePresenter.class)
+    static TabData getTabLabel(AppConstants constants) {
+        // Priority = 0, means it will be the left-most tab in the home tab
+        return new TabDataBasic(constants.news(), 0);
     }
 
     @Override

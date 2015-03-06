@@ -54,7 +54,8 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
     private SimplePanel oldMain;
 
     @Inject
-    ApplicationView(Binder uiBinder) {
+    ApplicationView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
         menu.setAttribute("core-drawer-toggle", "");

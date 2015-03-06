@@ -37,7 +37,7 @@ public class SimpleTabPanel extends BaseTabPanel {
 
     @Inject
     SimpleTabPanel(Binder binder,
-                   TabFactory tabFactory) {
+            TabFactory tabFactory) {
         this.tabFactory = tabFactory;
 
         initWidget(binder.createAndBindUi(this));

@@ -48,8 +48,9 @@ public class ProductsMobileView extends ViewImpl implements ProductsPresenter.My
     private final PlaceManager placeManager;
 
     @Inject
-    ProductsMobileView(Binder binder,
-                       PlaceManager placeManager) {
+    ProductsMobileView(
+            Binder binder,
+            PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));

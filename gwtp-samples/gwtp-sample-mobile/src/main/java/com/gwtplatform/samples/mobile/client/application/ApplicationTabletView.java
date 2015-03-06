@@ -39,7 +39,8 @@ public class ApplicationTabletView extends ViewWithUiHandlers<ApplicationUiHandl
     Button specials;
 
     @Inject
-    ApplicationTabletView(Binder binder) {
+    ApplicationTabletView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

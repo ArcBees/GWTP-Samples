@@ -38,8 +38,9 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
     SimpleTabPanel tabPanel;
 
     @Inject
-    DialogSampleView(Binder uiBinder,
-                     SimpleTabPanel tabPanel) {
+    DialogSampleView(
+            Binder uiBinder,
+            SimpleTabPanel tabPanel) {
         this.tabPanel = tabPanel;
 
         initWidget(uiBinder.createAndBindUi(this));

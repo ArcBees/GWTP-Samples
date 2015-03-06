@@ -14,20 +14,14 @@
  * the License.
  */
 
-package com.gwtplatform.samples.polymer.client.application.page2;
+package com.gwtplatform.samples.basic.client.application.response;
 
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-public class Page2View extends ViewImpl implements Page2Presenter.MyView {
-    interface Binder extends UiBinder<Widget, Page2View> {
-    }
-
-    @Inject
-    Page2View(
-            Binder uiBinder) {
-        initWidget(uiBinder.createAndBindUi(this));
+public class ResponseModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        bindPresenter(ResponsePresenter.class, ResponsePresenter.MyView.class, ResponseView.class,
+                ResponsePresenter.MyProxy.class);
     }
 }
