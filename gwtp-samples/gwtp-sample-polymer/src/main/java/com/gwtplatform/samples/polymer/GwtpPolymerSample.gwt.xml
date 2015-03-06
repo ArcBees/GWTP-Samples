@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+        "https://raw.githubusercontent.com/gwtproject/gwt/2.7.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='gwtppolymersample'>
+    <!-- Inherit the core Web Toolkit stuff.                        -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <inherits name="com.gwtplatform.dispatch.rest.DispatchRest"/>
+    <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
+    <inherits name="com.arcbees.gwtpolymer.GwtPolymer"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.coredrawerpanel.CoreDrawerPanel"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.coreheaderpanel.CoreHeaderPanel"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.coretoolbar.CoreToolbar"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.coreanimatedpages.CoreAnimatedPages"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.papericonbutton.PaperIconButton"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.coretransition.CoreTransition"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.corestyle.CoreStyle"/>
+    <inherits name="com.arcbees.gwtpolymer.elements.paperitem.PaperItem"/>
+    <inherits name="com.google.gwt.query.Query"/>
+
+    <extend-configuration-property name="gin.ginjector.modules"
+                                   value="com.gwtplatform.samples.polymer.client.gin.ClientModule"/>
+
+    <set-configuration-property name="gwtp.bootstrapper"
+                                value="com.gwtplatform.samples.polymer.client.MyBootstrapper"/>
+
+    <extend-configuration-property name="gwtpolymer.elements"
+                                   value="core-animated-pages/transitions/slide-from-right.html"/>
+
+    <!-- Specify the paths for translatable code                    -->
+    <source path='client'/>
+    <source path='shared'/>
+</module>
