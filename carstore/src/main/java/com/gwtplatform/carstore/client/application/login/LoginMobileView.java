@@ -41,7 +41,8 @@ public class LoginMobileView extends ViewWithUiHandlers<LoginUiHandlers> impleme
     TextBox username;
 
     @Inject
-    LoginMobileView(Binder uiBinder) {
+    LoginMobileView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
         username.getElement().setAttribute("placeholder", "Username");

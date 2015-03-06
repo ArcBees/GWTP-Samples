@@ -22,9 +22,9 @@ import com.google.gwt.event.shared.HasHandlers;
 
 public class NavigationTabEvent extends GwtEvent<NavigationTabEvent.NavigationTabHandler> {
     public interface NavigationTabHandler extends EventHandler {
-        public void onCloseTab(NavigationTab element);
+        void onCloseTab(NavigationTab element);
 
-        public void onRevealTab(NavigationTab element);
+        void onRevealTab(NavigationTab element);
     }
 
     private static enum Action {
@@ -32,6 +32,16 @@ public class NavigationTabEvent extends GwtEvent<NavigationTabEvent.NavigationTa
     }
 
     private static Type<NavigationTabHandler> type;
+
+    private NavigationTab element;
+    private Action action;
+
+    public NavigationTabEvent(
+            Action action,
+            NavigationTab element) {
+        this.element = element;
+        this.action = action;
+    }
 
     public static void fireClose(HasHandlers source, NavigationTab element) {
         if (type != null) {
@@ -52,12 +62,9 @@ public class NavigationTabEvent extends GwtEvent<NavigationTabEvent.NavigationTa
         return type;
     }
 
-    private NavigationTab element;
-    private Action action;
-
-    public NavigationTabEvent(Action action, NavigationTab element) {
-        this.element = element;
-        this.action = action;
+    @Override
+    public Type<NavigationTabHandler> getAssociatedType() {
+        return getType();
     }
 
     @Override
@@ -70,10 +77,5 @@ public class NavigationTabEvent extends GwtEvent<NavigationTabEvent.NavigationTa
                 handler.onCloseTab(element);
                 break;
         }
-    }
-
-    @Override
-    public Type<NavigationTabHandler> getAssociatedType() {
-        return getType();
     }
 }

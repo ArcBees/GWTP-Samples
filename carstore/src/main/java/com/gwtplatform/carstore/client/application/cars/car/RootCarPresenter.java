@@ -45,10 +45,11 @@ public class RootCarPresenter extends Presenter<RootCarPresenter.MyView, RootCar
     private final NavigationTabPresenter navigationTabPresenter;
 
     @Inject
-    RootCarPresenter(EventBus eventBus,
-                     MyView view,
-                     MyProxy proxy,
-                     NavigationTabPresenter navigationTabPresenter) {
+    RootCarPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            NavigationTabPresenter navigationTabPresenter) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN_CONTENT);
 
         this.navigationTabPresenter = navigationTabPresenter;

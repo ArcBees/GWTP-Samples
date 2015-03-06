@@ -26,6 +26,7 @@ import com.gwtplatform.carstore.cucumber.application.ApplicationPage;
 import com.gwtplatform.carstore.cucumber.application.login.LoginPage;
 import com.gwtplatform.carstore.cucumber.application.widgets.MessageWidgetPage;
 import com.gwtplatform.carstore.cucumber.util.TestParameters;
+
 import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -47,10 +48,11 @@ public class BasicStepdefs {
     private final MessageWidgetPage messageWidgetPage;
 
     @Inject
-    BasicStepdefs(WebDriver webDriver,
-                  LoginPage loginPage,
-                  ApplicationPage applicationPage,
-                  MessageWidgetPage messageWidgetPage) {
+    BasicStepdefs(
+            WebDriver webDriver,
+            LoginPage loginPage,
+            ApplicationPage applicationPage,
+            MessageWidgetPage messageWidgetPage) {
         this.webDriver = webDriver;
         this.loginPage = loginPage;
         this.applicationPage = applicationPage;

@@ -27,6 +27,23 @@ public class CarAddedEvent extends GwtEvent<CarAddedHandler> {
         void onCarAdded(CarAddedEvent event);
     }
 
+    private static final Type<CarAddedHandler> TYPE = new Type<>();
+
+    private final CarDto carDto;
+    private final Boolean isNew;
+
+    CarAddedEvent(
+            CarDto carDto) {
+        this(carDto, false);
+    }
+
+    CarAddedEvent(
+            CarDto carDto,
+            Boolean isNew) {
+        this.carDto = carDto;
+        this.isNew = isNew;
+    }
+
     public static Type<CarAddedHandler> getType() {
         return TYPE;
     }
@@ -37,21 +54,6 @@ public class CarAddedEvent extends GwtEvent<CarAddedHandler> {
 
     public static void fire(HasHandlers source, CarDto carDto, Boolean isNew) {
         source.fireEvent(new CarAddedEvent(carDto, isNew));
-    }
-
-    private static final Type<CarAddedHandler> TYPE = new Type<>();
-
-    private final CarDto carDto;
-    private final Boolean isNew;
-
-    public CarAddedEvent(CarDto carDto) {
-        this(carDto, false);
-    }
-
-    public CarAddedEvent(CarDto carDto, Boolean isNew) {
-
-        this.carDto = carDto;
-        this.isNew = isNew;
     }
 
     @Override

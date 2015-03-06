@@ -24,6 +24,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.gwtplatform.carstore.cucumber.application.BasePage;
+
 import cucumber.runtime.java.guice.ScenarioScoped;
 
 public class CucumberModule extends AbstractModule {

@@ -44,9 +44,10 @@ public class NavigationTabPresenter extends PresenterWidget<NavigationTabPresent
     private final PlaceManager placeManager;
 
     @Inject
-    NavigationTabPresenter(EventBus eventBus,
-                           MyView view,
-                           PlaceManager placeManager) {
+    NavigationTabPresenter(
+            EventBus eventBus,
+            MyView view,
+            PlaceManager placeManager) {
         super(eventBus, view);
 
         elements = new LinkedList<>();

@@ -43,7 +43,8 @@ public class ReportView extends ViewImpl implements ReportPresenter.MyView {
     private final ListDataProvider<ManufacturerRatingDto> ratingsProvider;
 
     @Inject
-    ReportView(Binder uiBinder) {
+    ReportView(
+            Binder uiBinder) {
         ratingsProvider = new ListDataProvider<>();
 
         initCarGrid();

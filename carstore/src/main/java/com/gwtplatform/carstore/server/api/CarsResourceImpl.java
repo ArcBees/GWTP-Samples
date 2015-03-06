@@ -30,9 +30,6 @@ import com.gwtplatform.carstore.shared.dto.CarDto;
 import com.gwtplatform.carstore.shared.dto.CarPropertiesDto;
 
 public class CarsResourceImpl implements CarsResource {
-    private static final Integer INT_DEFAULT_LIMIT = Integer.valueOf(DEFAULT_LIMIT);
-    private static final Integer INT_DEFAULT_OFFSET = Integer.valueOf(DEFAULT_OFFSET);
-
     private final Logger logger;
     private final ResourcesFactory resourcesFactory;
     private final CarDao carDao;

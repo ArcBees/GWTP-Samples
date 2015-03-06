@@ -25,17 +25,17 @@ public class GoBackEvent extends GwtEvent<GoBackEvent.GoBackHandler> {
         void onGoBack(GoBackEvent event);
     }
 
+    private static final Type<GoBackHandler> TYPE = new Type<>();
+
+    GoBackEvent() {
+    }
+
     public static Type<GoBackHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source) {
         source.fireEvent(new GoBackEvent());
-    }
-
-    private static final Type<GoBackHandler> TYPE = new Type<>();
-
-    public GoBackEvent() {
     }
 
     @Override

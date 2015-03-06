@@ -50,8 +50,7 @@ public class MessageWidget extends Composite {
     InlineLabel messageLabel;
 
     private final Message message;
-
-    private Timer closeTimer = new Timer() {
+    private final Timer closeTimer = new Timer() {
         @Override
         public void run() {
             close();
@@ -59,9 +58,10 @@ public class MessageWidget extends Composite {
     };
 
     @Inject
-    public MessageWidget(Binder binder,
-                         AppResources appResources,
-                         @Assisted Message message) {
+    MessageWidget(
+            Binder binder,
+            AppResources appResources,
+            @Assisted Message message) {
         this.appResources = appResources;
         this.message = message;
 

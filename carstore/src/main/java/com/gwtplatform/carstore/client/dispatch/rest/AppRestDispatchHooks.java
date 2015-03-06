@@ -39,6 +39,6 @@ public class AppRestDispatchHooks implements RestDispatchHooks {
     @Override
     public void onFailure(RestAction<?> action, Response response, Throwable caught) {
         logger.log(Level.INFO, "Failed to executed " + action.getPath() + ", result: "
-            + response.getStatusText() + " " + response.getText() + " " + caught.getMessage());
+                + response.getStatusText() + " " + response.getText() + " " + caught.getMessage());
     }
 }

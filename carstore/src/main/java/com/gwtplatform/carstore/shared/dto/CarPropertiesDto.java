@@ -30,9 +30,10 @@ public class CarPropertiesDto extends BaseEntity {
         this.someDate = new Date();
     }
 
-    public CarPropertiesDto(String someString,
-                            Integer someNumber,
-                            Date someDate) {
+    public CarPropertiesDto(
+            String someString,
+            Integer someNumber,
+            Date someDate) {
         this.someString = someString;
         this.someNumber = someNumber;
         this.someDate = someDate;

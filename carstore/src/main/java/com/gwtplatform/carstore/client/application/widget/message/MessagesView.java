@@ -35,8 +35,9 @@ public class MessagesView extends ViewImpl implements MessagesPresenter.MyView {
     private final MessageWidgetFactory messageWidgetFactory;
 
     @Inject
-    MessagesView(Binder binder,
-                 MessageWidgetFactory messageWidgetFactory) {
+    MessagesView(
+            Binder binder,
+            MessageWidgetFactory messageWidgetFactory) {
         this.messageWidgetFactory = messageWidgetFactory;
 
         initWidget(binder.createAndBindUi(this));

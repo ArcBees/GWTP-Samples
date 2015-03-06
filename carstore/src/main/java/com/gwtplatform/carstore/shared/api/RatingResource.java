@@ -28,9 +28,9 @@ import javax.ws.rs.core.MediaType;
 
 import com.gwtplatform.carstore.shared.dto.RatingDto;
 
+import static com.gwtplatform.carstore.shared.api.ApiParameters.ID;
 import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
 import static com.gwtplatform.carstore.shared.api.ApiPaths.RATING;
-import static com.gwtplatform.carstore.shared.api.ApiParameters.ID;
 
 @Path(RATING)
 @Produces(MediaType.APPLICATION_JSON)
@@ -43,7 +43,7 @@ public interface RatingResource {
     RatingDto get(@PathParam(ID) Long id);
 
     @POST
-    RatingDto saveOrCreate(RatingDto RatingDto);
+    RatingDto saveOrCreate(RatingDto ratingDto);
 
     @DELETE
     @Path(PATH_ID)

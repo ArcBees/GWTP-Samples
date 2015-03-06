@@ -26,20 +26,21 @@ public class DisplayMessageEvent extends GwtEvent<DisplayMessageEvent.DisplayMes
         void onDisplayMessage(DisplayMessageEvent event);
     }
 
+    private static final Type<DisplayMessageHandler> TYPE = new Type<>();
+
+    private Message message;
+
+    DisplayMessageEvent(
+            Message message) {
+        this.message = message;
+    }
+
     public static Type<DisplayMessageHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source, Message message) {
         source.fireEvent(new DisplayMessageEvent(message));
-    }
-
-    private static final Type<DisplayMessageHandler> TYPE = new Type<>();
-
-    private Message message;
-
-    public DisplayMessageEvent(Message message) {
-        this.message = message;
     }
 
     @Override

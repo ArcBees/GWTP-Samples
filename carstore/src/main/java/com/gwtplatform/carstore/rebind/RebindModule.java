@@ -36,18 +36,13 @@ public class RebindModule extends AbstractModule {
     private final MortalLogger logger;
     private final GeneratorContext generatorContext;
 
-    public RebindModule(MortalLogger logger, GeneratorContext generatorContext) {
+    public RebindModule(
+            MortalLogger logger,
+            GeneratorContext generatorContext) {
         super();
 
         this.logger = logger;
         this.generatorContext = generatorContext;
-    }
-
-    @Override
-    protected void configure() {
-        bindConstant().annotatedWith(VelocityProperties.class).to(VELOCITY_PROPERTIES);
-
-        bind(GeneratorUtil.class).in(Singleton.class);
     }
 
     @Provides
@@ -80,5 +75,12 @@ public class RebindModule extends AbstractModule {
         }
 
         return null;
+    }
+
+    @Override
+    protected void configure() {
+        bindConstant().annotatedWith(VelocityProperties.class).to(VELOCITY_PROPERTIES);
+
+        bind(GeneratorUtil.class).in(Singleton.class);
     }
 }

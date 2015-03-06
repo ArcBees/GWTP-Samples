@@ -35,7 +35,8 @@ public class RootCarView extends ViewImpl implements RootCarPresenter.MyView {
     SimplePanel contentPanel;
 
     @Inject
-    RootCarView(Binder uiBinder) {
+    RootCarView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

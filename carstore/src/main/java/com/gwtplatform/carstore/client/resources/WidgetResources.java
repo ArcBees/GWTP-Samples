@@ -25,5 +25,5 @@ public interface WidgetResources extends ClientBundle {
     }
 
     @Source("header.css")
-    public Header header();
+    Header header();
 }

@@ -29,9 +29,9 @@ import javax.ws.rs.core.MediaType;
 import com.gwtplatform.carstore.shared.dto.ManufacturerDto;
 import com.gwtplatform.carstore.shared.dto.ManufacturerRatingDto;
 
-import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
-import static com.gwtplatform.carstore.shared.api.ApiPaths.MANUFACTURER;
 import static com.gwtplatform.carstore.shared.api.ApiParameters.ID;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.MANUFACTURER;
+import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
 
 @Path(MANUFACTURER)
 @Produces(MediaType.APPLICATION_JSON)

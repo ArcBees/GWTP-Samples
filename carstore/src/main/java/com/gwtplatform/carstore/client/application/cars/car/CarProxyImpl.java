@@ -45,8 +45,9 @@ public class CarProxyImpl extends ProxyPlaceImpl<CarPresenter> implements CarPre
     private List<HandlerRegistration> handlers = new ArrayList<>();
 
     @Inject
-    CarProxyImpl(@Assisted CarPresenterProvider carPresenterProvider,
-                 @Assisted String nameToken) {
+    CarProxyImpl(
+            @Assisted CarPresenterProvider carPresenterProvider,
+            @Assisted String nameToken) {
         carPresenterProvider.setProxy(this);
 
         setProxy(new WrappedProxy(carPresenterProvider));

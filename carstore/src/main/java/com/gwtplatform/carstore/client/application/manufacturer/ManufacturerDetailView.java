@@ -41,8 +41,9 @@ public class ManufacturerDetailView extends ViewWithUiHandlers<ManufacturerDetai
     private final Driver driver;
 
     @Inject
-    ManufacturerDetailView(Binder uiBinder,
-                           Driver driver) {
+    ManufacturerDetailView(
+            Binder uiBinder,
+            Driver driver) {
         this.driver = driver;
 
         initWidget(uiBinder.createAndBindUi(this));

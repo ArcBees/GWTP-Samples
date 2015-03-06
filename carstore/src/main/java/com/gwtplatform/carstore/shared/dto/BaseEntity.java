@@ -71,6 +71,6 @@ public class BaseEntity implements Dto {
 
     @JsonIgnore
     public boolean isSaved() {
-        return (id != null);
+        return id != null;
     }
 }

@@ -30,7 +30,8 @@ import com.gwtplatform.dispatch.rest.client.RestCallback;
 public abstract class ErrorHandlerAsyncCallback<R> implements RestCallback<R> {
     private final HasHandlers hasHandlers;
 
-    public ErrorHandlerAsyncCallback(HasHandlers hasHandlers) {
+    public ErrorHandlerAsyncCallback(
+            HasHandlers hasHandlers) {
         this.hasHandlers = hasHandlers;
     }
 

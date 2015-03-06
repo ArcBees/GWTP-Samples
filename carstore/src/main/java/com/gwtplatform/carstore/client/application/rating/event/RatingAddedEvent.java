@@ -27,20 +27,21 @@ public class RatingAddedEvent extends GwtEvent<RatingAddedHandler> {
         void onRatingAdded(RatingAddedEvent event);
     }
 
+    private static final Type<RatingAddedHandler> TYPE = new Type<>();
+
+    private final RatingDto ratingDto;
+
+    RatingAddedEvent(
+            RatingDto ratingDto) {
+        this.ratingDto = ratingDto;
+    }
+
     public static Type<RatingAddedHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source, RatingDto ratingDto) {
         source.fireEvent(new RatingAddedEvent(ratingDto));
-    }
-
-    private static final Type<RatingAddedHandler> TYPE = new Type<>();
-
-    private RatingDto ratingDto;
-
-    public RatingAddedEvent(RatingDto ratingDto) {
-        this.ratingDto = ratingDto;
     }
 
     @Override

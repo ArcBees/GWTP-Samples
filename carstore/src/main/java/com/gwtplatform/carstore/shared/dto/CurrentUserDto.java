@@ -27,8 +27,9 @@ public class CurrentUserDto implements Dto {
     }
 
     @JsonCreator
-    public CurrentUserDto(@JsonProperty("loggedIn") Boolean loggedIn,
-                          @JsonProperty("user") UserDto user) {
+    public CurrentUserDto(
+            @JsonProperty("loggedIn") Boolean loggedIn,
+            @JsonProperty("user") UserDto user) {
         this.loggedIn = loggedIn;
         this.user = user;
     }

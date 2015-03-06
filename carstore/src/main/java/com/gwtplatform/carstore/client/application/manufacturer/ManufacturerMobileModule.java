@@ -29,10 +29,10 @@ public class ManufacturerMobileModule extends AbstractPresenterModule {
 
         bindPresenter(ManufacturerDetailPresenter.class, ManufacturerDetailPresenter.MyView.class,
                 ManufacturerDetailView.class, ManufacturerDetailPresenter.MyProxy.class);
-        
+
         bindSingletonPresenterWidget(EditManufacturerPresenter.class, EditManufacturerPresenter.MyView.class,
                 EditManufacturerView.class);
-       
+
         bind(ManufacturerUiHandlers.class).to(ManufacturerPresenter.class);
         bind(ManufacturerDetailUiHandlers.class).to(ManufacturerDetailPresenter.class);
         bind(EditManufacturerUiHandlers.class).to(EditManufacturerPresenter.class);

@@ -27,12 +27,12 @@ import com.google.gwt.user.client.ui.UIObject;
 public class ByDebugId extends By {
     private final String debugId;
 
-    public static By id(String debugId) {
-        return new ByDebugId(debugId);
-    }
-
     public ByDebugId(String debugId) {
         this.debugId = debugId;
+    }
+
+    public static By id(String debugId) {
+        return new ByDebugId(debugId);
     }
 
     @Override

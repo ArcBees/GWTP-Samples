@@ -27,7 +27,9 @@ public class LogInAction extends ActionImpl<LogInResult> {
     protected LogInAction() {
     }
 
-    public LogInAction(String username, String password) {
+    public LogInAction(
+            String username,
+            String password) {
         actionType = ActionType.VIA_CREDENTIALS;
         this.password = password;
         this.username = username;

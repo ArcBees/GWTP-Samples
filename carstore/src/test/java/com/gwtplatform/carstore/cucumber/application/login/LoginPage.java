@@ -28,7 +28,8 @@ public class LoginPage extends BasePage {
     private final HeaderWidgetPage headerWidgetPage;
 
     @Inject
-    LoginPage(HeaderWidgetPage headerWidgetPage) {
+    LoginPage(
+            HeaderWidgetPage headerWidgetPage) {
         this.headerWidgetPage = headerWidgetPage;
     }
 

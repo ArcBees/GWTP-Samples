@@ -20,6 +20,7 @@ import javax.inject.Inject;
 
 import com.gwtplatform.carstore.cucumber.application.ratings.RatingPage;
 import com.gwtplatform.carstore.cucumber.application.reports.ReportPage;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.runtime.java.guice.ScenarioScoped;
@@ -35,8 +36,9 @@ public class ReportStepDefs {
     private final ReportPage reportPage;
 
     @Inject
-    ReportStepDefs(RatingPage ratingPage,
-                   ReportPage reportPage) {
+    ReportStepDefs(
+            RatingPage ratingPage,
+            ReportPage reportPage) {
         this.ratingPage = ratingPage;
         this.reportPage = reportPage;
     }

@@ -40,7 +40,8 @@ public class CarPropertiesEditor extends Composite implements Editor<CarProperti
     DateBox someDate;
 
     @Inject
-    CarPropertiesEditor(Binder uiBinder) {
+    CarPropertiesEditor(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
         someString.getElement().setAttribute("placeholder", "Property #1");

@@ -40,7 +40,6 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 public class HeaderPresenter extends PresenterWidget<HeaderPresenter.MyView>
         implements HeaderUiHandlers, UserLoginEvent.UserLoginHandler, NavigationHandler {
-
     public interface MyView extends View, HasUiHandlers<HeaderUiHandlers> {
         void enableUserOptions(CurrentUser currentUser);
 

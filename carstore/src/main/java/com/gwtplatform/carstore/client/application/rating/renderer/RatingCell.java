@@ -42,8 +42,9 @@ public class RatingCell extends AbstractCell<RatingDto> {
     private final Delegate<RatingDto> delegate;
 
     @Inject
-    RatingCell(Renderer uiRenderer,
-               @Assisted Delegate<RatingDto> delegate) {
+    RatingCell(
+            Renderer uiRenderer,
+            @Assisted Delegate<RatingDto> delegate) {
         super(BrowserEvents.CLICK);
 
         this.uiRenderer = uiRenderer;
@@ -57,7 +58,7 @@ public class RatingCell extends AbstractCell<RatingDto> {
 
     @Override
     public void onBrowserEvent(Context context, Element parent, RatingDto value,
-                               NativeEvent event, ValueUpdater<RatingDto> valueUpdater) {
+            NativeEvent event, ValueUpdater<RatingDto> valueUpdater) {
         uiRenderer.onBrowserEvent(this, event, parent, value);
     }
 

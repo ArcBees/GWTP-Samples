@@ -43,8 +43,8 @@ public class CarProperties extends BaseEntity {
     }
 
     public CarProperties(String someString,
-                         Integer someNumber,
-                         Date someDate) {
+            Integer someNumber,
+            Date someDate) {
         this.someString = someString;
         this.someNumber = someNumber;
         this.someDate = someDate;
@@ -60,7 +60,6 @@ public class CarProperties extends BaseEntity {
         } else {
             this.car = null;
         }
-
     }
 
     public String getSomeString() {

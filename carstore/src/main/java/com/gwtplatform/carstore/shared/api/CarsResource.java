@@ -46,7 +46,8 @@ public interface CarsResource {
     int LIMIT_ALL = -1;
 
     @GET
-    List<CarDto> getCars(@MatrixParam(COLOR) String colorFilter,
+    List<CarDto> getCars(
+            @MatrixParam(COLOR) String colorFilter,
             @DefaultValue(DEFAULT_OFFSET) @QueryParam(OFFSET) int offset,
             @DefaultValue(DEFAULT_LIMIT) @QueryParam(LIMIT) int limit);
 

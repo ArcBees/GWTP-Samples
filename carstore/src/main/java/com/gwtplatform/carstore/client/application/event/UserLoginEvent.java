@@ -25,17 +25,17 @@ public class UserLoginEvent extends GwtEvent<UserLoginEvent.UserLoginHandler> {
         void onLogin(UserLoginEvent event);
     }
 
+    private static final Type<UserLoginHandler> TYPE = new Type<>();
+
+    UserLoginEvent() {
+    }
+
     public static Type<UserLoginHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source) {
         source.fireEvent(new UserLoginEvent());
-    }
-
-    private static final Type<UserLoginHandler> TYPE = new Type<>();
-
-    public UserLoginEvent() {
     }
 
     @Override

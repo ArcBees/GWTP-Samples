@@ -48,8 +48,9 @@ public class RatingDetailView extends ViewWithUiHandlers<RatingDetailUiHandlers>
     private final Driver driver;
 
     @Inject
-    public RatingDetailView(Binder uiBinder,
-                            Driver driver) {
+    RatingDetailView(
+            Binder uiBinder,
+            Driver driver) {
         this.driver = driver;
 
         car = new ValueListBox<>(new CarRenderer());

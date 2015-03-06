@@ -19,6 +19,7 @@ package com.gwtplatform.carstore.client.application.cars.car.navigation;
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HasHandlers;
+import com.google.web.bindery.event.shared.HandlerRegistration;
 
 public class CloseTabEvent extends GwtEvent<CloseTabEvent.CloseTabHandler> {
     public interface CloseTabHandler extends EventHandler {
@@ -26,7 +27,7 @@ public class CloseTabEvent extends GwtEvent<CloseTabEvent.CloseTabHandler> {
     }
 
     public interface HasCloseTabHandlers extends HasHandlers {
-        com.google.web.bindery.event.shared.HandlerRegistration addCloseTabHandler(CloseTabHandler handler);
+        HandlerRegistration addCloseTabHandler(CloseTabHandler handler);
     }
 
     private static Type<CloseTabHandler> TYPE = new Type<>();

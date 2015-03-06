@@ -41,7 +41,8 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements Lo
     TextBox username;
 
     @Inject
-    LoginView(Binder uiBinder) {
+    LoginView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
         username.getElement().setAttribute("placeholder", "Username");

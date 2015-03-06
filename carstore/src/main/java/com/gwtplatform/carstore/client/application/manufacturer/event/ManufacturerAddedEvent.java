@@ -27,20 +27,21 @@ public class ManufacturerAddedEvent extends GwtEvent<ManufacturerAddedHandler> {
         void onManufacturerAdded(ManufacturerAddedEvent event);
     }
 
+    private static final Type<ManufacturerAddedHandler> TYPE = new Type<>();
+
+    private ManufacturerDto manufacturerDto;
+
+    ManufacturerAddedEvent(
+            ManufacturerDto manufacturerDto) {
+        this.manufacturerDto = manufacturerDto;
+    }
+
     public static Type<ManufacturerAddedHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source, ManufacturerDto manufacturerDto) {
         source.fireEvent(new ManufacturerAddedEvent(manufacturerDto));
-    }
-
-    private static final Type<ManufacturerAddedHandler> TYPE = new Type<>();
-
-    private ManufacturerDto manufacturerDto;
-
-    public ManufacturerAddedEvent(ManufacturerDto manufacturerDto) {
-        this.manufacturerDto = manufacturerDto;
     }
 
     @Override

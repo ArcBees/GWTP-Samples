@@ -28,10 +28,10 @@ import com.gwtplatform.dispatch.shared.DispatchRequest;
 public class CarDeleteInterceptor extends AbstractRestInterceptor {
     CarDeleteInterceptor() {
         super(new InterceptorContext.Builder()
-            .path(ApiPaths.CARS)
-            .httpMethod(HttpMethod.DELETE)
-            .transcendent(true)
-            .build());
+                .path(ApiPaths.CARS)
+                .httpMethod(HttpMethod.DELETE)
+                .transcendent(true)
+                .build());
     }
 
     @Override

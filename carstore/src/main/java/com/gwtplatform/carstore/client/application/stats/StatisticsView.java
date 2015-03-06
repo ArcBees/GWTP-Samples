@@ -38,7 +38,8 @@ public class StatisticsView extends ViewWithUiHandlers<StatisticsUiHandlers> imp
     InlineLabel result;
 
     @Inject
-    StatisticsView(Binder uiBinder) {
+    StatisticsView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

@@ -26,22 +26,24 @@ public class ActionBarEvent extends GwtEvent<ActionBarEvent.ActionBarHandler> {
         void onActionEvent(ActionBarEvent event);
     }
 
+    private static final Type<ActionBarHandler> TYPE = new Type<>();
+
+    private final ActionType actionType;
+    private final String sourceToken;
+
+    ActionBarEvent(
+            ActionType actionType,
+            String sourceToken) {
+        this.actionType = actionType;
+        this.sourceToken = sourceToken;
+    }
+
     public static Type<ActionBarHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source, ActionType actionType, String sourceToken) {
         source.fireEvent(new ActionBarEvent(actionType, sourceToken));
-    }
-
-    private static final Type<ActionBarHandler> TYPE = new Type<>();
-
-    private final ActionType actionType;
-    private final String sourceToken;
-
-    public ActionBarEvent(final ActionType actionType, final String sourceToken) {
-        this.actionType = actionType;
-        this.sourceToken = sourceToken;
     }
 
     public Boolean isTheSameToken(String token) {

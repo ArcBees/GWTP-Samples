@@ -33,14 +33,14 @@ public class VelocityColumnsInitializerGenerator extends AbstractVelocityGenerat
 
     @Inject
     protected VelocityColumnsInitializerGenerator(Provider<VelocityContext> velocityContextProvider,
-                                                  VelocityEngine velocityEngine,
-                                                  GeneratorUtil generatorUtil) {
+            VelocityEngine velocityEngine,
+            GeneratorUtil generatorUtil) {
         super(velocityContextProvider, velocityEngine, generatorUtil);
     }
 
     @Override
     protected void populateVelocityContext(VelocityContext velocityContext,
-                                           JClassType type) throws UnableToCompleteException {
+            JClassType type) throws UnableToCompleteException {
         ColumnsInitializerDefinitions columnsInitializerDefinitions = ColumnsInitializerDefinitions.createFrom(type);
 
         velocityContext.put("columnsInitializerDefinitions", columnsInitializerDefinitions);

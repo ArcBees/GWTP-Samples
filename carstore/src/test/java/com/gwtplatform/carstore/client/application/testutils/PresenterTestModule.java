@@ -21,8 +21,8 @@ import org.jukito.JukitoModule;
 import com.gwtplatform.mvp.client.AutobindDisable;
 
 /**
- * Base module to use while testing presenters. {@link AutomockingModule} is
- * used. Your configuration module must extends this class.
+ * Base module to use while testing presenters. {@link AutomockingModule} is used. Your configuration module must
+ * extends this class.
  */
 public abstract class PresenterTestModule extends JukitoModule {
     @Override

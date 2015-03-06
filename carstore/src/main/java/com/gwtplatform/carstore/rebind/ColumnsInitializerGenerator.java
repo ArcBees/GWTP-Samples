@@ -31,9 +31,10 @@ public class ColumnsInitializerGenerator extends Generator {
     private Injector injector;
 
     @Override
-    public String generate(TreeLogger treeLogger,
-                           GeneratorContext generatorContext,
-                           String typeName) throws UnableToCompleteException {
+    public String generate(
+            TreeLogger treeLogger,
+            GeneratorContext generatorContext,
+            String typeName) throws UnableToCompleteException {
         logger = new MortalLogger(treeLogger);
         type = GeneratorUtil.getType(typeName, generatorContext.getTypeOracle(), logger);
 

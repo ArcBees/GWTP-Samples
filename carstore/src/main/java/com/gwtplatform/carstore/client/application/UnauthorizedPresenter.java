@@ -44,10 +44,11 @@ public class UnauthorizedPresenter extends Presenter<UnauthorizedPresenter.MyVie
     private final TokenFormatter tokenFormatter;
 
     @Inject
-    UnauthorizedPresenter(EventBus eventBus,
-                          MyView view,
-                          MyProxy proxy,
-                          TokenFormatter tokenFormatter) {
+    UnauthorizedPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            TokenFormatter tokenFormatter) {
         super(eventBus, view, proxy, RevealType.RootLayout);
 
         this.tokenFormatter = tokenFormatter;
