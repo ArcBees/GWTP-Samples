@@ -18,6 +18,7 @@ package com.gwtplatform.carstore.cucumber.application;
 
 import org.openqa.selenium.WebElement;
 
+import com.gwtplatform.carstore.client.debug.DebugIds;
 import com.gwtplatform.carstore.cucumber.util.ByDebugId;
 
 public class UnauthorizedPage extends BasePage {
@@ -26,6 +27,6 @@ public class UnauthorizedPage extends BasePage {
     }
 
     private WebElement getLinkToLogin() {
-        return waitUntilElementIsClickable(ByDebugId.id("linkToLogin"));
+        return waitUntilElementIsClickable(ByDebugId.id(DebugIds.DBG_LINK_TO_LOGIN));
     }
 }

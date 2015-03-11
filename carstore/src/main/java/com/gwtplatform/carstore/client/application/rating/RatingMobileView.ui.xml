@@ -1,7 +1,10 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
-    <g:ScrollPanel debugId="ratingPanel">
-        <cell:CellList ui:field="ratingList" debugId="ratings"/>
+
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
+
+    <g:ScrollPanel>
+        <cell:CellList ui:field="ratingList" debugId="{DBG_RATINGS}"/>
     </g:ScrollPanel>
 </ui:UiBinder>

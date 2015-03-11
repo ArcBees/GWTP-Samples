@@ -2,12 +2,14 @@
         xmlns:g='urn:import:com.google.gwt.user.client.ui'
         xmlns:datepicker="urn:import:com.google.gwt.user.datepicker.client">
 
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
+
     <g:HTMLPanel>
-        <datepicker:DatePicker ui:field="datePicker" debugId="extract-year-date-picker"/>
-        <g:Button ui:field="extractYear" debugId="extract-year-button">Extract Year</g:Button>
+        <datepicker:DatePicker ui:field="datePicker" debugId="{DBG_EXTRACT_YEAR_DATE_PICKER}"/>
+        <g:Button ui:field="extractYear" debugId="{DBG_EXTRACT_YEAR_BUTTON}">Extract Year</g:Button>
         <p>
             Result:
-            <g:InlineLabel ui:field="result" debugId="extract-year-result"/>
+            <g:InlineLabel ui:field="result" debugId="{DBG_EXTRACT_YEAR_RESULT}"/>
         </p>
     </g:HTMLPanel>
 </ui:UiBinder>

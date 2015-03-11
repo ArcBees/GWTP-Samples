@@ -1,10 +1,10 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-    <ui:import field="com.gwtplatform.carstore.client.place.NameTokens.*"/>
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <g:HTMLPanel>
         You are not authorized to view this page.
-        <g:Hyperlink ui:field="linkToLogin" debugId="linkToLogin">Please login first</g:Hyperlink>
+        <g:Hyperlink ui:field="linkToLogin" debugId="{DBG_LINK_TO_LOGIN}">Please login first</g:Hyperlink>
     </g:HTMLPanel>
 </ui:UiBinder>
