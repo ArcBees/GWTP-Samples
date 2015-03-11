@@ -42,6 +42,8 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -102,7 +104,7 @@ public class CarsPresenterTest extends PresenterWidgetTestBase {
         // Given
         givenDelegate(carsDelegate).useResource(CarsResource.class)
                 .and().succeed().withResult(carDtos)
-                .when().getCars(0, 1);
+                .when().getCars(anyString(), eq(0), eq(1));
 
         // When
         carsPresenter.fetchData(0, 1);
@@ -115,7 +117,7 @@ public class CarsPresenterTest extends PresenterWidgetTestBase {
     public void onFetchDataThreeCars(ArrayList<CarDto> carDtos) {
         // Given
         givenDelegate(carsDelegate).useResource(CarsResource.class)
-                .and().succeed().withResult(carDtos).when().getCars(0, 3);
+                .and().succeed().withResult(carDtos).when().getCars(anyString(), eq(0), eq(3));
 
         // When
         carsPresenter.fetchData(0, 3);
@@ -140,7 +142,7 @@ public class CarsPresenterTest extends PresenterWidgetTestBase {
         // We fetch the cars after delete
         givenDelegate(carsDelegate)
                 .succeed().withResult(new ArrayList<>())
-                .when().getCars();
+                .when().getCars(anyString(), anyInt(), anyInt());
 
         // And display is setup
         given(view.getCarDisplay()).willReturn(hasCarData);

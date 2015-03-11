@@ -26,5 +26,7 @@ public class ApiPaths {
     public static final String COUNT = "/count";
     public static final String STATS = "/stats";
 
+    public static final String REMEMBER_ME = "/remember-me";
+
     public static final String PATH_ID = "/{" + ApiParameters.ID + "}";
 }

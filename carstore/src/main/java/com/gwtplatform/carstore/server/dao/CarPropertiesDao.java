@@ -26,7 +26,7 @@ public class CarPropertiesDao extends BaseDao<CarProperties> {
 
     public CarPropertiesDto put(CarPropertiesDto carPropertiesDto) {
         CarProperties carProperties = super.put(CarProperties.create(carPropertiesDto));
-        
+
         return CarProperties.createDto(carProperties);
     }
 }

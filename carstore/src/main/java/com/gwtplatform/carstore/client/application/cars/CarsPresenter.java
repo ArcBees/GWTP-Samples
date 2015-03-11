@@ -111,7 +111,12 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
     }
 
     @Override
-    public void fetchData(final int offset, int limit) {
+    public void fetchData(int offset, int limit) {
+        filter(null, offset, limit);
+    }
+
+    @Override
+    public void filter(String color, final int offset, int limit) {
         carsDelegate
                 .withCallback(new AbstractAsyncCallback<List<CarDto>>() {
                     @Override
@@ -119,7 +124,7 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
                         getView().displayCars(offset, cars);
                     }
                 })
-                .getCars(offset, limit);
+                .getCars(color, offset, limit);
     }
 
     @Override

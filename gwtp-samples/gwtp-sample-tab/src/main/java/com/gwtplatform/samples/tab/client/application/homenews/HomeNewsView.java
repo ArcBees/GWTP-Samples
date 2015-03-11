@@ -62,8 +62,14 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
     }
 
     @Override
-    public void setConfirmationText(String text) {
-        confirmationLink.setText(text);
+    public void setConfirmation(boolean state) {
+        if(state) {
+            confirmationLink.addStyleName(resources.style().isOn());
+            confirmationLink.setText("Navigation confirmation ON, click here to disable it!");
+        } else {
+            confirmationLink.removeStyleName(resources.style().isOn());
+            confirmationLink.setText("Navigation confirmation OFF, click here to enable it!");
+        }
     }
 
     @UiHandler("confirmationLink")

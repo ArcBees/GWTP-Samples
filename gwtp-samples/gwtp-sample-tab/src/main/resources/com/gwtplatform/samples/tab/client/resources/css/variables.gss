@@ -1,0 +1,17 @@
+@provide 'variables';
+
+/**
+ * Colors
+ */
+
+@def C_PANEL_DARK               eval("com.gwtplatform.samples.tab.client.resources.Variables.C_PANEL_DARK");
+@def C_PANEL_LIGHT              eval("com.gwtplatform.samples.tab.client.resources.Variables.C_PANEL_LIGHT");
+@def C_PANEL_MEDIUM             eval("com.gwtplatform.samples.tab.client.resources.Variables.C_PANEL_MEDIUM");
+@def C_MESSAGEBOX               eval("com.gwtplatform.samples.tab.client.resources.Variables.C_MESSAGEBOX");
+@def C_TITLE                    eval("com.gwtplatform.samples.tab.client.resources.Variables.C_TITLE");
+
+/**
+ * Sizes
+ */
+
+@def S_TITLE                    eval("com.gwtplatform.samples.tab.client.resources.Variables.S_TITLE");

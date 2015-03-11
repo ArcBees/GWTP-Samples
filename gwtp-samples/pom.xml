@@ -83,6 +83,7 @@
         <maven.war.version>2.3</maven.war.version>
         <maven.compiler.version>2.3.2</maven.compiler.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
+        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
@@ -215,7 +216,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.6</version>
+                    <version>${maven-resources-plugin.version}</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>

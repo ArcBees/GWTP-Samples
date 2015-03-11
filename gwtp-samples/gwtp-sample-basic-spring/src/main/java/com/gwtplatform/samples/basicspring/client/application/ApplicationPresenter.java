@@ -81,7 +81,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private void sendNameToServer(String name) {
         getView().setError("");
         if (!FieldVerifier.isValidName(name)) {
-            getView().setError("Please enter at least four characters");
+            getView().setError("<p><em>Please enter at least four characters</em></p>");
             return;
         }
 
