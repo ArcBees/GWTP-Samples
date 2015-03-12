@@ -43,9 +43,10 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
     }
 
     @Inject
-    HomePresenter(EventBus eventBus,
-                  MyView view,
-                  MyProxy proxy) {
+    HomePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
     }
 }

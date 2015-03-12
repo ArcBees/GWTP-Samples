@@ -29,10 +29,11 @@ public class ApplicationDesktopPresenter extends AbstractApplicationPresenter im
     private PlaceManager placeManager;
 
     @Inject
-    ApplicationDesktopPresenter(EventBus eventBus,
-                                MyView view,
-                                MyProxy proxy,
-                                PlaceManager placeManager) {
+    ApplicationDesktopPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;

@@ -47,7 +47,8 @@ public class ProductView extends ViewImpl implements ProductPresenter.MyView {
     HeadingElement title;
 
     @Inject
-    ProductView(Binder binder) {
+    ProductView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

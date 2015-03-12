@@ -29,8 +29,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}.
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.localdialog
+ * .LocalDialogSubTabPresenter}.
  */
 public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTabUiHandlers> implements
         GlobalDialogSubTabPresenter.MyView {
@@ -43,7 +43,8 @@ public class GlobalDialogSubTabView extends ViewWithUiHandlers<GlobalDialogSubTa
     Anchor popupLink;
 
     @Inject
-    GlobalDialogSubTabView(Binder uiBinder) {
+    GlobalDialogSubTabView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

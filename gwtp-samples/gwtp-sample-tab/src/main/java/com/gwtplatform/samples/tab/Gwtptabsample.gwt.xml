@@ -14,10 +14,10 @@
     <source path='client'/>
 
     <set-configuration-property name="gin.ginjector.modules"
-            value="com.gwtplatform.samples.tab.client.gin.ClientModule"/>
+                                value="com.gwtplatform.samples.tab.client.gin.ClientModule"/>
 
     <set-configuration-property name="gin.ginjector.extensions"
-            value="com.gwtplatform.samples.tab.client.gin.GinjectorExtension"/>
+                                value="com.gwtplatform.samples.tab.client.gin.GinjectorExtension"/>
 
     <set-configuration-property name="CssResource.enableGss" value="true"/>
 </module>

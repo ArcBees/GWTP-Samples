@@ -39,7 +39,8 @@ public class ApplicationMobileView extends ViewWithUiHandlers<ApplicationUiHandl
     Button specials;
 
     @Inject
-    ApplicationMobileView(Binder binder) {
+    ApplicationMobileView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

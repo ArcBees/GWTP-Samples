@@ -16,12 +16,12 @@
 
 package com.gwtplatform.samples.tab.client;
 
-import static org.junit.Assert.assertTrue;
-
 import org.jukito.JukitoModule;
 import org.jukito.JukitoRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertTrue;
 
 @RunWith(JukitoRunner.class)
 public class SandboxJukitoTest {

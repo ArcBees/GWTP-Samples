@@ -39,7 +39,8 @@ public class ApplicationDesktopView extends ViewWithUiHandlers<ApplicationUiHand
     Button specials;
 
     @Inject
-    ApplicationDesktopView(Binder binder) {
+    ApplicationDesktopView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

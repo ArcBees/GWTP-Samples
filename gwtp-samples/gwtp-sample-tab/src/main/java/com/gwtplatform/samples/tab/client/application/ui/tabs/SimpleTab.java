@@ -32,7 +32,7 @@ public class SimpleTab extends BaseTab {
 
     @Inject
     SimpleTab(Binder uiBinder,
-              @Assisted TabData tabData) {
+            @Assisted TabData tabData) {
         super(tabData);
 
         initWidget(uiBinder.createAndBindUi(this));

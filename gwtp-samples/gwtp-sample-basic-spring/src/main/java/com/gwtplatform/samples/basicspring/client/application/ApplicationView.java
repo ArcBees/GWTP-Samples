@@ -39,7 +39,8 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
     HTML error;
 
     @Inject
-    ApplicationView(Binder uiBinder) {
+    ApplicationView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

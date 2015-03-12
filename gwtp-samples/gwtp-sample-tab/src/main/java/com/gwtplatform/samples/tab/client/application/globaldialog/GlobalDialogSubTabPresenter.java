@@ -34,8 +34,8 @@ import com.gwtplatform.samples.tab.client.application.infopopup.InfoPopupPresent
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
- * A sample {@link Presenter} that demonstrates how to trigger a global dialog box. It appears as a tab within
- * {@link DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
+ * A sample {@link Presenter} that demonstrates how to trigger a global dialog box. It appears as a tab within {@link
+ * DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
  * <p/>
  * It demonstrates the option 3 described in {@link TabInfo}.
  */
@@ -62,11 +62,12 @@ public class GlobalDialogSubTabPresenter extends
     private final InfoPopupPresenterWidget infoPopup;
 
     @Inject
-    GlobalDialogSubTabPresenter(EventBus eventBus,
-                                MyView view,
-                                MyProxy proxy,
-                                GlobalDialogPresenterWidget globalDialog,
-                                InfoPopupPresenterWidget infoPopup) {
+    GlobalDialogSubTabPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            GlobalDialogPresenterWidget globalDialog,
+            InfoPopupPresenterWidget infoPopup) {
         super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
 
         this.globalDialog = globalDialog;

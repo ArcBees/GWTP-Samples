@@ -34,8 +34,9 @@ public class InfoPopupPresenterWidget extends PresenterWidget<InfoPopupPresenter
     }
 
     @Inject
-    InfoPopupPresenterWidget(EventBus eventBus,
-                             MyView view) {
+    InfoPopupPresenterWidget(
+            EventBus eventBus,
+            MyView view) {
         super(eventBus, view);
     }
 }

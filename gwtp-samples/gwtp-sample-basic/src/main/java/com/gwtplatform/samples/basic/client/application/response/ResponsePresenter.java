@@ -27,21 +27,22 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.place.TokenParameters;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
 import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
 
-public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
+public class ResponsePresenter
+        extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
         implements ResponseUiHandlers {
     @ProxyCodeSplit
     @NameToken(NameTokens.response)
-    public interface MyProxy extends ProxyPlace<ResponsePresenter> {
+    interface MyProxy extends ProxyPlace<ResponsePresenter> {
     }
 
-    public interface MyView extends View, HasUiHandlers<ResponseUiHandlers> {
+    interface MyView extends View, HasUiHandlers<ResponseUiHandlers> {
         void setServerResponse(String serverResponse);
 
         void setTextToServer(String textToServer);
@@ -53,11 +54,12 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
     private String textToServer;
 
     @Inject
-    ResponsePresenter(EventBus eventBus,
-                      MyView view,
-                      MyProxy proxy,
-                      PlaceManager placeManager,
-                      DispatchAsync dispatcher) {
+    ResponsePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager,
+            DispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

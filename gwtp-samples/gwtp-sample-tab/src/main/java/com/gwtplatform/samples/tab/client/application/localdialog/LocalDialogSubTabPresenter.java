@@ -31,8 +31,8 @@ import com.gwtplatform.samples.tab.client.application.dialog.DialogSamplePresent
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
 /**
- * A sample {@link Presenter} that demonstrates how to trigger a local dialog box. It appears as a tab within
- * {@link DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
+ * A sample {@link Presenter} that demonstrates how to trigger a local dialog box. It appears as a tab within {@link
+ * DialogSamplePresenter}, which is itself a s tab in {@link ApplicationPresenter}.
  * <p/>
  * It demonstrates the option 1 described in {@link TabInfo}.
  */
@@ -59,9 +59,9 @@ public class LocalDialogSubTabPresenter
 
     @Inject
     LocalDialogSubTabPresenter(EventBus eventBus,
-                               MyView view,
-                               MyProxy proxy,
-                               LocalDialogPresenterWidget localDialog) {
+            MyView view,
+            MyProxy proxy,
+            LocalDialogPresenterWidget localDialog) {
         super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
 
         this.localDialog = localDialog;

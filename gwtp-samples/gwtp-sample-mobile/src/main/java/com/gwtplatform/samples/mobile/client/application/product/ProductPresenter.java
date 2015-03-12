@@ -27,9 +27,9 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TitleFunction;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.SetPlaceTitleHandler;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
@@ -63,11 +63,12 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
     private int id;
 
     @Inject
-    ProductPresenter(EventBus eventBus,
-                     MyView view,
-                     MyProxy proxy,
-                     PlaceManager placeManager,
-                     DispatchAsync dispatcher) {
+    ProductPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager,
+            DispatchAsync dispatcher) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;

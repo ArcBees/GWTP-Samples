@@ -23,8 +23,8 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.nested.client.application.ApplicationModule;
-import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
 import com.gwtplatform.samples.nested.client.place.NameTokens;
+import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
 
 public class ClientModule extends AbstractPresenterModule {
     @Override

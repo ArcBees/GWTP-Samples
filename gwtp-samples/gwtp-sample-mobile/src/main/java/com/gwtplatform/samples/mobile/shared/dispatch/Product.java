@@ -31,9 +31,9 @@ public class Product implements IsSerializable {
     private int quantity;
 
     public Product(String name,
-                   int flags,
-                   String price,
-                   int quantity) {
+            int flags,
+            String price,
+            int quantity) {
         this.id = nextId++;
         this.name = name;
         this.flags = flags;

@@ -43,10 +43,11 @@ public class ApplicationPresenter
     private final PlaceManager placeManager;
 
     @Inject
-    ApplicationPresenter(EventBus eventBus,
-                         MyView view,
-                         MyProxy proxy,
-                         PlaceManager placeManager) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.RootLayout);
 
         this.placeManager = placeManager;

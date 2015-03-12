@@ -28,10 +28,11 @@ public class ApplicationMobilePresenter extends AbstractApplicationPresenter imp
     private PlaceManager placeManager;
 
     @Inject
-    ApplicationMobilePresenter(EventBus eventBus,
-                               MyView view,
-                               MyProxy proxy,
-                               PlaceManager placeManager) {
+    ApplicationMobilePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
 
         this.placeManager = placeManager;

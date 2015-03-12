@@ -28,8 +28,8 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.TitleFunction;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 import com.gwtplatform.samples.mobile.client.place.ParameterTokens;
@@ -59,6 +59,24 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
         void setTitle(String title);
     }
 
+    private final DispatchAsync dispatcher;
+    private final PlaceManager placeManager;
+
+    private String currentType = ParameterTokens.TYPE_ALL_PRODUCTS;
+
+    @Inject
+    ProductsPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager,
+            DispatchAsync dispatcher) {
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
+
+        this.placeManager = placeManager;
+        this.dispatcher = dispatcher;
+    }
+
     @TitleFunction
     public static String getListTitle(PlaceRequest request) {
         return getTitleFor(request.getParameter(ParameterTokens.TOKEN_TYPE, null));
@@ -73,23 +91,6 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
             default:
                 return "All products";
         }
-    }
-
-    private final DispatchAsync dispatcher;
-    private final PlaceManager placeManager;
-
-    private String currentType = ParameterTokens.TYPE_ALL_PRODUCTS;
-
-    @Inject
-    ProductsPresenter(EventBus eventBus,
-                      MyView view,
-                      MyProxy proxy,
-                      PlaceManager placeManager,
-                      DispatchAsync dispatcher) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
-
-        this.placeManager = placeManager;
-        this.dispatcher = dispatcher;
     }
 
     @Override

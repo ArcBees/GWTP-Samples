@@ -39,8 +39,8 @@ public class Page2Presenter extends Presenter<Page2Presenter.MyView, Page2Presen
 
     @Inject
     Page2Presenter(EventBus eventBus,
-                   MyView view,
-                   MyProxy proxy) {
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN_CONTENT);
     }
 }

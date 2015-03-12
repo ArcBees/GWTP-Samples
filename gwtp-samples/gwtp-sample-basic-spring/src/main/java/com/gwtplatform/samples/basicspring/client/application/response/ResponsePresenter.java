@@ -27,8 +27,8 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 import com.gwtplatform.samples.basicspring.client.place.TokenParameters;
 import com.gwtplatform.samples.basicspring.shared.dispatch.SendTextToServerAction;
@@ -54,10 +54,10 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
 
     @Inject
     ResponsePresenter(EventBus eventBus,
-                      MyView view,
-                      MyProxy proxy,
-                      PlaceManager placeManager,
-                      DispatchAsync dispatcher) {
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager,
+            DispatchAsync dispatcher) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

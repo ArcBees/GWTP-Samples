@@ -6,11 +6,13 @@
     <g:PopupPanel autoHideOnHistoryEventsEnabled="true" autoHideEnabled="true" styleName="{resources.style.popup}">
         <g:HTMLPanel>
             <p>
-                This is an example of an auto-hiding<br/>
+                This is an example of an auto-hiding
+                <br/>
                 popup PresenterWidget.
             </p>
             <p>
-                It will automatically go away if you click<br/>
+                It will automatically go away if you click
+                <br/>
                 anywhere or navigate.
             </p>
         </g:HTMLPanel>

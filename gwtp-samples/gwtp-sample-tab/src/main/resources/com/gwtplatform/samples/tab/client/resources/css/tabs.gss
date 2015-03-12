@@ -6,11 +6,11 @@
     padding: 5px 10px 4px;
 }
 
-.tab a, 
-.tab a:visited, 
+.tab a,
+.tab a:visited,
 .tab a:hover {
     text-decoration: none;
-    
+
     cursor: pointer;
 }
 
@@ -59,13 +59,13 @@
 .inactive a,
 .inactive a:visited,
 .rounded.active a,
-.rounded.active a:visited  {
+.rounded.active a:visited {
     color: C_PANEL_LIGHT;
 }
 
 .horizontalBar {
     background-color: C_PANEL_DARK;
-    
+
     width: 100%;
     height: 1px;
 }
@@ -78,7 +78,7 @@
 
 .titlebar {
     background-color: C_PANEL_DARK;
-    
+
     padding: 0 5px 3px;
 }
 

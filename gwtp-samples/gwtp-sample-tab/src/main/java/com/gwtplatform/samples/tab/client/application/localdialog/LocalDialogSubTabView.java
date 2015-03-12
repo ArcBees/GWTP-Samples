@@ -27,8 +27,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogSubTabPresenter}.
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.localdialog
+ * .LocalDialogSubTabPresenter}.
  */
 public class LocalDialogSubTabView extends ViewWithUiHandlers<LocalDialogSubTabUihandlers>
         implements LocalDialogSubTabPresenter.MyView {

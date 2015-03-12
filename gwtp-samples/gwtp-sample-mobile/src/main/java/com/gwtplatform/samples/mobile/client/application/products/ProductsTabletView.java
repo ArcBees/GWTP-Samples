@@ -48,8 +48,9 @@ public class ProductsTabletView extends ViewImpl implements ProductsPresenter.My
     private final PlaceManager placeManager;
 
     @Inject
-    ProductsTabletView(Binder binder,
-                       PlaceManager placeManager) {
+    ProductsTabletView(
+            Binder binder,
+            PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));

@@ -3,7 +3,7 @@
         "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to='gwtpsamplespring'>
     <!-- Inherit the core Web Toolkit stuff. -->
-    <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.user.User'/>
 
     <!-- Other module inherits                                      -->
     <inherits name='com.gwtplatform.dispatch.Dispatch'/>
@@ -16,5 +16,5 @@
     <set-configuration-property name="gin.ginjector.modules"
                                 value="com.gwtplatform.samples.basicspring.client.gin.ClientModule"/>
 
-    <set-configuration-property name="CssResource.enableGss" value="true" />
+    <set-configuration-property name="CssResource.enableGss" value="true"/>
 </module>

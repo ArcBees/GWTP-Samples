@@ -48,13 +48,6 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
     public interface MyProxy extends NonLeafTabContentProxy<HomePresenter> {
     }
 
-    @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
-             nameToken = NameTokens.homeNewsPage)
-    // Go to HomeNewsPresenter when clicked
-    static String getTabLabel(AppConstants constants) {
-        return constants.home();
-    }
-
     /**
      * {@link HomePresenter}'s view.
      */
@@ -70,18 +63,27 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
     private final PlaceManager placeManager;
 
     @Inject
-    HomePresenter(EventBus eventBus,
-                  MyView view,
-                  MyProxy proxy,
-                  PlaceManager placeManager) {
+    HomePresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
 
         this.placeManager = placeManager;
     }
 
+    @TabInfo(container = ApplicationPresenter.class, priority = 0, // The first tab in the main page
+            nameToken = NameTokens.homeNewsPage)
+    // Go to HomeNewsPresenter when clicked
+    static String getTabLabel(AppConstants constants) {
+        return constants.home();
+    }
+
     @Override
     public void onReset() {
         super.onReset();
+
         MyProxy proxy = getProxy();
         proxy.changeTab(proxy.getTabData(), placeManager.getCurrentPlaceRequest().getNameToken());
     }
