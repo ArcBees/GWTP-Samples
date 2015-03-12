@@ -1,0 +1,50 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:style>
+        .bgColor {
+            background: #0f9d58;
+        }
+
+        .menuButton {
+        }
+
+        core-toolbar {
+            color: #f1f1f1;
+            fill: #f1f1f1;
+        }
+
+        .whiteBg {
+            background: #fff;
+        }
+
+        .main {
+            height: 100%;
+        }
+
+        .main > div {
+            height: 100%;
+        }
+    </ui:style>
+
+    <g:HTMLPanel>
+        <core-drawer-panel ui:field="drawerPanel" responsiveWidth="800px">
+            <core-header-panel class="{style.whiteBg}" drawer="">
+                <core-toolbar ui:field="menuToolbar" class="{style.bgColor}">
+                    <span>Menu</span>
+                </core-toolbar>
+                <paper-item ui:field="pageOne">Page one</paper-item>
+                <paper-item ui:field="pageTwo">Page two</paper-item>
+            </core-header-panel>
+            <core-header-panel main="">
+                <core-toolbar ui:field="toolbar" class="{style.bgColor}">
+                    <paper-icon-button class="{style.menuButton}" ui:field="menu" icon="menu"/>
+                    <span flex="">Title</span>
+                    <paper-icon-button icon="refresh"/>
+                    <paper-icon-button ui:field="more" icon="more-vert"/>
+                </core-toolbar>
+                <g:HTMLPanel tag="core-animated-pages" ui:field="pages" styleName="{style.main}"/>
+            </core-header-panel>
+        </core-drawer-panel>
+    </g:HTMLPanel>
+</ui:UiBinder>

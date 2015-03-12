@@ -37,10 +37,10 @@ public class ApplicationMobileModule extends AbstractPresenterModule {
         bind(AbstractApplicationPresenter.class).to(ApplicationMobilePresenter.class);
 
         bindPresenter(BreadcrumbsPresenter.class, BreadcrumbsPresenter.MyView.class, BreadcrumbsMobileView.class,
-                      BreadcrumbsPresenter.MyProxy.class);
+                BreadcrumbsPresenter.MyProxy.class);
         bindPresenter(ProductsPresenter.class, ProductsPresenter.MyView.class, ProductsMobileView.class,
-                      ProductsPresenter.MyProxy.class);
+                ProductsPresenter.MyProxy.class);
         bindPresenter(ProductPresenter.class, ProductPresenter.MyView.class, ProductMobileView.class,
-                      ProductPresenter.MyProxy.class);
+                ProductPresenter.MyProxy.class);
     }
 }

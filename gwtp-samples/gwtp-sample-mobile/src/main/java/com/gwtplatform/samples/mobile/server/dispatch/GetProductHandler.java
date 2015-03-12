@@ -30,7 +30,8 @@ public class GetProductHandler implements ActionHandler<GetProductAction, GetPro
     private final ProductDatabase database;
 
     @Inject
-    GetProductHandler(ProductDatabase database) {
+    GetProductHandler(
+            ProductDatabase database) {
         this.database = database;
     }
 

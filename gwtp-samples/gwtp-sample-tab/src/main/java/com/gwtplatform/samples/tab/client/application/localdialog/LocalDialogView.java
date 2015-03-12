@@ -28,8 +28,8 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 
 /**
- * The view implementation for
- * {@link com.gwtplatform.samples.tab.client.application.localdialog.LocalDialogPresenterWidget}.
+ * The view implementation for {@link com.gwtplatform.samples.tab.client.application.localdialog
+ * .LocalDialogPresenterWidget}.
  */
 public class LocalDialogView extends PopupViewImpl implements LocalDialogPresenterWidget.MyView {
     interface Binder extends UiBinder<PopupPanel, LocalDialogView> {
@@ -40,7 +40,7 @@ public class LocalDialogView extends PopupViewImpl implements LocalDialogPresent
 
     @Inject
     LocalDialogView(Binder uiBinder,
-                    EventBus eventBus) {
+            EventBus eventBus) {
         super(eventBus);
 
         initWidget(uiBinder.createAndBindUi(this));

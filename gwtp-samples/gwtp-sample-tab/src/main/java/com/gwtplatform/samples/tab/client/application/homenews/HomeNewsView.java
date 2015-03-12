@@ -50,10 +50,11 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
     private final AppMessages appMessages;
 
     @Inject
-    HomeNewsView(Binder uiBinder,
-                 AppResources resources,
-                 AppConstants appConstants,
-                 AppMessages appMessages) {
+    HomeNewsView(
+            Binder uiBinder,
+            AppResources resources,
+            AppConstants appConstants,
+            AppMessages appMessages) {
         this.resources = resources;
         this.appConstants = appConstants;
         this.appMessages = appMessages;
@@ -63,7 +64,7 @@ public class HomeNewsView extends ViewWithUiHandlers<HomeNewsUiHandler> implemen
 
     @Override
     public void setConfirmation(boolean state) {
-        if(state) {
+        if (state) {
             confirmationLink.addStyleName(resources.style().isOn());
             confirmationLink.setText("Navigation confirmation ON, click here to disable it!");
         } else {

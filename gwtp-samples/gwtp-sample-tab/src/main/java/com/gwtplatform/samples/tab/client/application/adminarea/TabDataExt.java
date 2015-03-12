@@ -25,9 +25,10 @@ import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 public class TabDataExt extends TabDataBasic {
     private final Gatekeeper gatekeeper;
 
-    public TabDataExt(String label,
-                      float priority,
-                      Gatekeeper gatekeeper) {
+    public TabDataExt(
+            String label,
+            float priority,
+            Gatekeeper gatekeeper) {
         super(label, priority);
 
         this.gatekeeper = gatekeeper;

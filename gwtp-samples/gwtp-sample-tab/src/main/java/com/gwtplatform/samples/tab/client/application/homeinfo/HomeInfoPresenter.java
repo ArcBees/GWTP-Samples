@@ -53,9 +53,10 @@ public class HomeInfoPresenter extends Presenter<HomeInfoPresenter.MyView, HomeI
     }
 
     @Inject
-    HomeInfoPresenter(EventBus eventBus,
-                      MyView view,
-                      MyProxy proxy) {
+    HomeInfoPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, HomePresenter.SLOT_SetTabContent);
     }
 }

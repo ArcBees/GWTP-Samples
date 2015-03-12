@@ -18,7 +18,6 @@ package com.gwtplatform.samples.tab.client.resources;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-import com.google.gwt.resources.client.ImageResource;
 
 public interface TabsResources extends ClientBundle {
     interface Style extends CssResource {
@@ -26,8 +25,9 @@ public interface TabsResources extends ClientBundle {
 
         String inactive();
 
-        String tab_inner();
-        
+        @ClassName("tab_inner")
+        String tabInner();
+
         String active();
 
         String horizontalBar();
@@ -37,9 +37,9 @@ public interface TabsResources extends ClientBundle {
         String bar();
 
         String panel();
-        
+
         String title();
-        
+
         String titlebar();
 
         String rounded();

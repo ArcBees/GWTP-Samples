@@ -28,8 +28,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 
 /**
- * This is the top-level view of the application. Every time another presenter wants to reveal itself,
- * {@link ApplicationView} will add its content of the target inside the {@code mainContantPanel}.
+ * This is the top-level view of the application. Every time another presenter wants to reveal itself, {@link
+ * ApplicationView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     interface Binder extends UiBinder<Widget, ApplicationView> {
@@ -41,7 +41,8 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     Element loadingMessage;
 
     @Inject
-    ApplicationView(Binder binder) {
+    ApplicationView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

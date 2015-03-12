@@ -39,14 +39,16 @@ public class GlobalDialogPresenterWidget extends PresenterWidget<GlobalDialogPre
     private HandlerRegistration handlerRegistration;
 
     @Inject
-    GlobalDialogPresenterWidget(EventBus eventBus,
-                                MyView view) {
+    GlobalDialogPresenterWidget(
+            EventBus eventBus,
+            MyView view) {
         super(eventBus, view);
     }
 
     @Override
     public void onReveal() {
         super.onReveal();
+
         getView().setNavigationPlace(null);
         unregisterNavigationHandler(); // Be on the safe side
         handlerRegistration = addHandler(NavigationEvent.getType(), this);
@@ -55,6 +57,7 @@ public class GlobalDialogPresenterWidget extends PresenterWidget<GlobalDialogPre
     @Override
     public void onHide() {
         super.onHide();
+
         unregisterNavigationHandler();
     }
 

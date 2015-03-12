@@ -21,19 +21,20 @@ import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.ImageResource;
 
 /**
- * {@link ResourceLoader} injects the css on boostrapping from the {@Link ClientModule} and the resources
- * exist in src/main/resources/com.gwtplatform.samples.tab.client.resources/*
+ * {@link ResourceLoader} injects the css on boostrapping from the {@Link ClientModule} and the resources exist in
+ * src/main/resources/com.gwtplatform.samples.tab.client.resources .
  */
 public interface AppResources extends ClientBundle {
     interface Normalize extends CssResource {
     }
-    
+
     interface Style extends CssResource {
         String divBorder();
 
         String logo();
-        
-        String label_error();
+
+        @ClassName("label_error")
+        String labelError();
 
         String container();
 

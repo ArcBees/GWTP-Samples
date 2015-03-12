@@ -39,7 +39,7 @@ public class RoundTabPanel extends BaseTabPanel {
 
     @Inject
     RoundTabPanel(Binder binder,
-                  TabFactory tabFactory) {
+            TabFactory tabFactory) {
         this.tabFactory = tabFactory;
 
         initWidget(binder.createAndBindUi(this));

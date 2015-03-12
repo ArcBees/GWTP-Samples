@@ -47,7 +47,8 @@ public class ProductTabletView extends ViewImpl implements ProductPresenter.MyVi
     HeadingElement title;
 
     @Inject
-    ProductTabletView(Binder binder) {
+    ProductTabletView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

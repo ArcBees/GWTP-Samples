@@ -33,8 +33,9 @@ public class SendTextToServerHandler implements ActionHandler<SendTextToServerAc
     private ServletContext servletContext;
 
     @Inject
-    SendTextToServerHandler(ServletContext servletContext,
-                            Provider<HttpServletRequest> requestProvider) {
+    SendTextToServerHandler(
+            ServletContext servletContext,
+            Provider<HttpServletRequest> requestProvider) {
         this.servletContext = servletContext;
         this.requestProvider = requestProvider;
     }
@@ -53,8 +54,8 @@ public class SendTextToServerHandler implements ActionHandler<SendTextToServerAc
         String serverInfo = servletContext.getServerInfo();
         String userAgent = requestProvider.get().getHeader("User-Agent");
         String response = String.format("Hello, %s!<br/><br/>I am running %s.<br/><br/>" +
-                                        "It looks like you are using:<br/>%s",
-                                        input, serverInfo, userAgent);
+                        "It looks like you are using:<br/>%s",
+                input, serverInfo, userAgent);
 
         return new SendTextToServerResult(response);
     }

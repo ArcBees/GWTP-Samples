@@ -26,7 +26,8 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
  * The String constants are used within the {@link NameToken} annotations, which can't use a method. The static method
  * corresponding to these constants are used within UiBinder which can't access static fields.
  * <p/>
- * Also note the exclamation mark in front of the tokens, this is the first step towards search engine crawling support.
+ * Also note the exclamation mark in front of the tokens, this is the first step towards search engine crawling
+ * support.
  */
 public class NameTokens {
     public static final String localDialogSamplePage = "!localDialogPage";

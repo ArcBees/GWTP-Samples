@@ -32,14 +32,15 @@ import com.gwtplatform.mvp.client.TabPanel;
  * any way they want. A {@link BaseTabPanel} will hold a number of {@link BaseTab}.
  */
 public abstract class BaseTabPanel extends Composite implements TabPanel {
-    Tab currentActiveTab;
 
     @UiField
     public FlowPanel tabContentContainer;
     @UiField
     public FlowPanel tabPanel;
 
-    private final List<BaseTab> tabList = new ArrayList<BaseTab>();
+    private final List<BaseTab> tabList = new ArrayList<>();
+
+    private Tab currentActiveTab;
 
     @Override
     public Tab addTab(TabData tabData, String historyToken) {

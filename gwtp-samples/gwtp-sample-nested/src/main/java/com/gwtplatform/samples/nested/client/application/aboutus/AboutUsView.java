@@ -27,7 +27,8 @@ public class AboutUsView extends ViewImpl implements AboutUsPresenter.MyView {
     }
 
     @Inject
-    public AboutUsView(Binder binder) {
+    public AboutUsView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 }

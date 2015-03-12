@@ -32,8 +32,9 @@ public class InfoPopupView extends PopupViewImpl implements InfoPopupPresenterWi
     }
 
     @Inject
-    InfoPopupView(Binder uiBinder,
-                  EventBus eventBus) {
+    InfoPopupView(
+            Binder uiBinder,
+            EventBus eventBus) {
         super(eventBus);
 
         initWidget(uiBinder.createAndBindUi(this));
