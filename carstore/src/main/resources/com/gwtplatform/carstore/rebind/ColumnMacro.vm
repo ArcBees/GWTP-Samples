@@ -1,18 +1,18 @@
 #* @vtlvariable name="columnsInitializerDefinitions" type="com.gwtplatform.carstore.rebind.ColumnsInitializerDefinitions" *#
 #macro(initColumns $columnsInitializerDefinitions)
     #foreach (${type} in ${columnsInitializerDefinitions.getColumns()})
-        #set($dtoCanonicalName = ${columnsInitializerDefinitions.getDtoCanonicalName()})
-        #set($returnCellCanonicalName = ${type.getReturnCellCanonicalName()})
+    #set($dtoCanonicalName = ${columnsInitializerDefinitions.getDtoCanonicalName()})
+    #set($returnCellCanonicalName = ${type.getReturnCellCanonicalName()})
 
     private void init${type.getMethodCapitalizedName()}Column(CellTable<${dtoCanonicalName}> table) {
-    Column<${dtoCanonicalName}, ${returnCellCanonicalName}> column
-    = new Column<${dtoCanonicalName}, ${returnCellCanonicalName}>(new ${type.getCellCanonicalName()}()) {
-    @Override
-    public ${returnCellCanonicalName} getValue(${dtoCanonicalName} object) {
-    return object.${type.method.getName()}();
-    }};
+        Column<${dtoCanonicalName}, ${returnCellCanonicalName}> column
+                = new Column<${dtoCanonicalName}, ${returnCellCanonicalName}>(new ${type.getCellCanonicalName()}()) {
+                        @Override
+                        public ${returnCellCanonicalName} getValue(${dtoCanonicalName} object) {
+                            return object.${type.method.getName()}();
+                        }};
 
-    table.addColumn(column, "${type.getColumn().headerName()}");
+        table.addColumn(column, "${type.getColumn().headerName()}");
     }
     #end
 #end
@@ -28,7 +28,7 @@
     #foreach (${type} in ${columnsInitializerDefinitions.getColumns()})
 
     public ${type.getMethod().getReturnType().getQualifiedSourceName()} ${type.getMethod().getName()}() {
-    return null;
+        return null;
     }
     #end
 #end

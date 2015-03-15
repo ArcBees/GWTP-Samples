@@ -8,12 +8,12 @@ import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 
 public class ${implName}Impl implements ${implName} {
-@Override
-public void initializeColumns(CellTable<${columnsInitializerDefinitions.getDtoCanonicalName()}> table) {
-#callInitColumns(${columnsInitializerDefinitions})
-}
+    @Override
+    public void initializeColumns(CellTable<${columnsInitializerDefinitions.getDtoCanonicalName()}> table) {
+        #callInitColumns(${columnsInitializerDefinitions})
+    }
 
-#initColumns(${columnsInitializerDefinitions})
+    #initColumns(${columnsInitializerDefinitions})
 
-#initEmptyMethods(${columnsInitializerDefinitions})
+    #initEmptyMethods(${columnsInitializerDefinitions})
 }
