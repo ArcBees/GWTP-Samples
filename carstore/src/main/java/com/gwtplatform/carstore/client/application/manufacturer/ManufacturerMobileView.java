@@ -44,9 +44,10 @@ public class ManufacturerMobileView extends ViewWithUiHandlers<ManufacturerUiHan
     private final SingleSelectionModel<ManufacturerDto> selectionModel;
 
     @Inject
-    ManufacturerMobileView(Binder uiBinder,
-                           ManufacturerCell manufacturerCell,
-                           MobileDataListStyle mobileDataListStyle) {
+    ManufacturerMobileView(
+            Binder uiBinder,
+            ManufacturerCell manufacturerCell,
+            MobileDataListStyle mobileDataListStyle) {
         manufacturerList = new CellList<>(manufacturerCell, mobileDataListStyle);
 
         initWidget(uiBinder.createAndBindUi(this));

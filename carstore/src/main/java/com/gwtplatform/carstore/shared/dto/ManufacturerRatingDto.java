@@ -25,8 +25,9 @@ public class ManufacturerRatingDto implements Dto {
     public ManufacturerRatingDto() {
     }
 
-    public ManufacturerRatingDto(@JsonProperty("manufacturer") String manufacturer,
-                                 @JsonProperty("rating") Double rating) {
+    public ManufacturerRatingDto(
+            @JsonProperty("manufacturer") String manufacturer,
+            @JsonProperty("rating") Double rating) {
         this.manufacturer = manufacturer;
         this.rating = rating;
     }

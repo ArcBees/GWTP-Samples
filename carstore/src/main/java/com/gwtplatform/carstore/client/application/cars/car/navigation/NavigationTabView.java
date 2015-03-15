@@ -26,8 +26,8 @@ import com.google.gwt.user.client.ui.TabBar;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class NavigationTabView extends ViewWithUiHandlers<NavigationUiHandlers> implements
-        NavigationTabPresenter.MyView {
+public class NavigationTabView extends ViewWithUiHandlers<NavigationUiHandlers>
+        implements NavigationTabPresenter.MyView {
     interface Binder extends UiBinder<Widget, NavigationTabView> {
     }
 
@@ -35,7 +35,8 @@ public class NavigationTabView extends ViewWithUiHandlers<NavigationUiHandlers> 
     TabBar tabBar;
 
     @Inject
-    NavigationTabView(Binder uiBinder) {
+    NavigationTabView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

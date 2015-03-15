@@ -47,7 +47,8 @@ public class ApplicationMobileView extends ViewImpl implements ApplicationPresen
     SimplePanel messages;
 
     @Inject
-    ApplicationMobileView(Binder uiBinder) {
+    ApplicationMobileView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

@@ -21,14 +21,16 @@ public class Message {
     private final MessageStyle style;
     private final MessageCloseDelay closeDelay;
 
-    public Message(String message,
-                   MessageStyle style) {
+    public Message(
+            String message,
+            MessageStyle style) {
         this(message, style, MessageCloseDelay.DEFAULT);
     }
 
-    public Message(String message,
-                   MessageStyle style,
-                   MessageCloseDelay closeDelay) {
+    public Message(
+            String message,
+            MessageStyle style,
+            MessageCloseDelay closeDelay) {
         this.message = message;
         this.style = style;
         this.closeDelay = closeDelay;

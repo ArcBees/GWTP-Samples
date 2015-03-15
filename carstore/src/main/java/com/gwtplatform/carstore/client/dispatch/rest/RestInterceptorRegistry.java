@@ -22,7 +22,8 @@ import com.gwtplatform.dispatch.rest.client.interceptor.DefaultRestInterceptorRe
 
 public class RestInterceptorRegistry extends DefaultRestInterceptorRegistry {
     @Inject
-    RestInterceptorRegistry(CarDeleteInterceptor carDeleteInterceptor) {
+    RestInterceptorRegistry(
+            CarDeleteInterceptor carDeleteInterceptor) {
         register(carDeleteInterceptor);
     }
 }

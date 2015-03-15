@@ -32,7 +32,8 @@ public class UnauthorizedView extends ViewImpl implements UnauthorizedPresenter.
     Hyperlink linkToLogin;
 
     @Inject
-    UnauthorizedView(Binder uiBinder) {
+    UnauthorizedView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

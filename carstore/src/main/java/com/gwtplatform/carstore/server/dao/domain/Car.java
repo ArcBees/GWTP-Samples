@@ -30,6 +30,16 @@ import com.gwtplatform.carstore.shared.dto.CarDto;
 @Index
 @Entity
 public class Car extends BaseEntity {
+    private String model;
+    @Load
+    private Ref<Manufacturer> manufacturer;
+    @Load
+    private Ref<CarProperties> carProperties;
+
+    public Car() {
+        this.model = "";
+    }
+
     public static List<CarDto> createDto(List<Car> cars) {
         if (cars == null) {
             return null;
@@ -84,16 +94,6 @@ public class Car extends BaseEntity {
         return car;
     }
 
-    private String model;
-    @Load
-    private Ref<Manufacturer> manufacturer;
-    @Load
-    private Ref<CarProperties> carProperties;
-
-    public Car() {
-        this.model = "";
-    }
-
     public String getModel() {
         return model;
     }
@@ -112,7 +112,6 @@ public class Car extends BaseEntity {
         } else {
             this.manufacturer = null;
         }
-
     }
 
     public CarProperties getCarProperties() {

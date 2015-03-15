@@ -30,7 +30,8 @@ public class CarCell extends AbstractCell<CarDto> {
     private final Renderer uiRenderer;
 
     @Inject
-    CarCell(Renderer uiRenderer) {
+    CarCell(
+            Renderer uiRenderer) {
         this.uiRenderer = uiRenderer;
     }
 

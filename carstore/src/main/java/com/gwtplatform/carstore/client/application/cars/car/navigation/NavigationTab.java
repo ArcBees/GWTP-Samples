@@ -17,9 +17,9 @@
 package com.gwtplatform.carstore.client.application.cars.car.navigation;
 
 public interface NavigationTab {
-    public String getName();
+    String getName();
 
-    public String getToken();
+    String getToken();
 
-    public boolean isClosable();
+    boolean isClosable();
 }

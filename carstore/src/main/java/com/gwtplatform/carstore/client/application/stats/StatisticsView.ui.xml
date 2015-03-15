@@ -1,6 +1,6 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-        xmlns:g='urn:import:com.google.gwt.user.client.ui'
-        xmlns:datepicker="urn:import:com.google.gwt.user.datepicker.client">
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:datepicker="urn:import:com.google.gwt.user.datepicker.client">
 
     <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 

@@ -27,10 +27,11 @@ public class UserDto extends BaseEntity {
         lastName = "";
     }
 
-    public UserDto(String username,
-                   String hashPassword,
-                   String firstName,
-                   String lastName) {
+    public UserDto(
+            String username,
+            String hashPassword,
+            String firstName,
+            String lastName) {
         this.username = username;
         this.hashPassword = hashPassword;
         this.firstName = firstName;

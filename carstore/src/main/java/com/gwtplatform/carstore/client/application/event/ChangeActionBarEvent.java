@@ -31,22 +31,24 @@ public class ChangeActionBarEvent extends GwtEvent<ChangeActionBarEvent.ChangeAc
         void onChangeActionBar(ChangeActionBarEvent event);
     }
 
+    private static final Type<ChangeActionBarHandler> TYPE = new Type<>();
+
+    private List<ActionType> actions;
+    private Boolean tabsVisible;
+
+    ChangeActionBarEvent(
+            List<ActionType> actions,
+            Boolean tabsVisible) {
+        this.actions = actions;
+        this.tabsVisible = tabsVisible;
+    }
+
     public static Type<ChangeActionBarHandler> getType() {
         return TYPE;
     }
 
     public static void fire(HasHandlers source, List<ActionType> actions, Boolean tabsVisible) {
         source.fireEvent(new ChangeActionBarEvent(actions, tabsVisible));
-    }
-
-    private static final Type<ChangeActionBarHandler> TYPE = new Type<>();
-
-    private List<ActionType> actions;
-    private Boolean tabsVisible;
-
-    public ChangeActionBarEvent(List<ActionType> actions, Boolean tabsVisible) {
-        this.actions = actions;
-        this.tabsVisible = tabsVisible;
     }
 
     @Override

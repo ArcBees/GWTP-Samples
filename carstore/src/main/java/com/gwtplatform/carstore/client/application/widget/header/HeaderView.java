@@ -48,7 +48,9 @@ public class HeaderView extends ViewWithUiHandlers<HeaderUiHandlers> implements 
     private final WidgetResources widgetRes;
 
     @Inject
-    HeaderView(Binder uiBinder, WidgetResources widgetResources) {
+    HeaderView(
+            Binder uiBinder,
+            WidgetResources widgetResources) {
         this.widgetRes = widgetResources;
 
         initWidget(uiBinder.createAndBindUi(this));

@@ -29,7 +29,8 @@ public class CarPresenterProvider implements Provider<CarPresenter> {
     private CarDto carDto;
 
     @Inject
-    CarPresenterProvider(CarPresenterFactory carPresenterFactory) {
+    CarPresenterProvider(
+            CarPresenterFactory carPresenterFactory) {
         this.carPresenterFactory = carPresenterFactory;
     }
 

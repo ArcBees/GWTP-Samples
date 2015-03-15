@@ -81,7 +81,7 @@ public class BasePage {
     }
 
     protected WebElement waitUntilElementIsClickable(final WebElement parent,
-                                                     final By locator) {
+            final By locator) {
         final WebElement childElement = webDriverWait().until(new Function<WebDriver, WebElement>() {
             @Override
             public WebElement apply(WebDriver input) {

@@ -25,6 +25,15 @@ public class ActionBarVisibilityEvent extends GwtEvent<ActionBarVisibilityEvent.
         void onActionBarVisible(ActionBarVisibilityEvent event);
     }
 
+    private static final Type<ActionBarVisibilityHandler> TYPE = new Type<>();
+
+    private final boolean visible;
+
+    ActionBarVisibilityEvent(
+            boolean visible) {
+        this.visible = visible;
+    }
+
     public static Type<ActionBarVisibilityHandler> getType() {
         return TYPE;
     }
@@ -33,16 +42,7 @@ public class ActionBarVisibilityEvent extends GwtEvent<ActionBarVisibilityEvent.
         source.fireEvent(new ActionBarVisibilityEvent(visible));
     }
 
-    private static final Type<ActionBarVisibilityHandler> TYPE = new Type<>();
-
-    private final Boolean visible;
-
-    public ActionBarVisibilityEvent(final Boolean visible) {
-        this.visible = visible;
-    }
-
-
-    public Boolean isVisible() {
+    public boolean isVisible() {
         return visible;
     }
 

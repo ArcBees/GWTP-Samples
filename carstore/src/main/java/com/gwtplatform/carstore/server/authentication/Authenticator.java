@@ -34,11 +34,12 @@ public class Authenticator {
     private final UserSessionDao userSessionDao;
 
     @Inject
-    Authenticator(UserDao userDao,
-                  Provider<HttpSession> sessionProvider,
-                  PasswordSecurity passwordSecurity,
-                  CurrentUserDtoProvider currentUserDtoProvider,
-                  UserSessionDao userSessionDao) {
+    Authenticator(
+            UserDao userDao,
+            Provider<HttpSession> sessionProvider,
+            PasswordSecurity passwordSecurity,
+            CurrentUserDtoProvider currentUserDtoProvider,
+            UserSessionDao userSessionDao) {
         this.userDao = userDao;
         this.sessionProvider = sessionProvider;
         this.passwordSecurity = passwordSecurity;
@@ -83,7 +84,7 @@ public class Authenticator {
     }
 
     /**
-     * Session support has to be enabled in the appengine-web.xml
+     * Session support has to be enabled in the appengine-web.xml.
      */
     private void persistHttpSessionCookie(UserDto user) {
         HttpSession session = sessionProvider.get();

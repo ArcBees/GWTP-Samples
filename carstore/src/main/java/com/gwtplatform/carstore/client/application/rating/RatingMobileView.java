@@ -41,20 +41,20 @@ public class RatingMobileView extends ViewWithUiHandlers<RatingUiHandlers> imple
     CellList<RatingDto> ratingList;
 
     private final ListDataProvider<RatingDto> ratingDataProvider;
-    private final SingleSelectionModel<RatingDto> selectionModel;
 
     @Inject
-    RatingMobileView(Binder uiBinder,
-                     RatingCellFactory ratingCellFactory,
-                     MobileDataListStyle mobileDataListStyle) {
+    RatingMobileView(
+            Binder uiBinder,
+            RatingCellFactory ratingCellFactory,
+            MobileDataListStyle mobileDataListStyle) {
         ratingList = new CellList<>(ratingCellFactory.create(setupRemoveAction()), mobileDataListStyle);
 
         initWidget(uiBinder.createAndBindUi(this));
 
         ratingDataProvider = new ListDataProvider<>();
         ratingDataProvider.addDataDisplay(ratingList);
-        selectionModel = new SingleSelectionModel<>();
-        ratingList.setSelectionModel(selectionModel);
+
+        ratingList.setSelectionModel(new SingleSelectionModel<>());
     }
 
     @Override

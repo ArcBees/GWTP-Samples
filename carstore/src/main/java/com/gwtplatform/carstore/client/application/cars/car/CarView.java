@@ -54,7 +54,8 @@ public class CarView extends ViewWithUiHandlers<CarUiHandlers> implements MyView
     private final Driver driver;
 
     @Inject
-    CarView(Binder uiBinder,
+    CarView(
+            Binder uiBinder,
             Driver driver,
             CarPropertiesEditor carProperties) {
         this.driver = driver;

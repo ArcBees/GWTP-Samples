@@ -32,7 +32,8 @@ public class ReportCell extends AbstractCell<ManufacturerRatingDto> {
     private final NumberFormat numberFormat;
 
     @Inject
-    ReportCell(Renderer uiRenderer) {
+    ReportCell(
+            Renderer uiRenderer) {
         this.uiRenderer = uiRenderer;
         this.numberFormat = NumberFormat.getFormat("#,##0.0#");
     }

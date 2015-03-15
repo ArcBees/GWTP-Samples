@@ -1,6 +1,6 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-        xmlns:g='urn:import:com.google.gwt.user.client.ui'
-        xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
 
     <ui:with field="resources" type="com.gwtplatform.carstore.client.resources.AppResources"/>
     <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>

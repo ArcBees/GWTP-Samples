@@ -26,10 +26,10 @@ import com.google.gwt.view.client.HasRows;
 public class ShowMorePagerPanel extends AbstractPager {
     private static final int DEFAULT_INCREMENT = 20;
 
-    private int incrementSize = DEFAULT_INCREMENT;
-    private int lastScrollPos = 0;
-
     private final ScrollPanel scrollable = new ScrollPanel();
+
+    private int incrementSize = DEFAULT_INCREMENT;
+    private int lastScrollPos;
 
     public ShowMorePagerPanel(int pageSize) {
         incrementSize = pageSize;
@@ -57,7 +57,7 @@ public class ShowMorePagerPanel extends AbstractPager {
                 int maxScrollTop = scrollable.getWidget().getOffsetHeight()
                         - scrollable.getOffsetHeight();
                 if (lastScrollPos >= maxScrollTop - 16) {
-                    //We are near the end, so increase the page size.
+                    // We are near the end, so increase the page size.
                     int newPageSize = Math.min(display.getVisibleRange()
                             .getLength() + incrementSize, display.getRowCount());
                     display.setVisibleRange(0, newPageSize);

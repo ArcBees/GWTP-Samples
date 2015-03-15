@@ -4,5 +4,5 @@
 <module rename-to='CarStore'>
     <inherits name="com.gwtplatform.carstore.Debug"/>
 
-    <add-linker name="xsiframe" />
+    <add-linker name="xsiframe"/>
 </module>

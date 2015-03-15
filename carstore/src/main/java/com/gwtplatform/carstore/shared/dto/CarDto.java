@@ -31,9 +31,10 @@ public class CarDto extends BaseEntity {
         this.ratings = new ArrayList<>();
     }
 
-    public CarDto(String model,
-                  ManufacturerDto manufacturer,
-                  CarPropertiesDto carProperties) {
+    public CarDto(
+            String model,
+            ManufacturerDto manufacturer,
+            CarPropertiesDto carProperties) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.carProperties = carProperties;

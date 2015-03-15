@@ -50,9 +50,10 @@ public class CarsMobileView extends ViewWithUiHandlers<CarsUiHandlers> implement
     private SingleSelectionModel<CarDto> selectionModel;
 
     @Inject
-    CarsMobileView(Binder uiBinder,
-                   CarCell carCell,
-                   MobileDataListStyle mobileDataListStyle) {
+    CarsMobileView(
+            Binder uiBinder,
+            CarCell carCell,
+            MobileDataListStyle mobileDataListStyle) {
         pagerPanel = new ShowMorePagerPanel(PAGE_SIZE);
         carList = new CellList<>(carCell, mobileDataListStyle);
         selectionModel = new SingleSelectionModel<>();

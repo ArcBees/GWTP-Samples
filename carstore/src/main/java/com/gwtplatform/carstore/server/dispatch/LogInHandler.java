@@ -35,11 +35,14 @@ public class LogInHandler extends AbstractActionHandler<LogInAction, LogInResult
     private final Authenticator authenticator;
     private final UserSessionDao loginCookieDao;
     private final Logger logger;
-    
+
     private boolean isLoggedIn;
 
     @Inject
-    LogInHandler(Logger logger, Authenticator authenticator, UserSessionDao loginCookieDao) {
+    LogInHandler(
+            Logger logger,
+            Authenticator authenticator,
+            UserSessionDao loginCookieDao) {
         super(LogInAction.class);
 
         this.logger = logger;

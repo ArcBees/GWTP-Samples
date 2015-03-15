@@ -23,8 +23,9 @@ public class RatingDto extends BaseEntity {
     public RatingDto() {
     }
 
-    public RatingDto(CarDto car,
-                     Integer rating) {
+    public RatingDto(
+            CarDto car,
+            Integer rating) {
         this.car = car;
         this.rating = rating;
     }

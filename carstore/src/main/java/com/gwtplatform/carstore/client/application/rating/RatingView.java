@@ -51,8 +51,9 @@ public class RatingView extends ViewWithUiHandlers<RatingUiHandlers> implements 
     private final ListDataProvider<RatingDto> ratingDataProvider;
 
     @Inject
-    RatingView(Binder uiBinder,
-               RatingColumnsDefinition ratingColumnInitializer) {
+    RatingView(
+            Binder uiBinder,
+            RatingColumnsDefinition ratingColumnInitializer) {
         this.ratingColumnInitializer = ratingColumnInitializer;
 
         initRatingGrid();

@@ -51,7 +51,8 @@ public class ManufacturerView extends ViewWithUiHandlers<ManufacturerUiHandlers>
     private final ListDataProvider<ManufacturerDto> manufacturerDataProvider;
 
     @Inject
-    ManufacturerView(Binder uiBinder) {
+    ManufacturerView(
+            Binder uiBinder) {
         initManufacturerGrid();
 
         initWidget(uiBinder.createAndBindUi(this));

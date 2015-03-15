@@ -34,8 +34,9 @@ public class UserSession implements Dto {
     public UserSession() {
     }
 
-    public UserSession(Long userId,
-                       String cookie) {
+    public UserSession(
+            Long userId,
+            String cookie) {
         super();
 
         this.userId = userId;

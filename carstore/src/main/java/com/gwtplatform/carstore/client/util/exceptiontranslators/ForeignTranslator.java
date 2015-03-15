@@ -26,7 +26,8 @@ public class ForeignTranslator implements Translator {
 
     private final MatchResult matchResult;
 
-    public ForeignTranslator(final String message) {
+    public ForeignTranslator(
+            String message) {
         matchResult = regExp.exec(message);
     }
 

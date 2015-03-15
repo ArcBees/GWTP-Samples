@@ -31,7 +31,8 @@ public class StatsStepDefs {
     private final StatsPage statsPage;
 
     @Inject
-    StatsStepDefs(StatsPage statsPage) {
+    StatsStepDefs(
+            StatsPage statsPage) {
         this.statsPage = statsPage;
     }
 

@@ -30,7 +30,8 @@ public class ManufacturerCell extends AbstractCell<ManufacturerDto> {
     private final Renderer uiRenderer;
 
     @Inject
-    ManufacturerCell(Renderer uiRenderer) {
+    ManufacturerCell(
+            Renderer uiRenderer) {
         this.uiRenderer = uiRenderer;
     }
 

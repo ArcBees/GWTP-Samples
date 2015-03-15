@@ -45,9 +45,10 @@ public class EditManufacturerView extends PopupViewWithUiHandlers<EditManufactur
     private final Driver driver;
 
     @Inject
-    EditManufacturerView(Binder uiBinder,
-                         Driver driver,
-                         EventBus eventBus) {
+    EditManufacturerView(
+            Binder uiBinder,
+            Driver driver,
+            EventBus eventBus) {
         super(eventBus);
 
         this.driver = driver;

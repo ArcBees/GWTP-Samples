@@ -29,7 +29,8 @@ public class RatingResourceImpl implements RatingResource {
     private final RatingDao ratingDao;
 
     @Inject
-    RatingResourceImpl(RatingDao ratingDao) {
+    RatingResourceImpl(
+            RatingDao ratingDao) {
         this.ratingDao = ratingDao;
     }
 

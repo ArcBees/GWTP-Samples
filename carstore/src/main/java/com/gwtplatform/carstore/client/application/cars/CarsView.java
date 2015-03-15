@@ -60,7 +60,8 @@ public class CarsView extends ViewWithUiHandlers<CarsUiHandlers> implements MyVi
     private AsyncDataProvider<CarDto> asyncDataProvider;
 
     @Inject
-    CarsView(Binder uiBinder) {
+    CarsView(
+            Binder uiBinder) {
         initCarGrid();
 
         initWidget(uiBinder.createAndBindUi(this));

@@ -22,6 +22,7 @@ import com.gwtplatform.carstore.cucumber.application.ApplicationPage;
 import com.gwtplatform.carstore.cucumber.application.UnauthorizedPage;
 import com.gwtplatform.carstore.cucumber.application.login.LoginPage;
 import com.gwtplatform.carstore.cucumber.application.widgets.HeaderWidgetPage;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.runtime.java.guice.ScenarioScoped;
@@ -36,10 +37,11 @@ public class LoginStepdefs {
     private final UnauthorizedPage unauthorizedPage;
 
     @Inject
-    LoginStepdefs(HeaderWidgetPage headerWidgetPage,
-                  LoginPage loginPage,
-                  ApplicationPage applicationPage,
-                  UnauthorizedPage unauthorizedPage) {
+    LoginStepdefs(
+            HeaderWidgetPage headerWidgetPage,
+            LoginPage loginPage,
+            ApplicationPage applicationPage,
+            UnauthorizedPage unauthorizedPage) {
         this.headerWidgetPage = headerWidgetPage;
         this.loginPage = loginPage;
         this.applicationPage = applicationPage;

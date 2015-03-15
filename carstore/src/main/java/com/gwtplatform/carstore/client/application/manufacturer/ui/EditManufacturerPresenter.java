@@ -45,7 +45,7 @@ public class EditManufacturerPresenter extends PresenterWidget<MyView> implement
     private ManufacturerDto manufacturerDto;
 
     @Inject
-    public EditManufacturerPresenter(
+    EditManufacturerPresenter(
             EventBus eventBus,
             MyView view,
             ResourceDelegate<ManufacturersResource> manufacturerResourceDelegate,

@@ -71,7 +71,7 @@
     height: auto;
     z-index: 100;
     -moz-box-shadow: 0 0 5px #888;
-    -webkit-box-shadow: 0 0 5px#888;
+    -webkit-box-shadow: 0 0 5px #888;
     box-shadow: 0 0 5px #888;
 }
 
@@ -86,7 +86,7 @@
 
 .gwt-TabBar .gwt-TabBarItem {
     background: none;
-    color: #aeaeae ;
+    color: #aeaeae;
 }
 
 .gwt-TabBar .gwt-TabBarItem-wrapper {
