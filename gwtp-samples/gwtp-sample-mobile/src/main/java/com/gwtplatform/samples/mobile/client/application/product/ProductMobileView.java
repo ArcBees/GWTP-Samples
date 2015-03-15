@@ -47,7 +47,8 @@ public class ProductMobileView extends ViewImpl implements ProductPresenter.MyVi
     HeadingElement title;
 
     @Inject
-    ProductMobileView(Binder binder) {
+    ProductMobileView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gwtplatform</groupId>
@@ -67,6 +67,8 @@
         <gwtp.version>1.5-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwt.style>OBF</gwt.style>
+        <gwt-polymer.version>0.5.5-SNAPSHOT</gwt-polymer.version>
+        <gwtquery.version>1.4.3</gwtquery.version>
 
         <!-- server -->
         <gae.version>1.9.17</gae.version>
@@ -84,6 +86,10 @@
         <maven.compiler.version>2.3.2</maven.compiler.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
+
+        <checkstyle.version>6.3</checkstyle.version>
+        <arcbees-checkstyle.version>1.1-SNAPSHOT</arcbees-checkstyle.version>
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
@@ -99,7 +105,6 @@
     </properties>
 
     <repositories>
-        <!-- Use GWTP snapshots for the latest and greatest -->
         <repository>
             <id>sonatype.snapshots</id>
             <name>Sonatype snapshot repository</name>
@@ -252,6 +257,46 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>/checkstyle.xml</configLocation>
+                    <suppressionsLocation>/suppressions.xml</suppressionsLocation>
+                    <propertyExpansion>basedir=${basedir}</propertyExpansion>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.arcbees</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${arcbees-checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>checkstyle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencyManagement>

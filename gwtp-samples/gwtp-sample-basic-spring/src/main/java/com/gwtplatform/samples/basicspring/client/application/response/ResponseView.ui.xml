@@ -9,8 +9,14 @@
             <div class="{res.style.container}">
                 <h1>GWTP Basic Spring Example</h1>
                 <ul>
-                    <li><a href="https://github.com/ArcBees/GWTP">[ Project Home ]</a></li>
-                    <li><a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic-spring">[ Source ]</a></li>
+                    <li>
+                        <a href="https://github.com/ArcBees/GWTP">[ Project Home ]</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ArcBees/GWTP-Samples/tree/master/gwtp-samples/gwtp-sample-basic-spring">
+                            [ Source ]
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -18,18 +24,22 @@
         <div class="{res.style.container}">
             <h2>Remote Procedure Call</h2>
 
-            <p><strong>Sending name to server:</strong></p>
+            <p>
+                <strong>Sending name to server:</strong>
+            </p>
             <div class="{res.style.box}">
                 <g:HTML ui:field="textToServer"/>
             </div>
 
-            <p><strong>Server replies:</strong></p>
+            <p>
+                <strong>Server replies:</strong>
+            </p>
             <div class="{res.style.box}">
                 <g:HTML ui:field="serverResponse"/>
             </div>
-    
+
             <g:Button ui:field="closeButton">Close</g:Button>
         </div>
-    
+
     </g:HTMLPanel>
 </ui:UiBinder> 

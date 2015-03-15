@@ -83,8 +83,8 @@ public class ApplicationPresenter
 
     @Inject
     ApplicationPresenter(EventBus eventBus,
-                         MyView view,
-                         MyProxy proxy) {
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, SLOT_ChangeTab, RevealType.Root);
     }
 

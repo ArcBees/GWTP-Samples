@@ -30,7 +30,8 @@ public class AdminAreaView extends ViewImpl implements AdminAreaPresenter.MyView
     }
 
     @Inject
-    AdminAreaView(Binder uiBinder) {
+    AdminAreaView(
+            Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 }

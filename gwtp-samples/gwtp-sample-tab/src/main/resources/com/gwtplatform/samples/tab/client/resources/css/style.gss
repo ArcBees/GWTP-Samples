@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
 }
 
-@media(max-width: 840px) {
+@media (max-width: 840px) {
     .container {
         width: 100%;
         padding: 0 10px;
@@ -95,7 +95,7 @@ nav > ul > li > a:hover {
 
 h2 {
     font-size: 1.6rem;
-    
+
     margin-bottom: 1rem;
 }
 
@@ -126,7 +126,7 @@ p {
 .panel a {
     text-decoration: none;
     color: #000;
-    
+
     border-bottom: 1px dotted #333;
 }
 
@@ -161,7 +161,7 @@ input {
 
 .links {
     font-style: italic;
-    
+
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -169,7 +169,7 @@ input {
 .topMessage {
     background-color: yellow;
     font-weight: bold;
-    
+
     padding: 5px;
 }
 
@@ -184,19 +184,19 @@ input {
 .anchor {
     text-decoration: underline;
     font-weight: bold;
-    
+
     cursor: pointer;
 }
 
-.confirmationLink a, 
-.confirmationLink a:visited, 
+.confirmationLink a,
+.confirmationLink a:visited,
 .confirmationLink a:hover {
     color: C_PANEL_LIGHT;
     background-color: #4c6e2e;
 
     display: inline-block;
     padding: 10px 10px 8px;
-    
+
     cursor: pointer;
 }
 
@@ -208,7 +208,7 @@ input {
 
 .links {
     font-style: italic;
-    
+
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -217,13 +217,13 @@ input {
     background-color: C_PANEL_DARK;
     color: C_PANEL_LIGHT;
     font-weight: 300;
-    
+
     border: 3px double C_PANEL_LIGHT;
     padding: 12px 15px 5px;
 
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
 footer {

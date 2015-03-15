@@ -57,9 +57,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<>();
 
     @Inject
-    ApplicationPresenter(EventBus eventBus,
-                         MyView view,
-                         MyProxy proxy) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy) {
         super(eventBus, view, proxy, RevealType.Root);
     }
 

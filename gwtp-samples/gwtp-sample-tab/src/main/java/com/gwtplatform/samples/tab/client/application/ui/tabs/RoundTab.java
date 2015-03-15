@@ -37,8 +37,8 @@ public class RoundTab extends BaseTab {
 
     @Inject
     RoundTab(Binder uiBinder,
-             @Assisted TabData tabData,
-             @Assisted Gatekeeper gatekeeper) {
+            @Assisted TabData tabData,
+            @Assisted Gatekeeper gatekeeper) {
         super(tabData);
 
         this.gatekeeper = gatekeeper;

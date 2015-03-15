@@ -23,14 +23,15 @@ import com.gwtplatform.samples.mobile.shared.dispatch.Product;
 
 @Singleton
 public class ProductDatabase {
-    private Product[] products = { new Product("jPad Wifi 16GB", Product.FLAG_SPECIAL, "$529.00", 13),
+    private Product[] products = {new Product("jPad Wifi 16GB", Product.FLAG_SPECIAL, "$529.00", 13),
             new Product("jPad Wifi 32GB", 0, "$649.00", 77),
             new Product("jPad Wifi 64GB", Product.FLAG_FAVORITE | Product.FLAG_SPECIAL, "$719.00", 5),
             new Product("jPad 3G 16GB", 0, "$679.00", 85),
             new Product("jPad 3G 32GB", Product.FLAG_FAVORITE, "$779.00", 123),
             new Product("jPad 3G 64GB", Product.FLAG_FAVORITE | Product.FLAG_SPECIAL, "$859.00", 0),
             new Product("jPhone 3G", Product.FLAG_SPECIAL, "$79.95", 823),
-            new Product("jPhone 3GS", Product.FLAG_FAVORITE, "$199.95", 1), new Product("Nexus Two", 0, "$529.95", 221) };
+            new Product("jPhone 3GS", Product.FLAG_FAVORITE, "$199.95", 1), new Product("Nexus Two", 0, "$529.95",
+            221)};
 
     public Product get(int id) {
         for (Product product : products) {

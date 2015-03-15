@@ -33,6 +33,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.runtime.java.guice.ScenarioScoped;
 
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_LOGIN;
 import static org.junit.Assert.assertTrue;
 
 @ScenarioScoped
@@ -80,7 +81,7 @@ public class BasicStepdefs {
 
     @Given("^I'm logged in$")
     public void iAmLoggedIn() {
-        iNavigateTo("login");
+        iNavigateTo(DBG_LOGIN);
         enterValidCredential("valid");
         applicationPage.waitUntilDomIsLoaded("manufacturer");
     }

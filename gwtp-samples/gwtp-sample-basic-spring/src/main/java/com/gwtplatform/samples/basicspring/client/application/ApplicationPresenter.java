@@ -24,8 +24,8 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 import com.gwtplatform.samples.basicspring.client.place.TokenParameters;
 import com.gwtplatform.samples.basicspring.shared.FieldVerifier;
@@ -52,10 +52,11 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    ApplicationPresenter(EventBus eventBus,
-                         MyView view,
-                         MyProxy proxy,
-                         PlaceManager placeManager) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

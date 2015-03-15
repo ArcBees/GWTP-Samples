@@ -35,10 +35,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         implements ApplicationUiHandlers {
     @ProxyStandard
     @NameToken(NameTokens.home)
-    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
+    interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
-    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
+    interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void resetAndFocus();
 
         void setError(String errorText);
@@ -47,10 +47,11 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final PlaceManager placeManager;
 
     @Inject
-    ApplicationPresenter(EventBus eventBus,
-                         MyView view,
-                         MyProxy proxy,
-                         PlaceManager placeManager) {
+    ApplicationPresenter(
+            EventBus eventBus,
+            MyView view,
+            MyProxy proxy,
+            PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;

@@ -17,7 +17,7 @@
 package com.gwtplatform.samples.tab.client.resources;
 
 public class Variables {
-    /* -- Colors -- */ 
+    /* -- Colors -- */
     public static final String C_PANEL_DARK = "#333";
     public static final String C_PANEL_LIGHT = "#eaeaea";
     public static final String C_PANEL_MEDIUM = "#ccc";

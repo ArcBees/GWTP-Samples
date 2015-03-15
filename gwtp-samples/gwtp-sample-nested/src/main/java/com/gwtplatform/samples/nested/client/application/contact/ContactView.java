@@ -31,7 +31,8 @@ public class ContactView extends ViewImpl implements ContactPresenter.MyView {
     Label navigationHistory;
 
     @Inject
-    ContactView(Binder binder) {
+    ContactView(
+            Binder binder) {
         initWidget(binder.createAndBindUi(this));
     }
 

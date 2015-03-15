@@ -16,7 +16,6 @@
 
 package com.gwtplatform.samples.basic.shared.dispatch;
 
-
 import com.gwtplatform.dispatch.rpc.shared.Result;
 
 /**

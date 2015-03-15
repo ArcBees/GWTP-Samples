@@ -43,10 +43,11 @@ public abstract class ContactPresenterBase<Proxy_ extends Proxy<?>> extends
         void setNavigationHistory(String navigationHistory);
     }
 
-    ContactPresenterBase(EventBus eventBus,
-                         MyView view,
-                         Proxy_ proxy,
-                         GwtEvent.Type<RevealContentHandler<?>> slot) {
+    ContactPresenterBase(
+            EventBus eventBus,
+            MyView view,
+            Proxy_ proxy,
+            GwtEvent.Type<RevealContentHandler<?>> slot) {
         super(eventBus, view, proxy, slot);
     }
 

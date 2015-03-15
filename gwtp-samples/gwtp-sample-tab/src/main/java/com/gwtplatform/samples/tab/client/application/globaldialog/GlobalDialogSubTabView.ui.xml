@@ -1,13 +1,18 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-        xmlns:g="urn:import:com.google.gwt.user.client.ui">
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="resources" type="com.gwtplatform.samples.tab.client.resources.AppResources"/>
 
     <g:HTMLPanel>
         <h2>Global Dialog Sample</h2>
 
-        <p>Clicking on the <strong>Dialogs</strong> tab will always come back to the <strong>Global</strong> tab.</p>
+        <p>Clicking on the
+            <strong>Dialogs</strong>
+            tab will always come back to the
+            <strong>Global</strong>
+            tab.
+        </p>
 
         <p>
             <g:Button ui:field="globalDialog">Launch global dialog</g:Button>
@@ -20,23 +25,23 @@
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid amet, consequuntur ducimus et 
-            exercitationem ipsum, labore libero mollitia nihil perferendis rem repellendus repudiandae sunt temporibus 
-            totam ullam veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur 
-            culpa, cupiditate doloremque, incidunt laborum molestias mollitia nobis optio placeat praesentium quibusdam 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid amet, consequuntur ducimus et
+            exercitationem ipsum, labore libero mollitia nihil perferendis rem repellendus repudiandae sunt temporibus
+            totam ullam veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur
+            culpa, cupiditate doloremque, incidunt laborum molestias mollitia nobis optio placeat praesentium quibusdam
             quos repellendus reprehenderit sit sunt tempora unde, ut.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad culpa, doloribus eveniet maiores minus officiis 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad culpa, doloribus eveniet maiores minus officiis
             quis quisquam quod quos ratione, sed sunt veniam voluptatibus. Culpa et illo molestias nulla voluptatibus.
         </p>
-        
+
         <p>
-            Doloremque et harum ipsum minus molestias placeat voluptatibus. Asperiores consequatur ex hic incidunt iure 
-            magni nam natus nesciunt officiis, reiciendis repudiandae sunt tempora tempore ullam voluptates! Architecto 
-            blanditiis dignissimos recusandae? Ex impedit quod similique! Amet atque deleniti eos, ex fugiat harum iste, 
-            laboriosam magnam minima minus mollitia, nam nemo nostrum odit pariatur quod sapiente sed tenetur ullam 
+            Doloremque et harum ipsum minus molestias placeat voluptatibus. Asperiores consequatur ex hic incidunt iure
+            magni nam natus nesciunt officiis, reiciendis repudiandae sunt tempora tempore ullam voluptates! Architecto
+            blanditiis dignissimos recusandae? Ex impedit quod similique! Amet atque deleniti eos, ex fugiat harum iste,
+            laboriosam magnam minima minus mollitia, nam nemo nostrum odit pariatur quod sapiente sed tenetur ullam
             velit veritatis voluptates.
         </p>
     </g:HTMLPanel>

@@ -38,8 +38,9 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     SimpleTabPanel tabPanel;
 
     @Inject
-    HomeView(Binder uiBinder,
-             SimpleTabPanel tabPanel) {
+    HomeView(
+            Binder uiBinder,
+            SimpleTabPanel tabPanel) {
         this.tabPanel = tabPanel;
 
         initWidget(uiBinder.createAndBindUi(this));

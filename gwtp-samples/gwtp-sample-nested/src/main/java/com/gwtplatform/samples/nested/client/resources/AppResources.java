@@ -24,7 +24,8 @@ public interface AppResources extends ClientBundle {
     }
 
     interface Style extends CssResource {
-        String label_error();
+        @ClassName("label_error")
+        String labelError();
 
         String container();
 
@@ -35,7 +36,7 @@ public interface AppResources extends ClientBundle {
 
     @Source("css/normalize.gss")
     Normalize normalize();
-    
+
     @Source("css/style.gss")
-    public Style style();
+    Style style();
 }

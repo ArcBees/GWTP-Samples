@@ -3,6 +3,7 @@
              xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
 
     <ui:with field="resources" type="com.gwtplatform.carstore.client.resources.AppResources"/>
+    <ui:import field="com.gwtplatform.carstore.client.debug.DebugIds.*"/>
 
     <ui:style>
         .tableWrapper {
@@ -10,19 +11,19 @@
         }
     </ui:style>
 
-    <g:HTMLPanel debugId="ratingPanel">
+    <g:HTMLPanel>
         <div class="{resources.styles.bigTitle}">
             <h2>
                 <g:InlineLabel text="Ratings"/>
             </h2>
             <div>
-                <g:Button ui:field="create" debugId="ratingCreate" styleName="{resources.styles.addAction}"/>
+                <g:Button ui:field="create" debugId="{DBG_RATING_CREATE}" styleName="{resources.styles.addAction}"/>
             </div>
             <span style="display: block; clear: both;"/>
         </div>
 
         <div class="{style.tableWrapper}">
-            <cell:CellTable ui:field="ratingGrid" width="100%" debugId="ratings"/>
+            <cell:CellTable ui:field="ratingGrid" width="100%" debugId="{DBG_RATINGS}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

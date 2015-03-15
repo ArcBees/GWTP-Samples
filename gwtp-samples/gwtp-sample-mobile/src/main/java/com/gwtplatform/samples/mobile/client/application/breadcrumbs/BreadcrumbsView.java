@@ -30,8 +30,8 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 /**
- * This is the top-level view of the application. Every time another presenter wants to reveal itself,
- * {@link BreadcrumbPresenterView} will add its content of the target inside the {@code mainContantPanel}.
+ * This is the top-level view of the application. Every time another presenter wants to reveal itself, {@link
+ * BreadcrumbPresenterView} will add its content of the target inside the {@code mainContantPanel}.
  */
 public class BreadcrumbsView extends ViewImpl implements BreadcrumbsPresenter.MyView {
     interface Binder extends UiBinder<Widget, BreadcrumbsView> {
@@ -45,8 +45,9 @@ public class BreadcrumbsView extends ViewImpl implements BreadcrumbsPresenter.My
     private final PlaceManager placeManager;
 
     @Inject
-    BreadcrumbsView(Binder binder,
-                    PlaceManager placeManager) {
+    BreadcrumbsView(
+            Binder binder,
+            PlaceManager placeManager) {
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));
