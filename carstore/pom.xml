@@ -46,7 +46,7 @@
         <gwt-maven-plugin.version>2.7.0</gwt-maven-plugin.version>
         <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
 
-        <arcbees-checkstyle.version>1.1-SNAPSHOT</arcbees-checkstyle.version>
+        <arcbees-checkstyle.version>1.1</arcbees-checkstyle.version>
         <checkstyle.version>6.3</checkstyle.version>
 
         <!-- Settings -->
