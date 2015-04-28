@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2011 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -17,13 +17,9 @@
 package com.gwtplatform.samples.tab.client.gin;
 
 import com.google.inject.Singleton;
-import com.gwtplatform.mvp.client.annotations.DefaultPlace;
-import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
-import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
-import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.tab.client.application.ApplicationModule;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 import com.gwtplatform.samples.tab.client.security.CurrentUser;
@@ -32,16 +28,15 @@ import com.gwtplatform.samples.tab.client.security.IsAdminGatekeeper;
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new DefaultModule.Builder()
+                .defaultPlace(NameTokens.homeNewsPage)
+                .errorPlace(NameTokens.homeNewsPage)
+                .unauthorizedPlace(NameTokens.homeNewsPage)
+                .build());
         install(new ApplicationModule());
 
         bind(CurrentUser.class).in(Singleton.class);
         bind(IsAdminGatekeeper.class).in(Singleton.class);
-
-        // DefaultPlaceManager Constants
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homeNewsPage);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homeNewsPage);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homeNewsPage);
 
         // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");

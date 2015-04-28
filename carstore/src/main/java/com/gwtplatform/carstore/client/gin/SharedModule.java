@@ -24,34 +24,31 @@ import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.client.security.SecurityModule;
 import com.gwtplatform.dispatch.rest.client.gin.RestDispatchAsyncModule;
 import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
-import com.gwtplatform.mvp.client.annotations.DefaultPlace;
-import com.gwtplatform.mvp.client.annotations.ErrorPlace;
-import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 
 public class SharedModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new DefaultModule());
-        install(new SecurityModule());
-
+        // GWTP libraries
+        install(new DefaultModule.Builder()
+                .defaultPlace(NameTokens.LOGIN)
+                .errorPlace(NameTokens.LOGIN)
+                .unauthorizedPlace(NameTokens.UNAUTHORIZED)
+                .build());
         install(new RestDispatchAsyncModule.Builder()
                 .dispatchHooks(AppRestDispatchHooks.class)
                 .interceptorRegistry(RestInterceptorRegistry.class)
                 .build());
-
         install(new RpcDispatchAsyncModule.Builder()
                 .dispatchHooks(AppRpcDispatchHooks.class)
                 .interceptorRegistry(RpcInterceptorRegistry.class)
                 .build());
 
-        // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.LOGIN);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.LOGIN);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.UNAUTHORIZED);
+        // CarStore modules
+        install(new SecurityModule());
 
-        // Load and inject CSS resources
+        // Load and inject CSS resources at startup
         bind(ResourceLoader.class).asEagerSingleton();
     }
 }

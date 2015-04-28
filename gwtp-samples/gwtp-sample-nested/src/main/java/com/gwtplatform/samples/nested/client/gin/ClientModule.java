@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2011 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -16,12 +16,8 @@
 
 package com.gwtplatform.samples.nested.client.gin;
 
-import com.gwtplatform.mvp.client.annotations.DefaultPlace;
-import com.gwtplatform.mvp.client.annotations.ErrorPlace;
-import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
-import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.samples.nested.client.application.ApplicationModule;
 import com.gwtplatform.samples.nested.client.place.NameTokens;
 import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
@@ -29,13 +25,12 @@ import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new DefaultModule(DefaultPlaceManager.class));
+        install(new DefaultModule.Builder()
+                .defaultPlace(NameTokens.homePage)
+                .errorPlace(NameTokens.homePage)
+                .unauthorizedPlace(NameTokens.homePage)
+                .build());
         install(new ApplicationModule());
-
-        // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homePage);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homePage);
 
         bind(ResourceLoader.class).asEagerSingleton();
     }
