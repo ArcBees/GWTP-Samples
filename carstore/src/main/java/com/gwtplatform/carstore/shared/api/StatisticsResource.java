@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2014 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -18,9 +18,12 @@ package com.gwtplatform.carstore.shared.api;
 
 import java.util.Date;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 import com.gwtplatform.dispatch.rest.shared.DateFormat;
 import com.gwtplatform.dispatch.rest.shared.RestAction;
@@ -30,6 +33,9 @@ import static com.gwtplatform.carstore.shared.api.ApiParameters.DATE_FORMAT;
 import static com.gwtplatform.carstore.shared.api.ApiPaths.STATS;
 
 @Path(STATS)
+// TODO: Use text/plain when the default serialization library is coded
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface StatisticsResource {
     // This method is intentionally left out as a RestAction to ensure it's properly handled.
     @GET

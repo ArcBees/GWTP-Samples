@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -16,9 +16,6 @@
 
 package com.gwtplatform.samples.polymer.client.gin;
 
-import com.gwtplatform.mvp.client.annotations.DefaultPlace;
-import com.gwtplatform.mvp.client.annotations.ErrorPlace;
-import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.polymer.client.application.ApplicationModule;
@@ -27,12 +24,11 @@ import com.gwtplatform.samples.polymer.client.place.NameTokens;
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new DefaultModule.Builder().build());
+        install(new DefaultModule.Builder()
+                .defaultPlace(NameTokens.PAGE1)
+                .errorPlace(NameTokens.PAGE1)
+                .unauthorizedPlace(NameTokens.PAGE2)
+                .build());
         install(new ApplicationModule());
-
-        // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.PAGE1);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.PAGE1);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.PAGE2);
     }
 }

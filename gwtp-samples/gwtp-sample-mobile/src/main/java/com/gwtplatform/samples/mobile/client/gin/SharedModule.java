@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2011 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -16,10 +16,7 @@
 
 package com.gwtplatform.samples.mobile.client.gin;
 
-import com.gwtplatform.mvp.client.annotations.DefaultPlace;
-import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
-import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
@@ -27,12 +24,11 @@ import com.gwtplatform.samples.mobile.client.place.NameTokens;
 public class SharedModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new DefaultModule());
-
-        // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.homePage);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.homePage);
+        install(new DefaultModule.Builder()
+                .defaultPlace(NameTokens.homePage)
+                .errorPlace(NameTokens.homePage)
+                .unauthorizedPlace(NameTokens.homePage)
+                .build());
 
         // Google Analytics
         bindConstant().annotatedWith(GaAccount.class).to("UA-8319339-6");

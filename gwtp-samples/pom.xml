@@ -5,7 +5,7 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>gwtp-samples</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GWT-Platform Samples</name>
     <inceptionYear>2010</inceptionYear>
@@ -89,7 +89,7 @@
         <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
 
         <checkstyle.version>6.3</checkstyle.version>
-        <arcbees-checkstyle.version>1.1</arcbees-checkstyle.version>
+        <arcbees-checkstyle.version>1.2</arcbees-checkstyle.version>
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
