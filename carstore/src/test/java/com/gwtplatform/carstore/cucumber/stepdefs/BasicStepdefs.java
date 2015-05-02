@@ -33,8 +33,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.runtime.java.guice.ScenarioScoped;
 
-import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_LOGIN;
 import static org.junit.Assert.assertTrue;
+
+import static com.gwtplatform.carstore.client.debug.DebugIds.DBG_LOGIN;
 
 @ScenarioScoped
 public class BasicStepdefs {
