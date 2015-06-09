@@ -70,7 +70,7 @@ public class ManufacturerDetailPresenter extends Presenter<MyView, MyProxy>
     private final EditManufacturerMessages messages;
 
     private ManufacturerDto currentManufacturer;
-    private Boolean createNew;
+    private boolean createNew = true;
 
     @Inject
     ManufacturerDetailPresenter(
@@ -121,9 +121,7 @@ public class ManufacturerDetailPresenter extends Presenter<MyView, MyProxy>
         if (event.isTheSameToken(NameTokens.getDetailManufacturer())) {
             switch (event.getActionType()) {
                 case UPDATE:
-                    getView().getManufacturer();
-                    break;
-                case DONE:
+                case DONE: // fallthru
                     getView().getManufacturer();
                     break;
                 case DELETE:
@@ -136,7 +134,6 @@ public class ManufacturerDetailPresenter extends Presenter<MyView, MyProxy>
     @Override
     public void onSave(ManufacturerDto manufacturerDto) {
         manufacturersDelegate
-
                 .withCallback(new ErrorHandlerAsyncCallback<ManufacturerDto>(this) {
                     @Override
                     public void onSuccess(ManufacturerDto savedManufacturerDto) {
@@ -149,21 +146,21 @@ public class ManufacturerDetailPresenter extends Presenter<MyView, MyProxy>
     }
 
     @Override
-    protected void onBind() {
-        addRegisteredHandler(GoBackEvent.getType(), this);
-        addRegisteredHandler(ActionBarEvent.getType(), this);
-    }
-
-    @Override
     protected void onReveal() {
         List<ActionType> actions;
         if (createNew) {
             actions = Arrays.asList(ActionType.DONE);
-            ChangeActionBarEvent.fire(this, actions, false);
         } else {
             actions = Arrays.asList(ActionType.DELETE, ActionType.UPDATE);
-            ChangeActionBarEvent.fire(this, actions, false);
         }
+
+        ChangeActionBarEvent.fire(this, actions, false);
+    }
+
+    @Override
+    protected void onBind() {
+        addRegisteredHandler(GoBackEvent.getType(), this);
+        addRegisteredHandler(ActionBarEvent.getType(), this);
     }
 
     private void deleteManufacturer() {
