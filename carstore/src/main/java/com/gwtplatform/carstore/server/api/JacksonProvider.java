@@ -25,13 +25,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.Provider;
 
-import org.codehaus.jackson.annotate.JsonMethod;
-import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-
-import static org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
-import static org.codehaus.jackson.map.SerializationConfig.Feature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 @Provider
 public class JacksonProvider extends JacksonJsonProvider {
@@ -45,13 +41,8 @@ public class JacksonProvider extends JacksonJsonProvider {
             MultivaluedMap<String, Object> httpHeaders,
             OutputStream entityStream) throws IOException {
         ObjectMapper mapper = locateMapper(type, mediaType);
-
-        SerializationConfig newSerializerConfig = mapper.getSerializationConfig()
-                .without(Feature.FAIL_ON_EMPTY_BEANS)
-                .without(Feature.WRITE_DATES_AS_TIMESTAMPS);
-
-        mapper.setSerializationConfig(newSerializerConfig);
-        mapper.setVisibility(JsonMethod.FIELD, Visibility.ANY);
+        mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         super.writeTo(value, type, genericType, annotations, mediaType, httpHeaders, entityStream);
     }
