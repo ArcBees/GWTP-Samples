@@ -25,12 +25,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.Provider;
 
+import org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 @Provider
-public class JacksonProvider extends JacksonJsonProvider {
+public class JacksonProvider extends ResteasyJackson2Provider {
     @Override
     public void writeTo(
             Object value,
