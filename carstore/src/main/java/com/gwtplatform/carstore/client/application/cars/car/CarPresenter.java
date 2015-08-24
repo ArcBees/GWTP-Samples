@@ -86,7 +86,7 @@ public class CarPresenter extends Presenter<MyView, CarPresenter.MyProxy>
             CarMessages messages,
             @Assisted MyProxy proxy,
             @Assisted CarDto carDto) {
-        super(eventBus, view, proxy, RootCarPresenter.SLOT_SetCarContent);
+        super(eventBus, view, proxy, RootCarPresenter.SLOT_SET_CAR_CONTENT);
 
         this.carsDelegate = carsDelegate;
         this.manufacturersDelegate = manufacturersDelegate;

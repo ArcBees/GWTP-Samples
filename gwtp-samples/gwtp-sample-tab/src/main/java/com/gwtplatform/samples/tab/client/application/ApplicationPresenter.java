@@ -24,10 +24,10 @@ import com.gwtplatform.mvp.client.RequestTabsHandler;
 import com.gwtplatform.mvp.client.TabContainerPresenter;
 import com.gwtplatform.mvp.client.TabView;
 import com.gwtplatform.mvp.client.annotations.ChangeTab;
-import com.gwtplatform.mvp.client.annotations.ContentSlot;
 import com.gwtplatform.mvp.client.annotations.ProxyEvent;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.annotations.RequestTabs;
+import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.AsyncCallFailEvent;
 import com.gwtplatform.mvp.client.proxy.AsyncCallFailHandler;
 import com.gwtplatform.mvp.client.proxy.AsyncCallStartEvent;
@@ -35,7 +35,6 @@ import com.gwtplatform.mvp.client.proxy.AsyncCallStartHandler;
 import com.gwtplatform.mvp.client.proxy.AsyncCallSucceedEvent;
 import com.gwtplatform.mvp.client.proxy.AsyncCallSucceedHandler;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.samples.tab.client.security.CurrentUserChangedEvent;
 import com.gwtplatform.samples.tab.client.security.CurrentUserChangedHandler;
 
@@ -78,14 +77,13 @@ public class ApplicationPresenter
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
+    public static final NestedSlot SLOT_SET_TAB_CONTENT = new NestedSlot();
 
     @Inject
     ApplicationPresenter(EventBus eventBus,
             MyView view,
             MyProxy proxy) {
-        super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, SLOT_ChangeTab, RevealType.Root);
+        super(eventBus, view, proxy, SLOT_SET_TAB_CONTENT, SLOT_RequestTabs, SLOT_ChangeTab, RevealType.Root);
     }
 
     @ProxyEvent

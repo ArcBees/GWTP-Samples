@@ -76,7 +76,7 @@ public class BreadcrumbsTabletView extends ViewImpl implements BreadcrumbsPresen
 
     @Override
     public void setInSlot(Object slot, IsWidget content) {
-        if (slot == BreadcrumbsPresenter.SLOT_SetMainContent) {
+        if (slot == BreadcrumbsPresenter.SLOT_SET_MAIN_CONTENT) {
             mainContentPanel.setWidget(content);
         } else {
             super.setInSlot(slot, content);

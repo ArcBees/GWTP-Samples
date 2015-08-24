@@ -61,7 +61,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.MyView, Setti
             MyView view,
             MyProxy proxy,
             CurrentUser currentUser) {
-        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetTabContent);
+        super(eventBus, view, proxy, ApplicationPresenter.SLOT_SET_TAB_CONTENT);
 
         this.currentUser = currentUser;
 

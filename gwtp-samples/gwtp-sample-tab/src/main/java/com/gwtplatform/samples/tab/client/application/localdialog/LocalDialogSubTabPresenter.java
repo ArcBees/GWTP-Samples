@@ -62,7 +62,7 @@ public class LocalDialogSubTabPresenter
             MyView view,
             MyProxy proxy,
             LocalDialogPresenterWidget localDialog) {
-        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
+        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SET_TAB_CONTENT);
 
         this.localDialog = localDialog;
 

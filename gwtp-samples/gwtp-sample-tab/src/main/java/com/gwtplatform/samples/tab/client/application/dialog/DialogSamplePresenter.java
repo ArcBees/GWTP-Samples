@@ -23,12 +23,11 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.RequestTabsHandler;
 import com.gwtplatform.mvp.client.TabContainerPresenter;
 import com.gwtplatform.mvp.client.TabView;
-import com.gwtplatform.mvp.client.annotations.ContentSlot;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.RequestTabs;
 import com.gwtplatform.mvp.client.annotations.TabInfo;
+import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.NonLeafTabContentProxy;
-import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.samples.tab.client.application.ApplicationPresenter;
 import com.gwtplatform.samples.tab.client.place.NameTokens;
 
@@ -59,19 +58,19 @@ public class DialogSamplePresenter extends
      * This will be the event sent to our "unknown" child presenters, in order for them to register their tabs.
      */
     @RequestTabs
-    public static final Type<RequestTabsHandler> SLOT_RequestTabs = new Type<>();
+    public static final Type<RequestTabsHandler> SLOT_REQUEST_TABS = new Type<>();
 
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
+    public static final NestedSlot SLOT_SET_TAB_CONTENT = new NestedSlot();
 
     @Inject
     DialogSamplePresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
-        super(eventBus, view, proxy, SLOT_SetTabContent, SLOT_RequestTabs, ApplicationPresenter.SLOT_SetTabContent);
+        super(eventBus, view, proxy, SLOT_SET_TAB_CONTENT, SLOT_REQUEST_TABS,
+                ApplicationPresenter.SLOT_SET_TAB_CONTENT);
     }
 }
