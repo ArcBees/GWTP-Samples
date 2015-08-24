@@ -68,7 +68,7 @@ public class GlobalDialogSubTabPresenter extends
             MyProxy proxy,
             GlobalDialogPresenterWidget globalDialog,
             InfoPopupPresenterWidget infoPopup) {
-        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_SetTabContent);
+        super(eventBus, view, proxy, DialogSamplePresenter.SLOT_TAB_CONTENT);
 
         this.globalDialog = globalDialog;
         this.infoPopup = infoPopup;

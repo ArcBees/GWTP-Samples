@@ -23,7 +23,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.InlineHyperlink;
 import com.google.gwt.user.client.ui.InlineLabel;
-import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
@@ -51,6 +50,8 @@ public class BreadcrumbsView extends ViewImpl implements BreadcrumbsPresenter.My
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));
+
+        bindSlot(BreadcrumbsPresenter.SLOT_MAIN_CONTENT, mainContentPanel);
     }
 
     @Override
@@ -71,15 +72,6 @@ public class BreadcrumbsView extends ViewImpl implements BreadcrumbsPresenter.My
             hyperlink.setHTML("Unknown title");
         } else {
             hyperlink.setHTML(title);
-        }
-    }
-
-    @Override
-    public void setInSlot(Object slot, IsWidget content) {
-        if (slot == BreadcrumbsPresenter.SLOT_SetMainContent) {
-            mainContentPanel.setWidget(content);
-        } else {
-            super.setInSlot(slot, content);
         }
     }
 }

@@ -69,7 +69,7 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
             MyProxy proxy,
             PlaceManager placeManager,
             DispatchAsync dispatcher) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SetMainContent);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_MAIN_CONTENT);
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
