@@ -52,6 +52,8 @@ public class BreadcrumbsMobileView extends ViewImpl implements BreadcrumbsPresen
         this.placeManager = placeManager;
 
         initWidget(binder.createAndBindUi(this));
+
+        bindSlot(BreadcrumbsPresenter.SLOT_MAIN_CONTENT, mainContentPanel);
     }
 
     @Override
@@ -72,15 +74,6 @@ public class BreadcrumbsMobileView extends ViewImpl implements BreadcrumbsPresen
             hyperlink.setHTML("Unknown title");
         } else {
             hyperlink.setHTML(title);
-        }
-    }
-
-    @Override
-    public void setInSlot(Object slot, IsWidget content) {
-        if (slot == BreadcrumbsPresenter.SLOT_SET_MAIN_CONTENT) {
-            mainContentPanel.setWidget(content);
-        } else {
-            super.setInSlot(slot, content);
         }
     }
 }

@@ -51,7 +51,7 @@ public class BreadcrumbsView extends ViewImpl implements BreadcrumbsPresenter.My
 
         initWidget(binder.createAndBindUi(this));
 
-        bindSlot(BreadcrumbsPresenter.SLOT_SET_MAIN_CONTENT, mainContentPanel);
+        bindSlot(BreadcrumbsPresenter.SLOT_MAIN_CONTENT, mainContentPanel);
     }
 
     @Override

@@ -63,14 +63,13 @@ public class DialogSamplePresenter extends
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    public static final NestedSlot SLOT_SET_TAB_CONTENT = new NestedSlot();
+    public static final NestedSlot SLOT_TAB_CONTENT = new NestedSlot();
 
     @Inject
     DialogSamplePresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
-        super(eventBus, view, proxy, SLOT_SET_TAB_CONTENT, SLOT_REQUEST_TABS,
-                ApplicationPresenter.SLOT_SET_TAB_CONTENT);
+        super(eventBus, view, proxy, SLOT_TAB_CONTENT, SLOT_REQUEST_TABS, ApplicationPresenter.SLOT_TAB_CONTENT);
     }
 }

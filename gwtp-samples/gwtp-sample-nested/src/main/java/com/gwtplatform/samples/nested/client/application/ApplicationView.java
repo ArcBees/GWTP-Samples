@@ -44,7 +44,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
             Binder binder) {
         initWidget(binder.createAndBindUi(this));
 
-        bindSlot(ApplicationPresenter.SLOT_SET_MAIN_CONTENT, mainContentPanel);
+        bindSlot(ApplicationPresenter.SLOT_MAIN_CONTENT, mainContentPanel);
     }
 
     @Override

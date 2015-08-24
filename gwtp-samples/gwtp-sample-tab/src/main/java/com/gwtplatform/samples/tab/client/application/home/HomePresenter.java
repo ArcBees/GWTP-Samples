@@ -68,7 +68,7 @@ public class HomePresenter extends HomePresenterBase<HomePresenter.MyView, HomeP
             MyView view,
             MyProxy proxy,
             PlaceManager placeManager) {
-        super(eventBus, view, proxy, SLOT_RequestTabs, ApplicationPresenter.SLOT_SET_TAB_CONTENT);
+        super(eventBus, view, proxy, SLOT_RequestTabs, ApplicationPresenter.SLOT_TAB_CONTENT);
 
         this.placeManager = placeManager;
     }

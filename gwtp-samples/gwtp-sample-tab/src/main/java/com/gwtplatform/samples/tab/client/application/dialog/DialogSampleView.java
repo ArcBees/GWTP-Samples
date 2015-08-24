@@ -44,7 +44,7 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
 
         initWidget(uiBinder.createAndBindUi(this));
 
-        bindSlot(DialogSamplePresenter.SLOT_SET_TAB_CONTENT, tabPanel);
+        bindSlot(DialogSamplePresenter.SLOT_TAB_CONTENT, tabPanel);
     }
 
     @Override

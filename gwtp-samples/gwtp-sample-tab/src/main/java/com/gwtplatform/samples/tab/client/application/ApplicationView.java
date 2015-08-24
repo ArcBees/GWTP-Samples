@@ -51,7 +51,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
         initWidget(uiBinder.createAndBindUi(this));
 
-        bindSlot(ApplicationPresenter.SLOT_SET_TAB_CONTENT, tabPanel);
+        bindSlot(ApplicationPresenter.SLOT_TAB_CONTENT, tabPanel);
     }
 
     @Override

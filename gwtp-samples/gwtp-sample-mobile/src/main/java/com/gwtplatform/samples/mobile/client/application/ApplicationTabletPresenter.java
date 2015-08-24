@@ -34,7 +34,7 @@ public class ApplicationTabletPresenter extends AbstractApplicationPresenter imp
             MyView view,
             MyProxy proxy,
             PlaceManager placeManager) {
-        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_SET_MAIN_CONTENT);
+        super(eventBus, view, proxy, BreadcrumbsPresenter.SLOT_MAIN_CONTENT);
 
         this.placeManager = placeManager;
 

@@ -51,7 +51,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    public static final NestedSlot SLOT_SET_MAIN_CONTENT = new NestedSlot();
+    public static final NestedSlot SLOT_MAIN_CONTENT = new NestedSlot();
 
     @Inject
     ApplicationPresenter(

@@ -39,6 +39,6 @@ public class RootCarView extends ViewImpl implements RootCarPresenter.MyView {
         initWidget(uiBinder.createAndBindUi(this));
 
         bindSlot(RootCarPresenter.SLOT_TAB_BAR, tabBarPanel);
-        bindSlot(RootCarPresenter.SLOT_SET_CAR_CONTENT, contentPanel);
+        bindSlot(RootCarPresenter.SLOT_CAR_CONTENT, contentPanel);
     }
 }

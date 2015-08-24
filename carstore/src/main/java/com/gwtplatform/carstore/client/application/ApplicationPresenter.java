@@ -26,6 +26,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
+import com.gwtplatform.mvp.client.presenter.slots.SingleSlot;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
@@ -42,8 +43,9 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     }
 
     public static final NestedSlot SLOT_MAIN_CONTENT = new NestedSlot();
-    public static final NestedSlot SLOT_MESSAGES_CONTENT = new NestedSlot();
-    public static final NestedSlot SLOT_HEADER_CONTENT = new NestedSlot();
+
+    public static final SingleSlot SLOT_MESSAGES_CONTENT = new SingleSlot();
+    public static final SingleSlot SLOT_HEADER_CONTENT = new SingleSlot();
 
     private final HeaderPresenter headerPresenter;
     private final MessagesPresenter messagesPresenter;
