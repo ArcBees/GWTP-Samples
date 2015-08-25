@@ -78,6 +78,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
         tabPanel.changeTab(tab, tabData, historyToken);
     }
 
+    //Cannot use bindSlot(...) with a Composite
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.SLOT_TAB_CONTENT) {
