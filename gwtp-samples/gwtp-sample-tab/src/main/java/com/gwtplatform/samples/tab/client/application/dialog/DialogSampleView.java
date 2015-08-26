@@ -20,6 +20,7 @@ import javax.inject.Inject;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.Tab;
 import com.gwtplatform.mvp.client.TabData;
@@ -43,8 +44,6 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
         this.tabPanel = tabPanel;
 
         initWidget(uiBinder.createAndBindUi(this));
-
-        bindSlot(DialogSamplePresenter.SLOT_TAB_CONTENT, tabPanel);
     }
 
     @Override
@@ -70,5 +69,14 @@ public class DialogSampleView extends ViewImpl implements DialogSamplePresenter.
     @Override
     public void changeTab(Tab tab, TabData tabData, String historyToken) {
         tabPanel.changeTab(tab, tabData, historyToken);
+    }
+
+    @Override
+    public void setInSlot(Object slot, IsWidget content) {
+        if (slot == DialogSamplePresenter.SLOT_TAB_CONTENT) {
+            tabPanel.setPanelContent(content);
+        } else {
+            super.setInSlot(slot, content);
+        }
     }
 }
