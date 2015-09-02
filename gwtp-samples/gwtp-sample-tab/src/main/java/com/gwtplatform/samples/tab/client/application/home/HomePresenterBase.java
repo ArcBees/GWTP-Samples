@@ -23,7 +23,7 @@ import com.gwtplatform.mvp.client.RequestTabsHandler;
 import com.gwtplatform.mvp.client.TabContainerPresenter;
 import com.gwtplatform.mvp.client.TabPanel;
 import com.gwtplatform.mvp.client.View;
-import com.gwtplatform.mvp.client.annotations.ContentSlot;
+import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 
@@ -39,8 +39,7 @@ public abstract class HomePresenterBase<V extends View & TabPanel, P extends Pro
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetTabContent = new Type<>();
+    public static final NestedSlot SLOT_SetTabContent = new NestedSlot();
 
     HomePresenterBase(
             EventBus eventBus,

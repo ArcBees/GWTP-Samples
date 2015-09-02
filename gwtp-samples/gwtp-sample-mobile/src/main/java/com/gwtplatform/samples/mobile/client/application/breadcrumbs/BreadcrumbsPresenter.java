@@ -18,15 +18,13 @@ package com.gwtplatform.samples.mobile.client.application.breadcrumbs;
 
 import javax.inject.Inject;
 
-import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
-import com.gwtplatform.mvp.client.annotations.ContentSlot;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
+import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.mvp.client.proxy.SetPlaceTitleHandler;
 
 /**
@@ -53,8 +51,7 @@ public class BreadcrumbsPresenter extends Presenter<BreadcrumbsPresenter.MyView,
     /**
      * Use this in leaf presenters, inside their {@link #revealInParent} method.
      */
-    @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<>();
+    public static final NestedSlot SLOT_MAIN_CONTENT = new NestedSlot();
 
     private final PlaceManager placeManager;
 
