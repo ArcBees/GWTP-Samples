@@ -34,7 +34,7 @@ import com.gwtplatform.samples.basic.shared.FieldVerifier;
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
         implements ApplicationUiHandlers {
     @ProxyStandard
-    @NameToken(NameTokens.home)
+    @NameToken(NameTokens.HOME)
     interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
@@ -79,7 +79,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         }
 
         PlaceRequest responsePlaceRequest = new PlaceRequest.Builder()
-                .nameToken(NameTokens.response)
+                .nameToken(NameTokens.RESPONSE)
                 .with(TokenParameters.TEXT_TO_SERVER, name)
                 .build();
         placeManager.revealPlace(responsePlaceRequest);

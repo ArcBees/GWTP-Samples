@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,25 +14,23 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.shared.dispatch;
+package com.gwtplatform.samples.basic.shared;
 
-import com.gwtplatform.dispatch.rpc.shared.UnsecuredActionImpl;
+public class TextResponse {
+    private String response;
 
-public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
-    private String textToServer;
-
-    public SendTextToServerAction(String textToServer) {
-        this.textToServer = textToServer;
+    public TextResponse() {
     }
 
-    /**
-     * For serialization only.
-     */
-    @SuppressWarnings("unused")
-    private SendTextToServerAction() {
+    public TextResponse(String response) {
+        this.response = response;
     }
 
-    public String getTextToServer() {
-        return textToServer;
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
     }
 }

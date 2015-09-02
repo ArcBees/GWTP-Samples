@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,14 +14,18 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.server.guice;
+package com.gwtplatform.samples.basic.client;
 
-import com.arcbees.guicyresteasy.GuiceRestEasyFilterDispatcher;
-import com.google.inject.servlet.ServletModule;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 
-public class DispatchServletModule extends ServletModule {
-    @Override
-    public void configureServlets() {
-        filter("/api/*").through(GuiceRestEasyFilterDispatcher.class);
-    }
+import com.gwtplatform.dispatch.rest.shared.RestAction;
+
+public interface SubService {
+    @GET
+    RestAction<Integer> subCount();
+
+    @Path("/sub")
+    SubSubService subSub(@QueryParam("q2") int q2);
 }

@@ -20,7 +20,7 @@ import javax.inject.Inject;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
+import com.gwtplatform.dispatch.rest.client.RestDispatch;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -29,16 +29,16 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
+import com.gwtplatform.samples.basic.client.SendTextService;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.place.TokenParameters;
-import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
-import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerResult;
+import com.gwtplatform.samples.basic.shared.TextResponse;
 
 public class ResponsePresenter
         extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy>
         implements ResponseUiHandlers {
     @ProxyCodeSplit
-    @NameToken(NameTokens.response)
+    @NameToken(NameTokens.RESPONSE)
     interface MyProxy extends ProxyPlace<ResponsePresenter> {
     }
 
@@ -48,8 +48,9 @@ public class ResponsePresenter
         void setTextToServer(String textToServer);
     }
 
-    private final DispatchAsync dispatcher;
     private final PlaceManager placeManager;
+    private final RestDispatch dispatcher;
+    private final SendTextService sendTextService;
 
     private String textToServer;
 
@@ -59,11 +60,13 @@ public class ResponsePresenter
             MyView view,
             MyProxy proxy,
             PlaceManager placeManager,
-            DispatchAsync dispatcher) {
+            RestDispatch dispatcher,
+            SendTextService sendTextService) {
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
+        this.sendTextService = sendTextService;
 
         getView().setUiHandlers(this);
     }
@@ -77,7 +80,7 @@ public class ResponsePresenter
 
     @Override
     public void onClose() {
-        PlaceRequest homePlaceRequest = new PlaceRequest.Builder().nameToken(NameTokens.home).build();
+        PlaceRequest homePlaceRequest = new PlaceRequest.Builder().nameToken(NameTokens.HOME).build();
         placeManager.revealPlace(homePlaceRequest);
     }
 
@@ -88,15 +91,15 @@ public class ResponsePresenter
         getView().setTextToServer(textToServer);
         getView().setServerResponse("Waiting for response...");
 
-        dispatcher.execute(new SendTextToServerAction(textToServer), new AsyncCallback<SendTextToServerResult>() {
+        dispatcher.execute(sendTextService.send(textToServer), new AsyncCallback<TextResponse>() {
             @Override
             public void onFailure(Throwable caught) {
                 getView().setServerResponse("An error occured: " + caught.getMessage());
             }
 
             @Override
-            public void onSuccess(SendTextToServerResult result) {
-                getView().setServerResponse(result.getResponse());
+            public void onSuccess(TextResponse response) {
+                getView().setServerResponse(response.getResponse());
             }
         });
     }

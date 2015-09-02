@@ -20,14 +20,14 @@ package com.gwtplatform.samples.basic.client.place;
  * Main presenters name tokens.
  */
 public class NameTokens {
-    public static final String home = "home";
-    public static final String response = "response";
+    public static final String HOME = "/home";
+    public static final String RESPONSE = "/response";
 
     public static String getHome() {
-        return home;
+        return HOME;
     }
 
     public static String getResponse() {
-        return response;
+        return RESPONSE;
     }
 }

@@ -29,4 +29,9 @@
     <session-config>
         <session-timeout>60</session-timeout>
     </session-config>
+
+    <context-param>
+        <param-name>resteasy.servlet.mapping.prefix</param-name>
+        <param-value>/api</param-value>
+    </context-param>
 </web-app>

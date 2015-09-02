@@ -19,6 +19,7 @@ package com.gwtplatform.samples.basic.client.application.response;
 import javax.inject.Inject;
 
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -46,7 +47,7 @@ public class ResponseView extends ViewWithUiHandlers<ResponseUiHandlers> impleme
 
     @Override
     public void setServerResponse(String serverResponse) {
-        this.serverResponse.setHTML(serverResponse);
+        this.serverResponse.setHTML(SafeHtmlUtils.fromTrustedString(serverResponse));
     }
 
     @Override

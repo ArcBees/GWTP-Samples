@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,18 +14,24 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.server.guice;
+package com.gwtplatform.samples.basic.client;
 
-import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
-import com.gwtplatform.samples.basic.server.dispatch.SendTextToServerHandler;
-import com.gwtplatform.samples.basic.shared.dispatch.SendTextToServerAction;
+import java.util.List;
 
-/**
- * Module which binds the handlers and configurations.
- */
-public class ServerModule extends HandlerModule {
-    @Override
-    protected void configureHandlers() {
-        bindHandler(SendTextToServerAction.class, SendTextToServerHandler.class);
-    }
+import javax.ws.rs.GET;
+import javax.ws.rs.HEAD;
+import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
+
+import com.gwtplatform.dispatch.rest.shared.RestAction;
+
+public interface SuperService {
+    @HEAD
+    RestAction<List<Long>> superDummy();
+
+    @GET
+    RestAction<Integer> count();
+
+    @Path("/sub")
+    SubService sub(@QueryParam("q1") int q1);
 }

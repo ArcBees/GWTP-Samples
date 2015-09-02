@@ -19,10 +19,11 @@ package com.gwtplatform.samples.basic.server.guice;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
+import com.gwtplatform.samples.basic.server.dispatch.DispatchModule;
 
 public class GuiceServletConfig extends GuiceServletContextListener {
     @Override
     protected Injector getInjector() {
-        return Guice.createInjector(new ServerModule(), new DispatchServletModule());
+        return Guice.createInjector(new DispatchModule(), new DispatchServletModule());
     }
 }

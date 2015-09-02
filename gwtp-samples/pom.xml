@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gwtplatform</groupId>
@@ -54,11 +54,11 @@
 
     <modules>
         <module>gwtp-sample-basic</module>
-        <module>gwtp-sample-basic-spring</module>
-        <module>gwtp-sample-crawler-service</module>
-        <module>gwtp-sample-mobile</module>
-        <module>gwtp-sample-nested</module>
-        <module>gwtp-sample-tab</module>
+        <!--<module>gwtp-sample-basic-spring</module>-->
+        <!--<module>gwtp-sample-crawler-service</module>-->
+        <!--<module>gwtp-sample-mobile</module>-->
+        <!--<module>gwtp-sample-nested</module>-->
+        <!--<module>gwtp-sample-tab</module>-->
     </modules>
 
     <properties>
@@ -77,15 +77,11 @@
 
         <!-- maven -->
         <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
-        <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
-        <maven.deploy.version>2.7</maven.deploy.version>
-        <maven-processor-plugin.version>2.1.0</maven-processor-plugin.version>
-        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
-        <maven.surfire.version>2.12</maven.surfire.version>
-        <maven.war.version>2.3</maven.war.version>
-        <maven.compiler.version>2.3.2</maven.compiler.version>
-        <maven-source-plugin.version>2.2</maven-source-plugin.version>
-        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven.deploy.version>2.8.2</maven.deploy.version>
+        <maven.surfire.version>2.18.1</maven.surfire.version>
+        <maven.war.version>2.6</maven.war.version>
+        <maven.compiler.version>3.3</maven.compiler.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
         <maven-checkstyle-plugin.version>2.15</maven-checkstyle-plugin.version>
 
         <checkstyle.version>6.5</checkstyle.version>
@@ -98,7 +94,6 @@
         <target.jdk>1.7</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
         <gae.home>
             ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}
         </gae.home>
@@ -116,7 +111,22 @@
     </repositories>
 
     <build>
-        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <excludes>
+                    <exclude>**/server/**</exclude>
+                </excludes>
+            </resource>
+
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
 
         <pluginManagement>
             <plugins>
@@ -128,6 +138,11 @@
                         <source>${target.jdk}</source>
                         <target>${target.jdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
+
+                        <showWarnings>true</showWarnings>
+                        <compilerArgs>
+                            <arg>-Adebug</arg>
+                        </compilerArgs>
                     </configuration>
                 </plugin>
 
@@ -145,16 +160,11 @@
                     </configuration>
                 </plugin>
 
-                <!-- GWT -->
-                <!-- 'mvn gwt:run' - runs development mode -->
-                <!-- 'mvn gwt:debug' - runs debug mode -->
-                <!-- 'mvn gwt:compile' - compiles gwt -->
-                <!-- 'mvn integration-test' - runs the gwt tests (*GwtTest.java) -->
-                <!-- 'mvn clean gwt:compile deploy -DskipTests' - deploys to gae & sona with out running tests -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
                     <version>${gwt.version}</version>
+
                     <configuration>
                         <testTimeOut>180</testTimeOut>
                         <includes>**/*GwtTest.java</includes>
@@ -165,24 +175,25 @@
                         <style>${gwt.style}</style>
 
                         <copyWebapp>true</copyWebapp>
-                        <hostedWebapp>${webappDirectory}</hostedWebapp>
+                        <gen>${project.build.directory}/generated-sources/gwt</gen>
 
                         <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
                         <appEngineVersion>${gae.version}</appEngineVersion>
                         <appEngineHome>${gae.home}</appEngineHome>
                         <extraJvmArgs>-Dappengine.sdk.root=${gae.home}</extraJvmArgs>
                     </configuration>
+
                     <executions>
                         <execution>
                             <goals>
-                                <goal>test</goal>
+                                <goal>resources</goal>
                                 <goal>compile</goal>
+                                <goal>test</goal>
                             </goals>
                         </execution>
                     </executions>
                 </plugin>
 
-                <!-- App Engine -->
                 <plugin>
                     <groupId>net.kindleit</groupId>
                     <artifactId>maven-gae-plugin</artifactId>
@@ -222,9 +233,36 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
+
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
+
+                    <executions>
+                        <execution>
+                            <id>copy-generated-sources</id>
+                            <phase>process-classes</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+
+                            <configuration>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.build.directory}/generated-sources/annotations</directory>
+                                        <includes>
+                                            <include>**/*.java</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>**/server/**</exclude>
+                                        </excludes>
+                                    </resource>
+                                </resources>
+
+                                <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
@@ -232,15 +270,14 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven.war.version}</version>
                     <configuration>
-                        <webappDirectory>${webappDirectory}</webappDirectory>
                         <webResources>
                             <resource>
                                 <directory>src/main/webapp/WEB-INF</directory>
+                                <targetPath>WEB-INF</targetPath>
                                 <filtering>true</filtering>
                                 <includes>
                                     <include>appengine-web.xml</include>
                                 </includes>
-                                <targetPath>WEB-INF</targetPath>
                             </resource>
                         </webResources>
                     </configuration>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 ArcBees Inc.
+ * Copyright 2015 ArcBees Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,25 +16,12 @@
 
 package com.gwtplatform.samples.basic.client;
 
-import org.jukito.JukitoModule;
-import org.jukito.JukitoRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import javax.ws.rs.GET;
+import javax.ws.rs.QueryParam;
 
-import static org.junit.Assert.assertTrue;
+import com.gwtplatform.dispatch.rest.shared.RestAction;
 
-@RunWith(JukitoRunner.class)
-public class SandboxJukitoTest {
-    /**
-     */
-    public static class Module extends JukitoModule {
-        @Override
-        protected void configureTest() {
-        }
-    }
-
-    @Test
-    public void testSandbox() {
-        assertTrue(true);
-    }
+public interface SubSubService {
+    @GET
+    RestAction<Integer> subSubCount(@QueryParam("q3") int q3);
 }

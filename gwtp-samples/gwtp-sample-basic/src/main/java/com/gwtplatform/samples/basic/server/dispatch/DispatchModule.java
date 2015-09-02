@@ -14,17 +14,20 @@
  * the License.
  */
 
-package com.gwtplatform.samples.basic.client;
+package com.gwtplatform.samples.basic.server.dispatch;
 
-import com.google.gwt.junit.client.GWTTestCase;
+import javax.inject.Singleton;
 
-public class SandboxGwtTest extends GWTTestCase {
+import com.google.inject.AbstractModule;
+
+/**
+ * Module which binds the handlers and configurations.
+ */
+public class DispatchModule extends AbstractModule {
     @Override
-    public String getModuleName() {
-        return "com.gwtplatform.samples.basic.Gwtpsample";
-    }
+    protected void configure() {
+        bind(JacksonProvider.class).in(Singleton.class);
 
-    public void testSandbox() {
-        assertTrue(true);
+        bind(SendTextResource.class).in(Singleton.class);
     }
 }

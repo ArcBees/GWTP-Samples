@@ -16,10 +16,12 @@
 
 package com.gwtplatform.samples.basic.client.gin;
 
-import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
+import com.gwtplatform.dispatch.rest.client.RestApplicationPath;
+import com.gwtplatform.dispatch.rest.client.gin.RestDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
 import com.gwtplatform.samples.basic.client.application.ApplicationModule;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.resources.ResourceLoader;
@@ -30,14 +32,16 @@ public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new DefaultModule.Builder()
-                .defaultPlace(NameTokens.home)
-                .errorPlace(NameTokens.home)
-                .unauthorizedPlace(NameTokens.home)
+                .tokenFormatter(RouteTokenFormatter.class)
+                .defaultPlace(NameTokens.HOME)
+                .errorPlace(NameTokens.HOME)
+                .unauthorizedPlace(NameTokens.HOME)
                 .build());
-        install(new RpcDispatchAsyncModule());
+        install(new RestDispatchAsyncModule());
         install(new ApplicationModule());
 
         bindConstant().annotatedWith(GaAccount.class).to(ANALYTICS_ACCOUNT);
+        bindConstant().annotatedWith(RestApplicationPath.class).to("/api");
 
         bind(ResourceLoader.class).asEagerSingleton();
     }
