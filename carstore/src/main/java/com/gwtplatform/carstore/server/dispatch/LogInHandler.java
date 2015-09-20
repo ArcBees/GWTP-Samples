@@ -68,9 +68,9 @@ public class LogInHandler extends AbstractActionHandler<LogInAction, LogInResult
             loggedInCookie = loginCookieDao.createSessionCookie(userDto);
         }
 
-        logger.info("LogInHandlerexecut(): actiontype=" + getActionType());
-        logger.info("LogInHandlerexecut(): currentUserDto=" + currentUserDto);
-        logger.info("LogInHandlerexecut(): loggedInCookie=" + loggedInCookie);
+        logger.info("LogInHandler#execute(): actiontype=" + getActionType());
+        logger.info("LogInHandler#execute(): currentUserDto=" + currentUserDto);
+        logger.info("LogInHandler#execute(): loggedInCookie=" + loggedInCookie);
 
         return new LogInResult(action.getActionType(), currentUserDto, loggedInCookie);
     }
