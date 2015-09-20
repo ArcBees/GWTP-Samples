@@ -21,7 +21,7 @@ import javax.inject.Inject;
 import com.gwtplatform.mvp.client.annotations.DefaultGatekeeper;
 import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 
-//@DefaultGatekeeper
+@DefaultGatekeeper
 public class LoggedInGatekeeper implements Gatekeeper {
     private final CurrentUser currentUser;
 
