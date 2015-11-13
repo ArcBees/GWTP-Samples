@@ -16,6 +16,7 @@
 
 package com.gwtplatform.carstore.client.gin;
 
+import com.gwtplatform.carstore.client.dispatch.DispatchExceptionHandler;
 import com.gwtplatform.carstore.client.dispatch.rest.AppRestDispatchHooks;
 import com.gwtplatform.carstore.client.dispatch.rest.RestInterceptorRegistry;
 import com.gwtplatform.carstore.client.dispatch.rpc.AppRpcDispatchHooks;
@@ -39,10 +40,12 @@ public class SharedModule extends AbstractPresenterModule {
         install(new RestDispatchAsyncModule.Builder()
                 .dispatchHooks(AppRestDispatchHooks.class)
                 .interceptorRegistry(RestInterceptorRegistry.class)
+                .exceptionHandler(DispatchExceptionHandler.class)
                 .build());
         install(new RpcDispatchAsyncModule.Builder()
                 .dispatchHooks(AppRpcDispatchHooks.class)
                 .interceptorRegistry(RpcInterceptorRegistry.class)
+                .exceptionHandler(DispatchExceptionHandler.class)
                 .build());
 
         // CarStore modules

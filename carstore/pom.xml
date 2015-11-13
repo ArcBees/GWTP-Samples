@@ -5,7 +5,7 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>carstore</artifactId>
-    <version>1.5</version>
+    <version>1.6-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>GWTP Carstore</name>
     <description>Simple application used for testing GWTP features.</description>
@@ -13,7 +13,7 @@
     <properties>
         <!-- Client -->
         <gwt.version>2.7.0</gwt.version>
-        <gwtp.version>1.5</gwtp.version>
+        <gwtp.version>1.6-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwtquery.version>1.4.2</gwtquery.version>
         <objectify-gwt.version>1.2.1</objectify-gwt.version>
@@ -41,8 +41,8 @@
         <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
-        <maven-failsafe-plugin.version>2.18</maven-failsafe-plugin.version>
-        <maven-surefire-plugin.version>2.18</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <gwt-maven-plugin.version>2.7.0</gwt-maven-plugin.version>
         <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
 
