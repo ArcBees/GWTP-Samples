@@ -54,11 +54,11 @@
 
     <modules>
         <module>gwtp-sample-basic</module>
-        <!--<module>gwtp-sample-basic-spring</module>-->
-        <!--<module>gwtp-sample-crawler-service</module>-->
-        <!--<module>gwtp-sample-mobile</module>-->
-        <!--<module>gwtp-sample-nested</module>-->
-        <!--<module>gwtp-sample-tab</module>-->
+        <module>gwtp-sample-basic-spring</module>
+        <module>gwtp-sample-crawler-service</module>
+        <module>gwtp-sample-mobile</module>
+        <module>gwtp-sample-nested</module>
+        <module>gwtp-sample-tab</module>
     </modules>
 
     <properties>

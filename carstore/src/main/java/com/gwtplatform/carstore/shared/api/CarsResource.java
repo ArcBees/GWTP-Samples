@@ -18,6 +18,7 @@ package com.gwtplatform.carstore.shared.api;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.MatrixParam;
@@ -40,6 +41,7 @@ import static com.gwtplatform.carstore.shared.api.ApiPaths.PATH_ID;
 
 @Path(CARS)
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface CarsResource {
     String DEFAULT_LIMIT = "1000";
     String DEFAULT_OFFSET = "0";
