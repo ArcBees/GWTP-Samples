@@ -27,6 +27,18 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+
+                <configuration>
+                    <compilerArguments>
+                        <Agwtp.debug/>
+                        <Agwtp.module>com.gwtplatform.samples.multimodule.aggregate.client.MultiModule</Agwtp.module>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <version>2.7.0</version>

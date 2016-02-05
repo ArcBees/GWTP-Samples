@@ -17,7 +17,6 @@
 package com.gwtplatform.samples.multimodule.module1.server.dispatch;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
@@ -35,7 +34,6 @@ import com.gwtplatform.samples.multimodule.module1.shared.TextResponse;
 @Path("/text")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Singleton
 public class SendTextResource {
     private final Provider<HttpServletRequest> requestProvider;
     private final ServletContext servletContext;

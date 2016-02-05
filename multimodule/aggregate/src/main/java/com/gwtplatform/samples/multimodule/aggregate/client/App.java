@@ -14,17 +14,10 @@
  * the License.
  */
 
-package com.gwtplatform.samples.multimodule.module1.server.dispatch;
+package com.gwtplatform.samples.multimodule.aggregate.client;
 
-import javax.inject.Singleton;
+import com.gwtplatform.common.client.GwtpApp;
 
-import com.google.inject.AbstractModule;
-
-public class DispatchModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(JacksonProvider.class).in(Singleton.class);
-
-        bind(SendTextResource.class).in(Singleton.class);
-    }
+@GwtpApp
+public class App {
 }
