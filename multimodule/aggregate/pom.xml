@@ -16,11 +16,13 @@
             <groupId>com.gwtplatform.samples.multimodule</groupId>
             <artifactId>module1</artifactId>
             <version>${gwtp.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.gwtplatform.samples.multimodule</groupId>
             <artifactId>module2</artifactId>
             <version>${gwtp.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
