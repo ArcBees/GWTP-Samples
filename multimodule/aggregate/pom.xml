@@ -33,7 +33,7 @@
                 <configuration>
                     <compilerArguments>
                         <Agwtp.debug/>
-                        <Agwtp.module>com.gwtplatform.samples.multimodule.aggregate.client.MultiModule</Agwtp.module>
+                        <Agwtp.module>com.gwtplatform.samples.multimodule.aggregate.MultiModule</Agwtp.module>
                     </compilerArguments>
                 </configuration>
             </plugin>

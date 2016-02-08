@@ -6,6 +6,7 @@
     <inherits name="com.gwtplatform.samples.multimodule.module2.Module2"/>
 
     <source path="client"/>
+    <source path="shared"/>
 
     <extend-configuration-property name="gin.ginjector.modules"
             value="com.gwtplatform.samples.multimodule.module1.client.gin.ClientModule"/>
