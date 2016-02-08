@@ -11,10 +11,6 @@
     <extend-configuration-property name="gin.ginjector.modules"
             value="com.gwtplatform.samples.multimodule.module1.client.gin.ClientModule"/>
 
-    <!-- TODO: Move to processor-tools -->
-    <extend-configuration-property name="gin.ginjector.modules"
-            value="com.gwtplatform.common.client.GeneratedGwtpModule"/>
-
     <set-configuration-property name="CssResource.enableGss" value="true"/>
     <set-property name="user.agent" value="safari"/>
 </module>

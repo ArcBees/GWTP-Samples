@@ -16,7 +16,7 @@
 
 package com.gwtplatform.samples.multimodule.aggregate.client;
 
-import com.gwtplatform.common.client.GwtpApp;
+import com.gwtplatform.common.client.annotations.GwtpApp;
 
 @GwtpApp
 public class App {
