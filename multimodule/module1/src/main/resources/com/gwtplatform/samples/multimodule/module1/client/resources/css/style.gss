@@ -1,0 +1,96 @@
+/** Add css rules here for your application. */
+
+@external "gwt-*";
+
+/** Example rules used by the template application (remove for your app) */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.3rem;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+
+    padding: 30px 0 5px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #fff;
+}
+
+header ul {
+    padding: 0;
+
+    list-style-type: none;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header a:link,
+header a:visited {
+    color: #ddd;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.box {
+    background-color: #eee;
+
+    padding: 15px;
+    border: 1px solid #bbb;
+    margin-bottom: 1rem;
+
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: .8rem;
+}
+
+button {
+    background: #333;
+    color: #fff;
+
+    border: 0;
+    padding: 7px 6px 6px;
+}
+
+button:hover {
+    background: #000;
+}
+
+input {
+    padding: 5px;
+}
+
+.label_error {
+    color: red;
+}
+
+.label_error p {
+    margin-top: .8rem;
+    margin-bottom: 0;
+}
