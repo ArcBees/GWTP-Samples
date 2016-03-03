@@ -54,7 +54,7 @@ public class ResponsePresenter
 
         @Override
         public void get(AsyncCallback<ResponsePresenter> callback) {
-            GWT.log("PATATES" );
+            GWT.log("PATATES");
             callback.onSuccess(provider.get());
         }
     }
@@ -109,7 +109,7 @@ public class ResponsePresenter
         super.onReset();
 
         getView().setTextToServer(textToServer);
-        getView().setServerResponse("Waiting for response..." );
+        getView().setServerResponse("Waiting for response...");
 
         sendTextService
                 .withCallback(new AsyncCallback<TextResponse>() {
