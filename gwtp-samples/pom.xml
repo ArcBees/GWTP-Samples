@@ -58,7 +58,6 @@
         <module>gwtp-sample-crawler-service</module>
         <module>gwtp-sample-mobile</module>
         <module>gwtp-sample-nested</module>
-        <module>gwtp-sample-tab</module>
     </modules>
 
     <properties>
