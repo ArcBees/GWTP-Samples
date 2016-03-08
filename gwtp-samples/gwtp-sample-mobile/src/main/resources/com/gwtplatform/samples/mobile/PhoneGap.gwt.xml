@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
-        "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+        "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
 <module>
     <!-- Inherit the core Web Toolkit stuff. -->
     <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
-    <inherits name='com.gwtplatform.dispatch.Dispatch'/>
+    <inherits name='com.gwtplatform.dispatch.rpc.DispatchRpc'/>
 
     <!-- Inherit the default GWT style sheet. -->
     <inherits name='com.google.gwt.user.theme.standard.Standard'/>
 
     <!-- Gin modules -->
-    <set-configuration-property name="gin.ginjector.modules"
-                                value="com.gwtplatform.samples.mobile.client.gin.PhoneGapModule"/>
+    <extend-configuration-property name="gin.ginjector.modules"
+            value="com.gwtplatform.samples.mobile.client.gin.PhoneGapModule"/>
 
     <!-- Specify the paths for translatable code -->
     <source path='client'/>

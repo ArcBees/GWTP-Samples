@@ -16,11 +16,13 @@
 
 package com.gwtplatform.samples.mobile.client.gin;
 
+import com.gwtplatform.common.client.annotations.GwtpApp;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
 
+@GwtpApp
 public class SharedModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

@@ -16,11 +16,16 @@
 
 package com.gwtplatform.samples.polymer.client.gin;
 
+import com.gwtplatform.common.client.annotations.GwtpApp;
+import com.gwtplatform.mvp.client.annotations.UseBootstrapper;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.samples.polymer.client.MyBootstrapper;
 import com.gwtplatform.samples.polymer.client.application.ApplicationModule;
 import com.gwtplatform.samples.polymer.client.place.NameTokens;
 
+@GwtpApp
+@UseBootstrapper(MyBootstrapper.class)
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

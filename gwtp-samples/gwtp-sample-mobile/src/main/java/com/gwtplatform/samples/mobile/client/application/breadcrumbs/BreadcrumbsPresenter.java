@@ -25,7 +25,6 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.gwtplatform.mvp.client.proxy.SetPlaceTitleHandler;
 
 /**
  * This is the top-level presenter of the hierarchy. Other presenters reveal themselves within this presenter. This
@@ -73,13 +72,7 @@ public class BreadcrumbsPresenter extends Presenter<BreadcrumbsPresenter.MyView,
         int size = placeManager.getHierarchyDepth();
         getView().clearBreadcrumbs(size);
         for (int i = 0; i < size; ++i) {
-            final int index = i;
-            placeManager.getTitle(i, new SetPlaceTitleHandler() {
-                @Override
-                public void onSetPlaceTitle(String title) {
-                    getView().setBreadcrumbs(index, title);
-                }
-            });
+            getView().setBreadcrumbs(i, "Depth " + i);
         }
     }
 }

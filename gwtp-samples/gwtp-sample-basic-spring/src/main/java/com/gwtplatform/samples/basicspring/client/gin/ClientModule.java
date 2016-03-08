@@ -16,6 +16,7 @@
 
 package com.gwtplatform.samples.basicspring.client.gin;
 
+import com.gwtplatform.common.client.annotations.GwtpApp;
 import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.dispatch.shared.SecurityCookie;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
@@ -25,6 +26,7 @@ import com.gwtplatform.samples.basicspring.client.application.ApplicationModule;
 import com.gwtplatform.samples.basicspring.client.place.NameTokens;
 import com.gwtplatform.samples.basicspring.client.resources.ResourceLoader;
 
+@GwtpApp
 public class ClientModule extends AbstractPresenterModule {
     private static final String ANALYTICS_ACCOUNT = "UA-8319339-6";
     private static final String COOKIE_NAME = "JSESSIONID";

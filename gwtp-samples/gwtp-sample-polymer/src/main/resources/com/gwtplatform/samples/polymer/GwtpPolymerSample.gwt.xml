@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
-        "https://raw.githubusercontent.com/gwtproject/gwt/2.7.0/distro-source/core/src/gwt-module.dtd">
+        "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
 <module rename-to='gwtppolymersample'>
     <!-- Inherit the core Web Toolkit stuff.                        -->
     <inherits name='com.google.gwt.user.User'/>
@@ -19,13 +19,10 @@
     <inherits name="com.google.gwt.query.Query"/>
 
     <extend-configuration-property name="gin.ginjector.modules"
-                                   value="com.gwtplatform.samples.polymer.client.gin.ClientModule"/>
-
-    <set-configuration-property name="gwtp.bootstrapper"
-                                value="com.gwtplatform.samples.polymer.client.MyBootstrapper"/>
+            value="com.gwtplatform.samples.polymer.client.gin.ClientModule"/>
 
     <extend-configuration-property name="gwtpolymer.elements"
-                                   value="core-animated-pages/transitions/slide-from-right.html"/>
+            value="core-animated-pages/transitions/slide-from-right.html"/>
 
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
