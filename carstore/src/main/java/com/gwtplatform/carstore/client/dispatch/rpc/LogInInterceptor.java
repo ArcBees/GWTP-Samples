@@ -37,7 +37,7 @@ public class LogInInterceptor extends AbstractRpcInterceptor<LogInAction, LogInR
 
     @Override
     public DispatchRequest execute(LogInAction action, AsyncCallback<LogInResult> resultCallback,
-            ExecuteCommand<LogInAction, LogInResult> executeCommand) {
+            ExecuteCommand<LogInAction, LogInResult, AsyncCallback<LogInResult>> executeCommand) {
         return executeCommand.execute(action, resultCallback);
     }
 }

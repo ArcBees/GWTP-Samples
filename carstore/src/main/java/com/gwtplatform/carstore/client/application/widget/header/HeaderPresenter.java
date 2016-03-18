@@ -18,8 +18,8 @@ package com.gwtplatform.carstore.client.application.widget.header;
 
 import java.util.logging.Logger;
 
+import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.Cookies;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.carstore.client.application.event.DisplayMessageEvent;
@@ -30,6 +30,7 @@ import com.gwtplatform.carstore.client.resources.HeaderMessages;
 import com.gwtplatform.carstore.client.security.CurrentUser;
 import com.gwtplatform.carstore.shared.api.ApiParameters;
 import com.gwtplatform.carstore.shared.api.SessionResource;
+import com.gwtplatform.dispatch.rest.client.RestCallback;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.PresenterWidget;
@@ -76,15 +77,15 @@ public class HeaderPresenter extends PresenterWidget<HeaderPresenter.MyView>
     @Override
     public void logout() {
         sessionDelegate
-                .withCallback(new AsyncCallback<Void>() {
+                .withCallback(new RestCallback<Void>() {
                     @Override
-                    public void onFailure(Throwable caught) {
+                    public void onFailure(Throwable caught, Response response) {
                         DisplayMessageEvent.fire(HeaderPresenter.this, new Message(messages.errorLoggingOut(),
                                 MessageStyle.ERROR));
                     }
 
                     @Override
-                    public void onSuccess(Void nothing) {
+                    public void onSuccess(Void nothing, Response response) {
                         onLogoutSuccess();
                     }
                 })

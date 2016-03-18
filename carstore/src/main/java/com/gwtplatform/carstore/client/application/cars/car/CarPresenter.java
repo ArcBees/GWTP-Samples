@@ -37,7 +37,7 @@ import com.gwtplatform.carstore.client.application.widget.message.Message;
 import com.gwtplatform.carstore.client.application.widget.message.MessageStyle;
 import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.client.resources.CarMessages;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.client.util.ErrorHandlerAsyncCallback;
 import com.gwtplatform.carstore.shared.api.CarsResource;
 import com.gwtplatform.carstore.shared.api.ManufacturersResource;
@@ -163,7 +163,7 @@ public class CarPresenter extends Presenter<MyView, CarPresenter.MyProxy>
     @Override
     protected void onReveal() {
         manufacturersDelegate
-                .withCallback(new AbstractAsyncCallback<List<ManufacturerDto>>() {
+                .withCallback(new AbstractRestCallback<List<ManufacturerDto>>() {
                     @Override
                     public void onSuccess(List<ManufacturerDto> manufacturers) {
                         onGetManufacturerSuccess(manufacturers);

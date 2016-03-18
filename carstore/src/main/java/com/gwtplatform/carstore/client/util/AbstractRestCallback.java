@@ -16,10 +16,14 @@
 
 package com.gwtplatform.carstore.client.util;
 
-import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.http.client.Response;
+import com.gwtplatform.dispatch.rest.client.RestCallback;
 
-public abstract class AbstractAsyncCallback<T> implements AsyncCallback<T> {
+public abstract class AbstractRestCallback<T> implements RestCallback<T> {
     @Override
-    public void onFailure(Throwable caught) {
+    public void onSuccess(T result, Response r) {
+        onSuccess(result);
     }
+
+    public abstract void onSuccess(T result);
 }

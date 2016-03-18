@@ -20,13 +20,14 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
-import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.http.client.Response;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.carstore.client.application.ApplicationPresenter;
 import com.gwtplatform.carstore.client.application.stats.StatisticsPresenter.MyProxy;
 import com.gwtplatform.carstore.client.application.stats.StatisticsPresenter.MyView;
 import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.shared.api.StatisticsResource;
+import com.gwtplatform.dispatch.rest.client.RestCallback;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -68,14 +69,14 @@ public class StatisticsPresenter extends Presenter<MyView, MyProxy> implements S
         getView().setResult("");
 
         statisticsDelegate
-                .withCallback(new AsyncCallback<Integer>() {
+                .withCallback(new RestCallback<Integer>() {
                     @Override
-                    public void onFailure(Throwable caught) {
+                    public void onFailure(Throwable caught, Response response) {
                         getView().setResult(FAILED);
                     }
 
                     @Override
-                    public void onSuccess(Integer year) {
+                    public void onSuccess(Integer year, Response response) {
                         int expectedYear = 1900 + date.getYear();
                         if (year == expectedYear) {
                             getView().setResult(year.toString());

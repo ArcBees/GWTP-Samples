@@ -22,9 +22,11 @@ import javax.inject.Provider;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.common.client.IndirectProvider;
+import com.gwtplatform.dispatch.rest.client.RestCallback;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
@@ -112,15 +114,15 @@ public class ResponsePresenter
         getView().setServerResponse("Waiting for response...");
 
         sendTextService
-                .withCallback(new AsyncCallback<TextResponse>() {
+                .withCallback(new RestCallback<TextResponse>() {
                     @Override
-                    public void onFailure(Throwable caught) {
+                    public void onFailure(Throwable caught, Response response) {
                         getView().setServerResponse("An error occured: " + caught.getMessage());
                     }
 
                     @Override
-                    public void onSuccess(TextResponse response) {
-                        getView().setServerResponse(response.getResponse());
+                    public void onSuccess(TextResponse testResponse, Response response) {
+                        getView().setServerResponse(testResponse.getResponse());
                     }
                 })
                 .send(textToServer);

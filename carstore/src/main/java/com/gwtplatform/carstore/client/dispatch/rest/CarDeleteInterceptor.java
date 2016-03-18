@@ -16,9 +16,9 @@
 
 package com.gwtplatform.carstore.client.dispatch.rest;
 
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.gwtplatform.carstore.shared.api.ApiPaths;
 import com.gwtplatform.dispatch.client.interceptor.ExecuteCommand;
+import com.gwtplatform.dispatch.rest.client.RestCallback;
 import com.gwtplatform.dispatch.rest.client.interceptor.AbstractRestInterceptor;
 import com.gwtplatform.dispatch.rest.client.interceptor.InterceptorContext;
 import com.gwtplatform.dispatch.rest.shared.HttpMethod;
@@ -35,8 +35,8 @@ public class CarDeleteInterceptor extends AbstractRestInterceptor {
     }
 
     @Override
-    public DispatchRequest execute(RestAction action, AsyncCallback<Object> resultCallback,
-            ExecuteCommand<RestAction, Object> executeCommand) {
+    public DispatchRequest execute(RestAction action, RestCallback resultCallback,
+            ExecuteCommand<RestAction, Object, RestCallback> executeCommand) {
         return executeCommand.execute(action, resultCallback);
     }
 }

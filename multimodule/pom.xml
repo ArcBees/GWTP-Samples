@@ -29,7 +29,7 @@
 
         <compiler-plugin.version>3.5.1</compiler-plugin.version>
 
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
     </properties>
 
     <dependencies>

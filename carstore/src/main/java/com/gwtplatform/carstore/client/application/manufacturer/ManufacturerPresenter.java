@@ -32,7 +32,7 @@ import com.gwtplatform.carstore.client.application.manufacturer.ManufacturerPres
 import com.gwtplatform.carstore.client.application.manufacturer.event.ManufacturerAddedEvent;
 import com.gwtplatform.carstore.client.application.manufacturer.ui.EditManufacturerPresenter;
 import com.gwtplatform.carstore.client.place.NameTokens;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.client.util.ErrorHandlerAsyncCallback;
 import com.gwtplatform.carstore.shared.api.ManufacturersResource;
 import com.gwtplatform.carstore.shared.dto.ManufacturerDto;
@@ -135,7 +135,7 @@ public class ManufacturerPresenter extends Presenter<MyView, MyProxy>
         ChangeActionBarEvent.fire(this, Arrays.asList(ActionType.ADD), true);
 
         manufacturersDelegate
-                .withCallback(new AbstractAsyncCallback<List<ManufacturerDto>>() {
+                .withCallback(new AbstractRestCallback<List<ManufacturerDto>>() {
                     @Override
                     public void onSuccess(List<ManufacturerDto> manufacturers) {
                         getView().displayManufacturers(manufacturers);
