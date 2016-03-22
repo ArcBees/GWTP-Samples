@@ -19,11 +19,12 @@ package com.gwtplatform.carstore.client.util;
 import com.google.gwt.http.client.Response;
 import com.gwtplatform.dispatch.rest.client.RestCallback;
 
-public abstract class AbstractRestCallback<T> implements RestCallback<T> {
+@FunctionalInterface
+public interface AbstractRestCallback<T> extends RestCallback<T> {
     @Override
-    public void onSuccess(T result, Response r) {
+    default void onSuccess(T result, Response r) {
         onSuccess(result);
     }
 
-    public abstract void onSuccess(T result);
+    void onSuccess(T result);
 }

@@ -44,10 +44,10 @@
         <maven-failsafe-plugin.version>2.18</maven-failsafe-plugin.version>
         <maven-surefire-plugin.version>2.18</maven-surefire-plugin.version>
         <gwt-maven-plugin.version>2.7.0</gwt-maven-plugin.version>
-        <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>2.15</maven-checkstyle-plugin.version>
 
         <arcbees-checkstyle.version>1.2</arcbees-checkstyle.version>
-        <checkstyle.version>6.3</checkstyle.version>
+        <checkstyle.version>6.12</checkstyle.version>
 
         <!-- Settings -->
 
@@ -57,7 +57,7 @@
         <gae.port>8888</gae.port>
         <gae.address>127.0.0.1</gae.address>
 
-        <target.jdk>1.7</target.jdk>
+        <target.jdk>1.8</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

@@ -135,12 +135,8 @@ public class ManufacturerPresenter extends Presenter<MyView, MyProxy>
         ChangeActionBarEvent.fire(this, Arrays.asList(ActionType.ADD), true);
 
         manufacturersDelegate
-                .withCallback(new AbstractRestCallback<List<ManufacturerDto>>() {
-                    @Override
-                    public void onSuccess(List<ManufacturerDto> manufacturers) {
-                        getView().displayManufacturers(manufacturers);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<ManufacturerDto>>)
+                        manufacturers -> getView().displayManufacturers(manufacturers))
                 .getManufacturers();
     }
 

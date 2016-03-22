@@ -96,12 +96,7 @@ public class RatingPresenter extends Presenter<RatingPresenter.MyView, RatingPre
     @Override
     public void onDelete(final RatingDto ratingDto) {
         ratingDelegate
-                .withCallback(new AbstractRestCallback<Void>() {
-                    @Override
-                    public void onSuccess(Void nothing) {
-                        getView().removeRating(ratingDto);
-                    }
-                })
+                .withCallback((AbstractRestCallback<Void>) nothing -> getView().removeRating(ratingDto))
                 .delete(ratingDto.getId());
     }
 
@@ -117,12 +112,7 @@ public class RatingPresenter extends Presenter<RatingPresenter.MyView, RatingPre
         ChangeActionBarEvent.fire(this, Arrays.asList(ActionType.ADD), true);
 
         ratingDelegate
-                .withCallback(new AbstractRestCallback<List<RatingDto>>() {
-                    @Override
-                    public void onSuccess(List<RatingDto> ratings) {
-                        getView().displayRatings(ratings);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<RatingDto>>) ratings -> getView().displayRatings(ratings))
                 .getRatings();
     }
 

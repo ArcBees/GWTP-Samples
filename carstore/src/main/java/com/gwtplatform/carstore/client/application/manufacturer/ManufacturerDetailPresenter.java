@@ -97,12 +97,9 @@ public class ManufacturerDetailPresenter extends Presenter<MyView, MyProxy>
         if (!createNew) {
             Long id = Long.parseLong(param);
             manufacturersDelegate
-                    .withCallback(new AbstractRestCallback<ManufacturerDto>() {
-                        @Override
-                        public void onSuccess(ManufacturerDto manufacturer) {
-                            currentManufacturer = manufacturer;
-                            getView().edit(currentManufacturer);
-                        }
+                    .withCallback((AbstractRestCallback<ManufacturerDto>) manufacturer -> {
+                        currentManufacturer = manufacturer;
+                        getView().edit(currentManufacturer);
                     })
                     .get(id);
         } else {

@@ -33,11 +33,6 @@ public class MyBootstrapper implements Bootstrapper {
 
     @Override
     public void onBootstrap() {
-        GwtPolymer.init(new GwtPolymer.LoadCallback() {
-            @Override
-            public void onInjectDone() {
-                placeManager.revealCurrentPlace();
-            }
-        });
+        GwtPolymer.init(placeManager::revealCurrentPlace);
     }
 }

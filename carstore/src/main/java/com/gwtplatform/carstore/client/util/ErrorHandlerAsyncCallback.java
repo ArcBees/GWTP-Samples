@@ -42,7 +42,7 @@ public abstract class ErrorHandlerAsyncCallback<R> implements RestCallback<R> {
     }
 
     @Override
-    public void setResponse(Response response) {
+    public void always(Response response) {
         GWT.log("HTTP " + response.getStatusCode() + ": " + response.getStatusText());
     }
 

@@ -61,13 +61,10 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
         menu.setAttribute("core-drawer-toggle", "");
         pages.getElement().setAttribute("transitions", "slide-from-right");
 
-        asWidget().addDomHandler(new AnimatedPagesTransitionEndEvent.AnimatedPagesTransitionEndHandler() {
-            @Override
-            public void onAnimatedPagesTransitionEnd(AnimatedPagesTransitionEndEvent event) {
-                oldMain.removeFromParent();
-                oldMain = null;
-                pages.getElement().setPropertyInt("selected", 0);
-            }
+        asWidget().addDomHandler(event -> {
+            oldMain.removeFromParent();
+            oldMain = null;
+            pages.getElement().setPropertyInt("selected", 0);
         }, AnimatedPagesTransitionEndEvent.getType());
     }
 

@@ -18,12 +18,12 @@ package com.gwtplatform.carstore.client.dispatch.rest;
 
 import javax.inject.Inject;
 
-import com.gwtplatform.dispatch.rest.client.interceptor.DefaultRestInterceptorRegistry;
+import com.gwtplatform.dispatch.rest.client.filter.DefaultRestFilterRegistry;
 
-public class RestInterceptorRegistry extends DefaultRestInterceptorRegistry {
+public class RestFilterRegistry extends DefaultRestFilterRegistry {
     @Inject
-    RestInterceptorRegistry(
-            CarDeleteInterceptor carDeleteInterceptor) {
-        register(carDeleteInterceptor);
+    RestFilterRegistry(
+            CarDeleteFilter carDeleteFilter) {
+        register(carDeleteFilter);
     }
 }

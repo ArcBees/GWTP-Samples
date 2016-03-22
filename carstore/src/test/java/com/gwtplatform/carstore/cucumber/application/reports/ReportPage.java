@@ -29,7 +29,7 @@ public class ReportPage extends PageWithEditTable {
     private static final String MANUFACTURER_COL = "Manufacturer";
     private static final String RATING_COL = "Rating";
 
-    private HashMap<String, AveragingCounter> averages = new HashMap<String, AveragingCounter>();
+    private HashMap<String, AveragingCounter> averages = new HashMap<>();
 
     public void addRating(String car, String rating) {
         String manufacturer = car.substring(0, car.indexOf('/'));

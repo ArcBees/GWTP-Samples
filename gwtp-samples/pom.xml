@@ -88,14 +88,14 @@
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-checkstyle-plugin.version>2.15</maven-checkstyle-plugin.version>
 
-        <checkstyle.version>6.5</checkstyle.version>
+        <checkstyle.version>6.12</checkstyle.version>
         <arcbees-checkstyle.version>1.2</arcbees-checkstyle.version>
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
         <jukito.version>1.4</jukito.version>
 
-        <target.jdk>1.7</target.jdk>
+        <target.jdk>1.8</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

@@ -60,7 +60,7 @@ public class ReportView extends ViewImpl implements ReportPresenter.MyView {
 
     private void initCarGrid() {
         reportGrid = new CellTable<>();
-        reportGrid.setSelectionModel(new NoSelectionModel<ManufacturerRatingDto>());
+        reportGrid.setSelectionModel(new NoSelectionModel<>());
 
         ratingsProvider.addDataDisplay(reportGrid);
 

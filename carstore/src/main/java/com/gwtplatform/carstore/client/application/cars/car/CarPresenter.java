@@ -163,12 +163,8 @@ public class CarPresenter extends Presenter<MyView, CarPresenter.MyProxy>
     @Override
     protected void onReveal() {
         manufacturersDelegate
-                .withCallback(new AbstractRestCallback<List<ManufacturerDto>>() {
-                    @Override
-                    public void onSuccess(List<ManufacturerDto> manufacturers) {
-                        onGetManufacturerSuccess(manufacturers);
-                    }
-                })
+                .withCallback(
+                        (AbstractRestCallback<List<ManufacturerDto>>) this::onGetManufacturerSuccess)
                 .getManufacturers();
 
         Boolean createNew = placeManager.getCurrentPlaceRequest().matchesNameToken(NameTokens.NEW_CAR);

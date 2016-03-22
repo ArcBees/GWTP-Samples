@@ -19,7 +19,7 @@ package com.gwtplatform.carstore.client.dispatch.rpc;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.gwtplatform.carstore.shared.dispatch.LogInAction;
 import com.gwtplatform.carstore.shared.dispatch.LogInResult;
-import com.gwtplatform.dispatch.client.interceptor.ExecuteCommand;
+import com.gwtplatform.dispatch.client.ExecuteCommand;
 import com.gwtplatform.dispatch.rpc.client.interceptor.AbstractRpcInterceptor;
 import com.gwtplatform.dispatch.rpc.client.interceptor.UndoCommand;
 import com.gwtplatform.dispatch.shared.DispatchRequest;
@@ -30,14 +30,14 @@ public class LogInInterceptor extends AbstractRpcInterceptor<LogInAction, LogInR
     }
 
     @Override
-    public DispatchRequest undo(LogInAction action, LogInResult result, AsyncCallback<Void> callback,
-            UndoCommand<LogInAction, LogInResult> undoCommand) {
-        return undoCommand.undo(action, result, callback);
+    public DispatchRequest execute(LogInAction action, AsyncCallback<LogInResult> resultCallback,
+            ExecuteCommand<LogInAction, AsyncCallback<LogInResult>> executeCommand) {
+        return executeCommand.execute(action, resultCallback);
     }
 
     @Override
-    public DispatchRequest execute(LogInAction action, AsyncCallback<LogInResult> resultCallback,
-            ExecuteCommand<LogInAction, LogInResult, AsyncCallback<LogInResult>> executeCommand) {
-        return executeCommand.execute(action, resultCallback);
+    public DispatchRequest undo(LogInAction action, LogInResult result, AsyncCallback<Void> callback,
+            UndoCommand<LogInAction, LogInResult> undoCommand) {
+        return undoCommand.undo(action, result, callback);
     }
 }

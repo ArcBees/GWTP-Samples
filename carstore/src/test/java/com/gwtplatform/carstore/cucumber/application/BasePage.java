@@ -44,12 +44,8 @@ public class BasePage {
     }
 
     public void waitUntilPlaceIsLoaded(final String nameToken) {
-        webDriverWait().until(new Function<WebDriver, Boolean>() {
-            @Override
-            public Boolean apply(WebDriver webDriver) {
-                return webDriver.getCurrentUrl().contains("#" + nameToken);
-            }
-        });
+        webDriverWait().until(
+                (Function<WebDriver, Boolean>) webDriver1 -> webDriver1.getCurrentUrl().contains("#" + nameToken));
     }
 
     protected void chooseOkOnNextConfirm() {
@@ -82,21 +78,12 @@ public class BasePage {
 
     protected WebElement waitUntilElementIsClickable(final WebElement parent,
             final By locator) {
-        final WebElement childElement = webDriverWait().until(new Function<WebDriver, WebElement>() {
-            @Override
-            public WebElement apply(WebDriver input) {
-                return parent.findElement(locator);
-            }
-        });
+        final WebElement childElement = webDriverWait().until(
+                (Function<WebDriver, WebElement>) input -> parent.findElement(locator));
 
         moveToElement(childElement);
 
-        webDriverWait().until(new Function<WebDriver, Boolean>() {
-            @Override
-            public Boolean apply(WebDriver input) {
-                return childElement.isEnabled();
-            }
-        });
+        webDriverWait().until((Function<WebDriver, Boolean>) input -> childElement.isEnabled());
 
         return childElement;
     }
@@ -112,12 +99,7 @@ public class BasePage {
     }
 
     protected WebElement waitUntilElementIsLoaded(final SearchContext parent, final By locator) {
-        return webDriverWait().until(new ExpectedCondition<WebElement>() {
-            @Override
-            public WebElement apply(WebDriver input) {
-                return parent.findElement(locator);
-            }
-        });
+        return webDriverWait().until((ExpectedCondition<WebElement>) input -> parent.findElement(locator));
     }
 
     private void moveToElementLocatedBy(By by) {

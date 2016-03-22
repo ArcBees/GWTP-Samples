@@ -118,12 +118,7 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
     @Override
     public void filter(String color, final int offset, int limit) {
         carsDelegate
-                .withCallback(new AbstractRestCallback<List<CarDto>>() {
-                    @Override
-                    public void onSuccess(List<CarDto> cars) {
-                        getView().displayCars(offset, cars);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<CarDto>>) cars -> getView().displayCars(offset, cars))
                 .getCars(color, offset, limit);
     }
 
@@ -165,12 +160,7 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
         getView().initDataProvider();
 
         carsDelegate
-                .withCallback(new AbstractRestCallback<Integer>() {
-                    @Override
-                    public void onSuccess(Integer result) {
-                        getView().setCarsCount(result);
-                    }
-                })
+                .withCallback((AbstractRestCallback<Integer>) result -> getView().setCarsCount(result))
                 .getCarsCount();
     }
 

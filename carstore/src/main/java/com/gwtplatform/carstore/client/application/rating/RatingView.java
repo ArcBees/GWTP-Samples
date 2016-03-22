@@ -87,7 +87,7 @@ public class RatingView extends ViewWithUiHandlers<RatingUiHandlers> implements 
 
     private void initRatingGrid() {
         ratingGrid = new CellTable<>();
-        ratingGrid.setSelectionModel(new NoSelectionModel<RatingDto>());
+        ratingGrid.setSelectionModel(new NoSelectionModel<>());
 
         ratingColumnInitializer.initializeColumns(ratingGrid);
         initActionColumns();

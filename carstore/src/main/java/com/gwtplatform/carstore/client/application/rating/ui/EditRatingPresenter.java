@@ -93,12 +93,7 @@ public class EditRatingPresenter extends PresenterWidget<MyView> implements Edit
 
     private void reveal() {
         carsDelegate
-                .withCallback(new AbstractRestCallback<List<CarDto>>() {
-                    @Override
-                    public void onSuccess(List<CarDto> cars) {
-                        onGetCarsSuccess(cars);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<CarDto>>) this::onGetCarsSuccess)
                 .getCars(null, 0, CarsResource.LIMIT_ALL);
     }
 

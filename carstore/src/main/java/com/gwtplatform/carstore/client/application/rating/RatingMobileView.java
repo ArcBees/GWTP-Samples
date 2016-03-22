@@ -76,13 +76,10 @@ public class RatingMobileView extends ViewWithUiHandlers<RatingUiHandlers> imple
     }
 
     private ActionCell.Delegate<RatingDto> setupRemoveAction() {
-        return new ActionCell.Delegate<RatingDto>() {
-            @Override
-            public void execute(RatingDto ratingDto) {
-                Boolean confirm = Window.confirm("Are you sure you want to delete" + ratingDto.toString() + "?");
-                if (confirm) {
-                    getUiHandlers().onDelete(ratingDto);
-                }
+        return ratingDto -> {
+            Boolean confirm = Window.confirm("Are you sure you want to delete" + ratingDto.toString() + "?");
+            if (confirm) {
+                getUiHandlers().onDelete(ratingDto);
             }
         };
     }

@@ -93,7 +93,7 @@ public class ManufacturerView extends ViewWithUiHandlers<ManufacturerUiHandlers>
 
     private void initManufacturerGrid() {
         manufacturerGrid = new CellTable<>();
-        manufacturerGrid.setSelectionModel(new NoSelectionModel<ManufacturerDto>());
+        manufacturerGrid.setSelectionModel(new NoSelectionModel<>());
 
         initDataColumns();
         initActionColumns();

@@ -128,12 +128,7 @@ public class RatingDetailPresenter extends Presenter<MyView, MyProxy>
         ChangeActionBarEvent.fire(this, actions, false);
 
         carsDelegate
-                .withCallback(new AbstractRestCallback<List<CarDto>>() {
-                    @Override
-                    public void onSuccess(List<CarDto> cars) {
-                        onGetCarsSuccess(cars);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<CarDto>>) this::onGetCarsSuccess)
                 .getCars(null, 0, CarsResource.LIMIT_ALL);
     }
 

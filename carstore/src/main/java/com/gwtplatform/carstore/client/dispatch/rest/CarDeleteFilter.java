@@ -17,26 +17,34 @@
 package com.gwtplatform.carstore.client.dispatch.rest;
 
 import com.gwtplatform.carstore.shared.api.ApiPaths;
-import com.gwtplatform.dispatch.client.interceptor.ExecuteCommand;
+import com.gwtplatform.dispatch.client.ExecuteCommand;
 import com.gwtplatform.dispatch.rest.client.RestCallback;
-import com.gwtplatform.dispatch.rest.client.interceptor.AbstractRestInterceptor;
-import com.gwtplatform.dispatch.rest.client.interceptor.InterceptorContext;
+import com.gwtplatform.dispatch.rest.client.context.RestContext;
+import com.gwtplatform.dispatch.rest.client.filter.RestFilter;
+import com.gwtplatform.dispatch.rest.client.filter.RestFilterChain;
 import com.gwtplatform.dispatch.rest.shared.HttpMethod;
 import com.gwtplatform.dispatch.rest.shared.RestAction;
 import com.gwtplatform.dispatch.shared.DispatchRequest;
 
-public class CarDeleteInterceptor extends AbstractRestInterceptor {
-    CarDeleteInterceptor() {
-        super(new InterceptorContext.Builder()
+public class CarDeleteFilter implements RestFilter {
+    private final RestContext restContext;
+
+    CarDeleteFilter() {
+        restContext = new RestContext.Builder()
                 .path(ApiPaths.CARS)
                 .httpMethod(HttpMethod.DELETE)
                 .transcendent(true)
-                .build());
+                .build();
     }
 
     @Override
-    public DispatchRequest execute(RestAction action, RestCallback resultCallback,
-            ExecuteCommand<RestAction, Object, RestCallback> executeCommand) {
-        return executeCommand.execute(action, resultCallback);
+    public DispatchRequest filter(RestAction<?> action, RestCallback<?> resultCallback,
+            ExecuteCommand<RestAction<?>, RestCallback<?>> executeCommand, RestFilterChain filterChain) {
+        return filterChain.doFilter(action, resultCallback, executeCommand);
+    }
+
+    @Override
+    public RestContext getRestContext() {
+        return restContext;
     }
 }

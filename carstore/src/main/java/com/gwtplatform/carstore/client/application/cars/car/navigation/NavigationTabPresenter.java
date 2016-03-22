@@ -96,12 +96,7 @@ public class NavigationTabPresenter extends PresenterWidget<NavigationTabPresent
     private Widget createTab(final NavigationTab element) {
         Tab tabElement = new Tab(element.getName(), element.isClosable());
 
-        tabElement.addCloseTabHandler(new CloseTabEvent.CloseTabHandler() {
-            @Override
-            public void onCloseTab(CloseTabEvent event) {
-                onTabClosed(elements.indexOf(element));
-            }
-        });
+        tabElement.addCloseTabHandler(event -> onTabClosed(elements.indexOf(element)));
 
         return tabElement;
     }

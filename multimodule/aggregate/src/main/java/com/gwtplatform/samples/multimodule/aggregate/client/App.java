@@ -50,12 +50,7 @@ public class App {
     public static class MyPreBootstrapper implements PreBootstrapper {
         @Override
         public void onPreBootstrap() {
-            GWT.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
-                @Override
-                public void onUncaughtException(Throwable e) {
-                    GWT.log("POTATOES!!1", e);
-                }
-            });
+            GWT.setUncaughtExceptionHandler(e -> GWT.log("POTATOES!!1", e));
         }
     }
 }
