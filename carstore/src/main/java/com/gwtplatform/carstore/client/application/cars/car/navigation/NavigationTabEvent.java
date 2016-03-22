@@ -27,7 +27,7 @@ public class NavigationTabEvent extends GwtEvent<NavigationTabEvent.NavigationTa
         void onRevealTab(NavigationTab element);
     }
 
-    private static enum Action {
+    private enum Action {
         REVEAL, CLOSE
     }
 

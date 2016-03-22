@@ -48,6 +48,7 @@ public abstract class ErrorHandlerAsyncCallback<R> implements RestCallback<R> {
 
     @Override
     public void onSuccess(R result, Response response) {
+        onSuccess(result);
     }
 
     public abstract void onSuccess(R result);

@@ -22,7 +22,7 @@ public enum MessageCloseDelay {
 
     private int delay;
 
-    private MessageCloseDelay(int delay) {
+    MessageCloseDelay(int delay) {
         this.delay = delay;
     }
 
