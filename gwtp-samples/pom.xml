@@ -58,20 +58,18 @@
         <module>gwtp-sample-crawler-service</module>
         <module>gwtp-sample-mobile</module>
         <module>gwtp-sample-nested</module>
-        <module>gwtp-sample-polymer</module>
     </modules>
 
     <properties>
         <!-- client -->
-        <gwt.version>2.7.0</gwt.version>
+        <gwt.version>2.8.0</gwt.version>
         <gwtp.version>2.0-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwt.style>OBF</gwt.style>
-        <gwt-polymer.version>0.5.5-SNAPSHOT</gwt-polymer.version>
-        <gwtquery.version>1.4.3</gwtquery.version>
+        <gwtquery.version>1.5-beta1</gwtquery.version>
 
         <!-- server -->
-        <gae.version>1.9.17</gae.version>
+        <gae.version>1.9.48</gae.version>
         <guice.version>3.0</guice.version>
         <aopalliance.version>1.0</aopalliance.version>
 
@@ -93,7 +91,7 @@
 
         <!-- testing -->
         <junit.version>4.11</junit.version>
-        <jukito.version>1.4</jukito.version>
+        <jukito.version>1.5</jukito.version>
 
         <target.jdk>1.8</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
