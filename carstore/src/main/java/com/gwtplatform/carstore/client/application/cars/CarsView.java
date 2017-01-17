@@ -109,7 +109,7 @@ public class CarsView extends ViewWithUiHandlers<CarsUiHandlers> implements MyVi
 
     private void initCarGrid() {
         carGrid = new CellTable<>();
-        carGrid.setSelectionModel(new NoSelectionModel<CarDto>());
+        carGrid.setSelectionModel(new NoSelectionModel<>());
 
         pager = new SimplePager(SimplePager.TextLocation.CENTER);
         pager.setDisplay(carGrid);

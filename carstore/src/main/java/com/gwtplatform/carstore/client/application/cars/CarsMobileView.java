@@ -27,7 +27,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.Range;
-import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.gwtplatform.carstore.client.application.cars.CarsPresenter.MyView;
 import com.gwtplatform.carstore.client.application.cars.renderer.CarCell;
@@ -63,12 +62,7 @@ public class CarsMobileView extends ViewWithUiHandlers<CarsUiHandlers> implement
         pagerPanel.setDisplay(carList);
         carList.setSelectionModel(selectionModel);
 
-        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
-            @Override
-            public void onSelectionChange(SelectionChangeEvent event) {
-                getUiHandlers().onEdit(selectionModel.getSelectedObject());
-            }
-        });
+        selectionModel.addSelectionChangeHandler(event -> getUiHandlers().onEdit(selectionModel.getSelectedObject()));
     }
 
     @Override

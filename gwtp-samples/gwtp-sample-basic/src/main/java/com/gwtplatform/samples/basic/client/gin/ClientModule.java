@@ -16,6 +16,7 @@
 
 package com.gwtplatform.samples.basic.client.gin;
 
+import com.gwtplatform.common.client.annotations.GwtpApp;
 import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.GaAccount;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
@@ -24,6 +25,7 @@ import com.gwtplatform.samples.basic.client.application.ApplicationModule;
 import com.gwtplatform.samples.basic.client.place.NameTokens;
 import com.gwtplatform.samples.basic.client.resources.ResourceLoader;
 
+@GwtpApp
 public class ClientModule extends AbstractPresenterModule {
     private static final String ANALYTICS_ACCOUNT = "UA-8319339-6";
 

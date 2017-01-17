@@ -36,15 +36,22 @@ public abstract class ErrorHandlerAsyncCallback<R> implements RestCallback<R> {
     }
 
     @Override
-    public void onFailure(Throwable caught) {
+    public void onFailure(Throwable caught, Response response) {
         Message message = new Message(translateCauses(caught), MessageStyle.ERROR);
         DisplayMessageEvent.fire(hasHandlers, message);
     }
 
     @Override
-    public void setResponse(Response response) {
+    public void always(Response response) {
         GWT.log("HTTP " + response.getStatusCode() + ": " + response.getStatusText());
     }
+
+    @Override
+    public void onSuccess(R result, Response response) {
+        onSuccess(result);
+    }
+
+    public abstract void onSuccess(R result);
 
     private String translateCauses(Throwable caught) {
         StringBuilder sb = new StringBuilder(translateCause(caught));

@@ -26,7 +26,6 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.annotations.TitleFunction;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -75,22 +74,6 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
-    }
-
-    @TitleFunction
-    public static String getListTitle(PlaceRequest request) {
-        return getTitleFor(request.getParameter(ParameterTokens.TOKEN_TYPE, null));
-    }
-
-    private static String getTitleFor(String type) {
-        switch (type) {
-            case ParameterTokens.TYPE_FAVORITE_PRODUCTS:
-                return "Favorite products";
-            case ParameterTokens.TYPE_SPECIALS:
-                return "Specials";
-            default:
-                return "All products";
-        }
     }
 
     @Override
@@ -143,5 +126,16 @@ public class ProductsPresenter extends Presenter<ProductsPresenter.MyView, Produ
 
     private void setViewTitle() {
         getView().setTitle(getTitleFor(currentType));
+    }
+
+    private static String getTitleFor(String type) {
+        switch (type) {
+            case ParameterTokens.TYPE_FAVORITE_PRODUCTS:
+                return "Favorite products";
+            case ParameterTokens.TYPE_SPECIALS:
+                return "Specials";
+            default:
+                return "All products";
+        }
     }
 }

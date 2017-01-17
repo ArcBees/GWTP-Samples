@@ -37,7 +37,7 @@ import com.gwtplatform.carstore.client.application.event.ActionBarVisibilityEven
 import com.gwtplatform.carstore.client.application.event.ChangeActionBarEvent;
 import com.gwtplatform.carstore.client.application.event.ChangeActionBarEvent.ActionType;
 import com.gwtplatform.carstore.client.place.NameTokens;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.client.util.ErrorHandlerAsyncCallback;
 import com.gwtplatform.carstore.shared.api.CarsResource;
 import com.gwtplatform.carstore.shared.dto.CarDto;
@@ -118,12 +118,7 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
     @Override
     public void filter(String color, final int offset, int limit) {
         carsDelegate
-                .withCallback(new AbstractAsyncCallback<List<CarDto>>() {
-                    @Override
-                    public void onSuccess(List<CarDto> cars) {
-                        getView().displayCars(offset, cars);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<CarDto>>) cars -> getView().displayCars(offset, cars))
                 .getCars(color, offset, limit);
     }
 
@@ -165,12 +160,7 @@ public class CarsPresenter extends Presenter<MyView, MyProxy>
         getView().initDataProvider();
 
         carsDelegate
-                .withCallback(new AbstractAsyncCallback<Integer>() {
-                    @Override
-                    public void onSuccess(Integer result) {
-                        getView().setCarsCount(result);
-                    }
-                })
+                .withCallback((AbstractRestCallback<Integer>) result -> getView().setCarsCount(result))
                 .getCarsCount();
     }
 

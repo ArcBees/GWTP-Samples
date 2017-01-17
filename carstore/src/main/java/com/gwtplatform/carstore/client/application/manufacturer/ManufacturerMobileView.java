@@ -25,7 +25,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.ListDataProvider;
-import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.gwtplatform.carstore.client.application.manufacturer.ManufacturerPresenter.MyView;
 import com.gwtplatform.carstore.client.application.manufacturer.renderer.ManufacturerCell;
@@ -57,12 +56,7 @@ public class ManufacturerMobileView extends ViewWithUiHandlers<ManufacturerUiHan
         selectionModel = new SingleSelectionModel<>();
         manufacturerList.setSelectionModel(selectionModel);
 
-        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
-            @Override
-            public void onSelectionChange(SelectionChangeEvent event) {
-                getUiHandlers().onDetail(selectionModel.getSelectedObject());
-            }
-        });
+        selectionModel.addSelectionChangeHandler(event -> getUiHandlers().onDetail(selectionModel.getSelectedObject()));
     }
 
     @Override

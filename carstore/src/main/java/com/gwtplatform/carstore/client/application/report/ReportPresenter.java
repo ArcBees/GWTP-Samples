@@ -25,9 +25,8 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.carstore.client.application.ApplicationPresenter;
 import com.gwtplatform.carstore.client.application.event.ActionBarVisibilityEvent;
 import com.gwtplatform.carstore.client.application.event.ChangeActionBarEvent;
-import com.gwtplatform.carstore.client.application.event.ChangeActionBarEvent.ActionType;
 import com.gwtplatform.carstore.client.place.NameTokens;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.shared.api.ManufacturersResource;
 import com.gwtplatform.carstore.shared.dto.ManufacturerRatingDto;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
@@ -63,15 +62,11 @@ public class ReportPresenter extends Presenter<ReportPresenter.MyView, ReportPre
     @Override
     protected void onReveal() {
         ActionBarVisibilityEvent.fire(this, true);
-        ChangeActionBarEvent.fire(this, new ArrayList<ActionType>(), true);
+        ChangeActionBarEvent.fire(this, new ArrayList<>(), true);
 
         manufacturersDelegate
-                .withCallback(new AbstractAsyncCallback<List<ManufacturerRatingDto>>() {
-                    @Override
-                    public void onSuccess(List<ManufacturerRatingDto> manufacturerRatings) {
-                        getView().displayReport(manufacturerRatings);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<ManufacturerRatingDto>>)
+                        manufacturerRatings -> getView().displayReport(manufacturerRatings))
                 .getAverageRatings();
     }
 }

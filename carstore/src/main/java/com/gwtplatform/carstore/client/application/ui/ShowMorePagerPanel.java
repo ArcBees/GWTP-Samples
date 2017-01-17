@@ -16,8 +16,6 @@
 
 package com.gwtplatform.carstore.client.application.ui;
 
-import com.google.gwt.event.dom.client.ScrollEvent;
-import com.google.gwt.event.dom.client.ScrollHandler;
 import com.google.gwt.user.cellview.client.AbstractPager;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -39,29 +37,26 @@ public class ShowMorePagerPanel extends AbstractPager {
         scrollable.getElement().setTabIndex(-1);
 
         // Handle scroll events.
-        scrollable.addScrollHandler(new ScrollHandler() {
-            @Override
-            public void onScroll(ScrollEvent event) {
-                // If scrolling up, ignore the event.
-                int oldScrollPos = lastScrollPos;
-                lastScrollPos = scrollable.getVerticalScrollPosition();
-                if (oldScrollPos >= lastScrollPos) {
-                    return;
-                }
+        scrollable.addScrollHandler(event -> {
+            // If scrolling up, ignore the event.
+            int oldScrollPos = lastScrollPos;
+            lastScrollPos = scrollable.getVerticalScrollPosition();
+            if (oldScrollPos >= lastScrollPos) {
+                return;
+            }
 
-                HasRows display = getDisplay();
-                if (display == null) {
-                    return;
-                }
+            HasRows display1 = getDisplay();
+            if (display1 == null) {
+                return;
+            }
 
-                int maxScrollTop = scrollable.getWidget().getOffsetHeight()
-                        - scrollable.getOffsetHeight();
-                if (lastScrollPos >= maxScrollTop - 16) {
-                    // We are near the end, so increase the page size.
-                    int newPageSize = Math.min(display.getVisibleRange()
-                            .getLength() + incrementSize, display.getRowCount());
-                    display.setVisibleRange(0, newPageSize);
-                }
+            int maxScrollTop = scrollable.getWidget().getOffsetHeight()
+                    - scrollable.getOffsetHeight();
+            if (lastScrollPos >= maxScrollTop - 16) {
+                // We are near the end, so increase the page size.
+                int newPageSize = Math.min(display1.getVisibleRange()
+                        .getLength() + incrementSize, display1.getRowCount());
+                display1.setVisibleRange(0, newPageSize);
             }
         });
     }

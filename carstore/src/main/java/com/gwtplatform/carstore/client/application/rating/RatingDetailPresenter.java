@@ -34,7 +34,7 @@ import com.gwtplatform.carstore.client.application.widget.message.Message;
 import com.gwtplatform.carstore.client.application.widget.message.MessageStyle;
 import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.client.resources.EditRatingMessages;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.client.util.ErrorHandlerAsyncCallback;
 import com.gwtplatform.carstore.shared.api.CarsResource;
 import com.gwtplatform.carstore.shared.api.RatingResource;
@@ -128,12 +128,7 @@ public class RatingDetailPresenter extends Presenter<MyView, MyProxy>
         ChangeActionBarEvent.fire(this, actions, false);
 
         carsDelegate
-                .withCallback(new AbstractAsyncCallback<List<CarDto>>() {
-                    @Override
-                    public void onSuccess(List<CarDto> cars) {
-                        onGetCarsSuccess(cars);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<CarDto>>) this::onGetCarsSuccess)
                 .getCars(null, 0, CarsResource.LIMIT_ALL);
     }
 

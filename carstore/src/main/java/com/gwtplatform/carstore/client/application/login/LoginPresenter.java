@@ -175,7 +175,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
         boolean secure = false;
 
         NewCookie newCookie = new NewCookie(ApiParameters.LOGIN_COOKIE, value, path, domain, "", maxAge, secure);
-        sessionResource.withoutCallback().rememberMe(newCookie);
+        sessionResource.call().rememberMe(newCookie);
 
         LOGGER.info("LoginPresenter.setLoggedInCookie() Set client cookie=" + value);
     }

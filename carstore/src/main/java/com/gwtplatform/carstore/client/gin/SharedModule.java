@@ -16,17 +16,17 @@
 
 package com.gwtplatform.carstore.client.gin;
 
-import com.gwtplatform.carstore.client.dispatch.rest.AppRestDispatchHooks;
-import com.gwtplatform.carstore.client.dispatch.rest.RestInterceptorRegistry;
 import com.gwtplatform.carstore.client.dispatch.rpc.AppRpcDispatchHooks;
 import com.gwtplatform.carstore.client.dispatch.rpc.RpcInterceptorRegistry;
 import com.gwtplatform.carstore.client.place.NameTokens;
 import com.gwtplatform.carstore.client.security.SecurityModule;
+import com.gwtplatform.common.client.annotations.GwtpApp;
 import com.gwtplatform.dispatch.rest.client.gin.RestDispatchAsyncModule;
 import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 
+@GwtpApp
 public class SharedModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
@@ -36,10 +36,7 @@ public class SharedModule extends AbstractPresenterModule {
                 .errorPlace(NameTokens.LOGIN)
                 .unauthorizedPlace(NameTokens.UNAUTHORIZED)
                 .build());
-        install(new RestDispatchAsyncModule.Builder()
-                .dispatchHooks(AppRestDispatchHooks.class)
-                .interceptorRegistry(RestInterceptorRegistry.class)
-                .build());
+        install(new RestDispatchAsyncModule.Builder().build());
         install(new RpcDispatchAsyncModule.Builder()
                 .dispatchHooks(AppRpcDispatchHooks.class)
                 .interceptorRegistry(RpcInterceptorRegistry.class)

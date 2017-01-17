@@ -25,10 +25,8 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.annotations.TitleFunction;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
-import com.gwtplatform.mvp.client.proxy.SetPlaceTitleHandler;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.samples.mobile.client.application.breadcrumbs.BreadcrumbsPresenter;
 import com.gwtplatform.samples.mobile.client.place.NameTokens;
@@ -73,23 +71,6 @@ public class ProductPresenter extends Presenter<ProductPresenter.MyView, Product
 
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
-    }
-
-    @TitleFunction
-    public void getListTitle(PlaceRequest request, final SetPlaceTitleHandler handler) {
-        prepareFromRequest(request);
-
-        dispatcher.execute(new GetProductAction(id), new AsyncCallback<GetProductResult>() {
-            @Override
-            public void onFailure(Throwable caught) {
-                handler.onSetPlaceTitle("Unknown Product");
-            }
-
-            @Override
-            public void onSuccess(GetProductResult result) {
-                handler.onSetPlaceTitle(result.getProduct().getName());
-            }
-        });
     }
 
     @Override

@@ -31,7 +31,7 @@ import com.gwtplatform.carstore.client.application.rating.event.RatingAddedEvent
 import com.gwtplatform.carstore.client.application.rating.event.RatingAddedEvent.RatingAddedHandler;
 import com.gwtplatform.carstore.client.application.rating.ui.EditRatingPresenter;
 import com.gwtplatform.carstore.client.place.NameTokens;
-import com.gwtplatform.carstore.client.util.AbstractAsyncCallback;
+import com.gwtplatform.carstore.client.util.AbstractRestCallback;
 import com.gwtplatform.carstore.shared.api.RatingResource;
 import com.gwtplatform.carstore.shared.dto.RatingDto;
 import com.gwtplatform.dispatch.rest.delegates.client.ResourceDelegate;
@@ -96,12 +96,7 @@ public class RatingPresenter extends Presenter<RatingPresenter.MyView, RatingPre
     @Override
     public void onDelete(final RatingDto ratingDto) {
         ratingDelegate
-                .withCallback(new AbstractAsyncCallback<Void>() {
-                    @Override
-                    public void onSuccess(Void nothing) {
-                        getView().removeRating(ratingDto);
-                    }
-                })
+                .withCallback((AbstractRestCallback<Void>) nothing -> getView().removeRating(ratingDto))
                 .delete(ratingDto.getId());
     }
 
@@ -117,12 +112,7 @@ public class RatingPresenter extends Presenter<RatingPresenter.MyView, RatingPre
         ChangeActionBarEvent.fire(this, Arrays.asList(ActionType.ADD), true);
 
         ratingDelegate
-                .withCallback(new AbstractAsyncCallback<List<RatingDto>>() {
-                    @Override
-                    public void onSuccess(List<RatingDto> ratings) {
-                        getView().displayRatings(ratings);
-                    }
-                })
+                .withCallback((AbstractRestCallback<List<RatingDto>>) ratings -> getView().displayRatings(ratings))
                 .getRatings();
     }
 

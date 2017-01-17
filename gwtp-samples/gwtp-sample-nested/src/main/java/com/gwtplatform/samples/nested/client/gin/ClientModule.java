@@ -16,12 +16,14 @@
 
 package com.gwtplatform.samples.nested.client.gin;
 
+import com.gwtplatform.common.client.annotations.GwtpApp;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.samples.nested.client.application.ApplicationModule;
 import com.gwtplatform.samples.nested.client.place.NameTokens;
 import com.gwtplatform.samples.nested.client.resources.ResourceLoader;
 
+@GwtpApp
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {

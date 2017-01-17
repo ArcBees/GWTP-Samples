@@ -5,21 +5,21 @@
 
     <groupId>com.gwtplatform</groupId>
     <artifactId>carstore</artifactId>
-    <version>1.5</version>
+    <version>1.6-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>GWTP Carstore</name>
     <description>Simple application used for testing GWTP features.</description>
 
     <properties>
         <!-- Client -->
-        <gwt.version>2.7.0</gwt.version>
-        <gwtp.version>1.5</gwtp.version>
+        <gwt.version>2.8.0</gwt.version>
+        <gwtp.version>2.0-SNAPSHOT</gwtp.version>
         <gin.version>2.1.2</gin.version>
-        <gwtquery.version>1.4.2</gwtquery.version>
+        <gwtquery.version>1.5-beta1</gwtquery.version>
         <objectify-gwt.version>1.2.1</objectify-gwt.version>
 
         <!-- Server -->
-        <gae.version>1.9.17</gae.version>
+        <gae.version>1.9.48</gae.version>
         <guice.version>3.0</guice.version>
         <resteasy.version>3.0.9.Final</resteasy.version>
         <guava.version>18.0</guava.version>
@@ -39,15 +39,15 @@
 
         <!-- Plugins -->
         <maven-gae-plugin.version>0.9.6</maven-gae-plugin.version>
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
         <maven-failsafe-plugin.version>2.18</maven-failsafe-plugin.version>
         <maven-surefire-plugin.version>2.18</maven-surefire-plugin.version>
-        <gwt-maven-plugin.version>2.7.0</gwt-maven-plugin.version>
-        <maven-checkstyle-plugin.version>2.14</maven-checkstyle-plugin.version>
+        <gwt-maven-plugin.version>2.8.0</gwt-maven-plugin.version>
+        <maven-checkstyle-plugin.version>2.15</maven-checkstyle-plugin.version>
 
         <arcbees-checkstyle.version>1.2</arcbees-checkstyle.version>
-        <checkstyle.version>6.3</checkstyle.version>
+        <checkstyle.version>6.12</checkstyle.version>
 
         <!-- Settings -->
 
@@ -57,7 +57,7 @@
         <gae.port>8888</gae.port>
         <gae.address>127.0.0.1</gae.address>
 
-        <target.jdk>1.7</target.jdk>
+        <target.jdk>1.8</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -106,7 +106,11 @@
                     <source>${target.jdk}</source>
                     <target>${target.jdk}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <proc>none</proc>
+
+                    <compilerArguments>
+                        <Agwtp.debug/>
+                        <Agwtp.module>com.gwtplatform.carstore.CarStore</Agwtp.module>
+                    </compilerArguments>
                 </configuration>
             </plugin>
 
@@ -165,6 +169,18 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.gwt</groupId>
+                        <artifactId>gwt-user</artifactId>
+                        <version>${gwt.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.google.gwt</groupId>
+                        <artifactId>gwt-dev</artifactId>
+                        <version>${gwt.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!-- App Engine -->
