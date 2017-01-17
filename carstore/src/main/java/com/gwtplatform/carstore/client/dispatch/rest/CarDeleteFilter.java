@@ -38,9 +38,12 @@ public class CarDeleteFilter implements RestFilter {
     }
 
     @Override
-    public DispatchRequest filter(RestAction<?> action, RestCallback<?> resultCallback,
-            ExecuteCommand<RestAction<?>, RestCallback<?>> executeCommand, RestFilterChain filterChain) {
-        return filterChain.doFilter(action, resultCallback, executeCommand);
+    public <R> DispatchRequest filter(
+            RestAction<R> action,
+            RestCallback<R> callback,
+            ExecuteCommand<RestAction<R>, RestCallback<R>> command,
+            RestFilterChain chain) {
+        return chain.doFilter(action, callback, command);
     }
 
     @Override
