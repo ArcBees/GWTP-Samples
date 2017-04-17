@@ -1,6 +1,6 @@
-#Basic GWTP Sample using Guice
+# Basic GWTP Sample using Guice
 
-##[GWTP Home](https://github.com/ArcBees/GWTP)
+## [GWTP Home](https://github.com/ArcBees/GWTP)
 
-##Demo
+## Demo
 http://gwtp-sample-basic.appspot.com

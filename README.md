@@ -1,17 +1,17 @@
-#GWTP-Samples
+# GWTP-Samples
 Project samples display GWT-Platform features configuration and uses.
 
-##GWTP Reference
+## GWTP Reference
 * [GWTP Custom Google Search](http://www.google.com/cse/home?cx=011138278718949652927:5yuja8xc600) - Search GWTP documentation, wiki and thread collections.
 * [GWTP Home](https://github.com/ArcBees/GWTP) - Find the GWT-Platform home here.
 * [GWTP Documentation](https://github.com/arcbees/gwtp/wiki) - Find out how to use GWT-Platform here.
 * [GWTP Archetypes](https://github.com/ArcBees/ArcBees-archetypes/tree/master/archetypes) - Start a project from a template here.
 
-##Community
+## Community
 * [Join the GWT-Platform G+ Community](https://plus.google.com/communities/113139554133824081251) - See whats happening in the community.
 * [GWTP Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwt-platform) - Ask for help here.
 
-##Demos
+## Demos
 <table>
   <tr>
     <th>Sample</th>
@@ -45,10 +45,10 @@ Project samples display GWT-Platform features configuration and uses.
   </tr>
 </table>
 
-##License
+## License
 * GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-##Thanks to
+## Thanks to
 [![Arcbees.com](http://i.imgur.com/HDf1qfq.png)](http://arcbees.com)
 
 [![Atlassian](http://i.imgur.com/BKkj8Rg.png)](https://www.atlassian.com/)

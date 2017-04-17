@@ -1,8 +1,8 @@
-#GWTP Samples
+# GWTP Samples
 
-##[GWTP Home](https://github.com/ArcBees/GWTP)
+## [GWTP Home](https://github.com/ArcBees/GWTP)
 
-##Demos
+## Demos
 <table>
   <tr>
     <th>Sample</th>
