@@ -1,6 +1,6 @@
-#GWTP Nested Sample
+# GWTP Nested Sample
 
-##[GWTP Home](https://github.com/ArcBees/GWTP)
+## [GWTP Home](https://github.com/ArcBees/GWTP)
 
-##Demo
+## Demo
 http://gwtp-sample-nested.appspot.com
